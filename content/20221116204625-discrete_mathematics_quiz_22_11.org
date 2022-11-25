@@ -4,7 +4,6 @@
 #+title: Discrete Mathematics - Quiz 3
 
 
-
 * Division
 If we have two integers $a,b$, there has to be a single pair $q,r$ such that:
 
