@@ -1,0 +1,5 @@
+#+title: University Notes
+
+All the notes which I take to prepare for exams can be found in the =/content= folder. They then get linked to my website, and published here [[alves.world/university]]. Like this, anyone can suggest an edit or addition to the notes and it then gets automatically integrated.
+
+The notes are written in org-mode, which is a very simple and intuitive markdown language.
