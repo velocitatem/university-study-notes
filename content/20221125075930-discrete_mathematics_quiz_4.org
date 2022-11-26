@@ -1,0 +1,95 @@
+:PROPERTIES:
+:ID:       aa3ef0d5-69a5-4e18-9c72-a3f8df16d101
+:END:
+#+title: Discrete Mathematics - Quiz 4
+#+WEBSITE:
+# [[https://docs.google.com/presentation/d/1wbjN4D-drVa3ifu7D66JyrNMUukxxN-8XENrgL0ehyw/edit]]
+#+WEBSITE:
+# [[https://docs.google.com/presentation/d/1zTcgPYSZU2ZbTmu33-WeF4c1VAmpgSIZD3WN6uoyiIs/edit]]
+
+* Path Finding
+A path finding algorithm is designed to find the shortest path between two points, while avoiding obstacles. It relies on a concept called *discretization*, which simplifies the problem by limiting the regions of the map into a finite set.
+To understand how we can move around the map we create relations which describe from where and to where we can move.
+* Relations
+The relation ranging from some set $A$ to the set $B$ is a subset of the Cartesian product between the two sets. To denote the relation between two set we use the notation $a R b$, which can also be expressed with $(a,b) \in R$.
+
+To represent a binary relation in a more legible format other than a list of lists, we can use a matrix.
+
+| *R* | *1* | *2* | *3* |
+| *a* | 0 | 1 | 1 |
+| *b* | 1 | 1 | 0 |
+
+
+** Reflexive Relations
+For some relation $R$ on $A$, it has the property of being reflexive if and only if:
+
+\[
+\forall a \in A ((a,a) \in R)
+\]
+
+An easy way to recognize this in a relation, is using a matrix and seeing that all the values alone the *diagonal* are 1s.
+
+If we want to show that a relation is not reflexive, since it has $\forall$, we just need to show one case for which it is not true. This is done by finding a pair $\exists a \in A [(a,a) | a\ \not{R}\ a]$.
+If this holds true, then we say the relation is *irreflexive*. This type of relation is defined by:
+
+\[
+\forall a \in A ((a,a) \not \in R)
+\]
+
+If all the mentioned properties of a relation are satisfied, we call it a *poset*.
+
+** Symmetric Relations
+A relation is told to be symmetric if it has two pairs which are the inverse of each other. The definition is as follows:
+
+\[
+\forall a \in A \forall b \in A (((a,b) \in R) \Leftrightarrow ((b,a) \in R))
+\]
+
+To recognize this in a matrix, we need to see if the values are mirrored over the diagonal.
+
+** Antisymmetric Relations
+:LOGBOOK:
+CLOCK: [2022-11-26 Sat 14:26]--[2022-11-26 Sat 14:51] =>  0:25
+:END:
+For a relation to be antisymmetric, it must be that the non-diagonal values for an inverse relationship have a different value. Mathematically it is defined as follows:
+
+\[
+\forall a \in A \forall b in A (((a, b) \in R) \in \neg ((b,a) in R))
+\]
+
+** Transitive Relations
+This type of relation is the hardest to detect when looking at a matrix. It is conceptually similar to the hypothetical syllogism. In english, it could be describe as the property of a relation, in which a connection defined by $n$ relations, can be simplified to just one relation.
+
+\[
+\forall a \forall b \forall c (((a,b) \in R) \land ((b,c) \in R) \to ((a,c) \in R))
+\]
+
+* Relation Composition
+The composition of relations, is a relations, which begins in the first term of the first set and ends in the last term of the last set.
+
+\[
+\forall a \forall b (((a,b) \in F \circ B) \Leftrightarrow \exists c(((a,c) \in G) \land ((c,b) \in F)))
+\]
+
+The composite relation of the same set over different variations $n$ is represented as $R^n$.
+
+* Closures
+A closure, is a collection of changes which need to be made (only additions) so that a relation satisfies certain property. It must be done with the minimum possible number of pairs.
+
+** Reflexive Closure
+With this closure, it is our aim to change the relation so that it is reflexive. This is done by adding all the missing connections between $(a,a)$, or simply changing all the values on the diagonal of the relational matrix to 1.
+If we have to do to do this on a graph, we just add loops to each node.
+
+** Irreflexive Closure
+This can only be done if there are no $(a,a)$ pair in the relation, because otherwise we would have to remove some and we cannot do that when defining a closure.
+** Symmetric closure
+This closure can be done by adding each missing $(b,a)$ pair for all $(a,b)$ pair. In a matrix, we simply write a 1 for each mirrored value over the diagonal.
+The easiest way to do this, is to transpose the matrix and add it to the original.
+** Transitive Closure
+The transitive closure of a matrix is done by adding any missing links for paths which can be done in more than 1 steps.
+* Hasse Diagram
+To create a Hasse Diagram from any relation represented by a graph, we have to follow the following rules:
+
+1. Make sure all arrows point up
+2. Remove all loops
+3. Remove all transitive vectors(connections)
