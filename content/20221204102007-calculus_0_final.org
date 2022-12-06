@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       658d9bd6-8f29-452c-a15e-2a45c02b5e2b
+:END:
+#+title: Calculus 0 - Final
+
+# [2022-12-04 Sunday - 10:20]:	Start Recap for Calculus 0

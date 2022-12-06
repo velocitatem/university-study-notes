@@ -20,6 +20,13 @@ To represent a binary relation in a more legible format other than a list of lis
 | *b* | 1 | 1 | 0 |
 
 
+** Binary Relations
+The number of binary relations, for some set $A$ with $n$ elements, is given by:
+
+\[
+2^{n^2}
+\]
+
 ** Reflexive Relations
 For some relation $R$ on $A$, it has the property of being reflexive if and only if:
 
@@ -57,6 +64,8 @@ For a relation to be antisymmetric, it must be that the non-diagonal values for 
 \forall a \in A \forall b in A (((a, b) \in R) \in \neg ((b,a) in R))
 \]
 
+For it to be true, there can be no one pair of relations which are symetric.
+
 ** Transitive Relations
 This type of relation is the hardest to detect when looking at a matrix. It is conceptually similar to the hypothetical syllogism. In english, it could be describe as the property of a relation, in which a connection defined by $n$ relations, can be simplified to just one relation.
 
@@ -73,6 +82,13 @@ The composition of relations, is a relations, which begins in the first term of 
 
 The composite relation of the same set over different variations $n$ is represented as $R^n$.
 
+* Other Relation Operations
++ Converse(Inverse/Transposition) :: This relation, given by $R^T$ is defined by $\{(y,x); xRy\}$ where the elements of the ordered pair are flipped.
++ Negation :: This operation should give the complement of the original relation set. Represented by $\bar{R}$.
++ Union :: This relation is analogous to binary addition, and can easily be done if we are looking at the relational matrices.
++ Intersection :: Similarly to the union, it is easiest to do if we are looking at the matrices, except, this time we multiply the respective values.
+
+
 * Closures
 A closure, is a collection of changes which need to be made (only additions) so that a relation satisfies certain property. It must be done with the minimum possible number of pairs.
 
@@ -87,7 +103,20 @@ This closure can be done by adding each missing $(b,a)$ pair for all $(a,b)$ pai
 The easiest way to do this, is to transpose the matrix and add it to the original.
 ** Transitive Closure
 The transitive closure of a matrix is done by adding any missing links for paths which can be done in more than 1 steps.
+
+
+** Partial Ordering
+A partially ordered set is a set with a relation which is:
++ Reflexive
++ Antisymmetric
++ Transitive
+Think kind of set is also referred to as a *poset*, which is denoted by $(A,R)$, where $R$ is the relation with all the above mentioned traits.
+
 * Hasse Diagram
+
+#+DOWNLOADED: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Hypercubeorder_binary.svg/1024px-Hypercubeorder_binary.svg.png @ 2022-11-28 19:31:22
+[[file:Hasse_Diagram/2022-11-28_19-31-22_1024px-Hypercubeorder_binary.svg.png]]
+
 To create a Hasse Diagram from any relation represented by a graph, we have to follow the following rules:
 
 1. Make sure all arrows point up

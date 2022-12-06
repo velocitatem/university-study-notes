@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       04e4403a-7371-4f3e-a360-04ed373d5bc5
+:END:
+#+title: Learning to Observe - Quizes 8-9
+
+# Qasi experimental designs slide 2-24 | Issues with NECG | Nawthorne Effect
+# Applied Research - 2-12;17-20;24/25
+
+* Quasi Experimental Designs
++ Participant groups cannot be mixed, nor can the participant variables
++ Consists of a *pre* and *post* test measures of the dependent variable
++ We cannot make any causal conclusions from the results
+
+** Nonequivalent control group design
+If we want to see of some treatment is effective, we will use the *nonequivalent control group design*, in which one group gets the treatment between the two times we measure the DV, and the other group gets nothing.
+
+The *issues* when it comes to this kind of design are commonly one of the following:
++ Selection :: The participants know what is expected of them, and modify their behavior
++ Maturation :: Natural improvement, not caused by the treatment
++ History :: Some underlying events cause a change in the measurements
++ Regression to the mean :: The measurements tend to regress to some overall mean which was not accounted for
+
+** Interrupted Time Series Designs
+This is an expansion of the quasi experimental design. It uses multiple measurements before and after some treatment. This gives a broader view of the situation.
+It can also be used with a control group, it is then called a design with variations. Another change which can improve the results of an experiment, is applying the treatment to each group at different stages in the experiment. This is called "ITS with Switching Replications".
+
+* Matching
+This is a kind of design used when we can manipulate independent variables. It can however cause issues if the *two samples have different factors*, this can cause a false negative.
+
+* Applied Research
+This kind of research is intended to solve real-world problems. It helps us improve knowledge and evaluate theories. It creates a feedback loop between itself and basic research.
+It also present some ethical issues, mostly relating to consent and coercion.
+* Applied Research: Mental Testing
+When the World War I broke out, there was increasing demand to quickly assess the intelligence and ability to follow instruction, for this reason, IQ tests were developed.
+They were meant to measure the ability to act in certain ranks, follow orders and test if an individual is fit for duty.
+
+We have two main army test which we will focus on:
++ Army Alpha Test :: Meant to test english literacy
++ Army Beta Test ::  Mean to test non-verbal abilities and behavior
+
+** Visual Search: Basic Research
+The purpose of this test was to determine the following:
++ Efficiency of visual search
++ Underlying mechanisms
++ Which type is better (parallel or serial)
+
+The experiment consist of finding a red circle among some blue ones. Visual *feature* search was shown to be more effective as the time it took to find the target did not change, with the number of distractions, whereas the *conjunction* search increased each time.

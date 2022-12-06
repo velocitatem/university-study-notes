@@ -2,3 +2,707 @@
 :ID:       50ba2de1-9736-430c-9e1f-910722f2e8f1
 :END:
 #+title: Discrete Mathematics - Final
+#+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
+#+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+
+
+#+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
+#+HTML_HEAD: <script src="anti-cheat.js"></script>
+
+* Domains
++ Naturals $\mathbb{N}$ :: $[1,2,3,\ldots,\infty)$
++ Integers $\mathbb{Z}$ :: $(-\infty,\ldots,-2,0,2,\ldots,\infty)$
++ Rationals $\mathbb{Q}$ :: Fractions of integers $\{ \frac{p}{q} \vert p \in Z \land q \in Z \land q \ne 0 \}$
++ Reals $\mathbb{R}$ :: All real numbers
++ Complex $\mathbb{C} :: All complex numbers
+* Terminology
++ Theorem :: A statement we can prove using some axioms
++ Proof :: A valid argument/set of arguments that demonstrate a theorem/proposition
++ Axioms :: Statements which are assumed to be true, they are in the most basic form
++ Lemma :: A small proof that is an element of another larger proof
+* Propositional Logic
+# [2022-12-03 Saturday - 11:27]:	Study Propositional Logic
+A proposition, is a sentence, which can be given some *truth value*.
+There are two types of propositions:
++ Tautology :: A proposition that will always be *true* ($\top$)
++ Contradiction :: A proposition that will never be true ($\bot$)
+** Operators
+There are three main operators which can be used to express any logical expression. These consists of *Not, Conjunction, Disjunction*.
+*** Not
+It flips the truth value of a proposition.
+
+\[
+\neg p, \bar{A}
+\]
+*** Conjunction
+This operators returns a new truth value which is true *if both of the propositions are true*
+
+\[
+p \land q, AB
+\]
+*** Disjunction
+Like the conjunction, it operates on two propositions. It will return true as long as either of the propositions is true.
+
+\[
+p \lor q, A+B
+\]
+*** Exclusive OR (XOR)
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+
+It is very similar to the *Disjunction* except that it must be exclusively one value that is true.
+
+\[
+p \oplus q = (p \lor q) \land \neg(p \land q)
+\]
+
+# [2022-12-04 Sunday - 12:05]:	How do we prove that the definition of the xor is xor
+
+*** Conditional Statements / Implication
+A conditional statement consists of two parts, the *premise* and *consequence*. The truth value is *only false when $T \to F$*.
+
+\[
+p \to q \equiv \neg p \lor q
+\]
+
++ If $p$ is True, then $q$ must also be True, we say that p is a *sufficient condition* for $q$. $T \to T$
++ If $p$ is False, $q$ could still be True. $F \to T$
++ $p$ cannot be true if $q$ is not true. $F \to F$
++ $p$ could still be false, even if $q$ is true. $F \to T$
+
+\[
+((p \to q) \land p) \to q
+\]
+
+\[
+((p \to q) \land \neg q) \to \neg p
+\]
+
+*** Bi-conditionals
+It expressed a *sufficient* and *necessary* conditional relationship between two propositions. It is read as /if and only if p, then q/.
+
+\[
+p \Leftrightarrow q
+\]
+
+This operator will return True only if both p and q have equal values. The expression can be represented with the 3 basic operators as:
+
+\[
+(p \to q) \land (q \to p) \equiv (\neg p \land \neg q) \lor (p \land q)
+\]
+
+\[
+p \equiv q = \neg (p \oplus q)
+\]
+
+*** Order of Operators
+1. $\neg$
+2. $\land$
+3. $\lor$
+4. $\to$
+5. $\Leftrightarrow$
+
+** Morgan Laws
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+\begin{align}
+\neg (p \land q) \equiv \neg p \lor \neg q \\
+\neg (p \lor q) \equiv \neg p \land q
+\end{align}
+
+** Fallacies
+The fallacies stem from the fact that an implication is true, and the truth value of either $p,q$.
++ Affirming the consequent :: $((p \to q) \land q) \to p$. We falsely assume that the premise is *true* because the consequence is *true*
++ Nageting the antecedent :: $((p \to q) \land \neg p) \to \neg q$. We falsely assume that the consequence is *false* because the premise is *false*.
+
+** Converse, Contrapositive, Inverse
++ Converse :: $q \to p$
++ Contrapositive :: $\neg q \to \neg p$
++ Inverse :: $\neg p \to \neg q$
+
+The fallacies are a product of assuming that the *Converse and Inverse* are equivalent to the conditional statement.
+** Disjunctive Normal Form
+This is a proposition created from the values in the truth table.
+
+** Logical Equivalences
+These are various way you can arrive at some conclusion given a few basic propositions.
+*** Identity Laws
+\[
+p \land \top \equiv p
+\]
+
+\[
+p \lor \bot \equiv p
+\]
+*** Denomination Laws
+\[
+p \lor \top \equiv \top
+\]
+
+\[
+p \land \bot \equiv \bot
+\]
+*** Idempotent Laws
+\[
+p \lor p \equiv p
+\]
+
+\[
+p \land p \equiv p
+\]
+*** Double Negation Law
+\[
+\neg ( \neg p) \equiv p
+\]
+*** Commutative Laws
+\[
+p \lor q \equiv q \lor p
+\]
+
+\[
+p \land q \equiv q \land p
+\]
+*** Associative Laws
+\[
+(p \lor q) \lor r \equiv p \lor (q \lor r)
+\]
+
+\[
+(p \land q) \land r \equiv p \land (q \land r)
+\]
+*** Distributive Laws
+\[
+p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)
+\]
+
+\[
+p \land (q \lor r) \equiv (p \land q) \lor (p \land r)
+\]
+*** [[Morgan Laws][Morgan Laws]]
+*** Absorption Laws
+\[
+p \lor (p \land q) \equiv p
+\]
+
+\[
+p \land (p \lor q) \equiv p
+\]
+*** Negation Laws
+\[
+p \lor \neg p \equiv \top
+\]
+
+\[
+p \land \neg p \equiv \bot
+\]
+** Satisfiability
+A proposition is satisfiable if it has at least one case for which it is *true*, it is anything but a *contradiction*.
+* Predicate Logic
+# [2022-12-03 Saturday - 11:28]:	Study Predicate Logic
+With predicate logic, we can break down a complex proposition into predicates and quantifiers.
+
+** Predicates
+It is a statement, which is made up of a proposition, with the only difference being that it can take a parameter.
+
+\begin{array}{l}
+X \text{ is faster than me} \\
+= \text{Subject} + \text{Predicate} \\
+\to P(x)
+\end{array}
+
+We say that the it is instantiated once it gets evaluated with the passed parameter.
+
+\[
+P(x_1, x_2, x_3, \ldots, x_n)
+\]
+
+And once instantiated with variables:
+
+\[
+P(a_1, a_2, a_3, \ldots, a_n) \equiv p
+\]
+
+** Quantifiers
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+With a quantifier, we can specify for which values on a certain domain, a predicate is true of false. There are various ways to express this: (*for all*, *for many*, *for at least one*, *for none*).
+
+** Universal Quantifier
+If we have some predicate for which we can say that all the possible values in a certain domain will make it true, we use the universal quantifier.
+
+\begin{array}{c}
+P(x) \text{ for all value of x within its domain} \\
+\forall x P(x)
+\end{array}
+
++ To prove that this quantifier is true, we must demonstrate that it holds true for all the possible values.
++ To *dis*-prove the quantifier, it is sufficient to show that there exists just one that does not satisfy the predicate
++ If we are considering an empty set, it will always be false.
+
+** Existential Quantifier
+\begin{array}{c}
+P(x) \text{ for at least one value of x within its domain} \\
+\exists x P(x)
+\end{array}
+
++ To prove this quantifier, we must find at least one value for which the predicate holds true
++ To disprove the quantifier, we must show that all the values will not hold for the predicate
++ Again, if we consider and empty set, it will always be false
+
+** Singular Existential Quantifier
+We can also use the existential quantifier, and with a bit of modification we can use it to specify how many values will satisfy the predict.
+
+\begin{array}{c}
+\text{There is exactly one } x \text{ such that } P(x) \\
+\exists! x P(x)
+\end{array}
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+
+The definition for this is as follows:
+
+\[
+\exists x (P(x) \land \forall y (P(y) \Leftrightarrow x = y))
+\]
+
+We can generalize this to a specific number $n$ for which the predicate is satisfiable.
+
+\[
+\exists_n x P(x)
+\]
+
+** Negation
+When negating a quantifier, we have to consider both the outside and inside, that being *the quantifier itself* and the *predicate*.
+
+\[
+\neg \forall x P(x) \equiv \exists x \neg P(x)
+\]
+
+\[
+\neg \exists x P(x) \equiv \forall x \neg P(x)
+\]
+
+** Nesting
+If we have more than one variable for which we quantify a predicate, we have to *consider the order*.
+
+\[
+\exists x \forall y P(x,y) \not \equiv \forall y \exists x P(x,y)
+\]
+
+
+* Inference
+A process of arriving at some conclusion through logical steps. This process consists of *arguments* which can either be valid or not. The logical form of an argument is vital, because it is the only way to determine if it is true or not.
+
+\begin{array}{r}
+p \to q \\ p
+\\
+\hline
+\therefore q
+\end{array}
+
+
+It is another thing to call an argument *sound*, for this we need to have an argument for which *all premises are true and valid*. *A valid argument implies a tautology*.
+
+
+** Rules of Inference
+An argument form which would generate a valid implication falls under the rules of inference
+*** Modus Ponens
+
+\begin{array}{r}
+p \\
+p \to q
+\\
+\hline
+q
+\end{array}
+
+
+1. If p is true, then q is true
+2. p is true
+3. Therefore q is true
+*** Modus Tollens
+
+
+\begin{array}{r}
+\neg q \\
+p \to q
+\\
+\hline
+\neg p
+\end{array}
+
+*** Hypothetical Syllogism
+
+\begin{array}{r}
+p \to q \\
+q \to r
+\\
+\hline
+p \to r
+\end{array}
+
+*** Disjunctive Syllogism
+
+\begin{array}{r}
+p \lor q \\
+\neg p
+\\
+\hline
+q
+\end{array}
+
+*** Addition
+
+\begin{array}{r}
+p
+\\
+\hline
+p \lor q
+\end{array}
+
+*** Simplification
+
+\begin{array}{r}
+p \land q
+\\
+\hline
+p
+\end{array}
+
+*** Conjunction
+
+\begin{array}{r}
+p \\ q
+\\
+\hline
+p \land q
+\end{array}
+
+*** Resolution
+
+\begin{array}{r}
+p \lor q \\
+\neg p \lor r
+\\
+\hline
+\therefore q \lor r
+\end{array}
+
+** Rules of Inference for Quantified Propositions
+*** Universal Instantiation
+\begin{array}{r}
+\forall x P(x)
+\\
+\hline
+\therefore P(c)
+\end{array}
+
+*** Universal Generalization
+\begin{array}{r}
+P(c) \text{ for an arbitrary c}
+\\
+\hline
+\therefore \forall x P(x)
+\end{array}
+
+*** Existential Instantiation
+\begin{array}{r}
+\exists x P(x)
+\\
+\hline
+\therefore P(c)
+\end{array}
+
+*** Existential Generalization
+\begin{array}{r}
+P(c) \text{ for an arbitrary c} \\
+\hline
+\therefore \exists x P(x)
+\end{array}
+
+* Formal Proofs
+# [2022-12-03 Saturday - 11:29]:	Study Proofs
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+This kind of proof is made up of statements which we can infer from previous statements. This we can construct using a table in which we state the logical expression and how we got to it.
+
+\begin{align}
+(p \lor q) \to (r \land s) & \quad \text{Premise} \\
+r \to t & \quad \text{Premise} \\
+\neg t & \quad \text{Premise} \\
+\neg r & \quad \text{Modus Tollens from 2 and 3} \\
+(\neg p \land \neg q) & \quad \text{Modus Tollens from 4 and 1} \\
+\neg p & \quad \text{Simplification of 5}
+\end{align}
+
+
+* Informal Proofs
+Because a formal proof can get convoluted, we use informal proofs. The main difference here is that we don't need to provide a step-by-step description of how the proof works; we just show how the conclusion is true by describing a few intermediate steps between the theorem and the corollary. (These are called *premises* and *conclusions* in logic.)
+
+There are various methods of proof we can use. The two primary categories for these proofs are *direct* and *indirect*.
+
+
+** Methods of Proof
+Upon deciding which axioms to use, you then need to use some method of proof. The most common statements we will be proving are implications.
+*** Direct Proof
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+We want to prove *"If p, then q*". This is done by assuming that the *premise* is true and then proving that the consequence is also true.
+
+1. We assume $p$ to be true.
+2. By applying the laws of inference, we deduce $q$ from $p$.
+*** Indirect: Proof by Contraposition
+If we cannot arrive to the consequence using just the premise, we can use contraposition, which states that $(p \to q) \equiv (\neg q \to \neg p)$.
+
+1. We assume that $\neg q$ is true
+2. We find a way to infer that $\neg p$ is true
+3. Since this verifies the contrapositive, we have proved that $p \to q$
+
+*** Indirect: Vacuous and Trivial proofs
+If we are saying that $p \to q$ is *True*, we can assume that:
+1. $p$ is False (Vacuous proof)
+2. $q$ is True (Trivial proof)
+
+It is enough to prove just one of these (as long as we do not accept the premise being True) we can prove the condition to be True.
+**** Example
+If $n$ is an integer and an even number, then $2n$ must be an integer.
++ Solution :: Since an integer multiplied by another integer will also be an integer, we can say that $q$ will be true. This is enough to prove that $p \to q$ is also True.
+*** Indirect: Proof by Contradiction
+This can be used to demonstrate any statement $p$. We say that $\neg p$ implies a contradiction. A nicer way to think about this is by the following:
+
+\[
+\neg p \to \bot \equiv \neg (\neg p) \lor \bot \equiv p \lor \bot \equiv p
+\]
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+If we should use proof by contradiction on an implication, we must prove that $p \land \neg q \to \bot$. This is because in this case, we need to show that the negation of the implication is a contradiction.
+
+\[
+\neg (p \to q) \equiv \neg (\neg p \lor q) \equiv p \land \neg q \equiv \bot
+\]
+
+**** Example
+Show that $\sqrt{2}$ is an irrational number.
+
++ Solution :: An irrational number is a fraction of 2 integers. We assume that $\sqrt{2}$ is rational. This would mean that $\sqrt{2} = \frac{p}{q}$ where both $p,q$ are integers. The key thing to assume here is that the fraction is in its smallest form. From the previous equation we can get to $p^2 = 2q^2$ which tells us that $p$ is an even number (if the square of a number even, then so is that number$). Further, we can also come to the conclusion that $q$ is even. Since both $p,q$ are even, the fraction is not its simplest form - implying a contradiction.
+*** Proof by Cases
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+This is a proof which can be used a used as a part of another proof when proving implications. If we have an implication where the premise consists of disjunctions, we can apply the following:
+
+\begin{align}
+(p_1 \lor p_2 \lor \ldots \lor p_n) \to q \\
+(p_1 \to q) \land (p_2 \to q) \land \ldots \land (p_n \to q)
+\end{align}
+
+This proof is very helpful when we want to prove that a condition is satisfiable for a group of elements.
+
+**** Example
+Prove that if $n$ is not a multiple of 3, $2n$ is not a multiple of 3.
++ Solution :: To define a value as not a multiple of 3, we have two formulas $n = 3k + 1 \quad n = 3k + 2$. We can reformulate the proposition by saying $(n = 3k+1) \lor (n = 3k^\prime) \to \neg (2n = 3k^{\prime\prime})$. We then have to show that both cases imply the consequence.
+*** Equivalence Proof
+As previously mentioned $p \leftrightarrow q = p \equiv q$, so if we want to prove some equivalence, we can use $(p \to q) \land (q \to p)$.
+*** Existential Statements Proof
+We have two strategies for this.
++ Constructive Proof :: We show an example that verifies a predicate and apply existential generalization to prove the proposition.
++ Non Constructive Proof :: We show that there exists an element which validates the predicate but we dont specify which one. This is most commonly proof by contradiction.
+*** Universal Statements Proof
++ Proving :: We show that a predicate holds for an arbitrary value and then apply universal generalization.
++ Counterexamples :: To disprove a universal statement we need to find a counterexample. This action is a process of negation, making the US an ES.
+*** Strategy for Proofs
+So should you use? It comes down to trial and error, but also practice and intuition.
++ Trial and error :: If direct proof doesnt work, try indirect lol.
++ Complex propositions :: If there are complex propositions in an implication, they quite possibly can be negated, allowing use to use an *indirect method*.
++ Using proof by contradiction with conditional statements :: We show that $\neg (p \to q)$ implies $\bot$.
+
+
+* Set Theory
+# [2022-12-03 Saturday - 11:29]:	Study Set Theory
+# [2022-12-03 Saturday - 11:32]:	Review what I did wrong on Discrete Math Midterm
+
+** Sets
+A set is a collection of objects. We use the notation $\{a,b,c\}$ to denote a set. We can also use the notation $\{x \in S \mid P(x)\}$ to denote a set of elements $x$ in $S$ that satisfy the predicate $P(x)$. A set can be empty, which is denoted by $\emptyset$.
+
+A more concrete definition of a set using quantifiers is as follows:
+
+\[
+\forall x (( x \in S) \leftrightarrow P(x))
+\]
+
+We also often use *interval definitions* to define sets. These are defined as follows:
+
+\[
+\{x \in \mathbb{R} \mid a \leq x \leq b\}
+\]
+
+A common way to define a interval is with brackets and parenthesis. For example, $(a,b)$ is an open interval, while $[a,b]$ is a closed interval.
+
+Two sets are equal if they have the same elements. We denote this as $A = B$. A more rigorous definition of this is as follows:
+
+\[
+A = B \equiv \forall x (x \in A \leftrightarrow x \in B)
+\]
+
+The equality of two sets can also be defined using subsets:
+
+\[
+A = B \equiv A \subseteq B \land B \subseteq A
+\]
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+A way to disprove the equality of two sets is by showing that they have at least one element that is not in the other set. This is called a *counterexample*. It can be represented with an existential quantifier and XOR: $\exists x (x \in A \oplus x \in B)$.
+
+Some important elements are the aforementioned empty set $\emptyset$ and the universal set $\mathbb{U}$. The universal set is the set of all elements in a domain. The empty set is the set that contains no elements. The Domains, mentioned at the beginning are also sets.
+
+** Subsets
+A subset is a set that is contained in another set. We denote this as $A \subseteq B$. A more rigorous definition of this is as follows:
+
+\[
+A \subseteq B \equiv \forall x (x \in A \to x \in B)
+\]
+
+For all sets, it is true that $A \subseteq A$ and $\emptyset \subseteq A$. Which means that every set is a subset of itself and the empty set is a subset of every set. We can also say that $A \subseteq B$ and $B \subseteq A$ implies $A = B$. This is called the *subset equality*.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+What can be confusing is the proper subset. A proper subset is a subset that is not equal to the set. We denote this as $A \subset B$. A more rigorous definition of this is as follows:
+
+\[
+A \subset B \equiv A \subseteq B \land A \neq B
+\]
+** Set Cardinality
+This is not the absolute value of a set. It is the number of elements in a set. We denote this as $|A|$. A more rigorous definition of this is as follows:
+
+\[
+\vert A \vert \equiv \# \{x \in A \mid x \in A\}
+\]
+
+** Power Set
+The power set is the set of all subsets of a set. We denote this as $P(A)$. What is meant by all subsets is that the power set contains the empty set and the universal set aswell as all the subsets of the set. A more rigorous definition of this is as follows:
+
+\[
+P(A) \equiv \{B \mid B \subseteq A\}
+\]
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+*The cardinality of a power set is $2^{|A|}$.*
+
+An example of this is the power set of $\{1,2,3\}$ is $\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}$.
+
+What is important to remember is that the power set of a power set is the original set. This is because the power set of a set is the set of all subsets of a set. So the power set of the power set is the set of all subsets of all subsets of a set. This is the original set.
+
+** Cartesian Product
+The cartesian product is the set of all ordered pairs of elements from two sets. We denote this as $A \times B$. In other words, the cartesian product is the set of all possible combinations of elements from two sets. A more rigorous definition of this is as follows:
+
+\[
+A \times B \equiv \{(a,b) \mid a \in A \land b \in B\}
+\]
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+*The cardinality of the cartesian product is $|A| \times |B|$.*
+
+An example of this is the cartesian product of $\{1,2\}$ and $\{3,4\}$ is $\{(1,3), (1,4), (2,3), (2,4)\}$.
+
+The relation of the Cartesian product to the power set is that the power set of a cartesian product is the cartesian product of the power sets. This is because the power set of a set is the set of all subsets of a set. So the power set of the cartesian product is the set of all subsets of all ordered pairs of elements from two sets. This is the cartesian product of the power sets. A mathematical proof of this is as follows:
+
+\[
+P(A \times B) = \{C \mid C \subseteq A \times B\} = \{C \mid C \subseteq \{(a,b) \mid a \in A \land b \in B\}\} = \{C \mid C \subseteq \{(a,b) \mid a \in P(A) \land b \in P(B)\}\} = P(A) \times P(B)
+\]
+
+Or simply: $P(A \times B) = P(A) \times P(B)$.
+
+** Set Operations
+Set operations are operations that can be performed on sets. The most common set operations are union, intersection, difference, and complement.
+
+** Union
+Simply explained, the union of two sets is the set of all elements that are in either set. We denote this as $A \cup B$. A more rigorous definition of this is as follows:
+
+\[
+A \cup B \equiv \{x \mid x \in A \lor x \in B\}
+\]
+
+And using quantifiers:
+
+\[
+\forall ((x \in A \cup B) \equiv (x \in A \lor x \in B))
+\]
+
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+*The cardinality of the union is $|A| + |B| - |A \cap B|$.* The reason why we have to subtract the cardinality of the intersection is because the intersection is counted twice. Once in $A$ and once in $B$.
+
+An example of this is the union of $\{1,2\}$ and $\{2,3\}$ is $\{1,2,3\}$. The reason why this is the union is because $1 \in A$, $2 \in A$, $2 \in B$, and $3 \in B$. So $1,2,3$ are all in the union.
+
+** Intersection
+The intersection of two sets is the set of all elements that are in both sets. We denote this as $A \cap B$. A more rigorous definition of this is as follows:
+
+\[
+A \cap B \equiv \{x \mid x \in A \land x \in B\}
+\]
+
+*The cardinality of the intersection is $|A \cap B|$.* What is important to remember is that the intersection of a set with itself is the set itself. This is because the intersection of a set with itself is the set of all elements that are in the set and the set itself. So the intersection of a set with itself is the set itself.
+
+An example of this is the intersection of $\{1,2\}$ and $\{2,3\}$ is $\{2\}$. The reason why this is the intersection is because $2 \in A$ and $2 \in B$. So $2$ is in the intersection.
+
+** Difference
+The difference of two sets is the set of all elements that are in the first set but not the second set. We denote this as $A \setminus B$. A more rigorous definition of this is as follows:
+
+\[
+A \setminus B \equiv \{x \mid x \in A \land x \notin B\}
+\]
+
+A visual representation of this is as follows:
+
+
+#+DOWNLOADED: https://www.askpython.com/wp-content/uploads/2020/01/Set-Difference.png @ 2022-12-06 09:56:18
+[[file:Set_Theory/2022-12-06_09-56-18_Set-Difference.png]]
+
+
+
+The cardinality of the difference is $|A \setminus B|$ or $|A| - |A \cap B|$. The reason why we have to subtract the cardinality of the intersection is because the intersection is counted twice. Once in $A$ and once in $B$.
+
+An example of this is the difference of $\{1,2\}$ and $\{2,3\}$ is $\{1\}$. The reason why this is the difference is because $1 \in A$ and $1 \notin B$. So $1$ is in the difference.
+
+** Complement
+The complement of a set is the set of all elements that are not in the set. We denote this as $A^c$. A more rigorous definition of this is as follows:
+
+\[
+A^c \equiv \{x \mid x \notin A\}
+\]
+
+In terms of the universal set, the complement of a set is the set of all elements that are not in the set and are in the universal set. It is denoted as $A^c = U \setminus A$. A more rigorous definition of this is as follows:
+
+\[
+A^c \equiv \{x \mid x \in U \land x \notin A\}
+\]
+
+*The cardinality of the complement is $|U| - |A|$.* The reason why we have to subtract the cardinality of the set is because the set is counted twice. Once in $U$ and once in $A$.
+
+An example of this is the complement of $\{1,2\}$ is $\{3,4\}$. The reason why this is the complement is because $3 \in U$ and $3 \notin A$. So $3$ is in the complement. This of course depends on the universal set being $\{1,2,3,4\}$.
+
+
+** Logical Operations with Sets
+We can relate sets to logical operations. The most common logical operations are conjunction, disjunction, and negation. We can relate these to sets as follows:
+
+\begin{array}{l}
+A \cup B \sim p \lor q \\
+A \cap B \sim p \land q \\
+\bar{A} \sim \neg p
+\end{array}
+
+The reason why we can do this is that the definition of a set, is based on a predicate. So we can relate the set to the predicate and the predicate to the logical operation. For example, the definition of a set is as follows:
+
+\[
+A \equiv \{x \mid x \in A\}
+\]
+
+So we can relate the set to the predicate as follows:
+
+\[
+A \equiv \{x \mid x \in A\} \equiv \{x \mid p(x)\}
+\]
+
+* Number Theory
+# [2022-12-03 Saturday - 11:29]:	Study Number Theory
+
+* Cryptography
+# [2022-12-03 Saturday - 11:29]:	Study Cryptography
+
+* Relations
+# [2022-12-03 Saturday - 11:29]:	Study Relations
+
+* Computation
+# [2022-12-03 Saturday - 11:30]:	Study Computation
