@@ -101,7 +101,7 @@ p \equiv q = \neg (p \oplus q)
 4. $\to$
 5. $\Leftrightarrow$
 
-** Morgan Laws
+** DeMorgan's Laws
 #+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
 \begin{align}
 \neg (p \land q) \equiv \neg p \lor \neg q \\
@@ -176,7 +176,7 @@ p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)
 \[
 p \land (q \lor r) \equiv (p \land q) \lor (p \land r)
 \]
-*** [[Morgan Laws][Morgan Laws]]
+*** [[DeMorgan's Laws]]
 *** Absorption Laws
 \[
 p \lor (p \land q) \equiv p
@@ -869,14 +869,306 @@ If we subtract 1 from the upper bound, we can find the sum of the sequence. For 
 
 If we have nested summations, we can expand the far-right summation and include it in each iteration of the left summation.
 
-* Number Theory
-# [2022-12-03 Saturday - 11:29]:	Study Number Theory
+* Divisibility
+A number is divisible by another number if the remainder is 0. We denote this as $a \mid b$ where $a$ is the divisor and $b$ is the dividend. We can also write this as $a = q \cdot d + r$ where $r$ is the remainder and $q$ is the quotient. It is important to note that $r$ is always less than $d$ and always positive.
 
-* Cryptography
-# [2022-12-03 Saturday - 11:29]:	Study Cryptography
+The elements in the primary equation are as follows:
+1. $a$ is the dividend
+2. $d$ is the divisor
+3. $q$ is the quotient
+4. $r$ is the remainder
+
+From this equation we gain two new operations, the *division* operation and the *modulus* operation. We can use these operations to find the remainder and quotient of a division problem.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+If we perform division of a negative number, we cannot have a negative remainder. To solve this, we can add the divisor to the dividend until the remainder is positive. This is called the *floor division* operation. In other words, we want to 'overshoot' with the dividend and then compensate with the remainder.
+
++ Division Function: This function is onto but not one-to-one
++ Modulus Function: This function neither one-to-one or onto
+
+
+** Divisibility Rules
+We can use divisibility rules to determine if a number is divisible by another number. The rules are as follows:
+1. If $a$ divides both $b$ and $c$, then $a$ divides $b+c$. Expression: $a \mid b \land a \mid c \Rightarrow a \mid (b+c)$
+2. If $a$ divides $b$, then $a$ divides any multiple of $b$. Expression: $a \mid b \implies a \mid bm$ for some $m \in \mathbb{N}$
+3. If $a$ divides $b$ and $b$ divides $c$, then $a$ divides $c$. Expression: $a \mid b \land b \mid c \Rightarrow a \mid c$
+
+* Modular Arithmetic
+Modular arithmetic uses the modulus operation to find the remainder of a division problem. We use the notation $a \equiv b \pmod{m}$ to denote that $a$ is congruent to $b$ modulo $m$.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+If we want to identify if two integers are congruent modulo $m$, we can test this in the following way:
+1. $a \equiv b \pmod{m} \land b \equiv c \pmod{m} \Rightarrow a \equiv c \pmod{m}$
+
+*In other words, if the remainder of the modulus operation is the same, then the two numbers are congruent modulo $m$.*
+
+
+* Integer Representation
+Integers can be represented in many ways. In every day life, we use the base 10 system. This means that we use the digits 0-9 to represent numbers. We can also use the base 2 system. This means that we use the digits 0-1 to represent numbers. We can also use the base 16 system. This means that we use the digits 0-9 and A-F to represent numbers. We can also use the base 26 system. This means that we use the digits A-Z to represent numbers.
+
+If we want to convert the value of base $b$ to base $b'$, we can use the following formula:
+
+\[
+n = a_k b^k + a_{k-1} b^{k-1} + \cdots + a_1 b + a_0
+\]
+
+The general algorithm for calculating the number representation is as follows:
+1. Divide the number by the base
+2. Take the remainder and add it to the list of digits
+3. Repeat until the number is 0
+
+In mathematics:
+
+\begin{align}
+n = a_0 + bq_0 \\
+n = a_1 + b(a_1 + bq_1) \\
+n = a_2 + b(a_1 + b(a_2 + bq_2))
+\end{align}
+
+
+* Binary Representation
+Binary representation is the representation of numbers in base 2. We can use the following rules to convert from base 10 to base 2:
+1. Divide the number by 2
+2. Take the remainder and add it to the list of digits
+3. Repeat until the number is 0
+
+To then put together the binary string we take each bit in reverse order and put it together. For example, the binary representation of 13 is 1101.
+
+To make life a bit easier, we can use a table to convert from base 10 to base 2. The table is made up of the powers of 2 and the digits 0-1.
+|  2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
+|-----+----+----+----+----+----+----+----|
+| 128 | 64 | 32 | 16 |  8 |  4 |  2 |  1 |
+
+
+* Hexadecimal Representation
+Hexadecimal representation is the representation of numbers in base 16. We can use the following rules to convert from base 10 to base 16:
+1. Divide the number by 16
+2. Take the remainder and add it to the list of digits
+3. Repeat until the number is 0
+
+To then put together the hexadecimal string we take each digit in reverse order and put it together. For example, the hexadecimal representation of 15816 is 3DC8. The steps taken to get to this number are as follows:
+1. 15816 / 16 = 988 remainder 8
+2. 988 / 16 = 61 remainder 12 (12 is C in hexadecimal)
+3. 61 / 16 = 3 remainder 13 (13 is represented as D in hexadecimal)
+4. 3 / 16 = 0 remainder 3
+5. 3DC8
+
+* Prime Numbers
+A prime number is a number that is only divisible by 1 and itself. We can use the following rules to determine if a number is prime:
+1. If $n$ is divisible by $a$, then $n$ is not prime
+2. If $n$ is not divisible by $a$, then $n$ is prime
+
+Any number that is not prime is called a composite number. This relates to the Fundamental Theorem of Arithmetic. This theorem states that every integer greater than 1 can be expressed as a product of prime numbers. This theorem is important because it allows us to factorize numbers.
+
+How to determine if a number is a prime or composite? We can use the following proposition:
+
+\[
+(n \text{ is composite})  \Leftrightarrow \exists a \in \mathbb{N} (( a \mid n) \land (a \neq 1) \land (a \neq n))
+\]
+
+
+
+* Algorithms
+An algorithm is a collection of instructions that are made to solve a problem. To create any algorithm, we need three basic components:
++ Sequence :: A sequence is a list of instructions that are executed in order
++ Selection :: A selection is a list of instructions that are executed based on a condition
++ Iteration :: An iteration is a list of instructions that are executed multiple times
+
+** Complexity of Algorithms
+The complexity of an algorithm is given by the relation between the input size and the number of steps required to solve the problem. We can use the following notations to describe the complexity of an algorithm:
++ $O(n)$ :: This notation describes the worst case scenario for an algorithm. This means that the algorithm will take at least this amount of time to solve the problem.
++ $\Omega(n)$ :: This notation describes the best case scenario for an algorithm. This means that the algorithm will take at most this amount of time to solve the problem.
++ $\Theta(n)$ :: This notation describes the average case scenario for an algorithm. This means that the algorithm will take this amount of time to solve the problem.
+
+We will not need omega and theta notation for the exam, but it is good to know.
+** Big O Notation
+Big O notation is used to describe the worst case scenario for an algorithm. We can use the following rules to determine the complexity of an algorithm:
+
+The idea of this notation is that we can use it to compare the complexity of different algorithms. For example, if we have two algorithms that solve the same problem, we can use big O notation to determine which algorithm is better. If one algorithm is $O(n)$ and the other is $O(n^2)$, then the first algorithm is better than the second algorithm.
+
+| Algorithm     | Complexity   | Example                             |
+|---------------+--------------+-------------------------------------|
+| $O(1)$        | Constant     | Finding the first element in a list |
+| $O(\log n)$   | Logarithmic  | Binary search                       |
+| $O(n)$        | Linear       | Finding the maximum value in a list |
+| $O(n \log n)$ | Linearithmic | Merge sort                          |
+| $O(n^2)$       | Quadratic    | Bubble sort                         |
+| $O(n^3)$       | Cubic        | Matrix multiplication               |
+| $O(2^n)$       | Exponential  | Tower of Hanoi                      |
+| $O(n!)$       | Factorial    | Travelling salesman problem         |
+
+Contrary to intuition, to solve a large problem you should always use the most efficient algorithm, but for a smaller size, higher complexity algorithms are better.
+
+* Greatest Common Divisor
+The greatest common divisor of two numbers is the largest number that divides both numbers. We can easily find this if we know the factorizations of each number. Another way to find the greatest common divisor is to use Euclid's algorithm. This algorithm is as follows:
+1. Let $a$ be the larger number and $b$ be the smaller number
+2. Divide $a$ by $b$ and take the remainder
+3. If the remainder is 0, then $b$ is the greatest common divisor
+4. If the remainder is not 0, then set $a$ to $b$ and $b$ to the remainder
+5. Repeat until the remainder is 0
+
+An example of this algorithm is as follows:
+1. Let $a = 24$ and $b = 16$
+2. $24 \div 16 = 1$ remainder $8$
+3. $16 \div 8 = 2$ remainder $0$
+4. $b = 8$ is the greatest common divisor
+
+** Least Common Multiple
+The least common multiple of two numbers is the smallest number that is divisible by both numbers. We can easily find this if we know the factorizations of each number. Another way to find the least common multiple is to use the following formula:
+
+\[
+\text{lcm}(a, b) = \frac{a \cdot b}{\text{gcd}(a, b)}
+\]
+
+* Applications of Number Theory
+Number theory is used in many different fields. Some of these fields are as follows: cryptography, coding theory, and combinatorics.
+
+** Databases
+If we know the number of records in a database and who much space they take up, swell as the starting position, we can use the following formula to determine the position of the nth record:
+
+\[
+\text{position} = \text{starting position} + \text{record size} \cdot (n - 1)
+\]
+
+** Hash Functions
+If we want to store some records into a database, we can use a hash function which will map each record to a unique location in the database. This is done by taking the record and applying a hash function to it. The hash function will then return a number which is the location of the record in the database. We might use the $mod$ operator to create a hash function.
+
+If each entry has some numerical value we can use $mod 10$ to map it to a location in the database. This method is not very practical because we might get some sort of collision. A collision is when two records map to the same location in the database. To avoid collisions we can make use of a secondary hash function.
+
+** Asymmetric Encryption
+Asymmetric encryption is a method of encryption that uses two keys. One key is used to encrypt the message and the other key is used to decrypt the message. The two keys are called the *public key* and the *private key*. The public key is used to encrypt the message and the private key is used to decrypt the message. The public key is made public and the private key is kept secret.
 
 * Relations
 # [2022-12-03 Saturday - 11:29]:	Study Relations
+A relation is a set of ordered pairs. It is also a subset of the Cartesian product of the set. We can use the following notation to represent a relation:
 
-* Computation
-# [2022-12-03 Saturday - 11:30]:	Study Computation
+\[
+R = \{(x, y) \mid x \in A \land y \in B\}
+\]
+
+The easiest way to represent a relation is to use a table. The table will have the elements of the first set as the rows and the elements of the second set as the columns. If the ordered pair $(x, y)$ is in the relation, then we will put a $1$ in the cell that corresponds to the row $x$ and the column $y$. If the ordered pair $(x, y)$ is not in the relation, then we will put a $0$ in the cell that corresponds to the row $x$ and the column $y$.
+
+Here is an example of a relation:
+
+\[
+R = \{(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)\}
+\]
+
+We can represent this relation as a table as follows:
+
+\begin{array}{c|ccc}
+& 1 & 2 & 3 \\
+\hline
+1 & 0 & 1 & 1 \\
+2 & 1 & 0 & 1 \\
+3 & 1 & 1 & 0
+\end{array}
+
+The relationship between functions and relations is that a function is a relation where each ordered pair has a unique first element.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+To find the cardinality of a relation for a *single set*, we can use the following formula:
+
+\[
+2^{n^2}
+\]
+
+This is because there are $2$ possibilities for each ordered pair. The ordered pair can either be in the relation or it can not be in the relation. If we have $n$ elements in the set, then there are $n^2$ ordered pairs. Therefore, there are $2^{n^2}$ possible relations.
+
+This should also be equivalent to the power set of the Cartesian product of the set.
+
+
+** Reflexive Relations
+A relation is reflexive if it contains the ordered pair $(x, x)$ for every element $x$ in the set. We can use the following notation to represent a reflexive relation:
+
+\[
+R = \{(x, y) \mid x \in A \land y \in A \land x = y\}
+\]
+
+As a matrix, it would look like this:
+
+\begin{array}{c|ccc}
+& 1 & 2 & 3 \\
+\hline
+1 & 1 & 0 & 0 \\
+2 & 0 & 1 & 0 \\
+3 & 0 & 0 & 1
+\end{array}
+
+** Symmetric Relations
+A relation is symmetric if it contains the ordered pair $(x, y)$ for every ordered pair $(y, x)$. We can use the following notation to represent a symmetric relation:
+
+\[
+R = \{(x, y) \mid x \in A \land y \in A \land (y, x) \in R\}
+\]
+
+As a matrix, it would look like this (or any other symmetric relation):
+
+\begin{array}{c|ccc}
+& 1 & 2 & 3 \\
+\hline
+1 & 0 & 1 & 1 \\
+2 & 1 & 1 & 1 \\
+3 & 1 & 1 & 0
+\end{array}
+
+
+** Antisymmetric Relations
+If a relation is antisymmetric, it will it will contain some order pair $(x,y)$ but not $(y,x)$ for every ordered pair $(x,y)$. We can use the following notation to represent an antisymmetric relation:
+
+\[
+R = \{(x, y) \mid x \in A \land y \in A \land (x, y) \in R \land (y, x) \notin R\}
+\]
+
+** Transitive Relations
+A relation is transitive if it contains the ordered pair $(x, z)$ for every ordered pair $(x, y)$ and $(y, z)$. We can use the following notation to represent a transitive relation:
+
+\[
+R = \{(x, z) \mid x \in A \land z \in A \land (x, y) \in R \land (y, z) \in R\}
+\]
+
+What its saying is that the relation will be transitive if for every $n$ steps, we can get from $x$ to $z$ in just one step.
+
+** Composite Relations
+We can combine two relations to create a composite relation. The composite relation will contain the ordered pair $(x, z)$ if the first relation contains the ordered pair $(x, y)$ and the second relation contains the ordered pair $(y, z)$. We can use the following notation to represent a composite relation:
+
+\[
+R \circ S = \{(x, z) \mid x \in A \land z \in A \land (x, y) \in R \land (y, z) \in S\}
+\]
+
+We can us *powers of a binary relation* to represent the composite relation. The $n$th power of a binary relation will contain the ordered pair $(x, z)$ if the relation contains the ordered pair $(x, y)$ and the relation contains the ordered pair $(y, z)$ $n$ times.
+
+
+* Directed Graphs
+If we want to represent a relation, we can use a directed graph. A directed graph is a graph where the edges have a direction. The edges can be represented by arrows. The arrows will point from the first element of the ordered pair to the second element of the ordered pair. If we have an ordered pair $(x, y)$ in the relation, then we will have an arrow from $x$ to $y$.
+
+An example of a directed graph is the following:
+
+#+DOWNLOADED: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Directed.svg/1024px-Directed.svg.png @ 2022-12-06 17:07:14
+[[file:Directed_Graphs/2022-12-06_17-07-14_1024px-Directed.svg.png]]
+
+
+* Grammars
+A grammar is a set of rules that can be used to generate strings. The strings that are generated by the grammar are called the language of the grammar. The language of the grammar is the set of all strings that can be generated by the grammar. The language of the grammar is denoted by $L(G)$.
+
+** Railroad Diagrams
+A railroad diagram is a way to represent a grammar. The railroad diagram will have a start symbol at the top. The start symbol will be the first symbol in the string. The start symbol will be connected to the next symbol in the string. The next symbol will be connected to the next symbol in the string. The next symbol will be connected to the next symbol in the string. This will continue until we reach the end of the string. The end of the string will be represented by a circle.
+
+An example of a railroad diagram is the following:
+
+#+DOWNLOADED: https://upload.wikimedia.org/wikipedia/commons/f/ff/Syntax-diagram-example.png @ 2022-12-06 17:15:45
+[[file:Grammars/2022-12-06_17-15-45_Syntax-diagram-example.png]]
+
+We write the railroad diagram as follows (not the one above):
+
+#+begin_src BNF
+<expression> ::= <term> | <term> "+" <expression>
+<term>       ::= <factor> | <factor> "*" <term>
+<factor>     ::= <constant> | <variable> | "(" <expression> ")"
+<variable>   ::= "x" | "y" | "z"
+<constant>   ::= <digit> | <digit> <constant>
+<digit>      ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+#+end_src
+
+
+/more coming soon/
