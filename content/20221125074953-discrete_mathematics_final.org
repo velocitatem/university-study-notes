@@ -509,7 +509,6 @@ So should you use? It comes down to trial and error, but also practice and intui
 + Complex propositions :: If there are complex propositions in an implication, they quite possibly can be negated, allowing use to use an *indirect method*.
 + Using proof by contradiction with conditional statements :: We show that $\neg (p \to q)$ implies $\bot$.
 
-
 * Set Theory
 # [2022-12-03 Saturday - 11:29]:	Study Set Theory
 # [2022-12-03 Saturday - 11:32]:	Review what I did wrong on Discrete Math Midterm
@@ -563,6 +562,13 @@ What can be confusing is the proper subset. A proper subset is a subset that is 
 \[
 A \subset B \equiv A \subseteq B \land A \neq B
 \]
+
+A quantified version of this is as follows:
+
+\[
+\forall x ((x \in A) \to (x \in B) \land (A \neq B))
+\]
+
 ** Set Cardinality
 This is not the absolute value of a set. It is the number of elements in a set. We denote this as $|A|$. A more rigorous definition of this is as follows:
 
@@ -606,6 +612,15 @@ Or simply: $P(A \times B) = P(A) \times P(B)$.
 
 ** Set Operations
 Set operations are operations that can be performed on sets. The most common set operations are union, intersection, difference, and complement.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+It is important to remember that if we have an expression like $A \subsete A \cup B$, something that could be tricky is that the order of operations is not the same as in arithmetic. In arithmetic, we would do the multiplication and division first, then addition and subtraction. In set operations, we do the complement first, then the difference, then the intersection, and finally the union. So the expression $A \subsete A \cup B$ would be read as $A \subsete (A \cup B)$.
+
+Once again, *the order of operations for sets* is:
+1. Complement
+2. Difference
+3. Intersection
+4. Union
 
 ** Union
 Simply explained, the union of two sets is the set of all elements that are in either set. We denote this as $A \cup B$. A more rigorous definition of this is as follows:
@@ -673,7 +688,6 @@ A^c \equiv \{x \mid x \in U \land x \notin A\}
 
 An example of this is the complement of $\{1,2\}$ is $\{3,4\}$. The reason why this is the complement is because $3 \in U$ and $3 \notin A$. So $3$ is in the complement. This of course depends on the universal set being $\{1,2,3,4\}$.
 
-
 ** Logical Operations with Sets
 We can relate sets to logical operations. The most common logical operations are conjunction, disjunction, and negation. We can relate these to sets as follows:
 
@@ -694,6 +708,166 @@ So we can relate the set to the predicate as follows:
 \[
 A \equiv \{x \mid x \in A\} \equiv \{x \mid p(x)\}
 \]
+
+* Functions
+A function, is the assignment of a single value $b\in B$ to each element $a$ in a set $A$. We denote this as $f: A \rightarrow B$. We can also call a function a mapping, transformation or a black box (in some cases even an oracle). A more rigorous definition of this is as follows:
+
+\[
+f: A \rightarrow B \equiv \{f(a) \mid a \in A\}
+\]
+
+We are mostly interested in what makes a function a function. So we will define what makes a function a function. A function is a function if the following conditions are met:
+1. The domain of the function is a set
+2. The range of the function is a set
+3. The function is one-to-one
+4. The function is onto
+
+A mathematical way to express this is as follows:
+
+\[
+\forall a \in A \exists ! b \in B \land f(a) = b
+\]
+
+The reasons why some assignments might not be functions is that not all elements in $A$ are assigned to an element in $B$. This is called a partial function. Another reason why some assignments might not be functions is that not all elements in $B$ are assigned to an element in $A$. This is called a surjection. Another reason why some assignments might not be functions is that not all elements in $A$ are assigned to a unique element in $B$. This is called a bijection.
+
+How can we tell if a function is a function? We can tell if a function is a function by checking if the function is one-to-one and onto. If the function is one-to-one and onto, then the function is a function. If the function is not one-to-one and onto, then the function is not a function.
+
+** Domain, Codomain & Range
+If $f(a) = b$, then we call $a$ the *pre-image* and $b$ the *image* of $f$. We call $A$ the *domain* of $f$ and $B$ the *codomain* of $f$. We call $f(A)$ the *range* of $f$.
+
+The main difference between the *codomain* and the *range* is that the *codomain* is the set of all possible images of $f$ and the *range* is the set of all images of $f$.
+
+
+** One-to-One
+A function is one-to-one if each element in the range is assigned to a unique element in the domain. We denote this as $f: A \rightarrow B$ is one-to-one. A more rigorous definition of this is as follows:
+
+\[
+f: A \rightarrow B \text{ is one-to-one } \equiv \forall a_1, a_2 \in A \land f(a_1) = f(a_2) \implies a_1 = a_2
+\]
+
+or simply: $f(a_1) = f(a_2) \implies a_1 = a_2$.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+If we want to check if a functions is one-to-one, we have to test if $f(a_1) = f(a_2) \implies a_1 = a_2$ for all $a_1, a_2 \in A$. If this is true for all $a_1, a_2 \in A$, then the function is one-to-one.
+
+
+** Onto
+A function is onto if each element in the codomain is assigned to an element in the domain. We denote this as $f: A \rightarrow B$ is onto. This is to say that for each element in the codomain, there is an element in the domain that maps to it. A more rigorous definition of this is as follows:
+
+\[
+f: A \rightarrow B \text{ is onto } \equiv \forall b \in B \exists a \in A \land f(a) = b
+\]
+
+or simply: $\forall b \in B \exists a \in A \land f(a) = b$.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+To see if a function is onto, we have to test if $\forall b \in B \exists a \in A \land f(a) = b$. If this is true for all $b \in B$, then the function is onto. For example if $f: \{1,2\} \rightarrow \{1,2,3\}$, then $f(1) = 1$, $f(2) = 2$ and $f(3) = 3$. So $f$ is onto. If $f: \{1,2\} \rightarrow \{1,2\}$, then $f(1) = 1$, $f(2) = 2$ and $f(3) = 3$. So $f$ is not onto. In this case, the function is not onto because $3$ is not assigned to an element in the domain.
+
+** Composite Functions
+We can combine functions to create composite functions. We can combine functions by applying one function to the output of another function. We denote this as $f \circ g$. We can also call this function composition. A more rigorous definition of this is as follows:
+
+\[
+f \circ g \equiv \{f(g(a)) \mid a \in A\}
+\]
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+If the *codomain* of $g$ is the *domain* of $f$, then we can combine $g$ and $f$ to create a composite function. We denote this as $f \circ g: A \rightarrow C$.
+
+When it comes to functions properties after composition we have the following properties:
+1. $f \circ g$ is one-to-one if $f$ is one-to-one and $g$ is one-to-one
+2. $f \circ g$ is onto if $f$ is onto and $g$ is onto
+
+If some of the functions are not one-to-one or onto, then the composite function is not one-to-one or onto.
+
+
+** Inverse Functions
+An inverse function is a function that undoes the effects of another function. We denote this as $f^{-1}$. The definition is as follows:
+
+\[
+f^{-1} \equiv \{a \mid f(a) = b\}
+\]
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+If $f$ is one-to-one and onto, then $f^{-1}$ is also one-to-one and onto.
+
+** Partial Functions
+A partial function is a function that is not one-to-one or onto. We denote this as $f: A \rightarrow B$ is a partial function. Definition:
+
+\[
+f: A \rightarrow B \text{ is a partial function } \equiv \exists a_1, a_2 \in A \land f(a_1) = f(a_2) \land a_1 \neq a_2
+\]
+
+or simply: $\exists a_1, a_2 \in A \land f(a_1) = f(a_2) \land a_1 \neq a_2$. If this is true for some $a_1, a_2 \in A$, then $f$ is a partial function.
+
+** Practice Questions
+1. Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be defined by $f(x) = x^2$. Is $f$ one-to-one? Is $f$ onto? Is $f$ a partial function?
+   + Solution :: $f$ is one-to-one because $f(x) = f(y) \implies x = y$. $f$ is not onto because $f(x) = x^2$ and $x^2$ is not in the domain. $f$ is not a partial function because $f(x) = f(y) \implies x = y$.
+2. Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be defined by $f(x) = x^2$. Is $f^{-1}$ one-to-one? Is $f^{-1}$ onto? Is $f^{-1}$ a partial function?
+   + Solution :: $f^{-1}$ is one-to-one because $f^{-1}(x) = f^{-1}(y) \implies x = y$. $f^{-1}$ is onto because $f^{-1}(x) = x^2$ and $x^2$ is in the domain. $f^{-1}$ is not a partial function because $f^{-1}(x) = f^{-1}(y) \implies x = y$.
+3. Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be defined by $f(x) = x^2$. Is $f \circ f$ one-to-one? Is $f \circ f$ onto? Is $f \circ f$ a partial function?
+   + Solution :: $f \circ f$ is one-to-one because $f$ is one-to-one and $f$ is one-to-one. $f \circ f$ is onto because $f$ is onto and $f$ is onto. $f \circ f$ is not a partial function because $f \circ f$ is one-to-one and $f \circ f$ is onto.
+4. Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be defined by $f(x) = x^2$. Is $f \circ f^{-1}$ one-to-one? Is $f \circ f^{-1}$ onto? Is $f \circ f^{-1}$ a partial function?
+   + Solution :: $f \circ f^{-1}$ is one-to-one because $f$ is one-to-one and $f^{-1}$ is one-to-one. $f \circ f^{-1}$ is onto because $f$ is onto and $f^{-1}$ is onto. $f \circ f^{-1}$ is not a partial function because $f \circ f^{-1}$ is one-to-one and $f \circ f^{-1}$ is onto.
+
+* Sequences
+
+A sequence is a set of elements, which can be continued by using intuition or mathematical patterns. We denote this as $\{a_n \mid n \in \mathbb{N}\}$. We will mostly focus on *arithmetic* sequences and *geometric* sequences.
+
+** Arithmetic Sequences
+An arithmetic sequence is a sequence where the difference between two consecutive terms is constant. We denote this as $\{a_n \mid n \in \mathbb{N}\}$ where $a_n = a_1 + (n-1)d$ for some $a_1, d \in \mathbb{R}$. We can also write this as $a_n = a_1 + nd$, where $n$ is the *nth* term of the sequence and $d$ is the *common difference*.
+
+An arithmetic sequence is defined by the following properties:
+1. $a_n = a_1 + (n-1)d$
+2. $a_n = a_1 + nd$
+
+This sequence can also be thought of as a linear function. We can write this as $a_n = f(n)$ where $f(n) = a_1 + (n-1)d$. The main elements of a sequence are the *first term* and the *common difference*.
+
+The expansion for the arithmetic sequence is as follows:
+
+\begin{align}
+a_1 = a_1 + 0d &= a_1 \\
+a_2 = a_1 + 1d &= a_1 + d \\
+a_3 = a_1 + 2d &= a_1 + 2d \\
+a_4 = a_1 + 3d &= a_1 + 3d \\
+\vdots &= \vdots \\
+a_n = a_1 + (n-1)d &= a_1 + (n-1)d
+\end{align}
+
+** Geometric Sequences
+A geometric sequence is a sequence where the ratio between two consecutive terms is constant. We denote this as $\{a_n \mid n \in \mathbb{N}\}$ where $a_n = a_1 r^{n-1}$ for some $a_1, r \in \mathbb{R}$. We can also write this as $a_n = a_1 r^n$, where $n$ is the *nth* term of the sequence and $r$ is the *common ratio*.
+
+An expansion of such as sequence can look something like this:
+
+\begin{align}
+a_1 &= a_1 \\
+a_2 &= a_1 r \\
+a_3 &= a_1 r^2 \\
+a_4 &= a_1 r^3 \\
+\vdots &= \vdots \\
+a_n &= a_1 r^{n-1}
+\end{align}
+
+** Recurrence Relations
+A recurrence relation is a sequence that is defined by a formula. We denote this as $\{a_n \mid n \in \mathbb{N}\}$ where $a_n = f(a_{n-1})$ for some $f: \mathbb{R} \rightarrow \mathbb{R}$. It takes the previous term and applies a function to it to get the next term.
+
+We can be told to find the closed formula for a sequence. This is a formula that can be used to find the nth term of a sequence.To do this, we need to use iteration and induction. We can use the following rules to find the closed formula for a sequence:
+1. $a_n = a_1 + (n-1)d$ where $a_1, d \in \mathbb{R}$
+2. $a_n = a_1 r^{n-1}$ where $a_1, r \in \mathbb{R}$
+3. $a_n = f(a_{n-1})$ where $f: \mathbb{R} \rightarrow \mathbb{R}$
+4. $a_n = f(a_{n-1}, a_{n-2})$ where $f: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$
+
+In short, we need to find the pattern in the sequence and use that to find the closed formula.
+
+* Summations
+A summation is a way to add up a sequence of numbers. We denote this as $\sum_{i=1}^n a_i$. There are many ways to define a summation. To find the sum of a sequence, we can use the following rules:
+1. $\sum_{i=1}^n i = \frac{n(n+1)}{2}$
+2. $\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$
+3. $\sum_{i=1}^n i^3 = \frac{n^2(n+1)^2}{4}$
+4. $\sum_{i=1}^n C * f(i) = \frac{C}{1-r}$
+
+If we subtract 1 from the upper bound, we can find the sum of the sequence. For example, $\sum_{i=1}^n i = \sum_{i=0}^{n-1} i + n = \sum_{i=0}^{n-1} i + \sum_{i=n}^n i = \sum_{i=0}^{n-1} i + n = \frac{n(n-1)}{2} + n = \frac{n(n+1)}{2}$.
+
+If we have nested summations, we can expand the far-right summation and include it in each iteration of the left summation.
 
 * Number Theory
 # [2022-12-03 Saturday - 11:29]:	Study Number Theory
