@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-04 Sun 11:20 -->
+<!-- 2022-12-07 Wed 20:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Discrete Mathematics - Final</title>
@@ -193,6 +193,10 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
+<link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
+<style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+<script src="https://alves.world/tracking.js" ></script>
+<script src="anti-cheat.js"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -222,59 +226,129 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgee7d7f6">1. Domains</a></li>
-<li><a href="#org8ea13ac">2. Propositional Logic</a>
+<li><a href="#org9e28a8b">1. Domains</a></li>
+<li><a href="#orgb7eb9eb">2. Terminology</a></li>
+<li><a href="#orge9a69dc">3. Propositional Logic</a>
 <ul>
-<li><a href="#orgf9dc2fb">2.1. Operators</a>
-<ul>
-<li><a href="#org7b3ff35">2.1.1. Not</a></li>
-<li><a href="#org52d1dc1">2.1.2. Conjunction</a></li>
-<li><a href="#orgf6923f9">2.1.3. Disjunction</a></li>
-<li><a href="#orgc840299">2.1.4. Exclusive OR (XOR)</a></li>
-<li><a href="#org6775e36">2.1.5. Conditional Statements / Implication</a></li>
-<li><a href="#orgbdf79d0">2.1.6. Bi-conditionals</a></li>
-<li><a href="#org2c702a7">2.1.7. Order of Operators</a></li>
+<li><a href="#org71f279f">3.1. Operators</a></li>
+<li><a href="#org64b173e">3.2. DeMorgan's Laws</a></li>
+<li><a href="#orgb1e26c3">3.3. Fallacies</a></li>
+<li><a href="#orgc937f01">3.4. Converse, Contrapositive, Inverse</a></li>
+<li><a href="#org5a0772f">3.5. Disjunctive Normal Form</a></li>
+<li><a href="#orge21b65c">3.6. Logical Equivalences</a></li>
+<li><a href="#org838fc8e">3.7. Satisfiability</a></li>
+<li><a href="#org325a209">3.8. Practice Problems</a></li>
 </ul>
 </li>
-<li><a href="#org58358cd">2.2. Morgan Laws</a></li>
-<li><a href="#orgd26b662">2.3. Fallacies</a></li>
-<li><a href="#orgc91f23e">2.4. Converse, Contrapositive, Inverse</a></li>
-<li><a href="#orge896bb5">2.5. Disjunctive Normal Form</a></li>
-<li><a href="#orgf3126c8">2.6. Logical Equivalences</a>
+<li><a href="#orga798ac7">4. Predicate Logic</a>
 <ul>
-<li><a href="#org4fd21b3">2.6.1. Identity Laws</a></li>
-<li><a href="#org8961fd5">2.6.2. Denomination Laws</a></li>
-<li><a href="#org7d82319">2.6.3. Idempotent Laws</a></li>
-<li><a href="#org81bb92c">2.6.4. Double Negation Law</a></li>
-<li><a href="#orgea6a7c7">2.6.5. Commutative Laws</a></li>
-<li><a href="#org723103e">2.6.6. Associative Laws</a></li>
-<li><a href="#orgfeec8ef">2.6.7. Distributive Laws</a></li>
-<li><a href="#org713e459">2.6.8. Morgan Laws</a></li>
-<li><a href="#org3d61922">2.6.9. Absorption Laws</a></li>
-<li><a href="#orgbd8a6d8">2.6.10. Negation Laws</a></li>
+<li><a href="#org7502e79">4.1. Predicates</a></li>
+<li><a href="#orgffcd599">4.2. Quantifiers</a></li>
+<li><a href="#orgc7d90ee">4.3. Universal Quantifier</a></li>
+<li><a href="#orgba6dfaa">4.4. Existential Quantifier</a></li>
+<li><a href="#org7f06f30">4.5. Singular Existential Quantifier</a></li>
+<li><a href="#org61309c2">4.6. Negation</a></li>
+<li><a href="#orgd7fcaae">4.7. Nesting</a></li>
+<li><a href="#orgcbf69a3">4.8. Practice Problems</a></li>
 </ul>
 </li>
-<li><a href="#org6990e67">2.7. Satisfiability</a></li>
-</ul>
-</li>
-<li><a href="#orga020259">3. Predicate Logic</a>
+<li><a href="#orgb7e40a0">5. Inference</a>
 <ul>
-<li><a href="#orgced4851">3.1. Predicates</a></li>
+<li><a href="#org860849e">5.1. Rules of Inference</a></li>
+<li><a href="#org893321a">5.2. Rules of Inference for Quantified Propositions</a></li>
 </ul>
 </li>
-<li><a href="#org7b587f6">4. Proofs</a></li>
-<li><a href="#org8b1a2b6">5. Set Theory</a></li>
-<li><a href="#orgb8a709b">6. Number Theory</a></li>
-<li><a href="#org12ed047">7. Cryptography</a></li>
-<li><a href="#org8c3bece">8. Relations</a></li>
-<li><a href="#org5014161">9. Computation</a></li>
+<li><a href="#org8fe1590">6. Formal Proofs</a></li>
+<li><a href="#org91da506">7. Informal Proofs</a>
+<ul>
+<li><a href="#orge72e3a5">7.1. Methods of Proof</a></li>
+</ul>
+</li>
+<li><a href="#orga8a3e80">8. Set Theory</a>
+<ul>
+<li><a href="#orgc34980f">8.1. Sets</a></li>
+<li><a href="#orgb18a31e">8.2. Subsets</a></li>
+<li><a href="#orgdc20d64">8.3. Set Cardinality</a></li>
+<li><a href="#org2ad7cc4">8.4. Power Set</a></li>
+<li><a href="#orgf30a417">8.5. Cartesian Product</a></li>
+<li><a href="#org312552b">8.6. Set Operations</a></li>
+<li><a href="#orgf3b951c">8.7. Union</a></li>
+<li><a href="#orgd8659bc">8.8. Intersection</a></li>
+<li><a href="#orga922675">8.9. Difference</a></li>
+<li><a href="#orgcd027e2">8.10. Complement</a></li>
+<li><a href="#orgedf2510">8.11. Logical Operations with Sets</a></li>
+</ul>
+</li>
+<li><a href="#org1704085">9. Functions</a>
+<ul>
+<li><a href="#orge5df910">9.1. Domain, Codomain &amp; Range</a></li>
+<li><a href="#org6e48b96">9.2. One-to-One</a></li>
+<li><a href="#orgf191eb8">9.3. Onto</a></li>
+<li><a href="#orgae4049f">9.4. Composite Functions</a></li>
+<li><a href="#orged4eb44">9.5. Inverse Functions</a></li>
+<li><a href="#orge166ae0">9.6. Partial Functions</a></li>
+<li><a href="#orgc8c0c01">9.7. Practice Questions</a></li>
+</ul>
+</li>
+<li><a href="#orgac59e6c">10. Sequences</a>
+<ul>
+<li><a href="#orgbe1ef9c">10.1. Arithmetic Sequences</a></li>
+<li><a href="#orgc45fb82">10.2. Geometric Sequences</a></li>
+<li><a href="#org1d76de4">10.3. Recurrence Relations</a></li>
+</ul>
+</li>
+<li><a href="#orgd007c3f">11. Summations</a></li>
+<li><a href="#org36751c0">12. Divisibility</a>
+<ul>
+<li><a href="#orgc261fac">12.1. Divisibility Rules</a></li>
+</ul>
+</li>
+<li><a href="#org37616a5">13. Modular Arithmetic</a></li>
+<li><a href="#org2b9b7a4">14. Integer Representation</a></li>
+<li><a href="#org1f48a35">15. Binary Representation</a></li>
+<li><a href="#org290abad">16. Hexadecimal Representation</a></li>
+<li><a href="#org2df7473">17. Prime Numbers</a></li>
+<li><a href="#org9e0aa8f">18. Algorithms</a>
+<ul>
+<li><a href="#org26e6168">18.1. Complexity of Algorithms</a></li>
+<li><a href="#org5c86590">18.2. Big O Notation</a></li>
+</ul>
+</li>
+<li><a href="#org549e7d6">19. Greatest Common Divisor</a>
+<ul>
+<li><a href="#orgd498683">19.1. Least Common Multiple</a></li>
+</ul>
+</li>
+<li><a href="#org83ca4b3">20. Applications of Number Theory</a>
+<ul>
+<li><a href="#org1b9f32a">20.1. Databases</a></li>
+<li><a href="#org0831465">20.2. Hash Functions</a></li>
+<li><a href="#org3fa2ca2">20.3. Asymmetric Encryption</a></li>
+</ul>
+</li>
+<li><a href="#org6f17c53">21. Relations</a>
+<ul>
+<li><a href="#org9251052">21.1. Reflexive Relations</a></li>
+<li><a href="#orgc05fbd3">21.2. Symmetric Relations</a></li>
+<li><a href="#orgded3904">21.3. Antisymmetric Relations</a></li>
+<li><a href="#org7dd1c73">21.4. Transitive Relations</a></li>
+<li><a href="#org8768cee">21.5. Composite Relations</a></li>
+</ul>
+</li>
+<li><a href="#org116f373">22. Directed Graphs</a></li>
+<li><a href="#org859c57e">23. Grammars</a>
+<ul>
+<li><a href="#org8478f9c">23.1. Railroad Diagrams</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgee7d7f6" class="outline-2">
-<h2 id="orgee7d7f6"><span class="section-number-2">1.</span> Domains</h2>
+
+<div id="outline-container-org9e28a8b" class="outline-2">
+<h2 id="org9e28a8b"><span class="section-number-2">1.</span> Domains</h2>
 <div class="outline-text-2" id="text-1">
 <dl class="org-dl">
 <dt>Naturals \(\mathbb{N}\)</dt><dd>\([1,2,3,\ldots,\infty)\)</dd>
@@ -285,11 +359,20 @@
 </dl>
 </div>
 </div>
-
-
-<div id="outline-container-org8ea13ac" class="outline-2">
-<h2 id="org8ea13ac"><span class="section-number-2">2.</span> Propositional Logic</h2>
+<div id="outline-container-orgb7eb9eb" class="outline-2">
+<h2 id="orgb7eb9eb"><span class="section-number-2">2.</span> Terminology</h2>
 <div class="outline-text-2" id="text-2">
+<dl class="org-dl">
+<dt>Theorem</dt><dd>A statement we can prove using some axioms</dd>
+<dt>Proof</dt><dd>A valid argument/set of arguments that demonstrate a theorem/proposition</dd>
+<dt>Axioms</dt><dd>Statements which are assumed to be true, they are in the most basic form</dd>
+<dt>Lemma</dt><dd>A small proof that is an element of another larger proof</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orge9a69dc" class="outline-2">
+<h2 id="orge9a69dc"><span class="section-number-2">3.</span> Propositional Logic</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 A proposition, is a sentence, which can be given some <b>truth value</b>.
 There are two types of propositions:
@@ -299,16 +382,16 @@ There are two types of propositions:
 <dt>Contradiction</dt><dd>A proposition that will never be true (\(\bot\))</dd>
 </dl>
 </div>
-<div id="outline-container-orgf9dc2fb" class="outline-3">
-<h3 id="orgf9dc2fb"><span class="section-number-3">2.1.</span> Operators</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org71f279f" class="outline-3">
+<h3 id="org71f279f"><span class="section-number-3">3.1.</span> Operators</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 There are three main operators which can be used to express any logical expression. These consists of <b>Not, Conjunction, Disjunction</b>.
 </p>
 </div>
-<div id="outline-container-org7b3ff35" class="outline-4">
-<h4 id="org7b3ff35"><span class="section-number-4">2.1.1.</span> Not</h4>
-<div class="outline-text-4" id="text-2-1-1">
+<div id="outline-container-org423b760" class="outline-4">
+<h4 id="org423b760"><span class="section-number-4">3.1.1.</span> Not</h4>
+<div class="outline-text-4" id="text-3-1-1">
 <p>
 It flips the truth value of a proposition.
 </p>
@@ -320,9 +403,9 @@ It flips the truth value of a proposition.
 </p>
 </div>
 </div>
-<div id="outline-container-org52d1dc1" class="outline-4">
-<h4 id="org52d1dc1"><span class="section-number-4">2.1.2.</span> Conjunction</h4>
-<div class="outline-text-4" id="text-2-1-2">
+<div id="outline-container-orgbb4b910" class="outline-4">
+<h4 id="orgbb4b910"><span class="section-number-4">3.1.2.</span> Conjunction</h4>
+<div class="outline-text-4" id="text-3-1-2">
 <p>
 This operators returns a new truth value which is true <b>if both of the propositions are true</b>
 </p>
@@ -334,9 +417,9 @@ p \land q, AB
 </p>
 </div>
 </div>
-<div id="outline-container-orgf6923f9" class="outline-4">
-<h4 id="orgf6923f9"><span class="section-number-4">2.1.3.</span> Disjunction</h4>
-<div class="outline-text-4" id="text-2-1-3">
+<div id="outline-container-org7553320" class="outline-4">
+<h4 id="org7553320"><span class="section-number-4">3.1.3.</span> Disjunction</h4>
+<div class="outline-text-4" id="text-3-1-3">
 <p>
 Like the conjunction, it operates on two propositions. It will return true as long as either of the propositions is true.
 </p>
@@ -348,29 +431,26 @@ p \lor q, A+B
 </p>
 </div>
 </div>
-<div id="outline-container-orgc840299" class="outline-4">
-<h4 id="orgc840299"><span class="section-number-4">2.1.4.</span> Exclusive OR (XOR)</h4>
-<div class="outline-text-4" id="text-2-1-4">
+<div id="outline-container-org463b1dd" class="outline-4">
+<h4 id="org463b1dd"><span class="section-number-4">3.1.4.</span> Exclusive OR (XOR)</h4>
+<div class="outline-text-4" id="text-3-1-4">
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+
 <p>
 It is very similar to the <b>Disjunction</b> except that it must be exclusively one value that is true.
 </p>
-
 
 <p>
 \[
 p \oplus q = (p \lor q) \land \neg(p \land q)
 \]
 </p>
-
-<p>
-<i>It might be useful to remember this formula.</i>
-</p>
 </div>
 </div>
 
-<div id="outline-container-org6775e36" class="outline-4">
-<h4 id="org6775e36"><span class="section-number-4">2.1.5.</span> Conditional Statements / Implication</h4>
-<div class="outline-text-4" id="text-2-1-5">
+<div id="outline-container-org867af21" class="outline-4">
+<h4 id="org867af21"><span class="section-number-4">3.1.5.</span> Conditional Statements / Implication</h4>
+<div class="outline-text-4" id="text-3-1-5">
 <p>
 A conditional statement consists of two parts, the <b>premise</b> and <b>consequence</b>. The truth value is <b>only false when \(T \to F\)</b>.
 </p>
@@ -402,9 +482,9 @@ p \to q \equiv \neg p \lor q
 </div>
 </div>
 
-<div id="outline-container-orgbdf79d0" class="outline-4">
-<h4 id="orgbdf79d0"><span class="section-number-4">2.1.6.</span> Bi-conditionals</h4>
-<div class="outline-text-4" id="text-2-1-6">
+<div id="outline-container-orga9a2736" class="outline-4">
+<h4 id="orga9a2736"><span class="section-number-4">3.1.6.</span> Bi-conditionals</h4>
+<div class="outline-text-4" id="text-3-1-6">
 <p>
 It expressed a <b>sufficient</b> and <b>necessary</b> conditional relationship between two propositions. It is read as <i>if and only if p, then q</i>.
 </p>
@@ -433,9 +513,9 @@ p \equiv q = \neg (p \oplus q)
 </div>
 </div>
 
-<div id="outline-container-org2c702a7" class="outline-4">
-<h4 id="org2c702a7"><span class="section-number-4">2.1.7.</span> Order of Operators</h4>
-<div class="outline-text-4" id="text-2-1-7">
+<div id="outline-container-org7be50ce" class="outline-4">
+<h4 id="org7be50ce"><span class="section-number-4">3.1.7.</span> Order of Operators</h4>
+<div class="outline-text-4" id="text-3-1-7">
 <ol class="org-ol">
 <li>\(\neg\)</li>
 <li>\(\land\)</li>
@@ -447,10 +527,10 @@ p \equiv q = \neg (p \oplus q)
 </div>
 </div>
 
-<div id="outline-container-org58358cd" class="outline-3">
-<h3 id="org58358cd"><span class="section-number-3">2.2.</span> Morgan Laws</h3>
-<div class="outline-text-3" id="text-2-2">
-<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Likely for the exam</div>
+<div id="outline-container-org64b173e" class="outline-3">
+<h3 id="org64b173e"><span class="section-number-3">3.2.</span> DeMorgan's Laws</h3>
+<div class="outline-text-3" id="text-3-2">
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
 \begin{align}
 \neg (p \land q) \equiv \neg p \lor \neg q \\
 \neg (p \lor q) \equiv \neg p \land q
@@ -458,9 +538,9 @@ p \equiv q = \neg (p \oplus q)
 </div>
 </div>
 
-<div id="outline-container-orgd26b662" class="outline-3">
-<h3 id="orgd26b662"><span class="section-number-3">2.3.</span> Fallacies</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-orgb1e26c3" class="outline-3">
+<h3 id="orgb1e26c3"><span class="section-number-3">3.3.</span> Fallacies</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 The fallacies stem from the fact that an implication is true, and the truth value of either \(p,q\).
 </p>
@@ -471,9 +551,9 @@ The fallacies stem from the fact that an implication is true, and the truth valu
 </div>
 </div>
 
-<div id="outline-container-orgc91f23e" class="outline-3">
-<h3 id="orgc91f23e"><span class="section-number-3">2.4.</span> Converse, Contrapositive, Inverse</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-orgc937f01" class="outline-3">
+<h3 id="orgc937f01"><span class="section-number-3">3.4.</span> Converse, Contrapositive, Inverse</h3>
+<div class="outline-text-3" id="text-3-4">
 <dl class="org-dl">
 <dt>Converse</dt><dd>\(q \to p\)</dd>
 <dt>Contrapositive</dt><dd>\(\neg q \to \neg p\)</dd>
@@ -485,25 +565,25 @@ The fallacies are a product of assuming that the <b>Converse and Inverse</b> are
 </p>
 </div>
 </div>
-<div id="outline-container-orge896bb5" class="outline-3">
-<h3 id="orge896bb5"><span class="section-number-3">2.5.</span> Disjunctive Normal Form</h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-org5a0772f" class="outline-3">
+<h3 id="org5a0772f"><span class="section-number-3">3.5.</span> Disjunctive Normal Form</h3>
+<div class="outline-text-3" id="text-3-5">
 <p>
 This is a proposition created from the values in the truth table.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf3126c8" class="outline-3">
-<h3 id="orgf3126c8"><span class="section-number-3">2.6.</span> Logical Equivalences</h3>
-<div class="outline-text-3" id="text-2-6">
+<div id="outline-container-orge21b65c" class="outline-3">
+<h3 id="orge21b65c"><span class="section-number-3">3.6.</span> Logical Equivalences</h3>
+<div class="outline-text-3" id="text-3-6">
 <p>
 These are various way you can arrive at some conclusion given a few basic propositions.
 </p>
 </div>
-<div id="outline-container-org4fd21b3" class="outline-4">
-<h4 id="org4fd21b3"><span class="section-number-4">2.6.1.</span> Identity Laws</h4>
-<div class="outline-text-4" id="text-2-6-1">
+<div id="outline-container-orgbe9f958" class="outline-4">
+<h4 id="orgbe9f958"><span class="section-number-4">3.6.1.</span> Identity Laws</h4>
+<div class="outline-text-4" id="text-3-6-1">
 <p>
 \[
 p \land \top \equiv p
@@ -517,9 +597,9 @@ p \lor \bot \equiv p
 </p>
 </div>
 </div>
-<div id="outline-container-org8961fd5" class="outline-4">
-<h4 id="org8961fd5"><span class="section-number-4">2.6.2.</span> Denomination Laws</h4>
-<div class="outline-text-4" id="text-2-6-2">
+<div id="outline-container-orgc17b276" class="outline-4">
+<h4 id="orgc17b276"><span class="section-number-4">3.6.2.</span> Denomination Laws</h4>
+<div class="outline-text-4" id="text-3-6-2">
 <p>
 \[
 p \lor \top \equiv \top
@@ -533,9 +613,9 @@ p \land \bot \equiv \bot
 </p>
 </div>
 </div>
-<div id="outline-container-org7d82319" class="outline-4">
-<h4 id="org7d82319"><span class="section-number-4">2.6.3.</span> Idempotent Laws</h4>
-<div class="outline-text-4" id="text-2-6-3">
+<div id="outline-container-org68860b2" class="outline-4">
+<h4 id="org68860b2"><span class="section-number-4">3.6.3.</span> Idempotent Laws</h4>
+<div class="outline-text-4" id="text-3-6-3">
 <p>
 \[
 p \lor p \equiv p
@@ -549,9 +629,9 @@ p \land p \equiv p
 </p>
 </div>
 </div>
-<div id="outline-container-org81bb92c" class="outline-4">
-<h4 id="org81bb92c"><span class="section-number-4">2.6.4.</span> Double Negation Law</h4>
-<div class="outline-text-4" id="text-2-6-4">
+<div id="outline-container-org1da3371" class="outline-4">
+<h4 id="org1da3371"><span class="section-number-4">3.6.4.</span> Double Negation Law</h4>
+<div class="outline-text-4" id="text-3-6-4">
 <p>
 \[
 \neg ( \neg p) \equiv p
@@ -559,9 +639,9 @@ p \land p \equiv p
 </p>
 </div>
 </div>
-<div id="outline-container-orgea6a7c7" class="outline-4">
-<h4 id="orgea6a7c7"><span class="section-number-4">2.6.5.</span> Commutative Laws</h4>
-<div class="outline-text-4" id="text-2-6-5">
+<div id="outline-container-org969ec84" class="outline-4">
+<h4 id="org969ec84"><span class="section-number-4">3.6.5.</span> Commutative Laws</h4>
+<div class="outline-text-4" id="text-3-6-5">
 <p>
 \[
 p \lor q \equiv q \lor p
@@ -575,9 +655,9 @@ p \land q \equiv q \land p
 </p>
 </div>
 </div>
-<div id="outline-container-org723103e" class="outline-4">
-<h4 id="org723103e"><span class="section-number-4">2.6.6.</span> Associative Laws</h4>
-<div class="outline-text-4" id="text-2-6-6">
+<div id="outline-container-org3c7618a" class="outline-4">
+<h4 id="org3c7618a"><span class="section-number-4">3.6.6.</span> Associative Laws</h4>
+<div class="outline-text-4" id="text-3-6-6">
 <p>
 \[
 (p \lor q) \lor r \equiv p \lor (q \lor r)
@@ -591,9 +671,9 @@ p \land q \equiv q \land p
 </p>
 </div>
 </div>
-<div id="outline-container-orgfeec8ef" class="outline-4">
-<h4 id="orgfeec8ef"><span class="section-number-4">2.6.7.</span> Distributive Laws</h4>
-<div class="outline-text-4" id="text-2-6-7">
+<div id="outline-container-org25c25ed" class="outline-4">
+<h4 id="org25c25ed"><span class="section-number-4">3.6.7.</span> Distributive Laws</h4>
+<div class="outline-text-4" id="text-3-6-7">
 <p>
 \[
 p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)
@@ -607,12 +687,12 @@ p \land (q \lor r) \equiv (p \land q) \lor (p \land r)
 </p>
 </div>
 </div>
-<div id="outline-container-org713e459" class="outline-4">
-<h4 id="org713e459"><span class="section-number-4">2.6.8.</span> <a href="#org58358cd">Morgan Laws</a></h4>
+<div id="outline-container-org240284b" class="outline-4">
+<h4 id="org240284b"><span class="section-number-4">3.6.8.</span> <a href="#org64b173e">3.2</a></h4>
 </div>
-<div id="outline-container-org3d61922" class="outline-4">
-<h4 id="org3d61922"><span class="section-number-4">2.6.9.</span> Absorption Laws</h4>
-<div class="outline-text-4" id="text-2-6-9">
+<div id="outline-container-orgbea77b8" class="outline-4">
+<h4 id="orgbea77b8"><span class="section-number-4">3.6.9.</span> Absorption Laws</h4>
+<div class="outline-text-4" id="text-3-6-9">
 <p>
 \[
 p \lor (p \land q) \equiv p
@@ -626,9 +706,9 @@ p \land (p \lor q) \equiv p
 </p>
 </div>
 </div>
-<div id="outline-container-orgbd8a6d8" class="outline-4">
-<h4 id="orgbd8a6d8"><span class="section-number-4">2.6.10.</span> Negation Laws</h4>
-<div class="outline-text-4" id="text-2-6-10">
+<div id="outline-container-orge28964c" class="outline-4">
+<h4 id="orge28964c"><span class="section-number-4">3.6.10.</span> Negation Laws</h4>
+<div class="outline-text-4" id="text-3-6-10">
 <p>
 \[
 p \lor \neg p \equiv \top
@@ -643,26 +723,444 @@ p \land \neg p \equiv \bot
 </div>
 </div>
 </div>
-<div id="outline-container-org6990e67" class="outline-3">
-<h3 id="org6990e67"><span class="section-number-3">2.7.</span> Satisfiability</h3>
-<div class="outline-text-3" id="text-2-7">
+<div id="outline-container-org838fc8e" class="outline-3">
+<h3 id="org838fc8e"><span class="section-number-3">3.7.</span> Satisfiability</h3>
+<div class="outline-text-3" id="text-3-7">
 <p>
 A proposition is satisfiable if it has at least one case for which it is <b>true</b>, it is anything but a <b>contradiction</b>.
 </p>
 </div>
 </div>
+<div id="outline-container-org325a209" class="outline-3">
+<h3 id="org325a209"><span class="section-number-3">3.8.</span> Practice Problems</h3>
+<div class="outline-text-3" id="text-3-8">
+<p>
+For the following, create a truth table and a DNF for each (a DNF is a proposition created from the values in the truth table)
+</p>
+<ol class="org-ol">
+<li><p>
+\(p \lor \neg p\)
+</p>
+<div id="sol">
+<p>
+Truth Table:
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \lor \neg p \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+\end{array}
+
+<p>
+DNF:
+</p>
+
+<p>
+\[
+    p \lor \neg p = \top
+    \]
+</p>
+
+</div id="sol"></li>
+<li><p>
+\(p \land \neg p\)
+</p>
+
+<p>
+Truth Table:
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \land \neg p \\
+\hline
+T & F & F \\
+\hline
+F & T & F \\
+\hline
+\end{array}
+
+<p>
+DNF:
+</p>
+
+<p>
+\[
+    p \land \neg p = \bot
+    \]
+</p></li>
+<li><p>
+\(p \lor (p \land q)\)
+</p>
+
+<p>
+Truth Table:
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \lor (p \land q) \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & F \\
+\hline
+F & F & F \\
+\hline
+\end{array}
+
+<p>
+DNF:
+</p>
+
+<p>
+\[
+    p \lor (p \land q) = p
+    \]
+</p></li>
+<li><p>
+\(p \land (p \lor q)\)
+</p>
+
+<p>
+Truth Table:
+</p>
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \land (p \lor q) \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & F \\
+\hline
+F & F & F \\
+\hline
+\end{array}
+
+<p>
+DNF:
+</p>
+
+<p>
+\[
+    p \land (p \lor q) = p
+    \]
+</p></li>
+</ol>
+
+<p>
+Now for implications:
+</p>
+<ol class="org-ol">
+<li><p>
+\(p \to q\)
+</p>
+
+<p>
+Truth Table:
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to q \\
+\hline
+T & T & T \\
+\hline
+T & F & F \\
+\hline
+F & T & T \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+<p>
+DNF:
+</p>
+
+<p>
+\[
+    p \to q = \neg p \lor q
+    \]
+</p></li>
+<li><p>
+\(p \to \neg q\)
+</p>
+
+<p>
+Truth Table:
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to \neg q \\
+\hline
+T & T & F \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+<p>
+DNF:
+</p>
+
+<p>
+\[
+    p \to \neg q = \neg p \lor \neg q
+    \]
+</p></li>
+<li><p>
+\((\neg p) \to q\)
+</p>
+
+<p>
+Truth Table:
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & (\neg p) \to q \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+F & F & F \\
+\hline
+\end{array}
+
+<p>
+DNF:
+</p>
+
+<p>
+\[
+    (\neg p) \to q = p \lor q
+    \]
+</p></li>
+<li><p>
+\(\neg p \to \neg q\)
+</p>
+
+<p>
+Truth Table:
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & \neg p \to \neg q \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & F \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+<p>
+DNF:
+</p>
+
+<p>
+\[
+    \neg p \to \neg q = p \lor \neg q
+    \]
+</p></li>
+</ol>
+
+<p>
+Prove the following:
+</p>
+<ol class="org-ol">
+<li><p>
+\(p \to q \equiv \neg p \lor q\)
+</p>
+
+<p>
+Proof:
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to q & \neg p \lor q \\
+\hline
+T & T & T & T \\
+\hline
+T & F & F & F \\
+\hline
+F & T & T & T \\
+\hline
+F & F & T & T \\
+\hline
+\end{array}
+
+<p>
+Therefore \(p \to q \equiv \neg p \lor q\) is true.
+</p></li>
+
+<li><p>
+\(p \to q \equiv \neg q \to \neg p\)
+</p>
+
+<p>
+Proof:
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to q & \neg q \to \neg p \\
+\hline
+T & T & T & T \\
+\hline
+T & F & F & F \\
+\hline
+F & T & T & T \\
+\hline
+F & F & T & T \\
+\hline
+\end{array}
+
+<p>
+Therefore \(p \to q \equiv \neg q \to \neg p\) is true.
+</p></li>
+</ol>
+
+<p>
+Which of the following are satisfiable:
+</p>
+<ol class="org-ol">
+<li><p>
+\(p \land \neg p\)
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \land \neg p \\
+\hline
+T & F & F \\
+\hline
+F & T & F \\
+\hline
+\end{array}
+
+<p>
+Therefore \(p \land \neg p\) is unsatisfiable.
+</p></li>
+<li><p>
+\(p \lor \neg p\)
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \lor \neg p \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+\end{array}
+
+<p>
+Therefore \(p \lor \neg p\) is satisfiable.
+</p></li>
+<li><p>
+\(p \to q\)
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to q \\
+\hline
+T & T & T \\
+\hline
+T & F & F \\
+\hline
+F & T & T \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+<p>
+Therefore \(p \to q\) is satisfiable.
+</p></li>
+<li><p>
+\(p \to \neg q\)
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to \neg q \\
+\hline
+T & T & F \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+<p>
+Therefore \(p \to \neg q\) is satisfiable.
+</p></li>
+<li><p>
+\(\neg p \to q\)
+</p>
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & \neg p \to q \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+F & F & F \\
+\hline
+\end{array}
+
+<p>
+Therefore \(\neg p \to q\) is satisfiable.
+</p></li>
+</ol>
 </div>
-<div id="outline-container-orga020259" class="outline-2">
-<h2 id="orga020259"><span class="section-number-2">3.</span> Predicate Logic</h2>
-<div class="outline-text-2" id="text-3">
+</div>
+</div>
+
+<div id="outline-container-orga798ac7" class="outline-2">
+<h2 id="orga798ac7"><span class="section-number-2">4.</span> Predicate Logic</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 With predicate logic, we can break down a complex proposition into predicates and quantifiers.
 </p>
 </div>
 
-<div id="outline-container-orgced4851" class="outline-3">
-<h3 id="orgced4851"><span class="section-number-3">3.1.</span> Predicates</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-org7502e79" class="outline-3">
+<h3 id="org7502e79"><span class="section-number-3">4.1.</span> Predicates</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 It is a statement, which is made up of a proposition, with the only difference being that it can take a parameter.
 </p>
@@ -694,49 +1192,1940 @@ P(a_1, a_2, a_3, \ldots, a_n) \equiv p
 </p>
 </div>
 </div>
+
+<div id="outline-container-orgffcd599" class="outline-3">
+<h3 id="orgffcd599"><span class="section-number-3">4.2.</span> Quantifiers</h3>
+<div class="outline-text-3" id="text-4-2">
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+With a quantifier, we can specify for which values on a certain domain, a predicate is true of false. There are various ways to express this: (<b>for all</b>, <b>for many</b>, <b>for at least one</b>, <b>for none</b>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc7d90ee" class="outline-3">
+<h3 id="orgc7d90ee"><span class="section-number-3">4.3.</span> Universal Quantifier</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+If we have some predicate for which we can say that all the possible values in a certain domain will make it true, we use the universal quantifier.
+</p>
+
+\begin{array}{c}
+P(x) \text{ for all value of x within its domain} \\
+\forall x P(x)
+\end{array}
+
+<ul class="org-ul">
+<li>To prove that this quantifier is true, we must demonstrate that it holds true for all the possible values.</li>
+<li>To <b>dis</b>-prove the quantifier, it is sufficient to show that there exists just one that does not satisfy the predicate</li>
+<li>If we are considering an empty set, it will always be false.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgba6dfaa" class="outline-3">
+<h3 id="orgba6dfaa"><span class="section-number-3">4.4.</span> Existential Quantifier</h3>
+<div class="outline-text-3" id="text-4-4">
+\begin{array}{c}
+P(x) \text{ for at least one value of x within its domain} \\
+\exists x P(x)
+\end{array}
+
+<ul class="org-ul">
+<li>To prove this quantifier, we must find at least one value for which the predicate holds true</li>
+<li>To disprove the quantifier, we must show that all the values will not hold for the predicate</li>
+<li>Again, if we consider and empty set, it will always be false</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7f06f30" class="outline-3">
+<h3 id="org7f06f30"><span class="section-number-3">4.5.</span> Singular Existential Quantifier</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+We can also use the existential quantifier, and with a bit of modification we can use it to specify how many values will satisfy the predict.
+</p>
+
+\begin{array}{c}
+\text{There is exactly one } x \text{ such that } P(x) \\
+\exists! x P(x)
+\end{array}
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+
+<p>
+The definition for this is as follows:
+</p>
+
+<p>
+\[
+\exists x (P(x) \land \forall y (P(y) \Leftrightarrow x = y))
+\]
+</p>
+
+<p>
+We can generalize this to a specific number \(n\) for which the predicate is satisfiable.
+</p>
+
+<p>
+\[
+\exists_n x P(x)
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61309c2" class="outline-3">
+<h3 id="org61309c2"><span class="section-number-3">4.6.</span> Negation</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+When negating a quantifier, we have to consider both the outside and inside, that being <b>the quantifier itself</b> and the <b>predicate</b>.
+</p>
+
+<p>
+\[
+\neg \forall x P(x) \equiv \exists x \neg P(x)
+\]
+</p>
+
+<p>
+\[
+\neg \exists x P(x) \equiv \forall x \neg P(x)
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd7fcaae" class="outline-3">
+<h3 id="orgd7fcaae"><span class="section-number-3">4.7.</span> Nesting</h3>
+<div class="outline-text-3" id="text-4-7">
+<p>
+If we have more than one variable for which we quantify a predicate, we have to <b>consider the order</b>.
+</p>
+
+<p>
+\[
+\exists x \forall y P(x,y) \not \equiv \forall y \exists x P(x,y)
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcbf69a3" class="outline-3">
+<h3 id="orgcbf69a3"><span class="section-number-3">4.8.</span> Practice Problems</h3>
+<div class="outline-text-3" id="text-4-8">
+<p>
+Evaluate the following:
+</p>
+<ol class="org-ol">
+<li><p>
+\(\forall x \exists y P(x,y)\) where \(P(x,y) = x > y\)
+</p>
+
+<p>
+This quantifier is true, because for any value of \(x\), there will always be a value of \(y\) that will satisfy the predicate.
+</p></li>
+<li><p>
+\(\exists x \forall y P(x,y)\) where \(P(x,y) = x > y\)
+</p>
+
+<p>
+This quantifier is false, because there will always be a value of \(x\) for which there will not be a value of \(y\) that will satisfy the predicate.
+</p></li>
+<li><p>
+\(\forall x \exists y P(x,y)\) where \(P(x,y) = x < y\)
+</p>
+
+<p>
+This quantifier is true, because for any value of \(x\), there will always be a value of \(y\) that will satisfy the predicate. This because no matter the value of \(x\), there will always be a value of \(y\) that will be greater than \(x\).
+</p></li>
+</ol>
+
+<p>
+Prove the following:
+</p>
+<ol class="org-ol">
+<li>\(\forall x \exists y P(x,y) \equiv \exists y \forall x P(x,y)\)</li>
+</ol>
+
+<p>
+Nested quantifiers:
+</p>
+<ol class="org-ol">
+<li>\(\exists x \forall y \exists z P(x,y,z)\) where \(P(x,y,z) = x > y \land y > z\)</li>
+</ol>
+
+<p>
+Negating quantifiers:
+</p>
+<ol class="org-ol">
+<li>\(\neg \forall x \exists y P(x,y)\) where \(P(x,y) = x > y\)</li>
+</ol>
+</div>
+</div>
 </div>
 
 
-
-<div id="outline-container-org7b587f6" class="outline-2">
-<h2 id="org7b587f6"><span class="section-number-2">4.</span> Proofs</h2>
-<div class="outline-text-2" id="text-4">
-</div>
-</div>
-
-<div id="outline-container-org8b1a2b6" class="outline-2">
-<h2 id="org8b1a2b6"><span class="section-number-2">5.</span> Set Theory</h2>
+<div id="outline-container-orgb7e40a0" class="outline-2">
+<h2 id="orgb7e40a0"><span class="section-number-2">5.</span> Inference</h2>
 <div class="outline-text-2" id="text-5">
+<p>
+A process of arriving at some conclusion through logical steps. This process consists of <b>arguments</b> which can either be valid or not. The logical form of an argument is vital, because it is the only way to determine if it is true or not.
+</p>
+
+\begin{array}{r}
+p \to q \\ p
+\\
+\hline
+\therefore q
+\end{array}
+
+
+<p>
+It is another thing to call an argument <b>sound</b>, for this we need to have an argument for which <b>all premises are true and valid</b>. <b>A valid argument implies a tautology</b>.
+</p>
+</div>
+
+
+<div id="outline-container-org860849e" class="outline-3">
+<h3 id="org860849e"><span class="section-number-3">5.1.</span> Rules of Inference</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+An argument form which would generate a valid implication falls under the rules of inference
+</p>
+</div>
+<div id="outline-container-org095661a" class="outline-4">
+<h4 id="org095661a"><span class="section-number-4">5.1.1.</span> Modus Ponens</h4>
+<div class="outline-text-4" id="text-5-1-1">
+\begin{array}{r}
+p \\
+p \to q
+\\
+\hline
+q
+\end{array}
+
+
+<ol class="org-ol">
+<li>If p is true, then q is true</li>
+<li>p is true</li>
+<li>Therefore q is true</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org16ab8e5" class="outline-4">
+<h4 id="org16ab8e5"><span class="section-number-4">5.1.2.</span> Modus Tollens</h4>
+<div class="outline-text-4" id="text-5-1-2">
+\begin{array}{r}
+\neg q \\
+p \to q
+\\
+\hline
+\neg p
+\end{array}
 </div>
 </div>
 
-<div id="outline-container-orgb8a709b" class="outline-2">
-<h2 id="orgb8a709b"><span class="section-number-2">6.</span> Number Theory</h2>
+<div id="outline-container-org7ece598" class="outline-4">
+<h4 id="org7ece598"><span class="section-number-4">5.1.3.</span> Hypothetical Syllogism</h4>
+<div class="outline-text-4" id="text-5-1-3">
+\begin{array}{r}
+p \to q \\
+q \to r
+\\
+\hline
+p \to r
+\end{array}
+</div>
+</div>
+
+<div id="outline-container-org516bafd" class="outline-4">
+<h4 id="org516bafd"><span class="section-number-4">5.1.4.</span> Disjunctive Syllogism</h4>
+<div class="outline-text-4" id="text-5-1-4">
+\begin{array}{r}
+p \lor q \\
+\neg p
+\\
+\hline
+q
+\end{array}
+</div>
+</div>
+
+<div id="outline-container-org8568e79" class="outline-4">
+<h4 id="org8568e79"><span class="section-number-4">5.1.5.</span> Addition</h4>
+<div class="outline-text-4" id="text-5-1-5">
+\begin{array}{r}
+p
+\\
+\hline
+p \lor q
+\end{array}
+</div>
+</div>
+
+<div id="outline-container-org3ab37d4" class="outline-4">
+<h4 id="org3ab37d4"><span class="section-number-4">5.1.6.</span> Simplification</h4>
+<div class="outline-text-4" id="text-5-1-6">
+\begin{array}{r}
+p \land q
+\\
+\hline
+p
+\end{array}
+</div>
+</div>
+
+<div id="outline-container-orge65cfd5" class="outline-4">
+<h4 id="orge65cfd5"><span class="section-number-4">5.1.7.</span> Conjunction</h4>
+<div class="outline-text-4" id="text-5-1-7">
+\begin{array}{r}
+p \\ q
+\\
+\hline
+p \land q
+\end{array}
+</div>
+</div>
+
+<div id="outline-container-orgac17bd1" class="outline-4">
+<h4 id="orgac17bd1"><span class="section-number-4">5.1.8.</span> Resolution</h4>
+<div class="outline-text-4" id="text-5-1-8">
+\begin{array}{r}
+p \lor q \\
+\neg p \lor r
+\\
+\hline
+\therefore q \lor r
+\end{array}
+</div>
+</div>
+</div>
+
+<div id="outline-container-org893321a" class="outline-3">
+<h3 id="org893321a"><span class="section-number-3">5.2.</span> Rules of Inference for Quantified Propositions</h3>
+<div class="outline-text-3" id="text-5-2">
+</div>
+<div id="outline-container-org71255ba" class="outline-4">
+<h4 id="org71255ba"><span class="section-number-4">5.2.1.</span> Universal Instantiation</h4>
+<div class="outline-text-4" id="text-5-2-1">
+\begin{array}{r}
+\forall x P(x)
+\\
+\hline
+\therefore P(c)
+\end{array}
+</div>
+</div>
+
+<div id="outline-container-org5f3c451" class="outline-4">
+<h4 id="org5f3c451"><span class="section-number-4">5.2.2.</span> Universal Generalization</h4>
+<div class="outline-text-4" id="text-5-2-2">
+\begin{array}{r}
+P(c) \text{ for an arbitrary c}
+\\
+\hline
+\therefore \forall x P(x)
+\end{array}
+</div>
+</div>
+
+<div id="outline-container-org2879fe1" class="outline-4">
+<h4 id="org2879fe1"><span class="section-number-4">5.2.3.</span> Existential Instantiation</h4>
+<div class="outline-text-4" id="text-5-2-3">
+\begin{array}{r}
+\exists x P(x)
+\\
+\hline
+\therefore P(c)
+\end{array}
+</div>
+</div>
+
+<div id="outline-container-org18e5ab9" class="outline-4">
+<h4 id="org18e5ab9"><span class="section-number-4">5.2.4.</span> Existential Generalization</h4>
+<div class="outline-text-4" id="text-5-2-4">
+\begin{array}{r}
+P(c) \text{ for an arbitrary c} \\
+\hline
+\therefore \exists x P(x)
+\end{array}
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8fe1590" class="outline-2">
+<h2 id="org8fe1590"><span class="section-number-2">6.</span> Formal Proofs</h2>
 <div class="outline-text-2" id="text-6">
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+This kind of proof is made up of statements which we can infer from previous statements. This we can construct using a table in which we state the logical expression and how we got to it.
+</p>
+
+\begin{align}
+(p \lor q) \to (r \land s) & \quad \text{Premise} \\
+r \to t & \quad \text{Premise} \\
+\neg t & \quad \text{Premise} \\
+\neg r & \quad \text{Modus Tollens from 2 and 3} \\
+(\neg p \land \neg q) & \quad \text{Modus Tollens from 4 and 1} \\
+\neg p & \quad \text{Simplification of 5}
+\end{align}
 </div>
 </div>
 
-<div id="outline-container-org12ed047" class="outline-2">
-<h2 id="org12ed047"><span class="section-number-2">7.</span> Cryptography</h2>
+<div id="outline-container-org91da506" class="outline-2">
+<h2 id="org91da506"><span class="section-number-2">7.</span> Informal Proofs</h2>
 <div class="outline-text-2" id="text-7">
+<p>
+Because a formal proof can get convoluted, we use informal proofs. The main difference here is that we don't need to provide a step-by-step description of how the proof works; we just show how the conclusion is true by describing a few intermediate steps between the theorem and the corollary. (These are called <b>premises</b> and <b>conclusions</b> in logic.)
+</p>
+
+<p>
+There are various methods of proof we can use. The two primary categories for these proofs are <b>direct</b> and <b>indirect</b>.
+</p>
+</div>
+
+
+<div id="outline-container-orge72e3a5" class="outline-3">
+<h3 id="orge72e3a5"><span class="section-number-3">7.1.</span> Methods of Proof</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Upon deciding which axioms to use, you then need to use some method of proof. The most common statements we will be proving are implications.
+</p>
+</div>
+<div id="outline-container-orge9f4b7c" class="outline-4">
+<h4 id="orge9f4b7c"><span class="section-number-4">7.1.1.</span> Direct Proof</h4>
+<div class="outline-text-4" id="text-7-1-1">
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+We want to prove <b>"If p, then q</b>". This is done by assuming that the <b>premise</b> is true and then proving that the consequence is also true.
+</p>
+
+<ol class="org-ol">
+<li>We assume \(p\) to be true.</li>
+<li>By applying the laws of inference, we deduce \(q\) from \(p\).</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf50e962" class="outline-4">
+<h4 id="orgf50e962"><span class="section-number-4">7.1.2.</span> Indirect: Proof by Contraposition</h4>
+<div class="outline-text-4" id="text-7-1-2">
+<p>
+If we cannot arrive to the consequence using just the premise, we can use contraposition, which states that \((p \to q) \equiv (\neg q \to \neg p)\).
+</p>
+
+<ol class="org-ol">
+<li>We assume that \(\neg q\) is true</li>
+<li>We find a way to infer that \(\neg p\) is true</li>
+<li>Since this verifies the contrapositive, we have proved that \(p \to q\)</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-org8c3bece" class="outline-2">
-<h2 id="org8c3bece"><span class="section-number-2">8.</span> Relations</h2>
+<div id="outline-container-org9d823c2" class="outline-4">
+<h4 id="org9d823c2"><span class="section-number-4">7.1.3.</span> Indirect: Vacuous and Trivial proofs</h4>
+<div class="outline-text-4" id="text-7-1-3">
+<p>
+If we are saying that \(p \to q\) is <b>True</b>, we can assume that:
+</p>
+<ol class="org-ol">
+<li>\(p\) is False (Vacuous proof)</li>
+<li>\(q\) is True (Trivial proof)</li>
+</ol>
+
+<p>
+It is enough to prove just one of these (as long as we do not accept the premise being True) we can prove the condition to be True.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org8a4fc1f"></a>Example<br />
+<div class="outline-text-5" id="text-7-1-3-1">
+<p>
+If \(n\) is an integer and an even number, then \(2n\) must be an integer.
+</p>
+<dl class="org-dl">
+<dt>Solution</dt><dd>Since an integer multiplied by another integer will also be an integer, we can say that \(q\) will be true. This is enough to prove that \(p \to q\) is also True.</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org64728f0" class="outline-4">
+<h4 id="org64728f0"><span class="section-number-4">7.1.4.</span> Indirect: Proof by Contradiction</h4>
+<div class="outline-text-4" id="text-7-1-4">
+<p>
+This can be used to demonstrate any statement \(p\). We say that \(\neg p\) implies a contradiction. A nicer way to think about this is by the following:
+</p>
+
+<p>
+\[
+\neg p \to \bot \equiv \neg (\neg p) \lor \bot \equiv p \lor \bot \equiv p
+\]
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+If we should use proof by contradiction on an implication, we must prove that \(p \land \neg q \to \bot\). This is because in this case, we need to show that the negation of the implication is a contradiction.
+</p>
+
+<p>
+\[
+\neg (p \to q) \equiv \neg (\neg p \lor q) \equiv p \land \neg q \equiv \bot
+\]
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org73a7e12"></a>Example<br />
+<div class="outline-text-5" id="text-7-1-4-1">
+<p>
+Show that \(\sqrt{2}\) is an irrational number.
+</p>
+
+<dl class="org-dl">
+<dt>Solution</dt><dd>An irrational number is a fraction of 2 integers. We assume that \(\sqrt{2}\) is rational. This would mean that \(\sqrt{2} = \frac{p}{q}\) where both \(p,q\) are integers. The key thing to assume here is that the fraction is in its smallest form. From the previous equation we can get to \(p^2 = 2q^2\) which tells us that \(p\) is an even number (if the square of a number even, then so is that number$). Further, we can also come to the conclusion that \(q\) is even. Since both \(p,q\) are even, the fraction is not its simplest form - implying a contradiction.</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgdcb8ad8" class="outline-4">
+<h4 id="orgdcb8ad8"><span class="section-number-4">7.1.5.</span> Proof by Cases</h4>
+<div class="outline-text-4" id="text-7-1-5">
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+This is a proof which can be used a used as a part of another proof when proving implications. If we have an implication where the premise consists of disjunctions, we can apply the following:
+</p>
+
+\begin{align}
+(p_1 \lor p_2 \lor \ldots \lor p_n) \to q \\
+(p_1 \to q) \land (p_2 \to q) \land \ldots \land (p_n \to q)
+\end{align}
+
+<p>
+This proof is very helpful when we want to prove that a condition is satisfiable for a group of elements.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org6dd66b5"></a>Example<br />
+<div class="outline-text-5" id="text-7-1-5-1">
+<p>
+Prove that if \(n\) is not a multiple of 3, \(2n\) is not a multiple of 3.
+</p>
+<dl class="org-dl">
+<dt>Solution</dt><dd>To define a value as not a multiple of 3, we have two formulas \(n = 3k + 1 \quad n = 3k + 2\). We can reformulate the proposition by saying \((n = 3k+1) \lor (n = 3k^\prime) \to \neg (2n = 3k^{\prime\prime})\). We then have to show that both cases imply the consequence.</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org22454e9" class="outline-4">
+<h4 id="org22454e9"><span class="section-number-4">7.1.6.</span> Equivalence Proof</h4>
+<div class="outline-text-4" id="text-7-1-6">
+<p>
+As previously mentioned \(p \leftrightarrow q = p \equiv q\), so if we want to prove some equivalence, we can use \((p \to q) \land (q \to p)\).
+</p>
+</div>
+</div>
+<div id="outline-container-org1ad34ed" class="outline-4">
+<h4 id="org1ad34ed"><span class="section-number-4">7.1.7.</span> Existential Statements Proof</h4>
+<div class="outline-text-4" id="text-7-1-7">
+<p>
+We have two strategies for this.
+</p>
+<dl class="org-dl">
+<dt>Constructive Proof</dt><dd>We show an example that verifies a predicate and apply existential generalization to prove the proposition.</dd>
+<dt>Non Constructive Proof</dt><dd>We show that there exists an element which validates the predicate but we dont specify which one. This is most commonly proof by contradiction.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orge4ef851" class="outline-4">
+<h4 id="orge4ef851"><span class="section-number-4">7.1.8.</span> Universal Statements Proof</h4>
+<div class="outline-text-4" id="text-7-1-8">
+<dl class="org-dl">
+<dt>Proving</dt><dd>We show that a predicate holds for an arbitrary value and then apply universal generalization.</dd>
+<dt>Counterexamples</dt><dd>To disprove a universal statement we need to find a counterexample. This action is a process of negation, making the US an ES.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgce2255a" class="outline-4">
+<h4 id="orgce2255a"><span class="section-number-4">7.1.9.</span> Strategy for Proofs</h4>
+<div class="outline-text-4" id="text-7-1-9">
+<p>
+So should you use? It comes down to trial and error, but also practice and intuition.
+</p>
+<dl class="org-dl">
+<dt>Trial and error</dt><dd>If direct proof doesnt work, try indirect lol.</dd>
+<dt>Complex propositions</dt><dd>If there are complex propositions in an implication, they quite possibly can be negated, allowing use to use an <b>indirect method</b>.</dd>
+<dt>Using proof by contradiction with conditional statements</dt><dd>We show that \(\neg (p \to q)\) implies \(\bot\).</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga8a3e80" class="outline-2">
+<h2 id="orga8a3e80"><span class="section-number-2">8.</span> Set Theory</h2>
 <div class="outline-text-2" id="text-8">
 </div>
+
+<div id="outline-container-orgc34980f" class="outline-3">
+<h3 id="orgc34980f"><span class="section-number-3">8.1.</span> Sets</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+A set is a collection of objects. We use the notation \(\{a,b,c\}\) to denote a set. We can also use the notation \(\{x \in S \mid P(x)\}\) to denote a set of elements \(x\) in \(S\) that satisfy the predicate \(P(x)\). A set can be empty, which is denoted by \(\emptyset\).
+</p>
+
+<p>
+A more concrete definition of a set using quantifiers is as follows:
+</p>
+
+<p>
+\[
+\forall x (( x \in S) \leftrightarrow P(x))
+\]
+</p>
+
+<p>
+We also often use <b>interval definitions</b> to define sets. These are defined as follows:
+</p>
+
+<p>
+\[
+\{x \in \mathbb{R} \mid a \leq x \leq b\}
+\]
+</p>
+
+<p>
+A common way to define a interval is with brackets and parenthesis. For example, \((a,b)\) is an open interval, while \([a,b]\) is a closed interval.
+</p>
+
+<p>
+Two sets are equal if they have the same elements. We denote this as \(A = B\). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+A = B \equiv \forall x (x \in A \leftrightarrow x \in B)
+\]
+</p>
+
+<p>
+The equality of two sets can also be defined using subsets:
+</p>
+
+<p>
+\[
+A = B \equiv A \subseteq B \land B \subseteq A
+\]
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+A way to disprove the equality of two sets is by showing that they have at least one element that is not in the other set. This is called a <b>counterexample</b>. It can be represented with an existential quantifier and XOR: \(\exists x (x \in A \oplus x \in B)\).
+</p>
+
+<p>
+Some important elements are the aforementioned empty set \(\emptyset\) and the universal set \(\mathbb{U}\). The universal set is the set of all elements in a domain. The empty set is the set that contains no elements. The Domains, mentioned at the beginning are also sets.
+</p>
+</div>
 </div>
 
-<div id="outline-container-org5014161" class="outline-2">
-<h2 id="org5014161"><span class="section-number-2">9.</span> Computation</h2>
+<div id="outline-container-orgb18a31e" class="outline-3">
+<h3 id="orgb18a31e"><span class="section-number-3">8.2.</span> Subsets</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+A subset is a set that is contained in another set. We denote this as \(A \subseteq B\). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+A \subseteq B \equiv \forall x (x \in A \to x \in B)
+\]
+</p>
+
+<p>
+For all sets, it is true that \(A \subseteq A\) and \(\emptyset \subseteq A\). Which means that every set is a subset of itself and the empty set is a subset of every set. We can also say that \(A \subseteq B\) and \(B \subseteq A\) implies \(A = B\). This is called the <b>subset equality</b>.
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+What can be confusing is the proper subset. A proper subset is a subset that is not equal to the set. We denote this as \(A \subset B\). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+A \subset B \equiv A \subseteq B \land A \neq B
+\]
+</p>
+
+<p>
+A quantified version of this is as follows:
+</p>
+
+<p>
+\[
+\forall x ((x \in A) \to (x \in B) \land (A \neq B))
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc20d64" class="outline-3">
+<h3 id="orgdc20d64"><span class="section-number-3">8.3.</span> Set Cardinality</h3>
+<div class="outline-text-3" id="text-8-3">
+<p>
+This is not the absolute value of a set. It is the number of elements in a set. We denote this as \(|A|\). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+\vert A \vert \equiv \# \{x \in A \mid x \in A\}
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2ad7cc4" class="outline-3">
+<h3 id="org2ad7cc4"><span class="section-number-3">8.4.</span> Power Set</h3>
+<div class="outline-text-3" id="text-8-4">
+<p>
+The power set is the set of all subsets of a set. We denote this as \(P(A)\). What is meant by all subsets is that the power set contains the empty set and the universal set aswell as all the subsets of the set. A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+P(A) \equiv \{B \mid B \subseteq A\}
+\]
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+<b>The cardinality of a power set is \(2^{|A|}\).</b>
+</p>
+
+<p>
+An example of this is the power set of \(\{1,2,3\}\) is \(\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}\).
+</p>
+
+<p>
+What is important to remember is that the power set of a power set is the original set. This is because the power set of a set is the set of all subsets of a set. So the power set of the power set is the set of all subsets of all subsets of a set. This is the original set.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf30a417" class="outline-3">
+<h3 id="orgf30a417"><span class="section-number-3">8.5.</span> Cartesian Product</h3>
+<div class="outline-text-3" id="text-8-5">
+<p>
+The cartesian product is the set of all ordered pairs of elements from two sets. We denote this as \(A \times B\). In other words, the cartesian product is the set of all possible combinations of elements from two sets. A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+A \times B \equiv \{(a,b) \mid a \in A \land b \in B\}
+\]
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+<b>The cardinality of the cartesian product is \(|A| \times |B|\).</b>
+</p>
+
+<p>
+An example of this is the cartesian product of \(\{1,2\}\) and \(\{3,4\}\) is \(\{(1,3), (1,4), (2,3), (2,4)\}\).
+</p>
+
+<p>
+The relation of the Cartesian product to the power set is that the power set of a cartesian product is the cartesian product of the power sets. This is because the power set of a set is the set of all subsets of a set. So the power set of the cartesian product is the set of all subsets of all ordered pairs of elements from two sets. This is the cartesian product of the power sets. A mathematical proof of this is as follows:
+</p>
+
+<p>
+\[
+P(A \times B) = \{C \mid C \subseteq A \times B\} = \{C \mid C \subseteq \{(a,b) \mid a \in A \land b \in B\}\} = \{C \mid C \subseteq \{(a,b) \mid a \in P(A) \land b \in P(B)\}\} = P(A) \times P(B)
+\]
+</p>
+
+<p>
+Or simply: \(P(A \times B) = P(A) \times P(B)\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org312552b" class="outline-3">
+<h3 id="org312552b"><span class="section-number-3">8.6.</span> Set Operations</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+Set operations are operations that can be performed on sets. The most common set operations are union, intersection, difference, and complement.
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+It is important to remember that if we have an expression like \(A \subsete A \cup B\), something that could be tricky is that the order of operations is not the same as in arithmetic. In arithmetic, we would do the multiplication and division first, then addition and subtraction. In set operations, we do the complement first, then the difference, then the intersection, and finally the union. So the expression \(A \subsete A \cup B\) would be read as \(A \subsete (A \cup B)\).
+</p>
+
+<p>
+Once again, <b>the order of operations for sets</b> is:
+</p>
+<ol class="org-ol">
+<li>Complement</li>
+<li>Difference</li>
+<li>Intersection</li>
+<li>Union</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgf3b951c" class="outline-3">
+<h3 id="orgf3b951c"><span class="section-number-3">8.7.</span> Union</h3>
+<div class="outline-text-3" id="text-8-7">
+<p>
+Simply explained, the union of two sets is the set of all elements that are in either set. We denote this as \(A \cup B\). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+A \cup B \equiv \{x \mid x \in A \lor x \in B\}
+\]
+</p>
+
+<p>
+And using quantifiers:
+</p>
+
+<p>
+\[
+\forall ((x \in A \cup B) \equiv (x \in A \lor x \in B))
+\]
+</p>
+
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+<b>The cardinality of the union is \(|A| + |B| - |A \cap B|\).</b> The reason why we have to subtract the cardinality of the intersection is because the intersection is counted twice. Once in \(A\) and once in \(B\).
+</p>
+
+<p>
+An example of this is the union of \(\{1,2\}\) and \(\{2,3\}\) is \(\{1,2,3\}\). The reason why this is the union is because \(1 \in A\), \(2 \in A\), \(2 \in B\), and \(3 \in B\). So \(1,2,3\) are all in the union.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd8659bc" class="outline-3">
+<h3 id="orgd8659bc"><span class="section-number-3">8.8.</span> Intersection</h3>
+<div class="outline-text-3" id="text-8-8">
+<p>
+The intersection of two sets is the set of all elements that are in both sets. We denote this as \(A \cap B\). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+A \cap B \equiv \{x \mid x \in A \land x \in B\}
+\]
+</p>
+
+<p>
+<b>The cardinality of the intersection is \(|A \cap B|\).</b> What is important to remember is that the intersection of a set with itself is the set itself. This is because the intersection of a set with itself is the set of all elements that are in the set and the set itself. So the intersection of a set with itself is the set itself.
+</p>
+
+<p>
+An example of this is the intersection of \(\{1,2\}\) and \(\{2,3\}\) is \(\{2\}\). The reason why this is the intersection is because \(2 \in A\) and \(2 \in B\). So \(2\) is in the intersection.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga922675" class="outline-3">
+<h3 id="orga922675"><span class="section-number-3">8.9.</span> Difference</h3>
+<div class="outline-text-3" id="text-8-9">
+<p>
+The difference of two sets is the set of all elements that are in the first set but not the second set. We denote this as \(A \setminus B\). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+A \setminus B \equiv \{x \mid x \in A \land x \notin B\}
+\]
+</p>
+
+<p>
+A visual representation of this is as follows:
+</p>
+
+
+
+<div id="orge0ebddd" class="figure">
+<p><img src="Set_Theory/2022-12-06_09-56-18_Set-Difference.png" alt="2022-12-06_09-56-18_Set-Difference.png" />
+</p>
+</div>
+
+
+
+<p>
+The cardinality of the difference is \(|A \setminus B|\) or \(|A| - |A \cap B|\). The reason why we have to subtract the cardinality of the intersection is because the intersection is counted twice. Once in \(A\) and once in \(B\).
+</p>
+
+<p>
+An example of this is the difference of \(\{1,2\}\) and \(\{2,3\}\) is \(\{1\}\). The reason why this is the difference is because \(1 \in A\) and \(1 \notin B\). So \(1\) is in the difference.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcd027e2" class="outline-3">
+<h3 id="orgcd027e2"><span class="section-number-3">8.10.</span> Complement</h3>
+<div class="outline-text-3" id="text-8-10">
+<p>
+The complement of a set is the set of all elements that are not in the set. We denote this as \(A^c\). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+A^c \equiv \{x \mid x \notin A\}
+\]
+</p>
+
+<p>
+In terms of the universal set, the complement of a set is the set of all elements that are not in the set and are in the universal set. It is denoted as \(A^c = U \setminus A\). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+A^c \equiv \{x \mid x \in U \land x \notin A\}
+\]
+</p>
+
+<p>
+<b>The cardinality of the complement is \(|U| - |A|\).</b> The reason why we have to subtract the cardinality of the set is because the set is counted twice. Once in \(U\) and once in \(A\).
+</p>
+
+<p>
+An example of this is the complement of \(\{1,2\}\) is \(\{3,4\}\). The reason why this is the complement is because \(3 \in U\) and \(3 \notin A\). So \(3\) is in the complement. This of course depends on the universal set being \(\{1,2,3,4\}\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgedf2510" class="outline-3">
+<h3 id="orgedf2510"><span class="section-number-3">8.11.</span> Logical Operations with Sets</h3>
+<div class="outline-text-3" id="text-8-11">
+<p>
+We can relate sets to logical operations. The most common logical operations are conjunction, disjunction, and negation. We can relate these to sets as follows:
+</p>
+
+\begin{array}{l}
+A \cup B \sim p \lor q \\
+A \cap B \sim p \land q \\
+\bar{A} \sim \neg p
+\end{array}
+
+<p>
+The reason why we can do this is that the definition of a set, is based on a predicate. So we can relate the set to the predicate and the predicate to the logical operation. For example, the definition of a set is as follows:
+</p>
+
+<p>
+\[
+A \equiv \{x \mid x \in A\}
+\]
+</p>
+
+<p>
+So we can relate the set to the predicate as follows:
+</p>
+
+<p>
+\[
+A \equiv \{x \mid x \in A\} \equiv \{x \mid p(x)\}
+\]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1704085" class="outline-2">
+<h2 id="org1704085"><span class="section-number-2">9.</span> Functions</h2>
 <div class="outline-text-2" id="text-9">
+<p>
+A function, is the assignment of a single value \(b\in B\) to each element \(a\) in a set \(A\). We denote this as \(f: A \rightarrow B\). We can also call a function a mapping, transformation or a black box (in some cases even an oracle). A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+f: A \rightarrow B \equiv \{f(a) \mid a \in A\}
+\]
+</p>
+
+<p>
+We are mostly interested in what makes a function a function. So we will define what makes a function a function. A function is a function if the following conditions are met:
+</p>
+<ol class="org-ol">
+<li>The domain of the function is a set</li>
+<li>The range of the function is a set</li>
+<li>The function is one-to-one</li>
+<li>The function is onto</li>
+</ol>
+
+<p>
+A mathematical way to express this is as follows:
+</p>
+
+<p>
+\[
+\forall a \in A \exists ! b \in B \land f(a) = b
+\]
+</p>
+
+<p>
+The reasons why some assignments might not be functions is that not all elements in \(A\) are assigned to an element in \(B\). This is called a partial function. Another reason why some assignments might not be functions is that not all elements in \(B\) are assigned to an element in \(A\). This is called a surjection. Another reason why some assignments might not be functions is that not all elements in \(A\) are assigned to a unique element in \(B\). This is called a bijection.
+</p>
+
+<p>
+How can we tell if a function is a function? We can tell if a function is a function by checking if the function is one-to-one and onto. If the function is one-to-one and onto, then the function is a function. If the function is not one-to-one and onto, then the function is not a function.
+</p>
+</div>
+
+<div id="outline-container-orge5df910" class="outline-3">
+<h3 id="orge5df910"><span class="section-number-3">9.1.</span> Domain, Codomain &amp; Range</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+If \(f(a) = b\), then we call \(a\) the <b>pre-image</b> and \(b\) the <b>image</b> of \(f\). We call \(A\) the <b>domain</b> of \(f\) and \(B\) the <b>codomain</b> of \(f\). We call \(f(A)\) the <b>range</b> of \(f\).
+</p>
+
+<p>
+The main difference between the <b>codomain</b> and the <b>range</b> is that the <b>codomain</b> is the set of all possible images of \(f\) and the <b>range</b> is the set of all images of \(f\).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6e48b96" class="outline-3">
+<h3 id="org6e48b96"><span class="section-number-3">9.2.</span> One-to-One</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+A function is one-to-one if each element in the range is assigned to a unique element in the domain. We denote this as \(f: A \rightarrow B\) is one-to-one. A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+f: A \rightarrow B \text{ is one-to-one } \equiv \forall a_1, a_2 \in A \land f(a_1) = f(a_2) \implies a_1 = a_2
+\]
+</p>
+
+<p>
+or simply: \(f(a_1) = f(a_2) \implies a_1 = a_2\).
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+If we want to check if a functions is one-to-one, we have to test if \(f(a_1) = f(a_2) \implies a_1 = a_2\) for all \(a_1, a_2 \in A\). If this is true for all \(a_1, a_2 \in A\), then the function is one-to-one.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgf191eb8" class="outline-3">
+<h3 id="orgf191eb8"><span class="section-number-3">9.3.</span> Onto</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+A function is onto if each element in the codomain is assigned to an element in the domain. We denote this as \(f: A \rightarrow B\) is onto. This is to say that for each element in the codomain, there is an element in the domain that maps to it. A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+f: A \rightarrow B \text{ is onto } \equiv \forall b \in B \exists a \in A \land f(a) = b
+\]
+</p>
+
+<p>
+or simply: \(\forall b \in B \exists a \in A \land f(a) = b\).
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+To see if a function is onto, we have to test if \(\forall b \in B \exists a \in A \land f(a) = b\). If this is true for all \(b \in B\), then the function is onto. For example if \(f: \{1,2\} \rightarrow \{1,2,3\}\), then \(f(1) = 1\), \(f(2) = 2\) and \(f(3) = 3\). So \(f\) is onto. If \(f: \{1,2\} \rightarrow \{1,2\}\), then \(f(1) = 1\), \(f(2) = 2\) and \(f(3) = 3\). So \(f\) is not onto. In this case, the function is not onto because \(3\) is not assigned to an element in the domain.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgae4049f" class="outline-3">
+<h3 id="orgae4049f"><span class="section-number-3">9.4.</span> Composite Functions</h3>
+<div class="outline-text-3" id="text-9-4">
+<p>
+We can combine functions to create composite functions. We can combine functions by applying one function to the output of another function. We denote this as \(f \circ g\). We can also call this function composition. A more rigorous definition of this is as follows:
+</p>
+
+<p>
+\[
+f \circ g \equiv \{f(g(a)) \mid a \in A\}
+\]
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+If the <b>codomain</b> of \(g\) is the <b>domain</b> of \(f\), then we can combine \(g\) and \(f\) to create a composite function. We denote this as \(f \circ g: A \rightarrow C\).
+</p>
+
+<p>
+When it comes to functions properties after composition we have the following properties:
+</p>
+<ol class="org-ol">
+<li>\(f \circ g\) is one-to-one if \(f\) is one-to-one and \(g\) is one-to-one</li>
+<li>\(f \circ g\) is onto if \(f\) is onto and \(g\) is onto</li>
+</ol>
+
+<p>
+If some of the functions are not one-to-one or onto, then the composite function is not one-to-one or onto.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orged4eb44" class="outline-3">
+<h3 id="orged4eb44"><span class="section-number-3">9.5.</span> Inverse Functions</h3>
+<div class="outline-text-3" id="text-9-5">
+<p>
+An inverse function is a function that undoes the effects of another function. We denote this as \(f^{-1}\). The definition is as follows:
+</p>
+
+<p>
+\[
+f^{-1} \equiv \{a \mid f(a) = b\}
+\]
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+If \(f\) is one-to-one and onto, then \(f^{-1}\) is also one-to-one and onto.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge166ae0" class="outline-3">
+<h3 id="orge166ae0"><span class="section-number-3">9.6.</span> Partial Functions</h3>
+<div class="outline-text-3" id="text-9-6">
+<p>
+A partial function is a function that is not one-to-one or onto. We denote this as \(f: A \rightarrow B\) is a partial function. Definition:
+</p>
+
+<p>
+\[
+f: A \rightarrow B \text{ is a partial function } \equiv \exists a_1, a_2 \in A \land f(a_1) = f(a_2) \land a_1 \neq a_2
+\]
+</p>
+
+<p>
+or simply: \(\exists a_1, a_2 \in A \land f(a_1) = f(a_2) \land a_1 \neq a_2\). If this is true for some \(a_1, a_2 \in A\), then \(f\) is a partial function.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc8c0c01" class="outline-3">
+<h3 id="orgc8c0c01"><span class="section-number-3">9.7.</span> Practice Questions</h3>
+<div class="outline-text-3" id="text-9-7">
+<ol class="org-ol">
+<li>Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) be defined by \(f(x) = x^2\). Is \(f\) one-to-one? Is \(f\) onto? Is \(f\) a partial function?
+<dl class="org-dl">
+<dt>Solution</dt><dd>\(f\) is one-to-one because \(f(x) = f(y) \implies x = y\). \(f\) is not onto because \(f(x) = x^2\) and \(x^2\) is not in the domain. \(f\) is not a partial function because \(f(x) = f(y) \implies x = y\).</dd>
+</dl></li>
+<li>Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) be defined by \(f(x) = x^2\). Is \(f^{-1}\) one-to-one? Is \(f^{-1}\) onto? Is \(f^{-1}\) a partial function?
+<dl class="org-dl">
+<dt>Solution</dt><dd>\(f^{-1}\) is one-to-one because \(f^{-1}(x) = f^{-1}(y) \implies x = y\). \(f^{-1}\) is onto because \(f^{-1}(x) = x^2\) and \(x^2\) is in the domain. \(f^{-1}\) is not a partial function because \(f^{-1}(x) = f^{-1}(y) \implies x = y\).</dd>
+</dl></li>
+<li>Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) be defined by \(f(x) = x^2\). Is \(f \circ f\) one-to-one? Is \(f \circ f\) onto? Is \(f \circ f\) a partial function?
+<dl class="org-dl">
+<dt>Solution</dt><dd>\(f \circ f\) is one-to-one because \(f\) is one-to-one and \(f\) is one-to-one. \(f \circ f\) is onto because \(f\) is onto and \(f\) is onto. \(f \circ f\) is not a partial function because \(f \circ f\) is one-to-one and \(f \circ f\) is onto.</dd>
+</dl></li>
+<li>Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) be defined by \(f(x) = x^2\). Is \(f \circ f^{-1}\) one-to-one? Is \(f \circ f^{-1}\) onto? Is \(f \circ f^{-1}\) a partial function?
+<dl class="org-dl">
+<dt>Solution</dt><dd>\(f \circ f^{-1}\) is one-to-one because \(f\) is one-to-one and \(f^{-1}\) is one-to-one. \(f \circ f^{-1}\) is onto because \(f\) is onto and \(f^{-1}\) is onto. \(f \circ f^{-1}\) is not a partial function because \(f \circ f^{-1}\) is one-to-one and \(f \circ f^{-1}\) is onto.</dd>
+</dl></li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgac59e6c" class="outline-2">
+<h2 id="orgac59e6c"><span class="section-number-2">10.</span> Sequences</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+A sequence is a set of elements, which can be continued by using intuition or mathematical patterns. We denote this as \(\{a_n \mid n \in \mathbb{N}\}\). We will mostly focus on <b>arithmetic</b> sequences and <b>geometric</b> sequences.
+</p>
+</div>
+
+<div id="outline-container-orgbe1ef9c" class="outline-3">
+<h3 id="orgbe1ef9c"><span class="section-number-3">10.1.</span> Arithmetic Sequences</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+An arithmetic sequence is a sequence where the difference between two consecutive terms is constant. We denote this as \(\{a_n \mid n \in \mathbb{N}\}\) where \(a_n = a_1 + (n-1)d\) for some \(a_1, d \in \mathbb{R}\). We can also write this as \(a_n = a_1 + nd\), where \(n\) is the <b>nth</b> term of the sequence and \(d\) is the <b>common difference</b>.
+</p>
+
+<p>
+An arithmetic sequence is defined by the following properties:
+</p>
+<ol class="org-ol">
+<li>\(a_n = a_1 + (n-1)d\)</li>
+<li>\(a_n = a_1 + nd\)</li>
+</ol>
+
+<p>
+This sequence can also be thought of as a linear function. We can write this as \(a_n = f(n)\) where \(f(n) = a_1 + (n-1)d\). The main elements of a sequence are the <b>first term</b> and the <b>common difference</b>.
+</p>
+
+<p>
+The expansion for the arithmetic sequence is as follows:
+</p>
+
+\begin{align}
+a_1 = a_1 + 0d &= a_1 \\
+a_2 = a_1 + 1d &= a_1 + d \\
+a_3 = a_1 + 2d &= a_1 + 2d \\
+a_4 = a_1 + 3d &= a_1 + 3d \\
+\vdots &= \vdots \\
+a_n = a_1 + (n-1)d &= a_1 + (n-1)d
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orgc45fb82" class="outline-3">
+<h3 id="orgc45fb82"><span class="section-number-3">10.2.</span> Geometric Sequences</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+A geometric sequence is a sequence where the ratio between two consecutive terms is constant. We denote this as \(\{a_n \mid n \in \mathbb{N}\}\) where \(a_n = a_1 r^{n-1}\) for some \(a_1, r \in \mathbb{R}\). We can also write this as \(a_n = a_1 r^n\), where \(n\) is the <b>nth</b> term of the sequence and \(r\) is the <b>common ratio</b>.
+</p>
+
+<p>
+An expansion of such as sequence can look something like this:
+</p>
+
+\begin{align}
+a_1 &= a_1 \\
+a_2 &= a_1 r \\
+a_3 &= a_1 r^2 \\
+a_4 &= a_1 r^3 \\
+\vdots &= \vdots \\
+a_n &= a_1 r^{n-1}
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org1d76de4" class="outline-3">
+<h3 id="org1d76de4"><span class="section-number-3">10.3.</span> Recurrence Relations</h3>
+<div class="outline-text-3" id="text-10-3">
+<p>
+A recurrence relation is a sequence that is defined by a formula. We denote this as \(\{a_n \mid n \in \mathbb{N}\}\) where \(a_n = f(a_{n-1})\) for some \(f: \mathbb{R} \rightarrow \mathbb{R}\). It takes the previous term and applies a function to it to get the next term.
+</p>
+
+<p>
+We can be told to find the closed formula for a sequence. This is a formula that can be used to find the nth term of a sequence.To do this, we need to use iteration and induction. We can use the following rules to find the closed formula for a sequence:
+</p>
+<ol class="org-ol">
+<li>\(a_n = a_1 + (n-1)d\) where \(a_1, d \in \mathbb{R}\)</li>
+<li>\(a_n = a_1 r^{n-1}\) where \(a_1, r \in \mathbb{R}\)</li>
+<li>\(a_n = f(a_{n-1})\) where \(f: \mathbb{R} \rightarrow \mathbb{R}\)</li>
+<li>\(a_n = f(a_{n-1}, a_{n-2})\) where \(f: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}\)</li>
+</ol>
+
+<p>
+In short, we need to find the pattern in the sequence and use that to find the closed formula.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd007c3f" class="outline-2">
+<h2 id="orgd007c3f"><span class="section-number-2">11.</span> Summations</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+A summation is a way to add up a sequence of numbers. We denote this as \(\sum_{i=1}^n a_i\). There are many ways to define a summation. To find the sum of a sequence, we can use the following rules:
+</p>
+<ol class="org-ol">
+<li>\(\sum_{i=1}^n i = \frac{n(n+1)}{2}\)</li>
+<li>\(\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}\)</li>
+<li>\(\sum_{i=1}^n i^3 = \frac{n^2(n+1)^2}{4}\)</li>
+<li>\(\sum_{i=1}^n C * f(i) = \frac{C}{1-r}\)</li>
+</ol>
+
+<p>
+If we subtract 1 from the upper bound, we can find the sum of the sequence. For example, \(\sum_{i=1}^n i = \sum_{i=0}^{n-1} i + n = \sum_{i=0}^{n-1} i + \sum_{i=n}^n i = \sum_{i=0}^{n-1} i + n = \frac{n(n-1)}{2} + n = \frac{n(n+1)}{2}\).
+</p>
+
+<p>
+If we have nested summations, we can expand the far-right summation and include it in each iteration of the left summation.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org36751c0" class="outline-2">
+<h2 id="org36751c0"><span class="section-number-2">12.</span> Divisibility</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+A number is divisible by another number if the remainder is 0. We denote this as \(a \mid b\) where \(a\) is the divisor and \(b\) is the dividend. We can also write this as \(a = q \cdot d + r\) where \(r\) is the remainder and \(q\) is the quotient. It is important to note that \(r\) is always less than \(d\) and always positive.
+</p>
+
+<p>
+The elements in the primary equation are as follows:
+</p>
+<ol class="org-ol">
+<li>\(a\) is the dividend</li>
+<li>\(d\) is the divisor</li>
+<li>\(q\) is the quotient</li>
+<li>\(r\) is the remainder</li>
+</ol>
+
+<p>
+From this equation we gain two new operations, the <b>division</b> operation and the <b>modulus</b> operation. We can use these operations to find the remainder and quotient of a division problem.
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+If we perform division of a negative number, we cannot have a negative remainder. To solve this, we can add the divisor to the dividend until the remainder is positive. This is called the <b>floor division</b> operation. In other words, we want to 'overshoot' with the dividend and then compensate with the remainder.
+</p>
+
+<ul class="org-ul">
+<li>Division Function: This function is onto but not one-to-one</li>
+<li>Modulus Function: This function neither one-to-one or onto</li>
+</ul>
+</div>
+
+
+<div id="outline-container-orgc261fac" class="outline-3">
+<h3 id="orgc261fac"><span class="section-number-3">12.1.</span> Divisibility Rules</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+We can use divisibility rules to determine if a number is divisible by another number. The rules are as follows:
+</p>
+<ol class="org-ol">
+<li>If \(a\) divides both \(b\) and \(c\), then \(a\) divides \(b+c\). Expression: \(a \mid b \land a \mid c \Rightarrow a \mid (b+c)\)</li>
+<li>If \(a\) divides \(b\), then \(a\) divides any multiple of \(b\). Expression: \(a \mid b \implies a \mid bm\) for some \(m \in \mathbb{N}\)</li>
+<li>If \(a\) divides \(b\) and \(b\) divides \(c\), then \(a\) divides \(c\). Expression: \(a \mid b \land b \mid c \Rightarrow a \mid c\)</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org37616a5" class="outline-2">
+<h2 id="org37616a5"><span class="section-number-2">13.</span> Modular Arithmetic</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Modular arithmetic uses the modulus operation to find the remainder of a division problem. We use the notation \(a \equiv b \pmod{m}\) to denote that \(a\) is congruent to \(b\) modulo \(m\).
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+If we want to identify if two integers are congruent modulo \(m\), we can test this in the following way:
+</p>
+<ol class="org-ol">
+<li>\(a \equiv b \pmod{m} \land b \equiv c \pmod{m} \Rightarrow a \equiv c \pmod{m}\)</li>
+</ol>
+
+<p>
+<b>In other words, if the remainder of the modulus operation is the same, then the two numbers are congruent modulo \(m\).</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2b9b7a4" class="outline-2">
+<h2 id="org2b9b7a4"><span class="section-number-2">14.</span> Integer Representation</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+Integers can be represented in many ways. In every day life, we use the base 10 system. This means that we use the digits 0-9 to represent numbers. We can also use the base 2 system. This means that we use the digits 0-1 to represent numbers. We can also use the base 16 system. This means that we use the digits 0-9 and A-F to represent numbers. We can also use the base 26 system. This means that we use the digits A-Z to represent numbers.
+</p>
+
+<p>
+If we want to convert the value of base \(b\) to base \(b'\), we can use the following formula:
+</p>
+
+<p>
+\[
+n = a_k b^k + a_{k-1} b^{k-1} + \cdots + a_1 b + a_0
+\]
+</p>
+
+<p>
+The general algorithm for calculating the number representation is as follows:
+</p>
+<ol class="org-ol">
+<li>Divide the number by the base</li>
+<li>Take the remainder and add it to the list of digits</li>
+<li>Repeat until the number is 0</li>
+</ol>
+
+<p>
+In mathematics:
+</p>
+
+\begin{align}
+n = a_0 + bq_0 \\
+n = a_1 + b(a_1 + bq_1) \\
+n = a_2 + b(a_1 + b(a_2 + bq_2))
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org1f48a35" class="outline-2">
+<h2 id="org1f48a35"><span class="section-number-2">15.</span> Binary Representation</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+Binary representation is the representation of numbers in base 2. We can use the following rules to convert from base 10 to base 2:
+</p>
+<ol class="org-ol">
+<li>Divide the number by 2</li>
+<li>Take the remainder and add it to the list of digits</li>
+<li>Repeat until the number is 0</li>
+</ol>
+
+<p>
+To then put together the binary string we take each bit in reverse order and put it together. For example, the binary representation of 13 is 1101.
+</p>
+
+<p>
+To make life a bit easier, we can use a table to convert from base 10 to base 2. The table is made up of the powers of 2 and the digits 0-1.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">2<sup>7</sup></th>
+<th scope="col" class="org-right">2<sup>6</sup></th>
+<th scope="col" class="org-right">2<sup>5</sup></th>
+<th scope="col" class="org-right">2<sup>4</sup></th>
+<th scope="col" class="org-right">2<sup>3</sup></th>
+<th scope="col" class="org-right">2<sup>2</sup></th>
+<th scope="col" class="org-right">2<sup>1</sup></th>
+<th scope="col" class="org-right">2<sup>0</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">128</td>
+<td class="org-right">64</td>
+<td class="org-right">32</td>
+<td class="org-right">16</td>
+<td class="org-right">8</td>
+<td class="org-right">4</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org290abad" class="outline-2">
+<h2 id="org290abad"><span class="section-number-2">16.</span> Hexadecimal Representation</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+Hexadecimal representation is the representation of numbers in base 16. We can use the following rules to convert from base 10 to base 16:
+</p>
+<ol class="org-ol">
+<li>Divide the number by 16</li>
+<li>Take the remainder and add it to the list of digits</li>
+<li>Repeat until the number is 0</li>
+</ol>
+
+<p>
+To then put together the hexadecimal string we take each digit in reverse order and put it together. For example, the hexadecimal representation of 15816 is 3DC8. The steps taken to get to this number are as follows:
+</p>
+<ol class="org-ol">
+<li>15816 / 16 = 988 remainder 8</li>
+<li>988 / 16 = 61 remainder 12 (12 is C in hexadecimal)</li>
+<li>61 / 16 = 3 remainder 13 (13 is represented as D in hexadecimal)</li>
+<li>3 / 16 = 0 remainder 3</li>
+<li>3DC8</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org2df7473" class="outline-2">
+<h2 id="org2df7473"><span class="section-number-2">17.</span> Prime Numbers</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+A prime number is a number that is only divisible by 1 and itself. We can use the following rules to determine if a number is prime:
+</p>
+<ol class="org-ol">
+<li>If \(n\) is divisible by \(a\), then \(n\) is not prime</li>
+<li>If \(n\) is not divisible by \(a\), then \(n\) is prime</li>
+</ol>
+
+<p>
+Any number that is not prime is called a composite number. This relates to the Fundamental Theorem of Arithmetic. This theorem states that every integer greater than 1 can be expressed as a product of prime numbers. This theorem is important because it allows us to factorize numbers.
+</p>
+
+<p>
+How to determine if a number is a prime or composite? We can use the following proposition:
+</p>
+
+<p>
+\[
+(n \text{ is composite})  \Leftrightarrow \exists a \in \mathbb{N} (( a \mid n) \land (a \neq 1) \land (a \neq n))
+\]
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9e0aa8f" class="outline-2">
+<h2 id="org9e0aa8f"><span class="section-number-2">18.</span> Algorithms</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+An algorithm is a collection of instructions that are made to solve a problem. To create any algorithm, we need three basic components:
+</p>
+<dl class="org-dl">
+<dt>Sequence</dt><dd>A sequence is a list of instructions that are executed in order</dd>
+<dt>Selection</dt><dd>A selection is a list of instructions that are executed based on a condition</dd>
+<dt>Iteration</dt><dd>An iteration is a list of instructions that are executed multiple times</dd>
+</dl>
+</div>
+
+<div id="outline-container-org26e6168" class="outline-3">
+<h3 id="org26e6168"><span class="section-number-3">18.1.</span> Complexity of Algorithms</h3>
+<div class="outline-text-3" id="text-18-1">
+<p>
+The complexity of an algorithm is given by the relation between the input size and the number of steps required to solve the problem. We can use the following notations to describe the complexity of an algorithm:
+</p>
+<dl class="org-dl">
+<dt>\(O(n)\)</dt><dd>This notation describes the worst case scenario for an algorithm. This means that the algorithm will take at least this amount of time to solve the problem.</dd>
+<dt>\(\Omega(n)\)</dt><dd>This notation describes the best case scenario for an algorithm. This means that the algorithm will take at most this amount of time to solve the problem.</dd>
+<dt>\(\Theta(n)\)</dt><dd>This notation describes the average case scenario for an algorithm. This means that the algorithm will take this amount of time to solve the problem.</dd>
+</dl>
+
+<p>
+We will not need omega and theta notation for the exam, but it is good to know.
+</p>
+</div>
+</div>
+<div id="outline-container-org5c86590" class="outline-3">
+<h3 id="org5c86590"><span class="section-number-3">18.2.</span> Big O Notation</h3>
+<div class="outline-text-3" id="text-18-2">
+<p>
+Big O notation is used to describe the worst case scenario for an algorithm. We can use the following rules to determine the complexity of an algorithm:
+</p>
+
+<p>
+The idea of this notation is that we can use it to compare the complexity of different algorithms. For example, if we have two algorithms that solve the same problem, we can use big O notation to determine which algorithm is better. If one algorithm is \(O(n)\) and the other is \(O(n^2)\), then the first algorithm is better than the second algorithm.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Algorithm</th>
+<th scope="col" class="org-left">Complexity</th>
+<th scope="col" class="org-left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(O(1)\)</td>
+<td class="org-left">Constant</td>
+<td class="org-left">Finding the first element in a list</td>
+</tr>
+
+<tr>
+<td class="org-left">\(O(\log n)\)</td>
+<td class="org-left">Logarithmic</td>
+<td class="org-left">Binary search</td>
+</tr>
+
+<tr>
+<td class="org-left">\(O(n)\)</td>
+<td class="org-left">Linear</td>
+<td class="org-left">Finding the maximum value in a list</td>
+</tr>
+
+<tr>
+<td class="org-left">\(O(n \log n)\)</td>
+<td class="org-left">Linearithmic</td>
+<td class="org-left">Merge sort</td>
+</tr>
+
+<tr>
+<td class="org-left">\(O(n^2)\)</td>
+<td class="org-left">Quadratic</td>
+<td class="org-left">Bubble sort</td>
+</tr>
+
+<tr>
+<td class="org-left">\(O(n^3)\)</td>
+<td class="org-left">Cubic</td>
+<td class="org-left">Matrix multiplication</td>
+</tr>
+
+<tr>
+<td class="org-left">\(O(2^n)\)</td>
+<td class="org-left">Exponential</td>
+<td class="org-left">Tower of Hanoi</td>
+</tr>
+
+<tr>
+<td class="org-left">\(O(n!)\)</td>
+<td class="org-left">Factorial</td>
+<td class="org-left">Travelling salesman problem</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Contrary to intuition, to solve a large problem you should always use the most efficient algorithm, but for a smaller size, higher complexity algorithms are better.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org549e7d6" class="outline-2">
+<h2 id="org549e7d6"><span class="section-number-2">19.</span> Greatest Common Divisor</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+The greatest common divisor of two numbers is the largest number that divides both numbers. We can easily find this if we know the factorizations of each number. Another way to find the greatest common divisor is to use Euclid's algorithm. This algorithm is as follows:
+</p>
+<ol class="org-ol">
+<li>Let \(a\) be the larger number and \(b\) be the smaller number</li>
+<li>Divide \(a\) by \(b\) and take the remainder</li>
+<li>If the remainder is 0, then \(b\) is the greatest common divisor</li>
+<li>If the remainder is not 0, then set \(a\) to \(b\) and \(b\) to the remainder</li>
+<li>Repeat until the remainder is 0</li>
+</ol>
+
+<p>
+An example of this algorithm is as follows:
+</p>
+<ol class="org-ol">
+<li>Let \(a = 24\) and \(b = 16\)</li>
+<li>\(24 \div 16 = 1\) remainder \(8\)</li>
+<li>\(16 \div 8 = 2\) remainder \(0\)</li>
+<li>\(b = 8\) is the greatest common divisor</li>
+</ol>
+</div>
+
+<div id="outline-container-orgd498683" class="outline-3">
+<h3 id="orgd498683"><span class="section-number-3">19.1.</span> Least Common Multiple</h3>
+<div class="outline-text-3" id="text-19-1">
+<p>
+The least common multiple of two numbers is the smallest number that is divisible by both numbers. We can easily find this if we know the factorizations of each number. Another way to find the least common multiple is to use the following formula:
+</p>
+
+<p>
+\[
+\text{lcm}(a, b) = \frac{a \cdot b}{\text{gcd}(a, b)}
+\]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org83ca4b3" class="outline-2">
+<h2 id="org83ca4b3"><span class="section-number-2">20.</span> Applications of Number Theory</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+Number theory is used in many different fields. Some of these fields are as follows: cryptography, coding theory, and combinatorics.
+</p>
+</div>
+
+<div id="outline-container-org1b9f32a" class="outline-3">
+<h3 id="org1b9f32a"><span class="section-number-3">20.1.</span> Databases</h3>
+<div class="outline-text-3" id="text-20-1">
+<p>
+If we know the number of records in a database and who much space they take up, swell as the starting position, we can use the following formula to determine the position of the nth record:
+</p>
+
+<p>
+\[
+\text{position} = \text{starting position} + \text{record size} \cdot (n - 1)
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0831465" class="outline-3">
+<h3 id="org0831465"><span class="section-number-3">20.2.</span> Hash Functions</h3>
+<div class="outline-text-3" id="text-20-2">
+<p>
+If we want to store some records into a database, we can use a hash function which will map each record to a unique location in the database. This is done by taking the record and applying a hash function to it. The hash function will then return a number which is the location of the record in the database. We might use the \(mod\) operator to create a hash function.
+</p>
+
+<p>
+If each entry has some numerical value we can use \(mod 10\) to map it to a location in the database. This method is not very practical because we might get some sort of collision. A collision is when two records map to the same location in the database. To avoid collisions we can make use of a secondary hash function.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3fa2ca2" class="outline-3">
+<h3 id="org3fa2ca2"><span class="section-number-3">20.3.</span> Asymmetric Encryption</h3>
+<div class="outline-text-3" id="text-20-3">
+<p>
+Asymmetric encryption is a method of encryption that uses two keys. One key is used to encrypt the message and the other key is used to decrypt the message. The two keys are called the <b>public key</b> and the <b>private key</b>. The public key is used to encrypt the message and the private key is used to decrypt the message. The public key is made public and the private key is kept secret.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6f17c53" class="outline-2">
+<h2 id="org6f17c53"><span class="section-number-2">21.</span> Relations</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+A relation is a set of ordered pairs. It is also a subset of the Cartesian product of the set. We can use the following notation to represent a relation:
+</p>
+
+<p>
+\[
+R = \{(x, y) \mid x \in A \land y \in B\}
+\]
+</p>
+
+<p>
+The easiest way to represent a relation is to use a table. The table will have the elements of the first set as the rows and the elements of the second set as the columns. If the ordered pair \((x, y)\) is in the relation, then we will put a \(1\) in the cell that corresponds to the row \(x\) and the column \(y\). If the ordered pair \((x, y)\) is not in the relation, then we will put a \(0\) in the cell that corresponds to the row \(x\) and the column \(y\).
+</p>
+
+<p>
+Here is an example of a relation:
+</p>
+
+<p>
+\[
+R = \{(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)\}
+\]
+</p>
+
+<p>
+We can represent this relation as a table as follows:
+</p>
+
+\begin{array}{c|ccc}
+& 1 & 2 & 3 \\
+\hline
+1 & 0 & 1 & 1 \\
+2 & 1 & 0 & 1 \\
+3 & 1 & 1 & 0
+\end{array}
+
+<p>
+The relationship between functions and relations is that a function is a relation where each ordered pair has a unique first element.
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+To find the cardinality of a relation for a <b>single set</b>, we can use the following formula:
+</p>
+
+<p>
+\[
+2^{n^2}
+\]
+</p>
+
+<p>
+This is because there are \(2\) possibilities for each ordered pair. The ordered pair can either be in the relation or it can not be in the relation. If we have \(n\) elements in the set, then there are \(n^2\) ordered pairs. Therefore, there are \(2^{n^2}\) possible relations.
+</p>
+
+<p>
+This should also be equivalent to the power set of the Cartesian product of the set.
+</p>
+</div>
+
+
+<div id="outline-container-org9251052" class="outline-3">
+<h3 id="org9251052"><span class="section-number-3">21.1.</span> Reflexive Relations</h3>
+<div class="outline-text-3" id="text-21-1">
+<p>
+A relation is reflexive if it contains the ordered pair \((x, x)\) for every element \(x\) in the set. We can use the following notation to represent a reflexive relation:
+</p>
+
+<p>
+\[
+R = \{(x, y) \mid x \in A \land y \in A \land x = y\}
+\]
+</p>
+
+<p>
+As a matrix, it would look like this:
+</p>
+
+\begin{array}{c|ccc}
+& 1 & 2 & 3 \\
+\hline
+1 & 1 & 0 & 0 \\
+2 & 0 & 1 & 0 \\
+3 & 0 & 0 & 1
+\end{array}
+</div>
+</div>
+
+<div id="outline-container-orgc05fbd3" class="outline-3">
+<h3 id="orgc05fbd3"><span class="section-number-3">21.2.</span> Symmetric Relations</h3>
+<div class="outline-text-3" id="text-21-2">
+<p>
+A relation is symmetric if it contains the ordered pair \((x, y)\) for every ordered pair \((y, x)\). We can use the following notation to represent a symmetric relation:
+</p>
+
+<p>
+\[
+R = \{(x, y) \mid x \in A \land y \in A \land (y, x) \in R\}
+\]
+</p>
+
+<p>
+As a matrix, it would look like this (or any other symmetric relation):
+</p>
+
+\begin{array}{c|ccc}
+& 1 & 2 & 3 \\
+\hline
+1 & 0 & 1 & 1 \\
+2 & 1 & 1 & 1 \\
+3 & 1 & 1 & 0
+\end{array}
+</div>
+</div>
+
+
+<div id="outline-container-orgded3904" class="outline-3">
+<h3 id="orgded3904"><span class="section-number-3">21.3.</span> Antisymmetric Relations</h3>
+<div class="outline-text-3" id="text-21-3">
+<p>
+If a relation is antisymmetric, it will it will contain some order pair \((x,y)\) but not \((y,x)\) for every ordered pair \((x,y)\). We can use the following notation to represent an antisymmetric relation:
+</p>
+
+<p>
+\[
+R = \{(x, y) \mid x \in A \land y \in A \land (x, y) \in R \land (y, x) \notin R\}
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7dd1c73" class="outline-3">
+<h3 id="org7dd1c73"><span class="section-number-3">21.4.</span> Transitive Relations</h3>
+<div class="outline-text-3" id="text-21-4">
+<p>
+A relation is transitive if it contains the ordered pair \((x, z)\) for every ordered pair \((x, y)\) and \((y, z)\). We can use the following notation to represent a transitive relation:
+</p>
+
+<p>
+\[
+R = \{(x, z) \mid x \in A \land z \in A \land (x, y) \in R \land (y, z) \in R\}
+\]
+</p>
+
+<p>
+What its saying is that the relation will be transitive if for every \(n\) steps, we can get from \(x\) to \(z\) in just one step.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8768cee" class="outline-3">
+<h3 id="org8768cee"><span class="section-number-3">21.5.</span> Composite Relations</h3>
+<div class="outline-text-3" id="text-21-5">
+<p>
+We can combine two relations to create a composite relation. The composite relation will contain the ordered pair \((x, z)\) if the first relation contains the ordered pair \((x, y)\) and the second relation contains the ordered pair \((y, z)\). We can use the following notation to represent a composite relation:
+</p>
+
+<p>
+\[
+R \circ S = \{(x, z) \mid x \in A \land z \in A \land (x, y) \in R \land (y, z) \in S\}
+\]
+</p>
+
+<p>
+We can us <b>powers of a binary relation</b> to represent the composite relation. The $n$th power of a binary relation will contain the ordered pair \((x, z)\) if the relation contains the ordered pair \((x, y)\) and the relation contains the ordered pair \((y, z)\) \(n\) times.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org116f373" class="outline-2">
+<h2 id="org116f373"><span class="section-number-2">22.</span> Directed Graphs</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+If we want to represent a relation, we can use a directed graph. A directed graph is a graph where the edges have a direction. The edges can be represented by arrows. The arrows will point from the first element of the ordered pair to the second element of the ordered pair. If we have an ordered pair \((x, y)\) in the relation, then we will have an arrow from \(x\) to \(y\).
+</p>
+
+<p>
+An example of a directed graph is the following:
+</p>
+
+
+<div id="orgc74903c" class="figure">
+<p><img src="Directed_Graphs/2022-12-06_17-07-14_1024px-Directed.svg.png" alt="2022-12-06_17-07-14_1024px-Directed.svg.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org859c57e" class="outline-2">
+<h2 id="org859c57e"><span class="section-number-2">23.</span> Grammars</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+A grammar is a set of rules that can be used to generate strings. The strings that are generated by the grammar are called the language of the grammar. The language of the grammar is the set of all strings that can be generated by the grammar. The language of the grammar is denoted by \(L(G)\).
+</p>
+</div>
+
+<div id="outline-container-org8478f9c" class="outline-3">
+<h3 id="org8478f9c"><span class="section-number-3">23.1.</span> Railroad Diagrams</h3>
+<div class="outline-text-3" id="text-23-1">
+<p>
+A railroad diagram is a way to represent a grammar. The railroad diagram will have a start symbol at the top. The start symbol will be the first symbol in the string. The start symbol will be connected to the next symbol in the string. The next symbol will be connected to the next symbol in the string. The next symbol will be connected to the next symbol in the string. This will continue until we reach the end of the string. The end of the string will be represented by a circle.
+</p>
+
+<p>
+An example of a railroad diagram is the following:
+</p>
+
+
+<div id="orgecac6c1" class="figure">
+<p><img src="Grammars/2022-12-06_17-15-45_Syntax-diagram-example.png" alt="2022-12-06_17-15-45_Syntax-diagram-example.png" />
+</p>
+</div>
+
+<p>
+We write the railroad diagram as follows (not the one above):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-BNF">&lt;expression&gt; ::= &lt;term&gt; | &lt;term&gt; "+" &lt;expression&gt;
+&lt;term&gt;       ::= &lt;factor&gt; | &lt;factor&gt; "*" &lt;term&gt;
+&lt;factor&gt;     ::= &lt;constant&gt; | &lt;variable&gt; | "(" &lt;expression&gt; ")"
+&lt;variable&gt;   ::= "x" | "y" | "z"
+&lt;constant&gt;   ::= &lt;digit&gt; | &lt;digit&gt; &lt;constant&gt;
+&lt;digit&gt;      ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+</pre>
+</div>
+
+
+<p>
+<i>more coming soon</i>
+</p>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel Rosel</p>
-<p class="date">Created: 2022-12-04 Sun 11:20</p>
+<p class="date">Created: 2022-12-07 Wed 20:25</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

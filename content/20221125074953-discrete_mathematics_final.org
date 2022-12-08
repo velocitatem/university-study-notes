@@ -4,10 +4,11 @@
 #+title: Discrete Mathematics - Final
 #+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
 #+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
-
-
+#+OPTIONS: toc:2
 #+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
 #+HTML_HEAD: <script src="anti-cheat.js"></script>
+
+
 
 * Domains
 + Naturals $\mathbb{N}$ :: $[1,2,3,\ldots,\infty)$
@@ -195,6 +196,308 @@ p \land \neg p \equiv \bot
 \]
 ** Satisfiability
 A proposition is satisfiable if it has at least one case for which it is *true*, it is anything but a *contradiction*.
+** Practice Problems
+# Create exercises for the following: Identity, Denomination, Idempotent, Double Negation, Commutative, Associative, Distributive, DeMorgan's, Absorption, Negation
+For the following, create a truth table and a DNF for each (a DNF is a proposition created from the values in the truth table)
+1. $p \lor \neg p$
+
+   Truth Table:
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & \neg p & p \lor \neg p \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & T \\
+    \hline
+    \end{array}
+
+    DNF:
+
+    \[
+    p \lor \neg p = \top
+    \]
+
+2. $p \land \neg p$
+
+    Truth Table:
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & \neg p & p \land \neg p \\
+    \hline
+    T & F & F \\
+    \hline
+    F & T & F \\
+    \hline
+    \end{array}
+
+    DNF:
+
+    \[
+    p \land \neg p = \bot
+    \]
+3. $p \lor (p \land q)$
+
+    Truth Table:
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & p \lor (p \land q) \\
+    \hline
+    T & T & T \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & F \\
+    \hline
+    F & F & F \\
+    \hline
+    \end{array}
+
+    DNF:
+
+    \[
+    p \lor (p \land q) = p
+    \]
+4. $p \land (p \lor q)$
+
+    Truth Table:
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & p \land (p \lor q) \\
+    \hline
+    T & T & T \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & F \\
+    \hline
+    F & F & F \\
+    \hline
+    \end{array}
+
+    DNF:
+
+    \[
+    p \land (p \lor q) = p
+    \]
+
+Now for implications:
+1. $p \to q$
+
+    Truth Table:
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & p \to q \\
+    \hline
+    T & T & T \\
+    \hline
+    T & F & F \\
+    \hline
+    F & T & T \\
+    \hline
+    F & F & T \\
+    \hline
+    \end{array}
+
+    DNF:
+
+    \[
+    p \to q = \neg p \lor q
+    \]
+2. $p \to \neg q$
+
+    Truth Table:
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & p \to \neg q \\
+    \hline
+    T & T & F \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & T \\
+    \hline
+    F & F & T \\
+    \hline
+    \end{array}
+
+    DNF:
+
+    \[
+    p \to \neg q = \neg p \lor \neg q
+    \]
+3. $(\neg p) \to q$
+
+    Truth Table:
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & (\neg p) \to q \\
+    \hline
+    T & T & T \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & T \\
+    \hline
+    F & F & F \\
+    \hline
+    \end{array}
+
+    DNF:
+
+    \[
+    (\neg p) \to q = p \lor q
+    \]
+4. $\neg p \to \neg q$
+
+    Truth Table:
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & \neg p \to \neg q \\
+    \hline
+    T & T & T \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & F \\
+    \hline
+    F & F & T \\
+    \hline
+    \end{array}
+
+    DNF:
+
+    \[
+    \neg p \to \neg q = p \lor \neg q
+    \]
+
+Prove the following:
+1. $p \to q \equiv \neg p \lor q$
+
+   Proof:
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & p \to q & \neg p \lor q \\
+    \hline
+    T & T & T & T \\
+    \hline
+    T & F & F & F \\
+    \hline
+    F & T & T & T \\
+    \hline
+    F & F & T & T \\
+    \hline
+    \end{array}
+
+    Therefore $p \to q \equiv \neg p \lor q$ is true.
+
+2. $p \to q \equiv \neg q \to \neg p$
+
+    Proof:
+
+      \begin{array}{|c|c|c|}
+      \hline
+      p & q & p \to q & \neg q \to \neg p \\
+      \hline
+      T & T & T & T \\
+      \hline
+      T & F & F & F \\
+      \hline
+      F & T & T & T \\
+      \hline
+      F & F & T & T \\
+      \hline
+      \end{array}
+
+      Therefore $p \to q \equiv \neg q \to \neg p$ is true.
+
+Which of the following are satisfiable:
+1. $p \land \neg p$
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & \neg p & p \land \neg p \\
+    \hline
+    T & F & F \\
+    \hline
+    F & T & F \\
+    \hline
+    \end{array}
+
+    Therefore $p \land \neg p$ is unsatisfiable.
+2. $p \lor \neg p$
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & \neg p & p \lor \neg p \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & T \\
+    \hline
+    \end{array}
+
+    Therefore $p \lor \neg p$ is satisfiable.
+3. $p \to q$
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & p \to q \\
+    \hline
+    T & T & T \\
+    \hline
+    T & F & F \\
+    \hline
+    F & T & T \\
+    \hline
+    F & F & T \\
+    \hline
+    \end{array}
+
+    Therefore $p \to q$ is satisfiable.
+4. $p \to \neg q$
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & p \to \neg q \\
+    \hline
+    T & T & F \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & T \\
+    \hline
+    F & F & T \\
+    \hline
+    \end{array}
+
+    Therefore $p \to \neg q$ is satisfiable.
+5. $\neg p \to q$
+
+    \begin{array}{|c|c|c|}
+    \hline
+    p & q & \neg p \to q \\
+    \hline
+    T & T & T \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & T \\
+    \hline
+    F & F & F \\
+    \hline
+    \end{array}
+
+    Therefore $\neg p \to q$ is satisfiable.
+
 * Predicate Logic
 # [2022-12-03 Saturday - 11:28]:	Study Predicate Logic
 With predicate logic, we can break down a complex proposition into predicates and quantifiers.
@@ -286,6 +589,27 @@ If we have more than one variable for which we quantify a predicate, we have to 
 \exists x \forall y P(x,y) \not \equiv \forall y \exists x P(x,y)
 \]
 
+** Practice Problems
+# Create exercises for the following: Predicates, Quantifiers, Universal Quantifier, Existential Quantifier, Singular Existential Quantifier, Negation, Nesting
+Evaluate the following:
+1. $\forall x \exists y P(x,y)$ where $P(x,y) = x > y$
+
+   This quantifier is true, because for any value of $x$, there will always be a value of $y$ that will satisfy the predicate.
+2. $\exists x \forall y P(x,y)$ where $P(x,y) = x > y$
+
+    This quantifier is false, because there will always be a value of $x$ for which there will not be a value of $y$ that will satisfy the predicate.
+3. $\forall x \exists y P(x,y)$ where $P(x,y) = x < y$
+
+   This quantifier is true, because for any value of $x$, there will always be a value of $y$ that will satisfy the predicate. This because no matter the value of $x$, there will always be a value of $y$ that will be greater than $x$.
+
+Prove the following:
+1. $\forall x \exists y P(x,y) \equiv \exists y \forall x P(x,y)$
+
+Nested quantifiers:
+1. $\exists x \forall y \exists z P(x,y,z)$ where $P(x,y,z) = x > y \land y > z$
+
+Negating quantifiers:
+1. $\neg \forall x \exists y P(x,y)$ where $P(x,y) = x > y$
 
 * Inference
 A process of arriving at some conclusion through logical steps. This process consists of *arguments* which can either be valid or not. The logical form of an argument is vital, because it is the only way to determine if it is true or not.
@@ -299,7 +623,6 @@ p \to q \\ p
 
 
 It is another thing to call an argument *sound*, for this we need to have an argument for which *all premises are true and valid*. *A valid argument implies a tautology*.
-
 
 ** Rules of Inference
 An argument form which would generate a valid implication falls under the rules of inference
@@ -417,6 +740,69 @@ P(c) \text{ for an arbitrary c} \\
 \therefore \exists x P(x)
 \end{array}
 
+** Practice Problems
+# Create exercises for the following: Inference, Rules of Inference, Rules of Inference for Quantified Propositions
+Use the rules of inference to prove the following:
+1. $\neg (p \lor q) \to \neg p \land \neg q$
+
+   \begin{array}{r}
+   \neg (p \lor q) \\
+   p \lor q
+   \\
+   \hline
+   \therefore \neg p \land \neg q
+   \end{array}
+
+   The rules of inference used are Modus Tollens and Disjunctive Syllogism.
+2. $\neg (p \land q) \to \neg p \lor \neg q$
+
+   \begin{array}{r}
+   \neg (p \land q) \\
+   p \land q
+   \\
+   \hline
+   \therefore \neg p \lor \neg q
+   \end{array}
+
+   The rules of inference used are Modus Tollens and Conjunction.
+   # Used Modus Ponens
+
+Prove the following using the rules of inference for quantified propositions:
+1. $\forall x P(x) \to P(c)$ where $P(x) = x > 0$
+
+   \begin{array}{r}
+   \forall x P(x) \\
+   P(c)
+   \\
+   \hline
+   \therefore P(c)
+   \end{array}
+
+   The rules of inference used are Universal Instantiation.
+
+2. $\exists x P(x) \to P(c)$ where $P(x) = x > 0$
+
+   \begin{array}{r}
+   \exists x P(x) \\
+   P(c)
+   \\
+   \hline
+   \therefore P(c)
+   \end{array}
+
+   The rules of inference used are Existential Instantiation.
+
+Turn the following phrases into logical statements using the rules of inference for quantified propositions:
+1. For all $x$, $x > 0$
+
+    $\forall x (x > 0)$
+2. There exists $x$ such that $x > 0$
+
+    $\exists x (x > 0)$
+3. There exists $x$ such that $x > 0$ and $x < 10$
+
+    $\exists x (x > 0 \land x < 10)$
+
 * Formal Proofs
 # [2022-12-03 Saturday - 11:29]:	Study Proofs
 #+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
@@ -431,12 +817,9 @@ r \to t & \quad \text{Premise} \\
 \neg p & \quad \text{Simplification of 5}
 \end{align}
 
-
 * Informal Proofs
 Because a formal proof can get convoluted, we use informal proofs. The main difference here is that we don't need to provide a step-by-step description of how the proof works; we just show how the conclusion is true by describing a few intermediate steps between the theorem and the corollary. (These are called *premises* and *conclusions* in logic.)
-
 There are various methods of proof we can use. The two primary categories for these proofs are *direct* and *indirect*.
-
 
 ** Methods of Proof
 Upon deciding which axioms to use, you then need to use some method of proof. The most common statements we will be proving are implications.
@@ -491,11 +874,16 @@ This is a proof which can be used a used as a part of another proof when proving
 
 This proof is very helpful when we want to prove that a condition is satisfiable for a group of elements.
 
+We can also use proof by cases for absolute values. If we have $|x| = y$, we can say that $x = y$ or $x = -y$. This is because $|x|$ is the distance from $x$ to $0$.
+
 **** Example
 Prove that if $n$ is not a multiple of 3, $2n$ is not a multiple of 3.
 + Solution :: To define a value as not a multiple of 3, we have two formulas $n = 3k + 1 \quad n = 3k + 2$. We can reformulate the proposition by saying $(n = 3k+1) \lor (n = 3k^\prime) \to \neg (2n = 3k^{\prime\prime})$. We then have to show that both cases imply the consequence.
+
+
 *** Equivalence Proof
 As previously mentioned $p \leftrightarrow q = p \equiv q$, so if we want to prove some equivalence, we can use $(p \to q) \land (q \to p)$.
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
 *** Existential Statements Proof
 We have two strategies for this.
 + Constructive Proof :: We show an example that verifies a predicate and apply existential generalization to prove the proposition.
@@ -508,6 +896,54 @@ So should you use? It comes down to trial and error, but also practice and intui
 + Trial and error :: If direct proof doesnt work, try indirect lol.
 + Complex propositions :: If there are complex propositions in an implication, they quite possibly can be negated, allowing use to use an *indirect method*.
 + Using proof by contradiction with conditional statements :: We show that $\neg (p \to q)$ implies $\bot$.
+* Proofs Practice Problems
+1. Prove that if $n$ is an integer, then $n^2$ is an integer.
+
+   To prove this we need to show that $p \to q$ is true. We can assume that $p$ is true and then show that $q$ is also true. We can do this by applying the laws of inference. We can say that $n^2 = (n+1)(n-1)$, which is an integer. This is enough to prove that $p \to q$ is true.
+
+2. Prove that if $n$ is an integer, then $n^2$ is even.
+
+   This is not true. It is not necessary for $n^2$ to be even. We can show this by taking $n = 3$. This would mean that $n^2 = 9$ which is odd.
+
+3. Define (using truth tables) the disjunction, conjunction, exclusive or, conditional, and biconditional of the propositions p and q:
+
+   Truth Table for Disjunction and Conjunction and Exclusive Or:
+
+   \begin{array}
+    \hline
+    p & q & p \lor q & p \land q & p \oplus q \\
+    \hline
+    T & T & T & T & F \\
+    T & F & T & F & T \\
+    F & T & T & F & T \\
+    F & F & F & F & F \\
+    \hline
+    \end{array}
+
+    Truth Table for Conditional and Biconditional:
+
+    \begin{array}
+    \hline
+    p & q & p \to q & p \leftrightarrow q \\
+    \hline
+    T & T & T & T \\
+    T & F & F & F \\
+    F & T & T & F \\
+    F & F & T & T \\
+    \hline
+    \end{array}
+
+4. Give a direct proof, a proof by contraposition, and a proof by contradiction of the statement: “If n is even, then n + 4 is even.”
+   + Direct Proof :: Let n = an even integer. Then, n = 2k for some integer k. Since n + 4 = 2k + 4, n + 4 is also even. Thus, if n is even, then n + 4 is also even.
+   + Proof by Contraposition :: Let n + 4 = an odd integer. Then, n + 4 = 2j + 1 for some integer j. Since n = 2j - 3, n is also odd. Thus, if n + 4 is odd, then n is also odd.
+   + Proof by Contradiction :: Assume that n is even but n + 4 is odd. Then, n = 2k for some integer k, but n + 4 = 2j + 1 for some integer j. Since 2k = 2j + 1, k = j + 1/2. Since j and k are integers, this is a contradiction. Thus, if n is even, then n + 4 is also even.
+
+
+5. Explain how a proof by cases can be used to prove a result about absolute values, such as the fact that |xy| = |x||y| for all real numbers x and y
+
+   A proof by cases can be used to prove a result about absolute values by breaking the statement into cases and proving each case separately. In the case of |xy| = |x||y|, the statement is broken into two cases: x and y are both positive, and x and y are both negative. For the first case, it can be shown that |xy| = xy, and |x||y| = xy, which proves the statement. For the second case, it can be shown that |xy| = -xy, and |x||y| = -xy, which also proves the statement. Together, these two cases prove that |xy| = |x||y| for all real numbers x and y.
+
+
 
 * Set Theory
 # [2022-12-03 Saturday - 11:29]:	Study Set Theory
@@ -902,6 +1338,58 @@ If we want to identify if two integers are congruent modulo $m$, we can test thi
 
 *In other words, if the remainder of the modulus operation is the same, then the two numbers are congruent modulo $m$.*
 
+** Rules of Modular Arithmetic
+We can use the following rules to perform modular arithmetic:
+1. $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow a+c \equiv b+d \pmod{m}$
+2. $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow ac \equiv bd \pmod{m}$
+3. $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow a-c \equiv b-d \pmod{m}$
+4. $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow a/c \equiv b/d \pmod{m}$
+5. $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow a^c \equiv b^d \pmod{m}$
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+The difference between congruency and the modulo operation is that congruency is a relation between two numbers, while the modulo operation is an operation that returns a number. For example, $a \equiv b \pmod{m}$ is a relation between $a$ and $b$, while $a \pmod{m}$ is an operation that returns a number.
+
+** Inverse of a Modulo
+We can find the inverse of a modulo by using the following equation: $a \cdot a^{-1} \equiv 1 \pmod{m}$. In other words, if we multiply the inverse of a modulo by the modulo, we get 1 modulo $m$.
+
+To find the inverse of a modulo, we can use the Extended Euclidean Algorithm. This algorithm is as follows:
+1. Set $a = m \cdot q + r$ where $q$ is the quotient and $r$ is the remainder
+2. Set $b = a \cdot q + r$ where $q$ is the quotient and $r$ is the remainder
+3. Repeat step 2 until $r = 0$
+4. The inverse of $m$ modulo $a$ is $q$ where $q$ is the quotient of the last step
+
+For example, if we want to find the inverse of 3 modulo 7, we can use the Extended Euclidean Algorithm as follows:
+1. $7 = 3 \cdot 2 + 1$
+2. $3 = 1 \cdot 3 + 0$
+3. $r = 0$ so we stop
+4. The inverse of 3 modulo 7 is 3
+
+** Practice Problems
+# Problems on modular arithmetic
+
+1. $2 \equiv 3 \pmod{5}$
+
+   Solution: False, 2 is not congruent to 3 modulo 5
+
+2. $3 \equiv 4 \pmod{5}$
+
+    Solution: False, 3 is not congruent to 4 modulo 5
+
+3. $4x \equiv 7 \pmod{5}$
+
+    Solution: This is true when $x = 0.5$ because $4(0.5) \equiv 7 \pmod{5}$ is true.
+
+4. $x \equiv 3 \pmod{5} \land x \equiv 4 \pmod{5}$
+
+    Solution: This is not true because $3 \not\equiv 4 \pmod{5}$ so $x \not\equiv 3 \pmod{5} \land x \not\equiv 4 \pmod{5}$
+
+Practice problems using powers of modular arithmetic:
+
+1. $2^3 \equiv 8 \pmod{5}$
+
+    Solution: This is true because $2^3 = 8 \equiv 8 \pmod{5}$
+
+
 
 * Integer Representation
 Integers can be represented in many ways. In every day life, we use the base 10 system. This means that we use the digits 0-9 to represent numbers. We can also use the base 2 system. This means that we use the digits 0-1 to represent numbers. We can also use the base 16 system. This means that we use the digits 0-9 and A-F to represent numbers. We can also use the base 26 system. This means that we use the digits A-Z to represent numbers.
@@ -925,7 +1413,6 @@ n = a_1 + b(a_1 + bq_1) \\
 n = a_2 + b(a_1 + b(a_2 + bq_2))
 \end{align}
 
-
 * Binary Representation
 Binary representation is the representation of numbers in base 2. We can use the following rules to convert from base 10 to base 2:
 1. Divide the number by 2
@@ -938,7 +1425,6 @@ To make life a bit easier, we can use a table to convert from base 10 to base 2.
 |  2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
 |-----+----+----+----+----+----+----+----|
 | 128 | 64 | 32 | 16 |  8 |  4 |  2 |  1 |
-
 
 * Hexadecimal Representation
 Hexadecimal representation is the representation of numbers in base 16. We can use the following rules to convert from base 10 to base 16:
@@ -965,7 +1451,6 @@ How to determine if a number is a prime or composite? We can use the following p
 \[
 (n \text{ is composite})  \Leftrightarrow \exists a \in \mathbb{N} (( a \mid n) \land (a \neq 1) \land (a \neq n))
 \]
-
 
 
 * Algorithms
@@ -1138,7 +1623,6 @@ R \circ S = \{(x, z) \mid x \in A \land z \in A \land (x, y) \in R \land (y, z) 
 
 We can us *powers of a binary relation* to represent the composite relation. The $n$th power of a binary relation will contain the ordered pair $(x, z)$ if the relation contains the ordered pair $(x, y)$ and the relation contains the ordered pair $(y, z)$ $n$ times.
 
-
 * Directed Graphs
 If we want to represent a relation, we can use a directed graph. A directed graph is a graph where the edges have a direction. The edges can be represented by arrows. The arrows will point from the first element of the ordered pair to the second element of the ordered pair. If we have an ordered pair $(x, y)$ in the relation, then we will have an arrow from $x$ to $y$.
 
@@ -1146,7 +1630,6 @@ An example of a directed graph is the following:
 
 #+DOWNLOADED: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Directed.svg/1024px-Directed.svg.png @ 2022-12-06 17:07:14
 [[file:Directed_Graphs/2022-12-06_17-07-14_1024px-Directed.svg.png]]
-
 
 * Grammars
 A grammar is a set of rules that can be used to generate strings. The strings that are generated by the grammar are called the language of the grammar. The language of the grammar is the set of all strings that can be generated by the grammar. The language of the grammar is denoted by $L(G)$.
