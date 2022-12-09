@@ -942,7 +942,102 @@ So should you use? It comes down to trial and error, but also practice and intui
 5. Explain how a proof by cases can be used to prove a result about absolute values, such as the fact that |xy| = |x||y| for all real numbers x and y
 
    A proof by cases can be used to prove a result about absolute values by breaking the statement into cases and proving each case separately. In the case of |xy| = |x||y|, the statement is broken into two cases: x and y are both positive, and x and y are both negative. For the first case, it can be shown that |xy| = xy, and |x||y| = xy, which proves the statement. For the second case, it can be shown that |xy| = -xy, and |x||y| = -xy, which also proves the statement. Together, these two cases prove that |xy| = |x||y| for all real numbers x and y.
+** Problems from the Book
+1. Show that each of the following conditional statements is a tautology using the fact that a conditional is false exactly when the hypothesis is true and the conclusion is false. (pg 38 Ex140
 
+
+   1. $(\neg p \land (p \lor q)) \to q$
+
+      Solution: If we use the laws of inference we will get that $\neg p \land q \to q$. If we try to make this false, we will should consider the case where the premise is true, for the $p$ is false and $q$ is true. This will make the conclusion false, which is not possible. Therefore, the statement is a tautology.
+
+   2. $((p\to q) \land (q\to r)) \to (p \to r)$
+
+      Solution: It is pretty easy to see that this is the hypothetical syllogism. We can use the laws of inference to show that $(p\to q) \land (q\to r)$ is equal to $p \to r$. Now we just need to show that this is a tautology. We can do this by considering the case where the premise is true, and since the premise and conclusion are the same, we can conclude that the statement is a tautology.
+
+   3. $(p \land (p \to q)) \to q$
+
+      Solution: We transform the statement into $(p \land q) \to q$. We can see that this is a tautology by considering the case where the premise is true. For the premise to be true, the conclusion also has to be true. This makes the case of the implication being false not possible, which means that the statement is a tautology.
+
+   4. $((p\lor q) \land (p \to r) \land (q \to r)) \to r$
+
+      Solution: By simplifying the premise we get that $\top \lor r \to r$.
+
+2. Show that each of the following conditional statements is a tautology using the chain of logical identities. (Pg 38 Ex 16)
+
+
+   1. $(\neg p \land (p \lor q)) \to q$
+
+      Solution:
+
+      \begin{align}
+      (\neg p \land (p \lor q)) \to q \\
+      \neg p \land p \lor \neg p \land q \to q \\
+      \bot \lor \neg p \land q \to q \\
+      \neg ( \neg p \land q ) \lor q \\
+      p \lor \neg q \lor q
+      p \lor \top \\
+      \top
+      \end{align}
+
+   2. $((p\to q) \land (q\to r)) \to (p \to r)$
+
+      Solution:
+
+       \begin{align}
+       ((p\to q) \land (q\to r)) \to (p \to r) \\
+       (\neg p \lor q \land \neg q \lor r) \to (\neg p \lor r) \\
+       \neg p \lor \bot \lor r \to \neg p \lor r \\
+       \neg ( \neg p \lor r ) \lor \neg p \lor r \\
+       p \lor \neg r \lor \neg p \lor r \\
+       (p \lor \neg p) \lor (r \lor \neg r) \\
+       \top \lor \top \\
+       \top
+       \end{align}
+
+   3. $(p \land (p \to q)) \to q$
+
+      Solution:
+
+      \begin{align}
+       (p \land (p \to q)) \to q \\
+       (p \land (\neg p \lor q)) \to q \\
+       (p \land \neg p \lor p \land q) \to q \\
+       (\bot \lor p \land q) \to q \\
+       \neg (p \land q) \lor q \\
+       p \lor \neg q \lor q \\
+       p \lor \top \\
+       \top
+      \end{align}
+
+   4. $((p\lor q) \land (p \to r) \land (q \to r)) \to r$
+
+      Solution:
+
+      \begin{align}
+      ((p\lor q) \land (p \to r) \land (q \to r)) \to r \\
+      \neg((p \lor q) \land (\neg p \lor r) \land (\neg q \lor r)) \lor r \\
+      \neg p \land \neg q \lor p \land \neg r \lor (q \land \neg r) \lor r \\
+      (\neg p \land \neg q) \lor (p \land \neg r) \lor (q \lor r) \land (\neg r \lor r) \\
+      (\neg p \land \neg q) \lor (p \land \neg r) \lor (q \lor r) \land \top \\
+      q \lor (\neg p \land \neg q) \lor r \lor (p \land \neg r) \\
+      q \lor \neg p \land q \lor \neg q \lor r \lor p \land r \lor \neg r \\
+      q \lor \neg p \land \top \lor r \lor p \land \top \\
+      q \lor \neg p \lor r \lor p \\
+      q \lor r \lor \top \\
+      \top
+      \end{align}
+
+
+1. Express the negation of the propositions using quantifiers:
+
+
+   1. $\forall x(x > 1)$
+
+      Solution: $\exists x(x \leq 1)$
+
+   2. $\forall x ((x < -1) \lor (x > 2))$
+
+      Solution: $\exists x (( x \ge -1) \land (x \le 2))$
 
 
 * Set Theory

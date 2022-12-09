@@ -4,3 +4,217 @@
 #+title: Introduction to Business Management - Final
 
 # [2022-12-04 Sunday - 10:21]:	Start studying Business Management
+# introduction phase of a new productintroduction phase of a new product
+# What is necessary to have a solid strategy: 1. how to generate profit 2. next steps 3. what makes us different 4. where do we want to be 5. how do we get where we need
+
+* History of Business
+** Pre Industrial
+During this time, most business was dependent on transport by sea or land. With the rise of the industrial revolution, came an increase in manufacturing. This prompted the introduction of *bonds* and *trusts*. Bonds made trading much easier and more efficient. Trusts were a way to pool money together to invest in a business. This allowed for more people to invest in a business and made it easier to raise capital. This also allowed for the creation of *stock exchanges*.
+
+As the world grew in complexity, a demand for managers arose. This led to the creation of *management schools*.
+** Basic Concepts of Business
+The foundation of conducting business is *supply and demand*. Business can be conducted in various markets, some of which include:
++ Monopoly :: This is a kind of market with a single seller.
++ Oligopoly :: In this market, there are a few sellers.
++ Monopolistic Competition :: Here there are many unique sellers.
++ Perfect Competition :: This is a market with many sellers, all of which sell identical products.
+* Demand Curve
+
+For an increase in price, there will be an increase in quantity. The key definition here is that the *demand implies an indirect relationship between price and quantity*.
+
+[[./DemandCurve.png]]
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+What might cause the demand curve to shift? There are a few things that can cause the demand curve to shift. These include:
++ Change in the in come of the consumer
++ Change in the price of related goods
+
+However, there is an exception for inferior goods. For inferior goods, a decrease in income will cause an increase in demand. This is because the consumer will be more likely to purchase the inferior good.
+
+* Supply Curve
+Inverse to the demand curve, the supply curve implies a direct relationship between price and quantity. For an increase in price, there will be a decrease in quantity. What might cause the supply curve to shift? There are a few things that can cause the supply curve to shift. These include:
++ Change in COP - New technology
++ Change in the price of related goods
++ Change in the price resources
+
+* Equilibrium
+This is the intersection of the *supply* and *demand* curves. This is the point where the quantity demanded is equal to the quantity supplied. This is the point where the price is at its lowest and the quantity is at its highest. This is the point where the market is most efficient.
+
+If at any point the price is above the equilibrium, there is surplus in the market, and vice versa, there is a shortage in the market.
+
+* Economic Theories and Business
+The study of economics is the study of how people make decisions. There are two main theories of economics: *classical* and *keynesian*.
+
+** Classical Economics
+This theory is based on the idea that the market is self-regulating. The man behind this theory is Adam Smith.
+
+As the 1929 depression struck, it was clear that the classical theory was not working. This led to the creation of the *keynesian* theory.
+
+** Keynesian Economics
+This theory relies on the fact that the government should interfere in the market in order to regulate it.
+
+* Market Structures
+There are four main market structures: *monopoly*, *oligopoly*, *monopolistic competition*, and *perfect competition*.
+
+
+#+DOWNLOADED: screenshot @ 2022-12-08 16:00:02
+[[file:Market_Structures/2022-12-08_16-00-02_screenshot.png]]
+
+
+* Competitive Strategy
+** Industry Evolution
+Evolution of an industry is a result of innovation. The three key stages are: Variation, Selection, and Retention.
++ Variation :: In this stage, a new product is created.
++ Selection :: Now the product is tested (in the market) to see if it is successful.
++ Retenation :: At this point, the new product that has been tested is being sold on the market.
+
+** Disruption
+Disruption comes when a new technology is introduced. This technology should be something which creates more value for the customer. This change causes a drastic shift in the market. This is not only the result of innovative disruption, it could also be a *change in leadership*. It could also be a change in the *architecture of a business*.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
++ How do we disrupt :: We combine similar elements in a different way and *introduce new* elements.
+
+*Incumbents* are firms who ignore the disruption and continue to do business as usual. *Disruptors* are firms who take advantage of the disruption and change their business model.
+** Strategy
+Strategy is about winning in the market. The goal of a successful strategy is to create a *sustainable competitive advantage*. This means that we are able to grow more than our competitors. This is done by creating a *unique value proposition*.
+
+We will also look at the *blue ocean strategy*.
+
+Strategy can be done on *two levels*:
+1. Corporate Level Strategy :: Here we decide in which markets we want to compete. How we want to diversify, integrate and expand.
+2. Business Level Strategy :: Here we decide how we want to compete in the market. We strive to find the *competitive advantage*.
+
+
+
+
+** Economic Logic
+The economic logic is the *value proposition* of the business. This is the value that the business creates for the customer. This is the value that the customer is willing to pay for. This is the value that the business is able to capture.
+
+This is a way of providing that *unique value proposition*. It focuses on *four key elements*:
+1. Phases :: How do we plan our the project? What are the phases of the project?
+2. Places :: Where will we sell? Who will we sell to?
+3. Differentiators :: What makes us different? What is our competitive advantage?
+4. Vehicles :: How will we get to where we need to be?
+
+** Strategy Archetypes
+There are four main strategy archetypes: *cost leadership*, *differentiation*, *focus*. and *stuck in the middle*. These are based on the *economic logic*. The *cost leadership* strategy is based on the *lowest cost*. The *differentiation* strategy is based on *unique value proposition*. The *focus* strategy is based on *specialization*. The *stuck in the middle* strategy is based on *average cost*.
++ Cost Leadership :: Our goal here is to minimize our costs. We can achieve this by *economies of scale, economies of learning, production techniques, material costs, utilizing capital, efficiency*.
+  # This is a strategy where we are able to create the lowest cost. This is done by *operational excellence*. This is a *low cost* strategy.
++ Differentiation :: We want to create a *unique value proposition*. We can differentiate by having more *attractive cost leadership*, this means we price our product lower than our competitors. Some more sources of differentiation are: *product performance, complementary services, company procedures, localization, vertical integration*.
+  # Our goal here is to create a unique value proposition. We can achieve this by *product innovation, service innovation, brand innovation, distribution innovation, customer innovation*.
++ Focus :: We want to find a very specific market.
+  # We want to *specialize* in a specific market. We can achieve this by *vertical integration, economies of scale, economies of learning, production techniques, material costs, utilizing capital, efficiency*.
+
+** Strategy Formulation
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+There are three main steps in strategy formulation:
+
+
+#+DOWNLOADED: screenshot @ 2022-12-09 13:46:59
+[[file:Competitive_Strategy/2022-12-09_13-46-59_screenshot.png]]
+
+
+
+
+* Business Analysis Tools
+** SWOT Analysis
+This is a tool which we can use to analyze a company. It relies on *four key elements*: *strengths*, *weaknesses*, *opportunities*, and *threats*.
+
+It is usually done by looking at the *internal* and *external* environment of the company and analyzing the *negative* and *positive* parts. Here is the SWOT matrix:
+
+|          | Internal Factors | External Factors |
+|----------+------------------+------------------|
+| *Positive* | Strengths        | Opportunities    |
+| *Negative* | Weaknesses       | Threats          |
+
+** Porter's Five Forces
+
+#+DOWNLOADED: https://learnbusinessconcepts.com/wp-content/uploads/2020/06/Post-3-Porters-Five-Forces.png @ 2022-12-09 14:00:07
+[[file:Business_Analysis_Tools/2022-12-09_14-00-07_Post-3-Porters-Five-Forces.png]]
+
+
+
+
+
+
+
+
+
+** MOST Analysis
+* Creation
+** Value Chain
+** Porter's Framework
+** Enterprise Resource Planning
+* Business Growth
+** Product Life Cycle
+** Ansoff Matrix
+** Vertical & Horizontal Integrations
+** Make or Buy
+** Economies of Scale
+* Business Models
+** B2B
+** B2C
+** C2C
+* Business Decision Making
+** Data Driven
+** Balanced Scorecards
+* Strategy Implementation
+** Organization
+** Processes
+** People
+** Culture
+* Organizational Structure and Design
+** Formal & Informal Structures
+** Approaches
+*** Functional
+*** Divisional
+*** Matrix
+** Team & Networking
+* Cultural Management
+** Cultural Dimension Models
+* Corporate Governance
+** The C-Suite
+** The Board
+** The Shareholders
+** Public & Private Enterprises
+* RDI
+** Objectives
+** Structure
+** Roles
+* Finance
+** Objectives
+** Structure
+** Roles
+* Legal
+** Objectives
+** Structure
+** Roles
+* Sales & Marketing
+** Objectives
+** Structure
+** Roles
+* IT Department
+** Objectives
+** Structure
+* Production Operations
+** Objectives
+** Structure
+* Human Resources
+** Objectives
+** Structure
+** Roles
+* Scalability & Growth
+** Key Difference
+** International Strategies
+** Asset Heavy & Asset Light
+** SASS Scaling
+* Glocal Companies
+** Local + Global
+** Act Global
+** Think Global
+* Adaptation
+** What to do?
+* Internalization
+** Market Research
+** Commercial Missions
+** Partnerships
