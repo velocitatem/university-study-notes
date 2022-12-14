@@ -1,4 +1,4 @@
-% Created 2022-12-06 Tue 13:52
+% Created 2022-12-10 Sat 11:43
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -25,11 +25,14 @@
 \begin{document}
 
 \maketitle
+\setcounter{tocdepth}{2}
 \tableofcontents
 
 
+
+
 \section{Domains}
-\label{sec:orgad83699}
+\label{sec:org7b5b900}
 \begin{description}
 \item[{Naturals \(\mathbb{N}\)}] \([1,2,3,\ldots,\infty)\)
 \item[{Integers \(\mathbb{Z}\)}] \((-\infty,\ldots,-2,0,2,\ldots,\infty)\)
@@ -38,7 +41,7 @@
 \item[{Complex \$\mathbb{C}}] All complex numbers
 \end{description}
 \section{Terminology}
-\label{sec:org55ee601}
+\label{sec:orgf584ba4}
 \begin{description}
 \item[{Theorem}] A statement we can prove using some axioms
 \item[{Proof}] A valid argument/set of arguments that demonstrate a theorem/proposition
@@ -46,7 +49,7 @@
 \item[{Lemma}] A small proof that is an element of another larger proof
 \end{description}
 \section{Propositional Logic}
-\label{sec:org645862d}
+\label{sec:org2971812}
 A proposition, is a sentence, which can be given some \textbf{truth value}.
 There are two types of propositions:
 \begin{description}
@@ -54,31 +57,31 @@ There are two types of propositions:
 \item[{Contradiction}] A proposition that will never be true (\(\bot\))
 \end{description}
 \subsection{Operators}
-\label{sec:org02873c8}
+\label{sec:org3154298}
 There are three main operators which can be used to express any logical expression. These consists of \textbf{Not, Conjunction, Disjunction}.
 \subsubsection{Not}
-\label{sec:org25f71ea}
+\label{sec:orgf190e6a}
 It flips the truth value of a proposition.
 
 \[
 \neg p, \bar{A}
 \]
 \subsubsection{Conjunction}
-\label{sec:orgb0c9128}
+\label{sec:org7864529}
 This operators returns a new truth value which is true \textbf{if both of the propositions are true}
 
 \[
 p \land q, AB
 \]
 \subsubsection{Disjunction}
-\label{sec:orgb26a39b}
+\label{sec:orgcac3798}
 Like the conjunction, it operates on two propositions. It will return true as long as either of the propositions is true.
 
 \[
 p \lor q, A+B
 \]
 \subsubsection{Exclusive OR (XOR)}
-\label{sec:org7b77f36}
+\label{sec:org4fd5d08}
 It is very similar to the \textbf{Disjunction} except that it must be exclusively one value that is true.
 
 \[
@@ -86,7 +89,7 @@ p \oplus q = (p \lor q) \land \neg(p \land q)
 \]
 
 \subsubsection{Conditional Statements / Implication}
-\label{sec:org70f1a83}
+\label{sec:org7870440}
 A conditional statement consists of two parts, the \textbf{premise} and \textbf{consequence}. The truth value is \textbf{only false when \(T \to F\)}.
 
 \[
@@ -109,7 +112,7 @@ p \to q \equiv \neg p \lor q
 \]
 
 \subsubsection{Bi-conditionals}
-\label{sec:org7055253}
+\label{sec:orgff9ef26}
 It expressed a \textbf{sufficient} and \textbf{necessary} conditional relationship between two propositions. It is read as \emph{if and only if p, then q}.
 
 \[
@@ -127,7 +130,7 @@ p \equiv q = \neg (p \oplus q)
 \]
 
 \subsubsection{Order of Operators}
-\label{sec:orgf67d995}
+\label{sec:orgd68dfd2}
 \begin{enumerate}
 \item \(\neg\)
 \item \(\land\)
@@ -137,14 +140,14 @@ p \equiv q = \neg (p \oplus q)
 \end{enumerate}
 
 \subsection{DeMorgan's Laws}
-\label{sec:org284aaa4}
+\label{sec:org55a97fc}
 \begin{align}
 \neg (p \land q) \equiv \neg p \lor \neg q \\
 \neg (p \lor q) \equiv \neg p \land q
 \end{align}
 
 \subsection{Fallacies}
-\label{sec:orgdd1777c}
+\label{sec:org7c58c46}
 The fallacies stem from the fact that an implication is true, and the truth value of either \(p,q\).
 \begin{description}
 \item[{Affirming the consequent}] \(((p \to q) \land q) \to p\). We falsely assume that the premise is \textbf{true} because the consequence is \textbf{true}
@@ -152,7 +155,7 @@ The fallacies stem from the fact that an implication is true, and the truth valu
 \end{description}
 
 \subsection{Converse, Contrapositive, Inverse}
-\label{sec:org32e7bf7}
+\label{sec:org3739445}
 \begin{description}
 \item[{Converse}] \(q \to p\)
 \item[{Contrapositive}] \(\neg q \to \neg p\)
@@ -161,14 +164,14 @@ The fallacies stem from the fact that an implication is true, and the truth valu
 
 The fallacies are a product of assuming that the \textbf{Converse and Inverse} are equivalent to the conditional statement.
 \subsection{Disjunctive Normal Form}
-\label{sec:org7b0dfc4}
+\label{sec:org5490d3f}
 This is a proposition created from the values in the truth table.
 
 \subsection{Logical Equivalences}
-\label{sec:org888a448}
+\label{sec:org8067ec4}
 These are various way you can arrive at some conclusion given a few basic propositions.
 \subsubsection{Identity Laws}
-\label{sec:org17e628d}
+\label{sec:org714fea5}
 \[
 p \land \top \equiv p
 \]
@@ -177,7 +180,7 @@ p \land \top \equiv p
 p \lor \bot \equiv p
 \]
 \subsubsection{Denomination Laws}
-\label{sec:org8e6edb1}
+\label{sec:orgaf01463}
 \[
 p \lor \top \equiv \top
 \]
@@ -186,7 +189,7 @@ p \lor \top \equiv \top
 p \land \bot \equiv \bot
 \]
 \subsubsection{Idempotent Laws}
-\label{sec:org805a65b}
+\label{sec:org9f01ea5}
 \[
 p \lor p \equiv p
 \]
@@ -195,12 +198,12 @@ p \lor p \equiv p
 p \land p \equiv p
 \]
 \subsubsection{Double Negation Law}
-\label{sec:org305efcf}
+\label{sec:org80e86fc}
 \[
 \neg ( \neg p) \equiv p
 \]
 \subsubsection{Commutative Laws}
-\label{sec:org3f6b4c2}
+\label{sec:org84ea1dd}
 \[
 p \lor q \equiv q \lor p
 \]
@@ -209,7 +212,7 @@ p \lor q \equiv q \lor p
 p \land q \equiv q \land p
 \]
 \subsubsection{Associative Laws}
-\label{sec:org76a20db}
+\label{sec:org1514741}
 \[
 (p \lor q) \lor r \equiv p \lor (q \lor r)
 \]
@@ -218,7 +221,7 @@ p \land q \equiv q \land p
 (p \land q) \land r \equiv p \land (q \land r)
 \]
 \subsubsection{Distributive Laws}
-\label{sec:org3890aab}
+\label{sec:org29c8fe4}
 \[
 p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)
 \]
@@ -226,10 +229,10 @@ p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)
 \[
 p \land (q \lor r) \equiv (p \land q) \lor (p \land r)
 \]
-\subsubsection{\ref{sec:org284aaa4}}
-\label{sec:org074dc9c}
+\subsubsection{\ref{sec:org55a97fc}}
+\label{sec:org4cadf10}
 \subsubsection{Absorption Laws}
-\label{sec:org75aad49}
+\label{sec:orgaf8e2c4}
 \[
 p \lor (p \land q) \equiv p
 \]
@@ -238,7 +241,7 @@ p \lor (p \land q) \equiv p
 p \land (p \lor q) \equiv p
 \]
 \subsubsection{Negation Laws}
-\label{sec:org184d6cc}
+\label{sec:org54b5b71}
 \[
 p \lor \neg p \equiv \top
 \]
@@ -247,14 +250,324 @@ p \lor \neg p \equiv \top
 p \land \neg p \equiv \bot
 \]
 \subsection{Satisfiability}
-\label{sec:orgb17327a}
+\label{sec:org1973582}
 A proposition is satisfiable if it has at least one case for which it is \textbf{true}, it is anything but a \textbf{contradiction}.
+\subsection{Practice Problems}
+\label{sec:orgab97247}
+For the following, create a truth table and a DNF for each (a DNF is a proposition created from the values in the truth table)
+\begin{enumerate}
+\item \(p \lor \neg p\)
+
+Truth Table:
+
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \lor \neg p \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+\end{array}
+
+DNF:
+
+\[
+    p \lor \neg p = \top
+    \]
+
+\item \(p \land \neg p\)
+
+Truth Table:
+
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \land \neg p \\
+\hline
+T & F & F \\
+\hline
+F & T & F \\
+\hline
+\end{array}
+
+DNF:
+
+\[
+    p \land \neg p = \bot
+    \]
+\item \(p \lor (p \land q)\)
+
+Truth Table:
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \lor (p \land q) \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & F \\
+\hline
+F & F & F \\
+\hline
+\end{array}
+
+DNF:
+
+\[
+    p \lor (p \land q) = p
+    \]
+\item \(p \land (p \lor q)\)
+
+Truth Table:
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \land (p \lor q) \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & F \\
+\hline
+F & F & F \\
+\hline
+\end{array}
+
+DNF:
+
+\[
+    p \land (p \lor q) = p
+    \]
+\end{enumerate}
+
+Now for implications:
+\begin{enumerate}
+\item \(p \to q\)
+
+Truth Table:
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to q \\
+\hline
+T & T & T \\
+\hline
+T & F & F \\
+\hline
+F & T & T \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+DNF:
+
+\[
+    p \to q = \neg p \lor q
+    \]
+\item \(p \to \neg q\)
+
+Truth Table:
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to \neg q \\
+\hline
+T & T & F \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+DNF:
+
+\[
+    p \to \neg q = \neg p \lor \neg q
+    \]
+\item \((\neg p) \to q\)
+
+Truth Table:
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & (\neg p) \to q \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+F & F & F \\
+\hline
+\end{array}
+
+DNF:
+
+\[
+    (\neg p) \to q = p \lor q
+    \]
+\item \(\neg p \to \neg q\)
+
+Truth Table:
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & \neg p \to \neg q \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & F \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+DNF:
+
+\[
+    \neg p \to \neg q = p \lor \neg q
+    \]
+\end{enumerate}
+
+Prove the following:
+\begin{enumerate}
+\item \(p \to q \equiv \neg p \lor q\)
+
+Proof:
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to q & \neg p \lor q \\
+\hline
+T & T & T & T \\
+\hline
+T & F & F & F \\
+\hline
+F & T & T & T \\
+\hline
+F & F & T & T \\
+\hline
+\end{array}
+
+Therefore \(p \to q \equiv \neg p \lor q\) is true.
+
+\item \(p \to q \equiv \neg q \to \neg p\)
+
+Proof:
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to q & \neg q \to \neg p \\
+\hline
+T & T & T & T \\
+\hline
+T & F & F & F \\
+\hline
+F & T & T & T \\
+\hline
+F & F & T & T \\
+\hline
+\end{array}
+
+Therefore \(p \to q \equiv \neg q \to \neg p\) is true.
+\end{enumerate}
+
+Which of the following are satisfiable:
+\begin{enumerate}
+\item \(p \land \neg p\)
+
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \land \neg p \\
+\hline
+T & F & F \\
+\hline
+F & T & F \\
+\hline
+\end{array}
+
+Therefore \(p \land \neg p\) is unsatisfiable.
+\item \(p \lor \neg p\)
+
+\begin{array}{|c|c|c|}
+\hline
+p & \neg p & p \lor \neg p \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+\end{array}
+
+Therefore \(p \lor \neg p\) is satisfiable.
+\item \(p \to q\)
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to q \\
+\hline
+T & T & T \\
+\hline
+T & F & F \\
+\hline
+F & T & T \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+Therefore \(p \to q\) is satisfiable.
+\item \(p \to \neg q\)
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & p \to \neg q \\
+\hline
+T & T & F \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+F & F & T \\
+\hline
+\end{array}
+
+Therefore \(p \to \neg q\) is satisfiable.
+\item \(\neg p \to q\)
+
+\begin{array}{|c|c|c|}
+\hline
+p & q & \neg p \to q \\
+\hline
+T & T & T \\
+\hline
+T & F & T \\
+\hline
+F & T & T \\
+\hline
+F & F & F \\
+\hline
+\end{array}
+
+Therefore \(\neg p \to q\) is satisfiable.
+\end{enumerate}
+
 \section{Predicate Logic}
-\label{sec:org06f3678}
+\label{sec:orgc6379fa}
 With predicate logic, we can break down a complex proposition into predicates and quantifiers.
 
 \subsection{Predicates}
-\label{sec:org2f0c7bc}
+\label{sec:orgac11690}
 It is a statement, which is made up of a proposition, with the only difference being that it can take a parameter.
 
 \begin{array}{l}
@@ -276,11 +589,11 @@ P(a_1, a_2, a_3, \ldots, a_n) \equiv p
 \]
 
 \subsection{Quantifiers}
-\label{sec:org86b7d45}
+\label{sec:org5f099a8}
 With a quantifier, we can specify for which values on a certain domain, a predicate is true of false. There are various ways to express this: (\textbf{for all}, \textbf{for many}, \textbf{for at least one}, \textbf{for none}).
 
 \subsection{Universal Quantifier}
-\label{sec:org557b90d}
+\label{sec:org689ca38}
 If we have some predicate for which we can say that all the possible values in a certain domain will make it true, we use the universal quantifier.
 
 \begin{array}{c}
@@ -295,7 +608,7 @@ P(x) \text{ for all value of x within its domain} \\
 \end{itemize}
 
 \subsection{Existential Quantifier}
-\label{sec:orgb812da4}
+\label{sec:org03a6e55}
 \begin{array}{c}
 P(x) \text{ for at least one value of x within its domain} \\
 \exists x P(x)
@@ -308,7 +621,7 @@ P(x) \text{ for at least one value of x within its domain} \\
 \end{itemize}
 
 \subsection{Singular Existential Quantifier}
-\label{sec:org74457f2}
+\label{sec:org5dd2276}
 We can also use the existential quantifier, and with a bit of modification we can use it to specify how many values will satisfy the predict.
 
 \begin{array}{c}
@@ -329,7 +642,7 @@ We can generalize this to a specific number \(n\) for which the predicate is sat
 \]
 
 \subsection{Negation}
-\label{sec:org11ca087}
+\label{sec:org1f16761}
 When negating a quantifier, we have to consider both the outside and inside, that being \textbf{the quantifier itself} and the \textbf{predicate}.
 
 \[
@@ -341,16 +654,45 @@ When negating a quantifier, we have to consider both the outside and inside, tha
 \]
 
 \subsection{Nesting}
-\label{sec:org708e48a}
+\label{sec:org01dface}
 If we have more than one variable for which we quantify a predicate, we have to \textbf{consider the order}.
 
 \[
 \exists x \forall y P(x,y) \not \equiv \forall y \exists x P(x,y)
 \]
 
+\subsection{Practice Problems}
+\label{sec:orgd3e4854}
+Evaluate the following:
+\begin{enumerate}
+\item \(\forall x \exists y P(x,y)\) where \(P(x,y) = x > y\)
+
+This quantifier is true, because for any value of \(x\), there will always be a value of \(y\) that will satisfy the predicate.
+\item \(\exists x \forall y P(x,y)\) where \(P(x,y) = x > y\)
+
+This quantifier is false, because there will always be a value of \(x\) for which there will not be a value of \(y\) that will satisfy the predicate.
+\item \(\forall x \exists y P(x,y)\) where \(P(x,y) = x < y\)
+
+This quantifier is true, because for any value of \(x\), there will always be a value of \(y\) that will satisfy the predicate. This because no matter the value of \(x\), there will always be a value of \(y\) that will be greater than \(x\).
+\end{enumerate}
+
+Prove the following:
+\begin{enumerate}
+\item \(\forall x \exists y P(x,y) \equiv \exists y \forall x P(x,y)\)
+\end{enumerate}
+
+Nested quantifiers:
+\begin{enumerate}
+\item \(\exists x \forall y \exists z P(x,y,z)\) where \(P(x,y,z) = x > y \land y > z\)
+\end{enumerate}
+
+Negating quantifiers:
+\begin{enumerate}
+\item \(\neg \forall x \exists y P(x,y)\) where \(P(x,y) = x > y\)
+\end{enumerate}
 
 \section{Inference}
-\label{sec:org29db4fc}
+\label{sec:org3687601}
 A process of arriving at some conclusion through logical steps. This process consists of \textbf{arguments} which can either be valid or not. The logical form of an argument is vital, because it is the only way to determine if it is true or not.
 
 \begin{array}{r}
@@ -361,14 +703,13 @@ p \to q \\ p
 \end{array}
 
 
-It is another thing to call an argument \textbf{sound}, for this we need to have an argument for which \textbf{all premises are true and valid}. \textbf{A valid argument implies a tautology}.
-
+It is another thing to call an argument \textbf{sound}, for this we need to have an argument for which \textbf{all premises are true and valid}. \textbf{A valid argument implies a tautology}. How can we tell if an argument is valid? We can use the \textbf{truth table}. Another way to determine if an argument is valid is to see if it makes use of any \textbf{existing argument forms}.
 
 \subsection{Rules of Inference}
-\label{sec:orga8fd1c9}
+\label{sec:org77e60f1}
 An argument form which would generate a valid implication falls under the rules of inference
 \subsubsection{Modus Ponens}
-\label{sec:orgabc1068}
+\label{sec:org7b8e6d4}
 
 \begin{array}{r}
 p \\
@@ -385,7 +726,7 @@ q
 \item Therefore q is true
 \end{enumerate}
 \subsubsection{Modus Tollens}
-\label{sec:org775239d}
+\label{sec:org3a78aa0}
 
 
 \begin{array}{r}
@@ -397,7 +738,7 @@ p \to q
 \end{array}
 
 \subsubsection{Hypothetical Syllogism}
-\label{sec:org8888d9c}
+\label{sec:org1c8a2f6}
 
 \begin{array}{r}
 p \to q \\
@@ -408,7 +749,7 @@ p \to r
 \end{array}
 
 \subsubsection{Disjunctive Syllogism}
-\label{sec:org1174050}
+\label{sec:orgdf3788a}
 
 \begin{array}{r}
 p \lor q \\
@@ -419,7 +760,7 @@ q
 \end{array}
 
 \subsubsection{Addition}
-\label{sec:orgc41e864}
+\label{sec:orgfb64f32}
 
 \begin{array}{r}
 p
@@ -429,7 +770,7 @@ p \lor q
 \end{array}
 
 \subsubsection{Simplification}
-\label{sec:org58c8e3b}
+\label{sec:org284a162}
 
 \begin{array}{r}
 p \land q
@@ -439,7 +780,7 @@ p
 \end{array}
 
 \subsubsection{Conjunction}
-\label{sec:org26be94d}
+\label{sec:org38f4167}
 
 \begin{array}{r}
 p \\ q
@@ -449,7 +790,7 @@ p \land q
 \end{array}
 
 \subsubsection{Resolution}
-\label{sec:org5a50e6e}
+\label{sec:org1600aad}
 
 \begin{array}{r}
 p \lor q \\
@@ -460,9 +801,9 @@ p \lor q \\
 \end{array}
 
 \subsection{Rules of Inference for Quantified Propositions}
-\label{sec:org43689ea}
+\label{sec:orgc465c0d}
 \subsubsection{Universal Instantiation}
-\label{sec:orgb1b223e}
+\label{sec:org2074e16}
 \begin{array}{r}
 \forall x P(x)
 \\
@@ -471,7 +812,7 @@ p \lor q \\
 \end{array}
 
 \subsubsection{Universal Generalization}
-\label{sec:org952a7db}
+\label{sec:org324f934}
 \begin{array}{r}
 P(c) \text{ for an arbitrary c}
 \\
@@ -480,7 +821,7 @@ P(c) \text{ for an arbitrary c}
 \end{array}
 
 \subsubsection{Existential Instantiation}
-\label{sec:orga8da559}
+\label{sec:org02d9b51}
 \begin{array}{r}
 \exists x P(x)
 \\
@@ -489,15 +830,83 @@ P(c) \text{ for an arbitrary c}
 \end{array}
 
 \subsubsection{Existential Generalization}
-\label{sec:org8cda54e}
+\label{sec:org15609e9}
 \begin{array}{r}
 P(c) \text{ for an arbitrary c} \\
 \hline
 \therefore \exists x P(x)
 \end{array}
 
+\subsection{Practice Problems}
+\label{sec:org784b60f}
+Use the rules of inference to prove the following:
+\begin{enumerate}
+\item \(\neg (p \lor q) \to \neg p \land \neg q\)
+
+\begin{array}{r}
+\neg (p \lor q) \\
+p \lor q
+\\
+\hline
+\therefore \neg p \land \neg q
+\end{array}
+
+The rules of inference used are Modus Tollens and Disjunctive Syllogism.
+\item \(\neg (p \land q) \to \neg p \lor \neg q\)
+
+\begin{array}{r}
+\neg (p \land q) \\
+p \land q
+\\
+\hline
+\therefore \neg p \lor \neg q
+\end{array}
+
+The rules of inference used are Modus Tollens and Conjunction.
+\end{enumerate}
+
+Prove the following using the rules of inference for quantified propositions:
+\begin{enumerate}
+\item \(\forall x P(x) \to P(c)\) where \(P(x) = x > 0\)
+
+\begin{array}{r}
+\forall x P(x) \\
+P(c)
+\\
+\hline
+\therefore P(c)
+\end{array}
+
+The rules of inference used are Universal Instantiation.
+
+\item \(\exists x P(x) \to P(c)\) where \(P(x) = x > 0\)
+
+\begin{array}{r}
+\exists x P(x) \\
+P(c)
+\\
+\hline
+\therefore P(c)
+\end{array}
+
+The rules of inference used are Existential Instantiation.
+\end{enumerate}
+
+Turn the following phrases into logical statements using the rules of inference for quantified propositions:
+\begin{enumerate}
+\item For all \(x\), \(x > 0\)
+
+\(\forall x (x > 0)\)
+\item There exists \(x\) such that \(x > 0\)
+
+\(\exists x (x > 0)\)
+\item There exists \(x\) such that \(x > 0\) and \(x < 10\)
+
+\(\exists x (x > 0 \land x < 10)\)
+\end{enumerate}
+
 \section{Formal Proofs}
-\label{sec:orge536877}
+\label{sec:org570b4e6}
 This kind of proof is made up of statements which we can infer from previous statements. This we can construct using a table in which we state the logical expression and how we got to it.
 
 \begin{align}
@@ -509,19 +918,16 @@ r \to t & \quad \text{Premise} \\
 \neg p & \quad \text{Simplification of 5}
 \end{align}
 
-
 \section{Informal Proofs}
-\label{sec:orgec3447e}
+\label{sec:orgf3b7432}
 Because a formal proof can get convoluted, we use informal proofs. The main difference here is that we don't need to provide a step-by-step description of how the proof works; we just show how the conclusion is true by describing a few intermediate steps between the theorem and the corollary. (These are called \textbf{premises} and \textbf{conclusions} in logic.)
-
 There are various methods of proof we can use. The two primary categories for these proofs are \textbf{direct} and \textbf{indirect}.
 
-
 \subsection{Methods of Proof}
-\label{sec:orgd7f250d}
+\label{sec:org05f992f}
 Upon deciding which axioms to use, you then need to use some method of proof. The most common statements we will be proving are implications.
 \subsubsection{Direct Proof}
-\label{sec:org744f52c}
+\label{sec:org4d5c5ad}
 We want to prove \textbf{"If p, then q}". This is done by assuming that the \textbf{premise} is true and then proving that the consequence is also true.
 
 \begin{enumerate}
@@ -529,7 +935,7 @@ We want to prove \textbf{"If p, then q}". This is done by assuming that the \tex
 \item By applying the laws of inference, we deduce \(q\) from \(p\).
 \end{enumerate}
 \subsubsection{Indirect: Proof by Contraposition}
-\label{sec:orgb84564d}
+\label{sec:org4a2fe31}
 If we cannot arrive to the consequence using just the premise, we can use contraposition, which states that \((p \to q) \equiv (\neg q \to \neg p)\).
 
 \begin{enumerate}
@@ -539,7 +945,7 @@ If we cannot arrive to the consequence using just the premise, we can use contra
 \end{enumerate}
 
 \subsubsection{Indirect: Vacuous and Trivial proofs}
-\label{sec:org7db5df7}
+\label{sec:orgf8b3699}
 If we are saying that \(p \to q\) is \textbf{True}, we can assume that:
 \begin{enumerate}
 \item \(p\) is False (Vacuous proof)
@@ -549,14 +955,14 @@ If we are saying that \(p \to q\) is \textbf{True}, we can assume that:
 It is enough to prove just one of these (as long as we do not accept the premise being True) we can prove the condition to be True.
 \begin{enumerate}
 \item Example
-\label{sec:orgc924fd8}
+\label{sec:org2d59bdd}
 If \(n\) is an integer and an even number, then \(2n\) must be an integer.
 \begin{description}
 \item[{Solution}] Since an integer multiplied by another integer will also be an integer, we can say that \(q\) will be true. This is enough to prove that \(p \to q\) is also True.
 \end{description}
 \end{enumerate}
 \subsubsection{Indirect: Proof by Contradiction}
-\label{sec:org6c10e9d}
+\label{sec:org1a78359}
 This can be used to demonstrate any statement \(p\). We say that \(\neg p\) implies a contradiction. A nicer way to think about this is by the following:
 
 \[
@@ -571,7 +977,7 @@ If we should use proof by contradiction on an implication, we must prove that \(
 
 \begin{enumerate}
 \item Example
-\label{sec:org7dd3e83}
+\label{sec:org275eb51}
 Show that \(\sqrt{2}\) is an irrational number.
 
 \begin{description}
@@ -579,7 +985,7 @@ Show that \(\sqrt{2}\) is an irrational number.
 \end{description}
 \end{enumerate}
 \subsubsection{Proof by Cases}
-\label{sec:org65a3c1c}
+\label{sec:org0c126ed}
 This is a proof which can be used a used as a part of another proof when proving implications. If we have an implication where the premise consists of disjunctions, we can apply the following:
 
 \begin{align}
@@ -589,43 +995,278 @@ This is a proof which can be used a used as a part of another proof when proving
 
 This proof is very helpful when we want to prove that a condition is satisfiable for a group of elements.
 
+We can also use proof by cases for absolute values. If we have \(|x| = y\), we can say that \(x = y\) or \(x = -y\). This is because \(|x|\) is the distance from \(x\) to \(0\).
+
 \begin{enumerate}
 \item Example
-\label{sec:org4042724}
+\label{sec:orgc6bad79}
 Prove that if \(n\) is not a multiple of 3, \(2n\) is not a multiple of 3.
 \begin{description}
 \item[{Solution}] To define a value as not a multiple of 3, we have two formulas \(n = 3k + 1 \quad n = 3k + 2\). We can reformulate the proposition by saying \((n = 3k+1) \lor (n = 3k^\prime) \to \neg (2n = 3k^{\prime\prime})\). We then have to show that both cases imply the consequence.
 \end{description}
 \end{enumerate}
+
+
 \subsubsection{Equivalence Proof}
-\label{sec:orgd985d40}
+\label{sec:orgc00ea8f}
 As previously mentioned \(p \leftrightarrow q = p \equiv q\), so if we want to prove some equivalence, we can use \((p \to q) \land (q \to p)\).
 \subsubsection{Existential Statements Proof}
-\label{sec:org0da4a04}
+\label{sec:org1088e8e}
 We have two strategies for this.
 \begin{description}
 \item[{Constructive Proof}] We show an example that verifies a predicate and apply existential generalization to prove the proposition.
 \item[{Non Constructive Proof}] We show that there exists an element which validates the predicate but we dont specify which one. This is most commonly proof by contradiction.
 \end{description}
 \subsubsection{Universal Statements Proof}
-\label{sec:orgd06713d}
+\label{sec:orgc1b3e54}
 \begin{description}
 \item[{Proving}] We show that a predicate holds for an arbitrary value and then apply universal generalization.
 \item[{Counterexamples}] To disprove a universal statement we need to find a counterexample. This action is a process of negation, making the US an ES.
 \end{description}
 \subsubsection{Strategy for Proofs}
-\label{sec:orgd0a2692}
+\label{sec:org1616cee}
 So should you use? It comes down to trial and error, but also practice and intuition.
 \begin{description}
 \item[{Trial and error}] If direct proof doesnt work, try indirect lol.
 \item[{Complex propositions}] If there are complex propositions in an implication, they quite possibly can be negated, allowing use to use an \textbf{indirect method}.
 \item[{Using proof by contradiction with conditional statements}] We show that \(\neg (p \to q)\) implies \(\bot\).
 \end{description}
+\section{Proofs Practice Problems}
+\label{sec:orgab040e7}
+\begin{enumerate}
+\item Prove that if \(n\) is an integer, then \(n^2\) is an integer.
+
+To prove this we need to show that \(p \to q\) is true. We can assume that \(p\) is true and then show that \(q\) is also true. We can do this by applying the laws of inference. We can say that \(n^2 = (n+1)(n-1)\), which is an integer. This is enough to prove that \(p \to q\) is true.
+
+\item Prove that if \(n\) is an integer, then \(n^2\) is even.
+
+This is not true. It is not necessary for \(n^2\) to be even. We can show this by taking \(n = 3\). This would mean that \(n^2 = 9\) which is odd.
+
+\item Define (using truth tables) the disjunction, conjunction, exclusive or, conditional, and biconditional of the propositions p and q:
+
+Truth Table for Disjunction and Conjunction and Exclusive Or:
+
+\begin{array}
+ \hline
+ p & q & p \lor q & p \land q & p \oplus q \\
+ \hline
+ T & T & T & T & F \\
+ T & F & T & F & T \\
+ F & T & T & F & T \\
+ F & F & F & F & F \\
+ \hline
+ \end{array}
+
+Truth Table for Conditional and Biconditional:
+
+\begin{array}
+\hline
+p & q & p \to q & p \leftrightarrow q \\
+\hline
+T & T & T & T \\
+T & F & F & F \\
+F & T & T & F \\
+F & F & T & T \\
+\hline
+\end{array}
+
+\item Give a direct proof, a proof by contraposition, and a proof by contradiction of the statement: “If n is even, then n + 4 is even.”
+\begin{description}
+\item[{Direct Proof}] Let n = an even integer. Then, n = 2k for some integer k. Since n + 4 = 2k + 4, n + 4 is also even. Thus, if n is even, then n + 4 is also even.
+\item[{Proof by Contraposition}] Let n + 4 = an odd integer. Then, n + 4 = 2j + 1 for some integer j. Since n = 2j - 3, n is also odd. Thus, if n + 4 is odd, then n is also odd.
+\item[{Proof by Contradiction}] Assume that n is even but n + 4 is odd. Then, n = 2k for some integer k, but n + 4 = 2j + 1 for some integer j. Since 2k = 2j + 1, k = j + 1/2. Since j and k are integers, this is a contradiction. Thus, if n is even, then n + 4 is also even.
+\end{description}
+\end{enumerate}
+
+
+\begin{enumerate}
+\item Explain how a proof by cases can be used to prove a result about absolute values, such as the fact that |xy| = |x||y| for all real numbers x and y
+
+A proof by cases can be used to prove a result about absolute values by breaking the statement into cases and proving each case separately. In the case of |xy| = |x||y|, the statement is broken into two cases: x and y are both positive, and x and y are both negative. For the first case, it can be shown that |xy| = xy, and |x||y| = xy, which proves the statement. For the second case, it can be shown that |xy| = -xy, and |x||y| = -xy, which also proves the statement. Together, these two cases prove that |xy| = |x||y| for all real numbers x and y.
+\end{enumerate}
+\subsection{Problems from the Book}
+\label{sec:orgdcff64b}
+\begin{itemize}
+\item Show that each of the following conditional statements is a tautology using the fact that a conditional is false exactly when the hypothesis is true and the conclusion is false. (pg 38 Ex140
+\end{itemize}
+
+
+\begin{enumerate}
+\item \((\neg p \land (p \lor q)) \to q\)
+
+Solution: If we use the laws of inference we will get that \(\neg p \land q \to q\). If we try to make this false, we will should consider the case where the premise is true, for the \(p\) is false and \(q\) is true. This will make the conclusion false, which is not possible. Therefore, the statement is a tautology.
+
+\item \(((p\to q) \land (q\to r)) \to (p \to r)\)
+
+Solution: It is pretty easy to see that this is the hypothetical syllogism. We can use the laws of inference to show that \((p\to q) \land (q\to r)\) is equal to \(p \to r\). Now we just need to show that this is a tautology. We can do this by considering the case where the premise is true, and since the premise and conclusion are the same, we can conclude that the statement is a tautology.
+
+\item \((p \land (p \to q)) \to q\)
+
+Solution: We transform the statement into \((p \land q) \to q\). We can see that this is a tautology by considering the case where the premise is true. For the premise to be true, the conclusion also has to be true. This makes the case of the implication being false not possible, which means that the statement is a tautology.
+
+\item \(((p\lor q) \land (p \to r) \land (q \to r)) \to r\)
+
+Solution: By simplifying the premise we get that \(\top \lor r \to r\).
+\end{enumerate}
+\begin{itemize}
+\item Show that each of the following conditional statements is a tautology using the chain of logical identities. (Pg 38 Ex 16)
+\end{itemize}
+
+
+\begin{enumerate}
+\item \((\neg p \land (p \lor q)) \to q\)
+
+Solution:
+
+\begin{align}
+(\neg p \land (p \lor q)) \to q \\
+\neg p \land p \lor \neg p \land q \to q \\
+\bot \lor \neg p \land q \to q \\
+\neg ( \neg p \land q ) \lor q \\
+p \lor \neg q \lor q
+p \lor \top \\
+\top
+\end{align}
+
+\item \(((p\to q) \land (q\to r)) \to (p \to r)\)
+
+Solution:
+
+\begin{align}
+((p\to q) \land (q\to r)) \to (p \to r) \\
+(\neg p \lor q \land \neg q \lor r) \to (\neg p \lor r) \\
+\neg p \lor \bot \lor r \to \neg p \lor r \\
+\neg ( \neg p \lor r ) \lor \neg p \lor r \\
+p \lor \neg r \lor \neg p \lor r \\
+(p \lor \neg p) \lor (r \lor \neg r) \\
+\top \lor \top \\
+\top
+\end{align}
+
+\item \((p \land (p \to q)) \to q\)
+
+Solution:
+
+\begin{align}
+ (p \land (p \to q)) \to q \\
+ (p \land (\neg p \lor q)) \to q \\
+ (p \land \neg p \lor p \land q) \to q \\
+ (\bot \lor p \land q) \to q \\
+ \neg (p \land q) \lor q \\
+ p \lor \neg q \lor q \\
+ p \lor \top \
+ \top
+\end{align}
+
+\item \(((p\lor q) \land (p \to r) \land (q \to r)) \to r\)
+
+Solution:
+
+\begin{align}
+((p\lor q) \land (p \to r) \land (q \to r)) \to r \\
+\neg((p \lor q) \land (\neg p \lor r) \land (\neg q \lor r)) \lor r \\
+\neg p \land \neg q \lor p \land \neg r \lor (q \land \neg r) \lor r \\
+(\neg p \land \neg q) \lor (p \land \neg r) \lor (q \lor r) \land (\neg r \lor r) \\
+(\neg p \land \neg q) \lor (p \land \neg r) \lor (q \lor r) \land \top \\
+q \lor (\neg p \land \neg q) \lor r \lor (p \land \neg r) \\
+q \lor \neg p \land q \lor \neg q \lor r \lor p \land r \lor \neg r \\
+q \lor \neg p \land \top \lor r \lor p \land \top \\
+q \lor \neg p \lor r \lor p \\
+q \lor r \lor \top \\
+\top
+\end{align}
+\end{enumerate}
+
+
+\begin{itemize}
+\item Express the negation of the propositions using quantifiers:
+\end{itemize}
+
+
+\begin{enumerate}
+\item \(\forall x(x > 1)\)
+
+Solution: \(\exists x(x \leq 1)\)
+
+\item \(\forall x ((x < -1) \lor (x > 2))\)
+
+Solution: \(\exists x (( x \ge -1) \land (x \le 2))\)
+\end{enumerate}
+\begin{itemize}
+\item Determine whether \(\forall x (P(x) \to Q(x))\) is equivalent to \(\forall x P(x) \to \forall x Q(x)\). (pg 59 ex 45)
+Solution:
+
+\begin{align}
+\forall x (P(x) \to Q(x)) \equiv \forall x P(x) \to \forall x Q(x) \\
+\neg \exists x (P(x) \to Q(x)) \lor \exists x P(x) \to \exists x Q(x) \\
+\neg \exists x (P(x) \to Q(x)) \lor \neg \exists x P(x) \lor \exists x Q(x) \\
+\neg \exists x (P(x) \to Q(x)) \lor \neg \exists x P(x) \lor \neg \exists x Q(x)
+\end{align}
+
+\item Use rules of inference to show that the hypotheses “If it does not rain or if it is not foggy, then the sailing race will be held and the lifesaving demonstration will go on,” “If the sailing race is held, then the trophy will be awarded,” and “The trophy was not awarded” imply the conclusion “It rained.”
+
+First we identify the premises:
+\begin{itemize}
+\item \(p =\) it rained
+\item \(q =\) it was foggy
+\item \(r =\) the race was held
+\item \(s =\) the lifesaving demonstration went on
+\item \(t =\) the trophy was awarded
+\end{itemize}
+
+\begin{align}
+\neg p \lor \neg q \to r \land s \\
+r \to t \\
+\neg t
+\neg r \quad \text{from 2nd and 3rd (modus tollens)} \\
+(\neg r \land s) \quad \text{from 1st and 4th} \\
+\neg (\neg p \lor \neg q) \\
+p \land q \\
+p \quad \text{it rained}
+\end{align}
+
+\item Find the argument form for the following argument and determine whether it is valid. Can we conclude that the conclusion is true if the premises are true?
+\end{itemize}
+
+
+\begin{array}{r}
+\text{If George does not have eight legs, then he is not a spider.}  \\
+\text{George is a spider} \\
+\hline
+\text{George has eight legs.}
+\end{array}
+
+Solution:
+The form of the argument is Modus Tollens, which is valid.
+
+\begin{itemize}
+\item What rules of inference are used in this famous argument? “All men are mortal. Socrates is a man. Therefore, Socrates is mortal.”
+
+Solution:
+\begin{array}{r}
+\forall x (M(x) \to Mo(x)) \\
+M(S) \\
+\hline
+Mo(S)
+\end{array}
+
+Here we make us of universal instantiation and them modus ponens.
+
+\item Use a direct proof to show that every odd integer is the difference of two squares.
+Solution:
+\begin{align}
+n = 2k + 1 \\
+n = (k+1)^2 - k^2 \\
+n = k^2 + 2k + 1 - k^2 \\
+n = 2k + 1
+\end{align}
+\end{itemize}
+
 
 \section{Set Theory}
-\label{sec:org8aee17b}
+\label{sec:org1a20b1c}
 \subsection{Sets}
-\label{sec:orgcc69011}
+\label{sec:org148548a}
 A set is a collection of objects. We use the notation \(\{a,b,c\}\) to denote a set. We can also use the notation \(\{x \in S \mid P(x)\}\) to denote a set of elements \(x\) in \(S\) that satisfy the predicate \(P(x)\). A set can be empty, which is denoted by \(\emptyset\).
 
 A more concrete definition of a set using quantifiers is as follows:
@@ -659,7 +1300,7 @@ A way to disprove the equality of two sets is by showing that they have at least
 Some important elements are the aforementioned empty set \(\emptyset\) and the universal set \(\mathbb{U}\). The universal set is the set of all elements in a domain. The empty set is the set that contains no elements. The Domains, mentioned at the beginning are also sets.
 
 \subsection{Subsets}
-\label{sec:org34c89e4}
+\label{sec:orgd0bf5e0}
 A subset is a set that is contained in another set. We denote this as \(A \subseteq B\). A more rigorous definition of this is as follows:
 
 \[
@@ -681,7 +1322,7 @@ A quantified version of this is as follows:
 \]
 
 \subsection{Set Cardinality}
-\label{sec:org327b457}
+\label{sec:org282547f}
 This is not the absolute value of a set. It is the number of elements in a set. We denote this as \(|A|\). A more rigorous definition of this is as follows:
 
 \[
@@ -689,7 +1330,7 @@ This is not the absolute value of a set. It is the number of elements in a set. 
 \]
 
 \subsection{Power Set}
-\label{sec:orgc199818}
+\label{sec:orgf761791}
 The power set is the set of all subsets of a set. We denote this as \(P(A)\). What is meant by all subsets is that the power set contains the empty set and the universal set aswell as all the subsets of the set. A more rigorous definition of this is as follows:
 
 \[
@@ -703,7 +1344,7 @@ An example of this is the power set of \(\{1,2,3\}\) is \(\{\emptyset, \{1\}, \{
 What is important to remember is that the power set of a power set is the original set. This is because the power set of a set is the set of all subsets of a set. So the power set of the power set is the set of all subsets of all subsets of a set. This is the original set.
 
 \subsection{Cartesian Product}
-\label{sec:org6767bdc}
+\label{sec:org94bbbf8}
 The cartesian product is the set of all ordered pairs of elements from two sets. We denote this as \(A \times B\). In other words, the cartesian product is the set of all possible combinations of elements from two sets. A more rigorous definition of this is as follows:
 
 \[
@@ -723,7 +1364,7 @@ P(A \times B) = \{C \mid C \subseteq A \times B\} = \{C \mid C \subseteq \{(a,b)
 Or simply: \(P(A \times B) = P(A) \times P(B)\).
 
 \subsection{Set Operations}
-\label{sec:orga1ad14c}
+\label{sec:org83ce5bd}
 Set operations are operations that can be performed on sets. The most common set operations are union, intersection, difference, and complement.
 
 It is important to remember that if we have an expression like \(A \subsete A \cup B\), something that could be tricky is that the order of operations is not the same as in arithmetic. In arithmetic, we would do the multiplication and division first, then addition and subtraction. In set operations, we do the complement first, then the difference, then the intersection, and finally the union. So the expression \(A \subsete A \cup B\) would be read as \(A \subsete (A \cup B)\).
@@ -737,7 +1378,7 @@ Once again, \textbf{the order of operations for sets} is:
 \end{enumerate}
 
 \subsection{Union}
-\label{sec:orga010009}
+\label{sec:orgc596395}
 Simply explained, the union of two sets is the set of all elements that are in either set. We denote this as \(A \cup B\). A more rigorous definition of this is as follows:
 
 \[
@@ -756,7 +1397,7 @@ And using quantifiers:
 An example of this is the union of \(\{1,2\}\) and \(\{2,3\}\) is \(\{1,2,3\}\). The reason why this is the union is because \(1 \in A\), \(2 \in A\), \(2 \in B\), and \(3 \in B\). So \(1,2,3\) are all in the union.
 
 \subsection{Intersection}
-\label{sec:org8a08039}
+\label{sec:org93fb782}
 The intersection of two sets is the set of all elements that are in both sets. We denote this as \(A \cap B\). A more rigorous definition of this is as follows:
 
 \[
@@ -768,7 +1409,7 @@ A \cap B \equiv \{x \mid x \in A \land x \in B\}
 An example of this is the intersection of \(\{1,2\}\) and \(\{2,3\}\) is \(\{2\}\). The reason why this is the intersection is because \(2 \in A\) and \(2 \in B\). So \(2\) is in the intersection.
 
 \subsection{Difference}
-\label{sec:org05a9e62}
+\label{sec:org921e6e4}
 The difference of two sets is the set of all elements that are in the first set but not the second set. We denote this as \(A \setminus B\). A more rigorous definition of this is as follows:
 
 \[
@@ -789,7 +1430,7 @@ The cardinality of the difference is \(|A \setminus B|\) or \(|A| - |A \cap B|\)
 An example of this is the difference of \(\{1,2\}\) and \(\{2,3\}\) is \(\{1\}\). The reason why this is the difference is because \(1 \in A\) and \(1 \notin B\). So \(1\) is in the difference.
 
 \subsection{Complement}
-\label{sec:org653668c}
+\label{sec:org0891bd1}
 The complement of a set is the set of all elements that are not in the set. We denote this as \(A^c\). A more rigorous definition of this is as follows:
 
 \[
@@ -807,7 +1448,7 @@ A^c \equiv \{x \mid x \in U \land x \notin A\}
 An example of this is the complement of \(\{1,2\}\) is \(\{3,4\}\). The reason why this is the complement is because \(3 \in U\) and \(3 \notin A\). So \(3\) is in the complement. This of course depends on the universal set being \(\{1,2,3,4\}\).
 
 \subsection{Logical Operations with Sets}
-\label{sec:org24f6600}
+\label{sec:org1c76dc8}
 We can relate sets to logical operations. The most common logical operations are conjunction, disjunction, and negation. We can relate these to sets as follows:
 
 \begin{array}{l}
@@ -829,7 +1470,7 @@ A \equiv \{x \mid x \in A\} \equiv \{x \mid p(x)\}
 \]
 
 \section{Functions}
-\label{sec:org3d790b2}
+\label{sec:org9d5ce50}
 A function, is the assignment of a single value \(b\in B\) to each element \(a\) in a set \(A\). We denote this as \(f: A \rightarrow B\). We can also call a function a mapping, transformation or a black box (in some cases even an oracle). A more rigorous definition of this is as follows:
 
 \[
@@ -855,14 +1496,14 @@ The reasons why some assignments might not be functions is that not all elements
 How can we tell if a function is a function? We can tell if a function is a function by checking if the function is one-to-one and onto. If the function is one-to-one and onto, then the function is a function. If the function is not one-to-one and onto, then the function is not a function.
 
 \subsection{Domain, Codomain \& Range}
-\label{sec:orgbef9d61}
+\label{sec:org11ea42a}
 If \(f(a) = b\), then we call \(a\) the \textbf{pre-image} and \(b\) the \textbf{image} of \(f\). We call \(A\) the \textbf{domain} of \(f\) and \(B\) the \textbf{codomain} of \(f\). We call \(f(A)\) the \textbf{range} of \(f\).
 
 The main difference between the \textbf{codomain} and the \textbf{range} is that the \textbf{codomain} is the set of all possible images of \(f\) and the \textbf{range} is the set of all images of \(f\).
 
 
 \subsection{One-to-One}
-\label{sec:org8b43906}
+\label{sec:org6b165bf}
 A function is one-to-one if each element in the range is assigned to a unique element in the domain. We denote this as \(f: A \rightarrow B\) is one-to-one. A more rigorous definition of this is as follows:
 
 \[
@@ -875,7 +1516,7 @@ If we want to check if a functions is one-to-one, we have to test if \(f(a_1) = 
 
 
 \subsection{Onto}
-\label{sec:org59c620f}
+\label{sec:orgb70e140}
 A function is onto if each element in the codomain is assigned to an element in the domain. We denote this as \(f: A \rightarrow B\) is onto. This is to say that for each element in the codomain, there is an element in the domain that maps to it. A more rigorous definition of this is as follows:
 
 \[
@@ -887,7 +1528,7 @@ or simply: \(\forall b \in B \exists a \in A \land f(a) = b\).
 To see if a function is onto, we have to test if \(\forall b \in B \exists a \in A \land f(a) = b\). If this is true for all \(b \in B\), then the function is onto. For example if \(f: \{1,2\} \rightarrow \{1,2,3\}\), then \(f(1) = 1\), \(f(2) = 2\) and \(f(3) = 3\). So \(f\) is onto. If \(f: \{1,2\} \rightarrow \{1,2\}\), then \(f(1) = 1\), \(f(2) = 2\) and \(f(3) = 3\). So \(f\) is not onto. In this case, the function is not onto because \(3\) is not assigned to an element in the domain.
 
 \subsection{Composite Functions}
-\label{sec:org55692ae}
+\label{sec:org1c1e13f}
 We can combine functions to create composite functions. We can combine functions by applying one function to the output of another function. We denote this as \(f \circ g\). We can also call this function composition. A more rigorous definition of this is as follows:
 
 \[
@@ -906,7 +1547,7 @@ If some of the functions are not one-to-one or onto, then the composite function
 
 
 \subsection{Inverse Functions}
-\label{sec:org7ae0507}
+\label{sec:org30ed0cf}
 An inverse function is a function that undoes the effects of another function. We denote this as \(f^{-1}\). The definition is as follows:
 
 \[
@@ -916,7 +1557,7 @@ f^{-1} \equiv \{a \mid f(a) = b\}
 If \(f\) is one-to-one and onto, then \(f^{-1}\) is also one-to-one and onto.
 
 \subsection{Partial Functions}
-\label{sec:orga0c9333}
+\label{sec:org646e3cf}
 A partial function is a function that is not one-to-one or onto. We denote this as \(f: A \rightarrow B\) is a partial function. Definition:
 
 \[
@@ -926,7 +1567,7 @@ f: A \rightarrow B \text{ is a partial function } \equiv \exists a_1, a_2 \in A 
 or simply: \(\exists a_1, a_2 \in A \land f(a_1) = f(a_2) \land a_1 \neq a_2\). If this is true for some \(a_1, a_2 \in A\), then \(f\) is a partial function.
 
 \subsection{Practice Questions}
-\label{sec:orgb01b947}
+\label{sec:orgc59fe15}
 \begin{enumerate}
 \item Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) be defined by \(f(x) = x^2\). Is \(f\) one-to-one? Is \(f\) onto? Is \(f\) a partial function?
 \begin{description}
@@ -947,12 +1588,12 @@ or simply: \(\exists a_1, a_2 \in A \land f(a_1) = f(a_2) \land a_1 \neq a_2\). 
 \end{enumerate}
 
 \section{Sequences}
-\label{sec:org4e5fc99}
+\label{sec:orgd4ef528}
 
 A sequence is a set of elements, which can be continued by using intuition or mathematical patterns. We denote this as \(\{a_n \mid n \in \mathbb{N}\}\). We will mostly focus on \textbf{arithmetic} sequences and \textbf{geometric} sequences.
 
 \subsection{Arithmetic Sequences}
-\label{sec:orga5ad7d6}
+\label{sec:orge44db40}
 An arithmetic sequence is a sequence where the difference between two consecutive terms is constant. We denote this as \(\{a_n \mid n \in \mathbb{N}\}\) where \(a_n = a_1 + (n-1)d\) for some \(a_1, d \in \mathbb{R}\). We can also write this as \(a_n = a_1 + nd\), where \(n\) is the \textbf{nth} term of the sequence and \(d\) is the \textbf{common difference}.
 
 An arithmetic sequence is defined by the following properties:
@@ -975,7 +1616,7 @@ a_n = a_1 + (n-1)d &= a_1 + (n-1)d
 \end{align}
 
 \subsection{Geometric Sequences}
-\label{sec:org1a4deb2}
+\label{sec:orgcab0ed1}
 A geometric sequence is a sequence where the ratio between two consecutive terms is constant. We denote this as \(\{a_n \mid n \in \mathbb{N}\}\) where \(a_n = a_1 r^{n-1}\) for some \(a_1, r \in \mathbb{R}\). We can also write this as \(a_n = a_1 r^n\), where \(n\) is the \textbf{nth} term of the sequence and \(r\) is the \textbf{common ratio}.
 
 An expansion of such as sequence can look something like this:
@@ -990,7 +1631,7 @@ a_n &= a_1 r^{n-1}
 \end{align}
 
 \subsection{Recurrence Relations}
-\label{sec:orge71ba80}
+\label{sec:org1bd5f43}
 A recurrence relation is a sequence that is defined by a formula. We denote this as \(\{a_n \mid n \in \mathbb{N}\}\) where \(a_n = f(a_{n-1})\) for some \(f: \mathbb{R} \rightarrow \mathbb{R}\). It takes the previous term and applies a function to it to get the next term.
 
 We can be told to find the closed formula for a sequence. This is a formula that can be used to find the nth term of a sequence.To do this, we need to use iteration and induction. We can use the following rules to find the closed formula for a sequence:
@@ -1004,7 +1645,7 @@ We can be told to find the closed formula for a sequence. This is a formula that
 In short, we need to find the pattern in the sequence and use that to find the closed formula.
 
 \section{Summations}
-\label{sec:org38d7d53}
+\label{sec:org835f74b}
 A summation is a way to add up a sequence of numbers. We denote this as \(\sum_{i=1}^n a_i\). There are many ways to define a summation. To find the sum of a sequence, we can use the following rules:
 \begin{enumerate}
 \item \(\sum_{i=1}^n i = \frac{n(n+1)}{2}\)
@@ -1017,10 +1658,8 @@ If we subtract 1 from the upper bound, we can find the sum of the sequence. For 
 
 If we have nested summations, we can expand the far-right summation and include it in each iteration of the left summation.
 
-\section{Number Theory}
-\label{sec:org4a36ff2}
 \section{Divisibility}
-\label{sec:orgbbd958b}
+\label{sec:org7f1f72e}
 A number is divisible by another number if the remainder is 0. We denote this as \(a \mid b\) where \(a\) is the divisor and \(b\) is the dividend. We can also write this as \(a = q \cdot d + r\) where \(r\) is the remainder and \(q\) is the quotient. It is important to note that \(r\) is always less than \(d\) and always positive.
 
 The elements in the primary equation are as follows:
@@ -1042,7 +1681,7 @@ If we perform division of a negative number, we cannot have a negative remainder
 
 
 \subsection{Divisibility Rules}
-\label{sec:orgddf0e0b}
+\label{sec:org27645b5}
 We can use divisibility rules to determine if a number is divisible by another number. The rules are as follows:
 \begin{enumerate}
 \item If \(a\) divides both \(b\) and \(c\), then \(a\) divides \(b+c\). Expression: \(a \mid b \land a \mid c \Rightarrow a \mid (b+c)\)
@@ -1051,7 +1690,7 @@ We can use divisibility rules to determine if a number is divisible by another n
 \end{enumerate}
 
 \section{Modular Arithmetic}
-\label{sec:org1fe8803}
+\label{sec:org70ad30f}
 Modular arithmetic uses the modulus operation to find the remainder of a division problem. We use the notation \(a \equiv b \pmod{m}\) to denote that \(a\) is congruent to \(b\) modulo \(m\).
 
 If we want to identify if two integers are congruent modulo \(m\), we can test this in the following way:
@@ -1061,9 +1700,71 @@ If we want to identify if two integers are congruent modulo \(m\), we can test t
 
 \textbf{In other words, if the remainder of the modulus operation is the same, then the two numbers are congruent modulo \(m\).}
 
+\subsection{Rules of Modular Arithmetic}
+\label{sec:org4d63c27}
+We can use the following rules to perform modular arithmetic:
+\begin{enumerate}
+\item \(a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow a+c \equiv b+d \pmod{m}\)
+\item \(a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow ac \equiv bd \pmod{m}\)
+\item \(a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow a-c \equiv b-d \pmod{m}\)
+\item \(a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow a/c \equiv b/d \pmod{m}\)
+\item \(a \equiv b \pmod{m} \land c \equiv d \pmod{m} \Rightarrow a^c \equiv b^d \pmod{m}\)
+\end{enumerate}
+
+The difference between congruency and the modulo operation is that congruency is a relation between two numbers, while the modulo operation is an operation that returns a number. For example, \(a \equiv b \pmod{m}\) is a relation between \(a\) and \(b\), while \(a \pmod{m}\) is an operation that returns a number.
+
+\subsection{Inverse of a Modulo}
+\label{sec:orge827119}
+We can find the inverse of a modulo by using the following equation: \(a \cdot a^{-1} \equiv 1 \pmod{m}\). In other words, if we multiply the inverse of a modulo by the modulo, we get 1 modulo \(m\).
+
+To find the inverse of a modulo, we can use the Extended Euclidean Algorithm. This algorithm is as follows:
+\begin{enumerate}
+\item Set \(a = m \cdot q + r\) where \(q\) is the quotient and \(r\) is the remainder
+\item Set \(b = a \cdot q + r\) where \(q\) is the quotient and \(r\) is the remainder
+\item Repeat step 2 until \(r = 0\)
+\item The inverse of \(m\) modulo \(a\) is \(q\) where \(q\) is the quotient of the last step
+\end{enumerate}
+
+For example, if we want to find the inverse of 3 modulo 7, we can use the Extended Euclidean Algorithm as follows:
+\begin{enumerate}
+\item \(7 = 3 \cdot 2 + 1\)
+\item \(3 = 1 \cdot 3 + 0\)
+\item \(r = 0\) so we stop
+\item The inverse of 3 modulo 7 is 3
+\end{enumerate}
+
+\subsection{Practice Problems}
+\label{sec:org0c04fd7}
+\begin{enumerate}
+\item \(2 \equiv 3 \pmod{5}\)
+
+Solution: False, 2 is not congruent to 3 modulo 5
+
+\item \(3 \equiv 4 \pmod{5}\)
+
+Solution: False, 3 is not congruent to 4 modulo 5
+
+\item \(4x \equiv 7 \pmod{5}\)
+
+Solution: This is true when \(x = 0.5\) because \(4(0.5) \equiv 7 \pmod{5}\) is true.
+
+\item \(x \equiv 3 \pmod{5} \land x \equiv 4 \pmod{5}\)
+
+Solution: This is not true because \(3 \not\equiv 4 \pmod{5}\) so \(x \not\equiv 3 \pmod{5} \land x \not\equiv 4 \pmod{5}\)
+\end{enumerate}
+
+Practice problems using powers of modular arithmetic:
+
+\begin{enumerate}
+\item \(2^3 \equiv 8 \pmod{5}\)
+
+Solution: This is true because \(2^3 = 8 \equiv 8 \pmod{5}\)
+\end{enumerate}
+
+
 
 \section{Integer Representation}
-\label{sec:orgf50aabf}
+\label{sec:org2b04a3f}
 Integers can be represented in many ways. In every day life, we use the base 10 system. This means that we use the digits 0-9 to represent numbers. We can also use the base 2 system. This means that we use the digits 0-1 to represent numbers. We can also use the base 16 system. This means that we use the digits 0-9 and A-F to represent numbers. We can also use the base 26 system. This means that we use the digits A-Z to represent numbers.
 
 If we want to convert the value of base \(b\) to base \(b'\), we can use the following formula:
@@ -1087,9 +1788,8 @@ n = a_1 + b(a_1 + bq_1) \\
 n = a_2 + b(a_1 + b(a_2 + bq_2))
 \end{align}
 
-
 \section{Binary Representation}
-\label{sec:org1a68b94}
+\label{sec:org9740234}
 Binary representation is the representation of numbers in base 2. We can use the following rules to convert from base 10 to base 2:
 \begin{enumerate}
 \item Divide the number by 2
@@ -1108,9 +1808,8 @@ To make life a bit easier, we can use a table to convert from base 10 to base 2.
 \end{tabular}
 \end{center}
 
-
 \section{Hexadecimal Representation}
-\label{sec:orgef4295b}
+\label{sec:orgf905e86}
 Hexadecimal representation is the representation of numbers in base 16. We can use the following rules to convert from base 10 to base 16:
 \begin{enumerate}
 \item Divide the number by 16
@@ -1128,9 +1827,24 @@ To then put together the hexadecimal string we take each digit in reverse order 
 \end{enumerate}
 
 \section{Prime Numbers}
-\label{sec:org1ba44e4}
+\label{sec:org1cf4f80}
+A prime number is a number that is only divisible by 1 and itself. We can use the following rules to determine if a number is prime:
+\begin{enumerate}
+\item If \(n\) is divisible by \(a\), then \(n\) is not prime
+\item If \(n\) is not divisible by \(a\), then \(n\) is prime
+\end{enumerate}
+
+Any number that is not prime is called a composite number. This relates to the Fundamental Theorem of Arithmetic. This theorem states that every integer greater than 1 can be expressed as a product of prime numbers. This theorem is important because it allows us to factorize numbers.
+
+How to determine if a number is a prime or composite? We can use the following proposition:
+
+\[
+(n \text{ is composite})  \Leftrightarrow \exists a \in \mathbb{N} (( a \mid n) \land (a \neq 1) \land (a \neq n))
+\]
+
+
 \section{Algorithms}
-\label{sec:orgde22366}
+\label{sec:org6185414}
 An algorithm is a collection of instructions that are made to solve a problem. To create any algorithm, we need three basic components:
 \begin{description}
 \item[{Sequence}] A sequence is a list of instructions that are executed in order
@@ -1139,7 +1853,7 @@ An algorithm is a collection of instructions that are made to solve a problem. T
 \end{description}
 
 \subsection{Complexity of Algorithms}
-\label{sec:orgce93136}
+\label{sec:org4c29887}
 The complexity of an algorithm is given by the relation between the input size and the number of steps required to solve the problem. We can use the following notations to describe the complexity of an algorithm:
 \begin{description}
 \item[{\(O(n)\)}] This notation describes the worst case scenario for an algorithm. This means that the algorithm will take at least this amount of time to solve the problem.
@@ -1149,27 +1863,222 @@ The complexity of an algorithm is given by the relation between the input size a
 
 We will not need omega and theta notation for the exam, but it is good to know.
 \subsection{Big O Notation}
-\label{sec:orge64b635}
+\label{sec:org7f55609}
 Big O notation is used to describe the worst case scenario for an algorithm. We can use the following rules to determine the complexity of an algorithm:
-\begin{enumerate}
-\item \(O(C)\) :: This means that the algorithm will take a constant amount of time to solve the problem. This means that the algorithm will take the same amount of time to solve the problem regardless of the input size.
-\item \(O(n)\) :: This means that the algorithm will take a linear amount of time to solve the problem. This means that the algorithm will take a linear amount of time to solve the problem. This means that the algorithm will take \(n\) amount of time to solve the problem.
-\item \(O(n^2)\) :: This means that the algorithm will take a quadratic amount of time to solve the problem. This means that the algorithm will take \(n^2\) amount of time to solve the problem.
-\item \(O(2^n)\) :: This means that the algorithm will take an exponential amount of time to solve the problem. This means that the algorithm will take \(2^n\) amount of time to solve the problem.
-\item \(O(n!)\) :: This means that the algorithm will take a factorial amount of time to solve the problem. This means that the algorithm will take \(n!\) amount of time to solve the problem.
-\end{enumerate}
-
 
 The idea of this notation is that we can use it to compare the complexity of different algorithms. For example, if we have two algorithms that solve the same problem, we can use big O notation to determine which algorithm is better. If one algorithm is \(O(n)\) and the other is \(O(n^2)\), then the first algorithm is better than the second algorithm.
 
+\begin{center}
+\begin{tabular}{lll}
+Algorithm & Complexity & Example\\
+\hline
+\(O(1)\) & Constant & Finding the first element in a list\\
+\(O(\log n)\) & Logarithmic & Binary search\\
+\(O(n)\) & Linear & Finding the maximum value in a list\\
+\(O(n \log n)\) & Linearithmic & Merge sort\\
+\(O(n^2)\) & Quadratic & Bubble sort\\
+\(O(n^3)\) & Cubic & Matrix multiplication\\
+\(O(2^n)\) & Exponential & Tower of Hanoi\\
+\(O(n!)\) & Factorial & Travelling salesman problem\\
+\end{tabular}
+\end{center}
 
+Contrary to intuition, to solve a large problem you should always use the most efficient algorithm, but for a smaller size, higher complexity algorithms are better.
 
-\section{Cryptography}
-\label{sec:orgd0e6d55}
+\section{Greatest Common Divisor}
+\label{sec:orgf11c424}
+The greatest common divisor of two numbers is the largest number that divides both numbers. We can easily find this if we know the factorizations of each number. Another way to find the greatest common divisor is to use Euclid's algorithm. This algorithm is as follows:
+\begin{enumerate}
+\item Let \(a\) be the larger number and \(b\) be the smaller number
+\item Divide \(a\) by \(b\) and take the remainder
+\item If the remainder is 0, then \(b\) is the greatest common divisor
+\item If the remainder is not 0, then set \(a\) to \(b\) and \(b\) to the remainder
+\item Repeat until the remainder is 0
+\end{enumerate}
+
+An example of this algorithm is as follows:
+\begin{enumerate}
+\item Let \(a = 24\) and \(b = 16\)
+\item \(24 \div 16 = 1\) remainder \(8\)
+\item \(16 \div 8 = 2\) remainder \(0\)
+\item \(b = 8\) is the greatest common divisor
+\end{enumerate}
+
+\subsection{Least Common Multiple}
+\label{sec:org89f0f1d}
+The least common multiple of two numbers is the smallest number that is divisible by both numbers. We can easily find this if we know the factorizations of each number. Another way to find the least common multiple is to use the following formula:
+
+\[
+\text{lcm}(a, b) = \frac{a \cdot b}{\text{gcd}(a, b)}
+\]
+
+\section{Applications of Number Theory}
+\label{sec:org3296a51}
+Number theory is used in many different fields. Some of these fields are as follows: cryptography, coding theory, and combinatorics.
+
+\subsection{Databases}
+\label{sec:orgbfb9dd9}
+If we know the number of records in a database and who much space they take up, swell as the starting position, we can use the following formula to determine the position of the nth record:
+
+\[
+\text{position} = \text{starting position} + \text{record size} \cdot (n - 1)
+\]
+
+\subsection{Hash Functions}
+\label{sec:orge8e8007}
+If we want to store some records into a database, we can use a hash function which will map each record to a unique location in the database. This is done by taking the record and applying a hash function to it. The hash function will then return a number which is the location of the record in the database. We might use the \(mod\) operator to create a hash function.
+
+If each entry has some numerical value we can use \(mod 10\) to map it to a location in the database. This method is not very practical because we might get some sort of collision. A collision is when two records map to the same location in the database. To avoid collisions we can make use of a secondary hash function.
+
+\subsection{Asymmetric Encryption}
+\label{sec:org6e09c0c}
+Asymmetric encryption is a method of encryption that uses two keys. One key is used to encrypt the message and the other key is used to decrypt the message. The two keys are called the \textbf{public key} and the \textbf{private key}. The public key is used to encrypt the message and the private key is used to decrypt the message. The public key is made public and the private key is kept secret.
 
 \section{Relations}
-\label{sec:org6790652}
+\label{sec:org4a2b4ee}
+A relation is a set of ordered pairs. It is also a subset of the Cartesian product of the set. We can use the following notation to represent a relation:
 
-\section{Computation}
-\label{sec:orgf589139}
+\[
+R = \{(x, y) \mid x \in A \land y \in B\}
+\]
+
+The easiest way to represent a relation is to use a table. The table will have the elements of the first set as the rows and the elements of the second set as the columns. If the ordered pair \((x, y)\) is in the relation, then we will put a \(1\) in the cell that corresponds to the row \(x\) and the column \(y\). If the ordered pair \((x, y)\) is not in the relation, then we will put a \(0\) in the cell that corresponds to the row \(x\) and the column \(y\).
+
+Here is an example of a relation:
+
+\[
+R = \{(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)\}
+\]
+
+We can represent this relation as a table as follows:
+
+\begin{array}{c|ccc}
+& 1 & 2 & 3 \\
+\hline
+1 & 0 & 1 & 1 \\
+2 & 1 & 0 & 1 \\
+3 & 1 & 1 & 0
+\end{array}
+
+The relationship between functions and relations is that a function is a relation where each ordered pair has a unique first element.
+
+To find the cardinality of a relation for a \textbf{single set}, we can use the following formula:
+
+\[
+2^{n^2}
+\]
+
+This is because there are \(2\) possibilities for each ordered pair. The ordered pair can either be in the relation or it can not be in the relation. If we have \(n\) elements in the set, then there are \(n^2\) ordered pairs. Therefore, there are \(2^{n^2}\) possible relations.
+
+This should also be equivalent to the power set of the Cartesian product of the set.
+
+
+\subsection{Reflexive Relations}
+\label{sec:org0185d96}
+A relation is reflexive if it contains the ordered pair \((x, x)\) for every element \(x\) in the set. We can use the following notation to represent a reflexive relation:
+
+\[
+R = \{(x, y) \mid x \in A \land y \in A \land x = y\}
+\]
+
+As a matrix, it would look like this:
+
+\begin{array}{c|ccc}
+& 1 & 2 & 3 \\
+\hline
+1 & 1 & 0 & 0 \\
+2 & 0 & 1 & 0 \\
+3 & 0 & 0 & 1
+\end{array}
+
+\subsection{Symmetric Relations}
+\label{sec:org5b0b110}
+A relation is symmetric if it contains the ordered pair \((x, y)\) for every ordered pair \((y, x)\). We can use the following notation to represent a symmetric relation:
+
+\[
+R = \{(x, y) \mid x \in A \land y \in A \land (y, x) \in R\}
+\]
+
+As a matrix, it would look like this (or any other symmetric relation):
+
+\begin{array}{c|ccc}
+& 1 & 2 & 3 \\
+\hline
+1 & 0 & 1 & 1 \\
+2 & 1 & 1 & 1 \\
+3 & 1 & 1 & 0
+\end{array}
+
+
+\subsection{Antisymmetric Relations}
+\label{sec:orgcb4bb64}
+If a relation is antisymmetric, it will it will contain some order pair \((x,y)\) but not \((y,x)\) for every ordered pair \((x,y)\). We can use the following notation to represent an antisymmetric relation:
+
+\[
+R = \{(x, y) \mid x \in A \land y \in A \land (x, y) \in R \land (y, x) \notin R\}
+\]
+
+\subsection{Transitive Relations}
+\label{sec:org82d5332}
+A relation is transitive if it contains the ordered pair \((x, z)\) for every ordered pair \((x, y)\) and \((y, z)\). We can use the following notation to represent a transitive relation:
+
+\[
+R = \{(x, z) \mid x \in A \land z \in A \land (x, y) \in R \land (y, z) \in R\}
+\]
+
+What its saying is that the relation will be transitive if for every \(n\) steps, we can get from \(x\) to \(z\) in just one step.
+
+\subsection{Composite Relations}
+\label{sec:org664c4d2}
+We can combine two relations to create a composite relation. The composite relation will contain the ordered pair \((x, z)\) if the first relation contains the ordered pair \((x, y)\) and the second relation contains the ordered pair \((y, z)\). We can use the following notation to represent a composite relation:
+
+\[
+R \circ S = \{(x, z) \mid x \in A \land z \in A \land (x, y) \in R \land (y, z) \in S\}
+\]
+
+We can us \textbf{powers of a binary relation} to represent the composite relation. The \$n\$th power of a binary relation will contain the ordered pair \((x, z)\) if the relation contains the ordered pair \((x, y)\) and the relation contains the ordered pair \((y, z)\) \(n\) times.
+
+\section{Directed Graphs}
+\label{sec:orge538cba}
+If we want to represent a relation, we can use a directed graph. A directed graph is a graph where the edges have a direction. The edges can be represented by arrows. The arrows will point from the first element of the ordered pair to the second element of the ordered pair. If we have an ordered pair \((x, y)\) in the relation, then we will have an arrow from \(x\) to \(y\).
+
+An example of a directed graph is the following:
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{Directed_Graphs/2022-12-06_17-07-14_1024px-Directed.svg.png}
+\end{center}
+
+\section{Grammars}
+\label{sec:org4b532d9}
+A grammar is a set of rules that can be used to generate strings. The strings that are generated by the grammar are called the language of the grammar. The language of the grammar is the set of all strings that can be generated by the grammar. The language of the grammar is denoted by \(L(G)\).
+
+\subsection{Railroad Diagrams}
+\label{sec:orgf146329}
+
+
+\begin{description}
+\item[{Vocabulary}] This is a set of symbols which we use to represent the language of the grammar. The vocabulary of the grammar is denoted by \(V\).
+\item[{Grammar}] This is a set of rules that can be used to generate strings. The grammar is denoted by \(G\). It is a combination of the vocabulary. By using grammar and vocabulary, we can generate strings which are part of \textbf{formal language}.
+\end{description}
+
+
+An example of a railroad diagram is the following:
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{Grammars/2022-12-06_17-15-45_Syntax-diagram-example.png}
+\end{center}
+
+We write the railroad diagram as follows (not the one above):
+
+\begin{verbatim}
+<expression> ::= <term> | <term> "+" <expression>
+<term>       ::= <factor> | <factor> "*" <term>
+<factor>     ::= <constant> | <variable> | "(" <expression> ")"
+<variable>   ::= "x" | "y" | "z"
+<constant>   ::= <digit> | <digit> <constant>
+<digit>      ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+\end{verbatim}
+
+
+\emph{more coming soon}
 \end{document}

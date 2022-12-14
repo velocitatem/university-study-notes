@@ -622,7 +622,7 @@ p \to q \\ p
 \end{array}
 
 
-It is another thing to call an argument *sound*, for this we need to have an argument for which *all premises are true and valid*. *A valid argument implies a tautology*.
+It is another thing to call an argument *sound*, for this we need to have an argument for which *all premises are true and valid*. *A valid argument implies a tautology*. How can we tell if an argument is valid? We can use the *truth table*. Another way to determine if an argument is valid is to see if it makes use of any *existing argument forms*.
 
 ** Rules of Inference
 An argument form which would generate a valid implication falls under the rules of inference
@@ -884,6 +884,7 @@ Prove that if $n$ is not a multiple of 3, $2n$ is not a multiple of 3.
 *** Equivalence Proof
 As previously mentioned $p \leftrightarrow q = p \equiv q$, so if we want to prove some equivalence, we can use $(p \to q) \land (q \to p)$.
 #+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+We could also prove this by seeing if the two propositions will be false/true for the same values of $p$ and $q$.
 *** Existential Statements Proof
 We have two strategies for this.
 + Constructive Proof :: We show an example that verifies a predicate and apply existential generalization to prove the proposition.
@@ -943,7 +944,7 @@ So should you use? It comes down to trial and error, but also practice and intui
 
    A proof by cases can be used to prove a result about absolute values by breaking the statement into cases and proving each case separately. In the case of |xy| = |x||y|, the statement is broken into two cases: x and y are both positive, and x and y are both negative. For the first case, it can be shown that |xy| = xy, and |x||y| = xy, which proves the statement. For the second case, it can be shown that |xy| = -xy, and |x||y| = -xy, which also proves the statement. Together, these two cases prove that |xy| = |x||y| for all real numbers x and y.
 ** Problems from the Book
-1. Show that each of the following conditional statements is a tautology using the fact that a conditional is false exactly when the hypothesis is true and the conclusion is false. (pg 38 Ex140
++ Show that each of the following conditional statements is a tautology using the fact that a conditional is false exactly when the hypothesis is true and the conclusion is false. (pg 38 Ex140
 
 
    1. $(\neg p \land (p \lor q)) \to q$
@@ -962,7 +963,7 @@ So should you use? It comes down to trial and error, but also practice and intui
 
       Solution: By simplifying the premise we get that $\top \lor r \to r$.
 
-2. Show that each of the following conditional statements is a tautology using the chain of logical identities. (Pg 38 Ex 16)
++ Show that each of the following conditional statements is a tautology using the chain of logical identities. (Pg 38 Ex 16)
 
 
    1. $(\neg p \land (p \lor q)) \to q$
@@ -1005,7 +1006,7 @@ So should you use? It comes down to trial and error, but also practice and intui
        (\bot \lor p \land q) \to q \\
        \neg (p \land q) \lor q \\
        p \lor \neg q \lor q \\
-       p \lor \top \\
+       p \lor \top \
        \top
       \end{align}
 
@@ -1028,7 +1029,7 @@ So should you use? It comes down to trial and error, but also practice and intui
       \end{align}
 
 
-1. Express the negation of the propositions using quantifiers:
++ Express the negation of the propositions using quantifiers:
 
 
    1. $\forall x(x > 1)$
@@ -1038,6 +1039,70 @@ So should you use? It comes down to trial and error, but also practice and intui
    2. $\forall x ((x < -1) \lor (x > 2))$
 
       Solution: $\exists x (( x \ge -1) \land (x \le 2))$
+
++ Determine whether $\forall x (P(x) \to Q(x))$ is equivalent to $\forall x P(x) \to \forall x Q(x)$. (pg 59 ex 45)
+  Solution:
+
+  \begin{align}
+  \forall x (P(x) \to Q(x)) \equiv \forall x P(x) \to \forall x Q(x) \\
+  \neg \exists x (P(x) \to Q(x)) \lor \exists x P(x) \to \exists x Q(x) \\
+  \neg \exists x (P(x) \to Q(x)) \lor \neg \exists x P(x) \lor \exists x Q(x) \\
+  \neg \exists x (P(x) \to Q(x)) \lor \neg \exists x P(x) \lor \neg \exists x Q(x)
+  \end{align}
+
++ Use rules of inference to show that the hypotheses “If it does not rain or if it is not foggy, then the sailing race will be held and the lifesaving demonstration will go on,” “If the sailing race is held, then the trophy will be awarded,” and “The trophy was not awarded” imply the conclusion “It rained.”
+
+  First we identify the premises:
+  + $p =$ it rained
+  + $q =$ it was foggy
+  + $r =$ the race was held
+  + $s =$ the lifesaving demonstration went on
+  + $t =$ the trophy was awarded
+
+  \begin{align}
+  \neg p \lor \neg q \to r \land s \\
+  r \to t \\
+  \neg t
+  \neg r \quad \text{from 2nd and 3rd (modus tollens)} \\
+  (\neg r \land s) \quad \text{from 1st and 4th} \\
+  \neg (\neg p \lor \neg q) \\
+  p \land q \\
+  p \quad \text{it rained}
+  \end{align}
+
++ Find the argument form for the following argument and determine whether it is valid. Can we conclude that the conclusion is true if the premises are true?
+
+
+  \begin{array}{r}
+  \text{If George does not have eight legs, then he is not a spider.}  \\
+  \text{George is a spider} \\
+  \hline
+  \text{George has eight legs.}
+  \end{array}
+
+  Solution:
+  The form of the argument is Modus Tollens, which is valid.
+
++ What rules of inference are used in this famous argument? “All men are mortal. Socrates is a man. Therefore, Socrates is mortal.”
+
+  Solution:
+  \begin{array}{r}
+  \forall x (M(x) \to Mo(x)) \\
+  M(S) \\
+  \hline
+  Mo(S)
+  \end{array}
+
+  Here we make us of universal instantiation and them modus ponens.
+
++  Use a direct proof to show that every odd integer is the difference of two squares.
+  Solution:
+  \begin{align}
+  n = 2k + 1 \\
+  n = (k+1)^2 - k^2 \\
+  n = k^2 + 2k + 1 - k^2 \\
+  n = 2k + 1
+  \end{align}
 
 
 * Set Theory
@@ -1387,7 +1452,7 @@ We can be told to find the closed formula for a sequence. This is a formula that
 3. $a_n = f(a_{n-1})$ where $f: \mathbb{R} \rightarrow \mathbb{R}$
 4. $a_n = f(a_{n-1}, a_{n-2})$ where $f: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$
 
-In short, we need to find the pattern in the sequence and use that to find the closed formula.
+In short, we need to find the pattern in the sequence and use that to find the closed formula. *A closed formula should be defined only in terms of $n$*.
 
 * Summations
 A summation is a way to add up a sequence of numbers. We denote this as $\sum_{i=1}^n a_i$. There are many ways to define a summation. To find the sum of a sequence, we can use the following rules:
@@ -1730,7 +1795,11 @@ An example of a directed graph is the following:
 A grammar is a set of rules that can be used to generate strings. The strings that are generated by the grammar are called the language of the grammar. The language of the grammar is the set of all strings that can be generated by the grammar. The language of the grammar is denoted by $L(G)$.
 
 ** Railroad Diagrams
-A railroad diagram is a way to represent a grammar. The railroad diagram will have a start symbol at the top. The start symbol will be the first symbol in the string. The start symbol will be connected to the next symbol in the string. The next symbol will be connected to the next symbol in the string. The next symbol will be connected to the next symbol in the string. This will continue until we reach the end of the string. The end of the string will be represented by a circle.
+
+
++ Vocabulary :: This is a set of symbols which we use to represent the language of the grammar. The vocabulary of the grammar is denoted by $V$.
++ Grammar :: This is a set of rules that can be used to generate strings. The grammar is denoted by $G$. It is a combination of the vocabulary. By using grammar and vocabulary, we can generate strings which are part of *formal language*.
+
 
 An example of a railroad diagram is the following:
 

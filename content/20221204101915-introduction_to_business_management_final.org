@@ -7,6 +7,9 @@
 # introduction phase of a new productintroduction phase of a new product
 # What is necessary to have a solid strategy: 1. how to generate profit 2. next steps 3. what makes us different 4. where do we want to be 5. how do we get where we need
 
+# https://docs.google.com/document/d/e/2PACX-1vSdK0mc6Xr5GxQ5REAcpQW5BbQYHIbFs8zP9iQYSfLKMHx3B44imI5VFMFwxAOI31lNd1K7evBedZLl/pub
+# /home/velocitatem/Copy of Introduction to Business Managment Sem1 2022 (Sessions 1-25).pdf
+
 * History of Business
 ** Pre Industrial
 During this time, most business was dependent on transport by sea or land. With the rise of the industrial revolution, came an increase in manufacturing. This prompted the introduction of *bonds* and *trusts*. Bonds made trading much easier and more efficient. Trusts were a way to pool money together to invest in a business. This allowed for more people to invest in a business and made it easier to raise capital. This also allowed for the creation of *stock exchanges*.
@@ -42,6 +45,18 @@ This is the intersection of the *supply* and *demand* curves. This is the point 
 
 If at any point the price is above the equilibrium, there is surplus in the market, and vice versa, there is a shortage in the market.
 
+* Cost of Production
+The cost of production is the cost of producing a good or service. This includes the cost of the *labor*, the cost of the *raw materials*, and the cost of the capital.
+There are two types views for costs:
+
+| Economic View   | Accountig View    |
+|-----------------+-------------------|
+| Economic Profit | Accounting Profit |
+| Economic Cost   | Accounting Cost   |
+| Implicit Cost   |                   |
+
+** Law of Diminishing Return
+Each type of production has some optimal levels, if this level is exceeded, the the cost of producing more units grows as well.
 * Economic Theories and Business
 The study of economics is the study of how people make decisions. There are two main theories of economics: *classical* and *keynesian*.
 
@@ -59,7 +74,6 @@ There are four main market structures: *monopoly*, *oligopoly*, *monopolistic co
 
 #+DOWNLOADED: screenshot @ 2022-12-08 16:00:02
 [[file:Market_Structures/2022-12-08_16-00-02_screenshot.png]]
-
 
 * Competitive Strategy
 ** Industry Evolution
@@ -81,11 +95,8 @@ Strategy is about winning in the market. The goal of a successful strategy is to
 We will also look at the *blue ocean strategy*.
 
 Strategy can be done on *two levels*:
-1. Corporate Level Strategy :: Here we decide in which markets we want to compete. How we want to diversify, integrate and expand.
-2. Business Level Strategy :: Here we decide how we want to compete in the market. We strive to find the *competitive advantage*.
-
-
-
+1. Corporate Level Strategy :: Here we decide in which markets we want to compete. How we want to diversify, integrate and expand. (What investors are interested in)
+2. Business Level Strategy :: Here we decide how we want to compete in the market. We strive to find the *competitive advantage*. (
 
 ** Economic Logic
 The economic logic is the *value proposition* of the business. This is the value that the business creates for the customer. This is the value that the customer is willing to pay for. This is the value that the business is able to capture.
@@ -113,8 +124,34 @@ There are three main steps in strategy formulation:
 #+DOWNLOADED: screenshot @ 2022-12-09 13:46:59
 [[file:Competitive_Strategy/2022-12-09_13-46-59_screenshot.png]]
 
+** Strategy Development
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+There are three main steps in strategy development:
+1. Sector Understanding (SWOT, 5 forces, etc.)
+2. Positioning (Value Chain, Value Network, etc.)
+3. Resource Development
+
+Finding your place: If you cannot compete with the current market, you may want to consider creating a new market. This is called *blue ocean strategy*.
+* Blue Ocean Strategy
+This is a strategy where you create a new market. This is done by *creating new demand*. By doing this, you:
++ Make competitors irrelevant
++ Differentiating costs
++ No competition
+
+What is very useful to do when creating a blue ocean is the *strategy canvas*. This is a tool that helps you to create a new market. It is based on the *value innovation* principle.
+
+The following is an example for video streaming services:
 
 
+#+DOWNLOADED: https://d6b9b5n3.rocketcdn.me/wp-content/uploads/2019/02/stretegy-canvas-example-1024x391.jpg @ 2022-12-09 17:56:03
+[[file:Blue_Ocean_Strategy/2022-12-09_17-56-03_stretegy-canvas-example-1024x391.jpg]]
+
+
+The four key steps in creating a blue ocean strategy are:
+1. Eliminate
+2. Increase
+3. Reduce
+4. Create
 
 * Business Analysis Tools
 ** SWOT Analysis
@@ -132,27 +169,97 @@ It is usually done by looking at the *internal* and *external* environment of th
 #+DOWNLOADED: https://learnbusinessconcepts.com/wp-content/uploads/2020/06/Post-3-Porters-Five-Forces.png @ 2022-12-09 14:00:07
 [[file:Business_Analysis_Tools/2022-12-09_14-00-07_Post-3-Porters-Five-Forces.png]]
 
+# The way this model works is that it looks at the *five key forces* in the market. These are: *threat of new entrants*, *threat of substitutes*, *bargaining power of suppliers*, *bargaining power of buyers*, and *rivalry among existing competitors*. What it does is that it looks at the *strength* of these forces. If the strength is *high*, then the company is *vulnerable*. If the strength is *low*, then the company is *strong*.
 
+How does this model work? It considers each of the forces, and determines the *vulnerability* or *strength* of the company.
 
-
-
-
-
++ Threats of new enterants :: This force considers the possible threat of new companies entering the market. What this is based on, is the *entry barriers* for the given market.
+  # This is the threat of new companies entering the market. This is done by looking at the *barriers to entry*.
++ Buyer Bargain Power :: For this force, we determine consider the *number of buyers* and the *importance of the buyers*. From this, we can determine the *bargaining power* of the buyers.
+  # This is the power of the buyer. This is done by looking at the *number of buyers*, *switching costs*, and *buyer information*.
++ Supplier Bargain Power :: For this force, we determine consider the *number of suppliers* and the *importance of the suppliers*. From this, we can determine the *bargaining power* of the suppliers.
+  # This is the power of the supplier. This is done by looking at the *number of suppliers*, *switching costs*, and *supplier information*.
++ Threat of Substitutes :: This force considers the *threat of substitutes* in the market. This is done by looking at the *substitutes*, *switching costs*, and *buyer information*.
+  # This is the threat of substitutes. This is done by looking at the *substitutes*, *switching costs*, and *buyer information*.
 
 
 ** MOST Analysis
+This is a tool which we can use to analyze a company. It relies on *four key elements*: *Mission, Objectives**, *strategy*, and *Tactics*.
+
++ Mission :: The purpose and definition of the company.
++ Objectives :: The goals of the company. We must be able to measure these.
++ Strategy :: The way we are going to achieve our goals. We should be able to track this.
++ Tactics :: Next steps for implementing our strategy.
+
+
+Here is an example of a MOST analysis for Google:
++ Mission :: To organize the world's information and make it universally accessible and useful.
++ Objectives
+  + To provide the best search engine.
+  + To provide the best advertising platform.
+  + To provide the best cloud computing platform.
++ Strategy
+  + Search Engine :: To provide the best search engine, we will use *machine learning* to improve our search engine.
+  + Advertising Platform :: To provide the best advertising platform, we will use *machine learning* to improve our advertising platform.
+  + Cloud Computing Platform :: To provide the best cloud computing platform, we will use *machine learning* to improve our cloud computing platform.
++ Tactics
+  + Search Engine :: We will use *machine learning* to improve our search engine.
+  + Advertising Platform :: We will use *machine learning* to improve our advertising platform.
+  + Cloud Computing Platform :: We will use *machine learning* to improve our cloud computing platform.
+
 * Creation
 ** Value Chain
-** Porter's Framework
-** Enterprise Resource Planning
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+It is a chain which describes the process from the point of gathering *resources* all the way to *selling the product*. What makes this important is that it helps us identify our primary and secondary (support) activities.
+
+** Business Process Modeling and Re-engineering
+All companies will reach points when they have to re-engineer their business processes. This is because the world is changing, and the company needs to adapt to the changes. BPR makes a company undergo drastic changes, hoping to improve: *quality, output, costs, service and speed*.
+
+** Enterprise Resource Planning (ERP)
+This is a digital system which improves the functioning of a company by: *imporving communication*, *improving efficiency*, and *improving productivity*. It is a *system* which helps a company to *manage* its *resources*.
+
 * Business Growth
 ** Product Life Cycle
+# The product life cycle is a model which describes the *four stages* of a product. These are: *introduction*, *growth*, *maturity*, and *decline*.
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+This is a cycle which describes four distinct stages of a product. These are: *introduction*, *growth*, *maturity*, and *decline*.
++ Introduction :: You try to *educate* the market about your product.
++ Growth :: Now that people, know about your product, you try to *increase* your *sales*. You are also trying to build *brand loyalty*.
++ Maturity :: Given that you now have loyal customers and a successful product, you to try to *maintain* your *sales*. You might also try to *improve* your *product*.
++ Decline :: Now the market has become a lot more saturated, and your product is starting to lose its *appeal*. You might try to *re-invent* your product, or *phase it out*. The key part of this stage is that you try to *milk* your brand, and get as much money as you can.
+** BCG Matrix
+# The BCG Matrix is a model which helps us to *analyze* our *products*. It is based on *two key factors*: *market share* and *market growth*.
+With this model, we can correlate the different stages of the product life cycle with how *market growth* and *market share* are changing.
+
+#+DOWNLOADED: screenshot @ 2022-12-10 12:13:26
+[[file:Business_Growth/2022-12-10_12-13-26_screenshot.png]]
+
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+A key takeaway from this is that if you have a product which is in the *cash cow* stage, you should invest the money into a *question mark* product. This is because the *cash cow* product is in the *decline* stage, and you should try to *phase it out*.
+
 ** Ansoff Matrix
+# The Ansoff Matrix is a model which helps us to *analyze* our *products*. It is based on *two key factors*: *market penetration* and *market development*.
+This is a model which can help us analze our strategy for growing.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+#+DOWNLOADED: screenshot @ 2022-12-10 12:24:08
+[[file:Business_Growth/2022-12-10_12-24-08_screenshot.png]]
+
+
+We can look at the *market* and the *product* to determine the *strategy*. It is also important to try to make the business as synergetic as possible.
+
 ** Vertical & Horizontal Integrations
++ Vertical Integration :: A process of taking up more space in the chain. This can be done by buying the company which either provides some resources or sells the product.
+# Vertical Integration is when a company takes over a company which is in a different stage of the value chain. This is done to *increase* the *control* of the company.
++ Horizontal Integration :: Here we try to occupy more space on the same level of the chain. This can be done by buying a company which is in the same stage of the value chain. The key objectives here are to *increase* the *control* of the company, and to *increase* the *synergy* of the company.
+  # A process of taking up more space in the same stage of the supply chain. This can be done by buying the company which is in the same stage of the supply chain.
 ** Make or Buy
-** Economies of Scale
+# Make or Buy is a decision which we have to make when we are trying to decide whether we should *make* a product or *buy* it from another company.
+It is not necessary to always make everything yourself, you can outsource a lot as a company. The key decision is to make sure your core competencies are not being outsourced.
 * Business Models
 ** B2B
+
 ** B2C
 ** C2C
 * Business Decision Making
@@ -208,6 +315,7 @@ It is usually done by looking at the *internal* and *external* environment of th
 ** International Strategies
 ** Asset Heavy & Asset Light
 ** SASS Scaling
+
 * Glocal Companies
 ** Local + Global
 ** Act Global
@@ -218,3 +326,63 @@ It is usually done by looking at the *internal* and *external* environment of th
 ** Market Research
 ** Commercial Missions
 ** Partnerships
+* Sample Quiz
+
+1. What is the most important factor to consider when developing a business plan?
+A. Cost
+B. Market
+C. Competition
+D. Strategy
+
+2. Which of the following is NOT an example of a business resource?
+A. Office supplies
+B. Human capital
+C. Technology
+D. Natural resources
+
+3. What is the definition of a sole proprietorship?
+A. A business owned by multiple people
+B. A business owned by a single person
+C. A business owned by a corporation
+D. A business owned by the government
+
+4. What is the primary goal of a business?
+A. To make a profit
+B. To provide employment
+C. To satisfy customers
+D. To become a global leader
+
+5. What are the four main functions of management?
+A. Planning, organizing, leading, and controlling
+B. Planning, hiring, leading, and controlling
+C. Planning, organizing, motivating, and controlling
+D. Planning, organizing, leading, and motivating
+
+6. What is the purpose of a mission statement?
+A. To define a company's goals and objectives
+B. To define a company's values and beliefs
+C. To define
+a company's competitors
+D. To define a company's products and services
+
+7. What is the difference between a manager and an entrepreneur?
+A. A manager is responsible for managing the operations of a business, while an entrepreneur is responsible for creating and growing a business.
+B. A manager is responsible for creating and growing a business, while an entrepreneur is responsible for managing the operations of a business.
+C. A manager is responsible for managing the finances of a business, while an entrepreneur is responsible for creating and growing a business.
+D. A manager is responsible for creating and managing a team, while an entrepreneur is responsible for managing the finances of a business.
+
+8. What is the purpose of a SWOT analysis?
+A. To evaluate the strengths, weaknesses, opportunities, and threats of a business
+B. To evaluate the success of a business
+C. To evaluate the competition of a business
+D. To evaluate the market of a business
+
+9. What are the three main types of business organizations?
+A. Sole proprietorships, partnerships, and corporations
+B. Franchises, partnerships, and corporations
+C. Sole proprietorships, franchises, and partnerships
+D. Sole proprietorships, limited
+
+Now create a free response question to sum up the entire year of learning:
+
+10. In your own words, explain the importance of business management and why it is essential for businesses to succeed.

@@ -1,0 +1,343 @@
+:PROPERTIES:
+:ID:       6085a591-1c69-454d-9099-5f08175bb29d
+:END:
+#+title: Introduction to Business Management - Final Example
+#+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
+#+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+#+OPTIONS: toc:2
+#+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
+#+HTML_HEAD: <script src="anti-cheat.js"></script>
+
+* Example 1
+1. What is the main purpose of a business model?
+   A. To make money
+   B. To provide a service
+   C. To gain market share
+   D. To increase efficiency
+
+2. Which of the following is an example of a public company?
+   1. Microsoft
+   2. Apple
+   3. Tesla
+   4. Google
+
+3. What is the main role of a manager in a business?
+   1. To lead and motivate employees
+   2. To develop strategies and tactics
+   3. To make financial decisions
+   4. To manage resources
+
+4. What type of framework is used to analyze business models?
+   1. Structural framework
+   2. Economic framework
+   3. Tactical framework
+   4. Strategic framework
+
+5. What is the most important factor in determining a company’s success?
+   1. Leadership
+   2. Market share
+   3. Financial decisions
+   4. Innovation
+
+6. What type of economic system is most commonly used in international business?
+   1. Capitalism
+   2. Communism
+   3. Socialism
+   4. Free market
+
+7. What is the main goal of establishing a corporation?
+   1. To increase profits
+   2. To gain market share
+   3. To reduce costs
+   4. To limit liability
+
+8. What is the most important factor in creating successful business strategies?
+   1. Market research
+   2. Financial analysis
+   3. Leadership
+   4. Risk assessment
+
+9. What is the first step to take when negotiating a business deal?
+   1. Establishing trust
+   2. Determining the needs of both parties
+   3. Defining the terms
+   4. Reaching an agreement
+
+10. What is the most important factor in the global economy for the foreseeable future?
+    1. Employment
+    2. International trade
+    3. Technological advancement
+    4. Political stability
+* Example 2
+1. What is the main purpose of an Introduction to Business Management Course?
+   1. To familiarize future engineers with the concept of private and public companies
+   2. To provide a comprehensive overview of various management strategies
+   3. To teach engineers about business model innovation
+   4. To understand the basics of negotiating and decision making
+
+2. Which of the following is NOT a key element of an Introduction to Business Management Course?
+   1. Assessing institutional and legal frameworks
+   2. Understanding organizational structures
+   3. Applying frameworks to analyze stocks
+   4. Analyzing the global economy
+
+3. What type of strategies are typically discussed in an Introduction to Business Management Course?
+   1. Leadership strategies
+   2. Marketing strategies
+   3. Investment strategies
+   4. All of the above
+
+4. How can a business model be analyzed in the context of macro and micro economics?
+   1. By assessing its impact on stakeholders
+   2. By studying its potential for growth
+   3. By evaluating its potential for generating profit
+   4. All of the above
+
+5. What type of decisions are typically discussed in an Introduction to Business Management Course?
+   a. Personal decisions
+   b. Financial decisions
+   c. Legal decisions
+   d. All of the above
+6. What is one example of a practical case that could be discussed in an Introduction to Business Management Course?
+   1. Establishing a corporation
+   2. Creating an advertising campaign
+   3. Developing a new product
+   4. All of the above
+
+7. Which type of company is typically discussed in an Introduction to Business Management Course?
+   a. Private companies
+   b. Public companies
+   c. Both private and public companies
+   d. Neither private nor public companies
+* Example 3
+
+1. What is the law of diminishing return?
+   A) The principle that increased production leads to decreased profits
+   B) The principle that increased production leads to decreased cost
+   C) The principle that increased input leads to a decrease in the rate of output
+   D) The principle that increased output leads to an increase in cost
+
+2. What is the purpose of SWOT Analysis?
+   1. To analyze the internal and external environment of an organization
+   2. To evaluate the competitive landscape
+   3. To examine customer segments and target markets
+   4. To measure a company’s financial performance
+
+3. What are the four components of Strategy Implementation?
+   1. Organization, Processes, People, Culture
+   2. Planning, Execution, Monitoring, Adjustment
+   3. Goals, Resources, Tactics, Measurement
+   4. Leadership, Vision, Execution, Evaluation
+
+4. What is the difference between Asset Heavy and Asset Light strategies?
+   1. Asset Heavy strategies focus on acquiring physical assets while Asset Light strategies focus on intangible assets such as knowledge and technology.
+   2. Asset Heavy strategies focus on short-term investments while Asset Light strategies focus on long-term investments.
+   3. Asset Heavy strategies focus on cost reduction while Asset Light strategies focus on innovation.
+   4. Asset Heavy strategies focus on diversification while Asset Light strategies focus on specialization.
+
+5. What is the purpose of Market Research?
+   1. To evaluate customer segments and target markets
+   2. To analyze the internal and external environment of an organization
+   3. To measure a company’s financial performance
+   4. To identify opportunities for growth and expansion
+
+6. What is the purpose of a Balanced Scorecard?
+   1. To measure a company’s financial performance
+   2. To analyze the internal and external environment of an organization
+   3. To evaluate customer segments and target markets
+   4. To track progress towards achieving strategic goals
+
+7. What are the five forces in Porter's Five Forces Model?
+   1. Threat of new entrants, threat of substitutes, bargaining power of buyers, bargaining power of suppliers, and competitive rivalry
+   2. Threat of new entrants, threat of substitutes, customer loyalty, market segmentation, and competitive rivalry
+   3. Threat of new entrants, threat of substitutes, customer loyalty, bargaining power of buyers, and competitive rivalry
+   4. Threat of new entrants, threat of substitutes, bargaining power of buyers, bargaining power of suppliers, and market segmentation
+* Example 4
+1. Which of the following is NOT a basic concept of business?
+   A. Demand Curve
+   B. Supply Chain
+   C. Equilibrium
+   D. Profit Margin
+
+2. In Classical Economics, what type of economy is assumed to exist?
+   1. Planned Economy
+   2. Mixed Economy
+   3. Market Economy
+   4. Command Economy
+
+3. What does the acronym SWOT stand for?
+   1. Survival, Wealth, Opportunities, Tactics
+   2. Strengths, Weaknesses, Opportunities, Threats
+   3. Strength, Wealth, Obstacles, Timing
+   4. Successful, Worthy, Opportunities, Trends
+
+4. What type of strategy focuses on creating new demand in a market that did not previously exist?
+   1. Blzue Ocean Strategy
+   2. Disruption Strategy
+   3. Make or Buy Strategy
+   4. Vertical Integration Strategy
+
+5. Which of the following models is used to measure cultural differences between countries?
+   1. MOST Analysis
+   2. BCG Matrix
+   3. Ansoff Matrix
+   D Cultural Dimension Model
+
+6. What are the three main components of an organization's R&D department?
+   A. Objectives , Structure , People
+   B. Objectives , Processes , Culture
+   C. Objectives , Structure , Roles
+   D. Structure , Processes , People
+
+7. What type of industry is characterized by having few competitors and high barriers to entry?
+   A. Oligopoly
+   B. Monopoly
+   C. Perfect Competition
+   D. Monopolistic Competition
+
+8. What is the name given to a strategy designed to integrate two businesses at the same level in the supply chain?
+   A. Horizontal Integration
+   B. Mergers & Acquisitions
+   C. Market Penetration
+   D. Vertical Integration
+
+9. What type of business model involves two businesses selling goods and services directly to each other?
+   A. B2B
+   B. B2C
+   C. C2C
+   D. E-commerce
+
+10. According to Porter’s Five Forces model, which one of these is NOT a competitive force in an industry?
+    A. Suppliers
+    B. Customers
+    C. Substitutes
+    D. Competitors
+
+11. What is the process of evaluating an organization's internal and external environment in order to identify potential opportunities and threats?
+    A. SWOT Analysis
+    B. Balanced Scorecards
+    C. Porter's Five Forces
+    D. MOST Analysis
+
+12. What type of organizational structure has a decentralized decision making process and is based on relationships between teams?
+    1. Functional Structure
+    2. Divisional Structure
+    3. Matrix Structure
+    4. Team & Networking Structure
+
+13. Which of the following goals are not typically associated with a company's finance department?
+    1. Increase Sales
+    2. Increase Profits
+    3. Maximize Shareholder Value
+    4. Reduce Production Costs
+
+14. What type of strategy involves developing products or services that will be attractive to customers who have previously not been served by other companies?
+    1. Blue Ocean Strategy
+    2. Disruption Strategy
+    3. Make or Buy Strategy
+    4. Vertical Integration Strategy
+
+15. What type of analysis looks at the value each part of a company’s operations adds to the final product?
+    A. Value Chain Analysis
+    B. BCG Matrix
+    C. Ansoff Matrix
+    D. MOST Analysis
+
+16. What is the name given to a growth strategy involving the acquisition of new businesses or assets in order to expand into new markets?
+    1. Mergers & Acquisitions
+    2. Market Penetration
+    3. Horizontal Integration
+    4. Vertical Integration
+
+17. The concept of ‘think global, act local’ is most closely associated with which type of business model?
+    1. Glocal Companies
+    2. International Strategies
+    3. Asset Heavy & Asset Light
+    4. SASS Scaling
+
+18. Where does the primary responsibility for corporate governance usually lie?
+    1. Board Members
+    2. Shareholders
+    3. Public Enterprises
+    4. The C-Suite
+
+19. What is the term used to describe an enterprise which combines both global and local strategies in order to meet customer needs around the world?
+    1. Glocal Company
+    2. International Strategies
+    3. Asset Heavy & Asset Light
+    4. SASS Scaling
+
+20. What type of business decision making approach relies heavily on data driven analysis and quantitative methods?
+    1. Data Driven Decision Making
+    2. Balanced Scorecards
+    3. Porter's Five Forces
+    4. SWOT Analysis
+
+21. What type of strategy focuses on creating new demand in a market that did not previously exist?
+    1. Blue Ocean Strategy
+    2. Disruption Strategy
+    3. Make or Buy Strategy
+    4. Vertical Integration Strategy
+
+22. What type of analysis looks at the value each part of a company’s operations adds to the final product?
+    1. Value Chain Analysis
+    2. BCG Matrix
+    3. Ansoff Matrix
+    4. MOST Analysis
+
+23. What type of organizational structure has a decentralized decision making process and is based on relationships between teams?
+    1. Functional Structure
+    2. Divisional Structure
+    3. Matrix Structure
+    4. Team & Networking Structure
+
+24. What does the acronym SWOT stand for?
+    1. Survival, Wealth, Opportunities, Tactics
+    2. Strengths, Weaknesses, Opportunities, Threats
+    3. Strength, Wealth, Obstacles, Timing
+    4. Successful, Worthy, Opportunities, Trends
+
+
+
+* Free Response Example 1
+1. Explain the concept of equilibrium and how it affects business decisions.
+
+2. Describe the differences between classical economics and Keynesian economics and the implications of each for businesses.
+
+3. Analyze a company’s SWOT analysis in terms of its competitive strategy, strengths, weaknesses, opportunities, and threats.
+
+4. Explain the Product Life Cycle and how companies can use it to make decisions about growth strategies.
+
+5. Discuss the five forces of competition as identified by Porter and how they impact a company’s competitive strategy.
+
+6. Describe the different types of organizational structures used in businesses and discuss their advantages and disadvantages.
+
+7. Analyze the roles of different stakeholders in corporate governance and how they influence decision-making within an organization.
+
+8. Compare and contrast internalization strategies such as market research, commercial missions, partnerships, etc., and explain their importance to global businesses.
+
+9. Outline key differences between asset heavy and asset light scaling methods and discuss which is more effective when attempting to achieve scalability for a business venture
+
+10. Evaluate the importance of cultural management to a business's success by examining cultural dimension models such as Hofstede’s or Trompenaars’s theories
+
+** Answers
+
+1. Equilibrium is a state in which supply and demand are equal, resulting in stable prices and market conditions. Business decisions can be affected by the concept of equilibrium in that if there is an imbalance between supply and demand, prices will fluctuate accordingly. If demand increases, prices will rise; if supply increases, prices will fall. Therefore, businesses must consider these fluctuations as they make decisions about production levels, pricing, and marketing strategies.
+
+2. Classical economics is based on the idea of laissez-faire economics, meaning that government intervention should be minimal and the free market should be allowed to operate freely with little interference from the government or other entities. Keynesian economics takes a different approach by advocating for more active government involvement in the economy via fiscal policy such as taxation and spending in order to promote economic growth. This can have implications for businesses in terms of the cost of doing business, regulation, and tax incentives.
+
+3. A SWOT analysis is a tool used to measure a company’s strengths, weaknesses, opportunities, and threats in order to help it develop an effective competitive strategy. Strengths and weaknesses refer to internal factors such as resources, capabilities, and the skills of the management team while opportunities and threats refer to external factors such as competitors and changes in the marketplace. By analyzing these factors, companies can identify their greatest advantages and areas of improvement in order to better position themselves against competitors.
+
+4. The Product Life Cycle is a model that explains how products move through different stages of development from introduction to maturity to decline. Companies can use this model to make decisions about when to launch or discontinue products based on customer demand and market conditions. For example, if a company sees that demand for a particular product is declining they may decide to discontinue it or introduce new features in order to revitalize the product.
+
+5. Porter's Five Forces are five key factors that influence industry competition: the threat of new entrants, the threat of substitutes, bargaining power of buyers, bargaining power of suppliers, and rivalry among existing firms. These forces interact with each other to determine how competitive an industry will be; for example, high barriers to entry decrease the threat of new entrants which increases competition among existing firms resulting in lower prices for buyers. Companies must consider these forces when developing competitive strategies so that they can stay ahead of their competitors by understanding their strengths and weaknesses relative to them.
+
+6. Organizational structures are used by companies in order to define roles within their organization as well as how tasks should be completed. There are three main types of structures: functional - where employees specialize in specific areas; divisional - where employees are divided into departments; and matrix - where employees report directly to two or more managers at once. Each type has its own advantages and disadvantages depending on the company’s goals; for example, a matrix structure may be more suitable for complex projects while a functional structure may be better suited for large organizations with many departments.
+
+7. Corporate governance involves stakeholders such as shareholders, board members, executives (the “C-Suite”), government agencies, customers/clients/partners etc., all playing a role in decision making within an organization or company. Shareholders have ownership rights over the company’s assets whereas board members provide oversight and guidance for management teams with regard to legal obligations etc.. The C-Suite is responsible for setting up strategies and ensuring they are properly implemented while government agencies regulate activities by companies in order ensure fairness under law etc.. All these stakeholders play an important role when it comes to corporate governance since they all have different interests which must be balanced out when making decisions about how best manage a business entity.
+
+8. Internalization strategies refer to ways that companies can expand internationally by researching foreign markets prior launching operations there (market research), sending representatives abroad (commercial missions), forming partnerships with local companies (partnerships) etc.. These strategies are important because they allow companies access valuable information about foreign markets which helps them make better informed decisions when entering new markets thus reducing risk involved with international expansion .
+
+9. The difference between asset heavy scaling methods (such as mergers & acquisitions) versus asset light scaling methods (such as franchising) is that asset heavy methods involve taking on more costs associated with acquiring assets such as factories or warehouses while asset light methods involve less risk since no physical assets need be purchased but rather agreements made between two parties allowing one party access/rights over another party's resources/assets without owning them outright . In most cases asset light methods prove more effective when attempting scalability due lower financial risks associated with them than those associated with asset heavy methods though this ultimately depends on individual circumstances faced by each business venture .
+
+10. Cultural management is important because it allows organizations understand how culture impacts workplace dynamics which then affects employee performance , morale , creativity , productivity , communication etc... Cultural dimension models like Hofstede’s or Trompenaars’s provide insight into various aspects of culture such as power distance , uncertainty avoidance , collectivism vs individualism etc.. Such models can help businesses identify cultural differences between countries/regions which can then inform HR policies tailored towards each region thereby helping them improve cross-cultural relations & communication within multinational workforces .
