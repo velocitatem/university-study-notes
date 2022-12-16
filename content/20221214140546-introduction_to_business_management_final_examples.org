@@ -7,13 +7,15 @@
 #+OPTIONS: toc:2
 #+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
 #+HTML_HEAD: <script src="anti-cheat.js"></script>
+#+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+#+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee. Bottom right cornner :)")}, 60*1000);</script>
 
 * Example 1
 1. What is the main purpose of a business model?
-   A. To make money
-   B. To provide a service
-   C. To gain market share
-   D. To increase efficiency
+   1. To make money
+   2. To provide a service
+   3. To gain market share
+   4. To increase efficiency
 
 2. Which of the following is an example of a public company?
    1. Microsoft
@@ -21,7 +23,7 @@
    3. Tesla
    4. Google
 
-3. What is the main role of a manager in a business?
+3. What is the main role of a leader in a business?
    1. To lead and motivate employees
    2. To develop strategies and tactics
    3. To make financial decisions
@@ -68,6 +70,17 @@
     2. International trade
     3. Technological advancement
     4. Political stability
+** Solutions
+1. 4. To increase efficiency
+2. 1, 2, 3, and 4
+3. 1. To lead and motivate employees
+4. 2. Economic framework
+5. 4. Innovation
+6. 1. Capitalism
+7. 1. To increase profit
+8. 1. Market research
+9. 2. Determining the needs of both parties
+10. 4. Political stability
 * Example 2
 1. What is the main purpose of an Introduction to Business Management Course?
    1. To familiarize future engineers with the concept of private and public companies
@@ -98,6 +111,7 @@
    b. Financial decisions
    c. Legal decisions
    d. All of the above
+
 6. What is one example of a practical case that could be discussed in an Introduction to Business Management Course?
    1. Establishing a corporation
    2. Creating an advertising campaign
@@ -109,6 +123,14 @@
    b. Public companies
    c. Both private and public companies
    d. Neither private nor public companies
+** Solutions
+1. 2. To provide a comprehensive overview of various management strategies
+2. 3. Applying frameworks to analyze stocks
+3. 4. All of the above
+4. 4. All of the above
+5. d. All of the above
+6. 4. All of the above
+7. c. Both private and public companies
 * Example 3
 
 1. What is the law of diminishing return?
@@ -152,12 +174,20 @@
    2. Threat of new entrants, threat of substitutes, customer loyalty, market segmentation, and competitive rivalry
    3. Threat of new entrants, threat of substitutes, customer loyalty, bargaining power of buyers, and competitive rivalry
    4. Threat of new entrants, threat of substitutes, bargaining power of buyers, bargaining power of suppliers, and market segmentation
+** Solutions
+1. C) The principle that increased input leads to a decrease in the rate of output
+2. To analyze the internal and external environment of an organization
+3. Organization, Processes, People, Culture
+4. Asset Heavy strategies focus on acquiring physical assets while Asset Light strategies focus on intangible assets such as knowledge and technology.
+5. To evaluate customer segments and target markets
+6. To track progress towards achieving strategic goals
+7. Threat of new entrants, threat of substitutes, bargaining power of buyers, bargaining power of suppliers, and competitive rivalry
 * Example 4
 1. Which of the following is NOT a basic concept of business?
-   A. Demand Curve
-   B. Supply Chain
-   C. Equilibrium
-   D. Profit Margin
+   1. Demand Curve
+   2. Supply Chain
+   3. Equilibrium
+   4. Profit Margin
 
 2. In Classical Economics, what type of economy is assumed to exist?
    1. Planned Economy
@@ -184,40 +214,40 @@
    D Cultural Dimension Model
 
 6. What are the three main components of an organization's R&D department?
-   A. Objectives , Structure , People
-   B. Objectives , Processes , Culture
-   C. Objectives , Structure , Roles
-   D. Structure , Processes , People
+   1. Objectives , Structure , People
+   2. Objectives , Processes , Culture
+   3. Objectives , Structure , Roles
+   4. Structure , Processes , People
 
 7. What type of industry is characterized by having few competitors and high barriers to entry?
-   A. Oligopoly
-   B. Monopoly
-   C. Perfect Competition
-   D. Monopolistic Competition
+   1. Oligopoly
+   2. Monopoly
+   3. Perfect Competition
+   4. Monopolistic Competition
 
 8. What is the name given to a strategy designed to integrate two businesses at the same level in the supply chain?
-   A. Horizontal Integration
-   B. Mergers & Acquisitions
-   C. Market Penetration
-   D. Vertical Integration
+   1. Horizontal Integration
+   2. Mergers & Acquisitions
+   3. Market Penetration
+   4. Vertical Integration
 
 9. What type of business model involves two businesses selling goods and services directly to each other?
-   A. B2B
-   B. B2C
-   C. C2C
-   D. E-commerce
+   1. B2B
+   2. B2C
+   3. C2C
+   4. E-commerce
 
 10. According to Porter’s Five Forces model, which one of these is NOT a competitive force in an industry?
-    A. Suppliers
-    B. Customers
-    C. Substitutes
-    D. Competitors
+    1. Suppliers
+    2. Customers
+    3. Substitutes
+    4. Competitors
 
 11. What is the process of evaluating an organization's internal and external environment in order to identify potential opportunities and threats?
-    A. SWOT Analysis
-    B. Balanced Scorecards
-    C. Porter's Five Forces
-    D. MOST Analysis
+    1. SWOT Analysis
+    2. Balanced Scorecards
+    3. Porter's Five Forces
+    4. MOST Analysis
 
 12. What type of organizational structure has a decentralized decision making process and is based on relationships between teams?
     1. Functional Structure
@@ -238,10 +268,10 @@
     4. Vertical Integration Strategy
 
 15. What type of analysis looks at the value each part of a company’s operations adds to the final product?
-    A. Value Chain Analysis
-    B. BCG Matrix
-    C. Ansoff Matrix
-    D. MOST Analysis
+    1. Value Chain Analysis
+    2. BCG Matrix
+    3. Ansoff Matrix
+    4. MOST Analysis
 
 16. What is the name given to a growth strategy involving the acquisition of new businesses or assets in order to expand into new markets?
     1. Mergers & Acquisitions
@@ -291,13 +321,31 @@
     3. Matrix Structure
     4. Team & Networking Structure
 
-24. What does the acronym SWOT stand for?
-    1. Survival, Wealth, Opportunities, Tactics
-    2. Strengths, Weaknesses, Opportunities, Threats
-    3. Strength, Wealth, Obstacles, Timing
-    4. Successful, Worthy, Opportunities, Trends
 
-
+** Solutions
+1. Demand Curve
+2. Market Economy
+3. Strengths, Weaknesses, Opportunities, Threats
+4. Blue Ocean Strategy
+5. Cultural Dimension Model
+6. Objectives , Structure , Roles
+7. Oligopoly
+8. Horizontal Integration
+9. B2B
+10. Competitors
+11. SWOT Analysis
+12. Team & Networking Structure
+13. Increase Sales
+14. Blue Ocean Strategy
+15. Value Chain Analysis
+16. Mergers & Acquisitions
+17. Glocal Companies
+18. Board Members
+19. Glocal Company
+20. Data Driven Decision Making
+21. Blue Ocean Strategy
+22. Value Chain Analysis
+23. Matrix Structure
 
 * Free Response Example 1
 1. Explain the concept of equilibrium and how it affects business decisions.

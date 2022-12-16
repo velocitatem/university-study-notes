@@ -1,0 +1,424 @@
+:PROPERTIES:
+:ID:       7abedd78-d1e5-4686-be6d-1a231047d4da
+:END:
+#+title: Fundamentals of Probability and Statistics - Final
+#+html_head_extra: <link rel="favicon" type="image/x-icon" href="favicon.png"/>
+#+OPTIONS: num:nil timestamp:nil toc:nil author:nil
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="extra.css" />
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="bq.css"></link>
+#+html: <div id="back"></div>
+#+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+#+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);</script>
+
+
+
+
+* First Part
+Key concepts which were on the midterm:
++ Computing Means and Variances
++ Five Number Summary
++ Probability of independent compound events
++ Conditional Probability
++ Bayes Theorem
++ Empirical Rule and Chebyshev's Theorem
++ Linear Relationships and Correlation
++ Types of Studies (Enumerative, Analytical)
++ Stem and Leaf Plots
++ Box Plots
+* Discrete Random Variable
+There are two fundamentally different types of random variables -discrete random variables and continuous random variables. In this topic, we examine the basic propoerties and discuss the most important examples of discrete variables.
+Definition of random variable. Probability distributions for discrete random variables. Properties of discrete random variables: Expected value, variance. Bernouilli distribution. Binomial distribution. Hypergeometric distribution. Negative Binomial distribution. Poisson distribution.
+* Continuous Probability Distributions
+There are two fundamentally different types of random variables -discrete random variables and continuous random variables. In this topic, we examine the basic propoerties and discuss the most important examples of continuous variables.
+Probability Density Functions. Cumulative Distribution Functions and Expected Values. The Normal Distribution. The Exponential and Gamma Distributions. The Chi-Squared Distribution. Other distributions.
+* Joint Probability Distributions
+Many problems in probability and statistics involve working simultaneously with two or more random variables. For example, X and Y might be the income and willingness to pay for a good, respectively, of a randomly selected individual. This topic address the concept of joint probability distributions.
+Jointly Distributed Random Variables. Expected Values, Covariance, and Correlation. Statistics and Their Distributions. The Distribution of the Sample Mean. The Distribution of a Linear Combination
+* Point Estimation
+Given a parameter of interest, such as population mean or population proportion, the objective of point estimation is to use a sample to compute a number that represents in some sense an educated guess for the true value of the parameter. The resulting number is called a point estimate. This topic describes and illustrates two important methods for obtaining point estimates.
+* Practice Questions
+** Short Answer
+1. What are the two fundamentally different types of random variables?
+   - Answer: Discrete random variables and continuous random variables.
+
+2. What are the three basic principles of probability?
+   - Answer: The three basic principles of probability are sample spaces and events, axioms and properties of probability, and counting techniques.
+
+3. What is the expected value for a discrete random variable?
+   - Answer: The expected value for a discrete random variable is the sum of the values of each outcome multiplied by the probability of that outcome.
+
+4. What is the difference between a probability density function and a cumulative distribution function?
+   - Answer: A probability density function is a formula that describes the relative likelihood of a random variable taking on a given value, while a cumulative distribution function is a formula that describes the cumulative probability of a random variable taking on a value less than or equal to a given value.
+
+5. What is the purpose of point estimation?
+   - Answer: The purpose of point estimation is to use a sample to compute a number that represents in some sense an educated guess for the true value of a parameter such as a population mean or population proportion.
+
+6. What is the distribution of the sample mean?
+   - Answer: The distribution of the sample mean is a normal distribution with mean equal to the population mean and standard deviation equal to the population standard deviation divided by the square root of the sample size.
+** Questions 1
+
+
+1. What type of data does Fundamentals of Statistics examine?
+  A. Graphical methods
+  B. Numerical methods
+  C. Random variables
+  D. Quantitative and qualitative data
+
+  Answer: D. Quantitative and qualitative data
+
+
+2. What is the purpose of studying Probability?
+  A. To quantify the chances of different outcomes in a given situation
+  B. To measure the variance in a population
+  C. To study randomness and uncertainty
+  D. To estimate population mean or proportion
+
+  Answer: C. To study randomness and uncertainty
+
+
+3. What are examples of discrete random variables?
+  A. Bernouilli distribution, Normal Distribution, Exponential Distribution
+  B. Binomial distribution, Poisson distribution, Gamma Distribution
+  C. Stem-and-leaf displays, dotplots, histograms, boxplots
+  D. Mean, median, sample proportions, variance
+
+  Answer: B. Binomial distribution, Poisson distribution, Gamma Distribution
+
+
+4. How can we calculate Expected Value for a discrete random variable?
+  A. By using the formula $\mathbb{E}(X) = \sum_{i=1}^{n}x_iP(x_i)$
+  B. By computing the average value of a set of numbers
+  C. By summing up the probability distributions for all outcomes
+  D. By calculating the variance in a population
+
+  Answer: A. By using the formula $\mathbb{E}(X) = \sum_{i=1}^{n}x_iP(x_i)$
+
+
+5. What is the role of Joint Probability Distributions in probability and statistics?
+  A. To measure the variance in a population
+  B. To study randomness and uncertainty
+  C. To provide methods for quantifying the chances of different outcomes
+  D. To work with two or more random variables simultaneously
+
+  Answer: D. To work with two or more random variables simultaneously
+
+
+6. What is the purpose of Point Estimation?
+  A. To study randomness and uncertainty
+  B. To quantify the chances of different outcomes in a given situation
+  C. To use a sample to compute an estimate for the true value of a parameter
+  D. To measure the variance in a population
+
+  Answer: C. To use a sample to compute an estimate for the true value of a parameter
+
+
+7. What is a Probability Density Function?
+  A. A function that describes the probability of occurrence of different possible outcomes in a given situation
+  B. A graph which shows the relationship between two variables
+  C. A function which defines the probability of an event occurring within a continuous range of values
+  D. A function which assigns probabilities to individual outcomes
+
+  Answer: C. A function which defines the probability of an event occurring within a continuous range of values
+
+
+8. What is the cumulative distribution function of a continuous random variable?
+  A. A graph which shows the relationship between two variables
+  B. A function which assigns probabilities to individual outcomes
+  C. A function which defines the probability of an event occurring within a continuous range of values
+  D. The probability that the random variable takes on a value less than or equal to a given value
+
+  Answer: D. The probability that the random variable takes on a value less than or equal to a given value
+
+
+9. What are the two types of random variables?
+  A. Graphical and Numerical methods
+  B. Discrete and Continuous Probability Distributions
+  C. Descriptive and Inferential Statistics
+  D. Quantitative and Qualitative Data
+
+  Answer: B. Discrete and Continuous Probability Distributions
+
+
+10. What is the Distribution of a Linear Combination?
+  A. The probability that the linear combination takes on a value less than or equal to a given value
+  B. The distribution of probabilities across a set of outcomes
+  C. A function which assigns probabilities to individual outcomes
+  D. The sum of two random variables
+
+  Answer: A. The probability that the linear combination takes on a value less than or equal to a given value
+
+** Questions 2
+1. What is a stem-and-leaf display?
+   1. A graphical way of organizing and displaying numerical data
+   2. A type of bar graph
+   3. A probability distribution
+   4. A method of counting technique
+
+2. What is the expected value of a discrete random variable?
+   1. The sum of all possible outcomes
+   2. The most likely outcome
+   3. The average of the probabilities associated with the sample space
+   4. The average of all possible outcomes
+
+3. What is the equation for the normal distribution?
+   1. N(x) = 1/σ√2π e^-x^2/2σ^2
+   2. N(x) = 1/σ√2π e^-(x-μ)^2/2σ^2
+   3. N(x) = 1/σ√2π e^-(x+μ)^2/2σ^2
+   4. N(x) = 1/σ√2π e^-x/σ^2
+
+4. What is the formula for calculating variance?
+   1. Var(X) = E[X^2] – (E[X])^2
+   2. Var(X) = E[(X-μ)^2]
+   3. Var(X) = E[X] – (E[X])^2
+   4. Var(X) = E[X - μ]
+
+5. What is the definition of joint probability distribution?
+   1. The sum of probabilities for each possible outcome of two events
+   2. The probability of two events occurring simultaneously
+   3. The probability of one event occurring given that another already occurred
+   4. The mutual dependence between two variables in a probability distribution
+
+6. What is a point estimate?
+   1. An educated guess for the true value of the parameter based on a sample
+   2. A numerical value representing the average of a sample set
+   3. A measure of how closely two variables are related to one another
+   4. The probability of an event occurring based on given conditions
+
+7. Determine the probability of selecting an even number when a six-sided die is rolled.
+   1. 1/6
+   2. 1/2
+   3. 2/3
+   4. 3/4
+
+8. What is the variance of a Bernouilli distribution with a probability of 0.3?
+   1. 0.7
+   2. 0.9
+   3. 0.21
+   4. 0.03
+
+9. What is the cumulative distribution function of the exponential distribution?
+   1. P(x <= x) = 1 - e^-λx
+   2. P(x>x) = e^-λx
+   3. P(x<=x) = e^-λx
+   4. P(x>x) = 1 - e^-λx
+
+10. A sample contains 3, 9, 12, 4, 5, 8 and 11. What is the mean of the sample?
+    1. 7
+    2. 8
+    3. 9
+    4. 10
+
+
+
+*Answers: 1. 1; 2. 4; 3. 2; 4. 1; 5. 2; 6. 1; 7. 2; 8. 3; 9. 1; 10. 4*
+
+** Questions 3
+1. What is the expected value of a discrete random variable?
+   1. The average value of a random variable
+   2. The sum of all possible values of a random variable
+   3. The most likely value of a random variable
+   4. The median value of a random variable
+
+2. What is the variance of a continuous random variable?
+   1. The average change in the value of a random variable
+   2. The sum of all possible values of a random variable
+   3. The most likely value of a random variable
+   4. The median value of a random variable
+
+3. What is the probability density function of a uniform distribution?
+   1. A function that assigns a probability to each value of a random variable
+   2. A function that assigns a probability to each range of values of a random variable
+   3. A function that assigns a probability to each combination of values of a random variable
+   4. A function that assigns a probability to each interval of values of a random variable
+
+4. What is the cumulative distribution function of a normal distribution?
+   1. A function that assigns a probability to each value of a random variable
+   2. A function that assigns a probability to each range of values of a random variable
+   3. A function that assigns a probability to each combination of values of a random variable
+   4. A function that assigns a probability to each interval of values of a random variable
+
+5. What is the expected value of a binomial distribution?
+   A. The mean of a random variable
+   B. The sum of all possible values of a random variable
+   C. The most likely value of a random variable
+   D. The median value of a random variable
+*** Answers
+1. The expected value of a discrete random variable is the sum of all possible values of a random variable.
+2. The variance of a continuous random variable is the average change in the value of a random variable.
+3. The probability density function of a uniform distribution is a function that assigns a probability to each interval of values of a random variable.
+4. The cumulative distribution function of a normal distribution is a function that assigns a probability to each combination of values of a random variable.
+5. The expected value of a binomial distribution is the mean of a random variable.
+** Questions 4
+1. Calculate the expected value of a discrete random variable with the following probability mass function: P(X=1) = 0.3, P(X=2) = 0.4, P(X=3) = 0.2, P(X=4) = 0.1
+
+  Answer: 2.3
+
+2. If X is a continuous random variable with probability density function f(x) = 4x^2, calculate the cumulative distribution function F(x).
+
+  Answer: F(x) = x^3
+
+3. Calculate the variance of a binomial distribution with n = 10 and p = 0.3.
+
+ Answer: 2.7
+
+4. Calculate the probability of x successes in a Poisson distribution with a mean of 5.
+
+  Answer: P(X=x) = (e^-5)*(5^x)/x!
+
+
+5. Calculate the expected value of a uniform distribution with a = 3 and b = 8.
+
+  Answer: 5.5
+
+
+6. Calculate the standard deviation of a chi-squared distribution with 6 degrees of freedom.
+
+  Answer: 2.449
+
+
+7. Calculate the probability density function of a student's t distribution with 3 degrees of freedom.
+
+  Answer: f(t) = (Gamma((3+1)/2)/(sqrt(3π)Gamma(3/2)))*(1+t^2/3)^-((3+1)/2)
+
+** Questions 5
+1. What is the probability of getting exactly two heads when flipping a fair coin three times?
+    A. \frac{1}{4}
+    B. \frac{3}{8}
+    C. \frac{1}{8}
+    D. \frac{3}{4}
+
+2. What is the expected value of a discrete random variable X with probability mass function P(X) = {x : 0.2, 1 : 0.4, 2 : 0.4}?
+    A. 1
+    B. 1.2
+    C. 0.4
+    D. 0.8
+
+3. What is the variance of a discrete random variable X with probability mass function P(X) = {x : 0.2, 1 : 0.4, 2 : 0.4}?
+    A. 0.64
+    B. 1.2
+    C. 0.8
+    D. 0.4
+
+4. What is the standard deviation of a discrete random variable X with probability mass function P(X) = {x : 0.2, 1 : 0.4, 2 : 0.4}?
+    A. 0.8
+    B. 1.2
+    C. 0.4
+    D. 0.64
+
+5. What is the probability mass function of a binomial distribution with n = 5 and p = 0.2?
+    A. P(X = x) = (5x) (0.2)^x (0.8)^(5-x)
+    B. P(X = x) = (5x) (0.2)^(5-x) (0.8)^x
+    C. P(X = x) = (5x) (0.2)^(5x) (0.8)^(5-x)
+    D. P(X = x) = (5x) (0.8)^x (0.2)^(5-x)
+
+6. What is the expected value of a binomial distribution with n = 5 and p = 0.2?
+    A. 0.8
+    B. 1
+    C. 0.2
+    D. 1.0
+
+7. What is the variance of a binomial distribution with n = 5 and p = 0.2?
+    A. 0.8
+    B. 0.2
+    C. 1.0
+    D. 0.64
+
+8. What is the standard deviation of a binomial distribution with n = 5 and p = 0.2?
+    A. 0.8
+    B. 0.2
+    C. 1.0
+    D. 0.8
+
+9. What is the probability density function of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+    A. f(x) = \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+    B. f(x) = \frac{1}{\sqrt{2\pi} \mu}e^{-\frac{(x-\sigma)^2}{2\mu^2}}
+    C. f(x) = \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\sigma)^2}{2\mu^2}}
+    D. f(x) = \frac{1}{\sqrt{2\pi} \mu}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+
+10. What is the cumulative distribution function of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+    A. F(x) = \frac{1}{2}[1 + erf(\frac{x-\mu}{\sqrt{2}\sigma})]
+    B. F(x) = \frac{1}{2}[1 + erf(\frac{x-\sigma}{\sqrt{2}\mu})]
+    C. F(x) = \frac{1}{2}[1 + erf(\frac{x-\mu}{\sqrt{2}\mu})]
+    D. F(x) = \frac{1}{2}[1 + erf(\frac{x-\sigma}{\sqrt{2}\sigma})]
+
+11. What is the expected value of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+    A. 0.2
+    B. 10
+    C. 1.0
+    D. 0.8
+
+12. What is the variance of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+    A. 0.2
+    B. 0.8
+    C. 10
+    D. 4
+
+13. What is the standard deviation of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+    A. 0.2
+    B. 0.8
+    C. 10
+    D. 2
+
+14. What is the probability density function of an exponential distribution with parameter λ = 0.5?
+    A. f(x) = \frac{1}{\lambda}e^{-\frac{x}{\lambda}}
+    B. f(x) = \frac{\lambda}{x}e^{-\frac{x}{\lambda}}
+    C. f(x) = \frac{\lambda}{x^2}e^{-\frac{x}{\lambda}}
+    D. f(x) = \frac{x}{\lambda}e^{-\frac{x}{\lambda}}
+
+15. What is the cumulative distribution function of an exponential distribution with parameter λ = 0.5?
+    A. F(x) = 1 - e^{-\frac{x}{\lambda}}
+    B. F(x) = 1 - \frac{x}{\lambda}e^{-\frac{x}{\lambda}}
+    C. F(x) = 1 - \frac{\lambda}{x}e^{-\frac{x}{\lambda}}
+    D. F(x) = 1 - \frac{\lambda}{x^2}e^{-\frac{x}{\lambda}}
+
+16. What is the expected value of an exponential distribution with parameter λ = 0.5?
+    A. 0.5
+    B. 1.0
+    C. 0.2
+    D. 2.0
+
+17. What is the variance of an exponential distribution with parameter λ = 0.5?
+    A. 0.5
+    B. 0.2
+    C. 2.0
+    D. 0.25
+
+18. What is the standard deviation of an exponential distribution with parameter λ = 0.5?
+    A. 0.5
+    B. 0.2
+    C. 2.0
+    D. 0.5
+
+19. What is the probability density function of a uniform distribution with lower bound a = 1 and upper bound b = 4?
+    A. f(x) = \frac{1}{b-a}
+    B. f(x) = \frac{1}{a-b}
+    C. f(x) = \frac{1}{b}
+    D. f(x) = \frac{1}{a}
+
+20. What is the cumulative distribution function of a uniform distribution with lower bound a = 1 and upper bound b = 4?
+    A. F(x) = \frac{x-a}{b-a}
+    B. F(x) = \frac{x-b}{a-b}
+    C. F(x) = \frac{x-a}{b}
+    D. F(x) = \frac{x-b}{a}
+
+*** Answers
+1. C
+2. A
+3. A
+4. D
+5. D
+6. B
+7. D
+8. D
+9. D
+10. A
+11. B
+12. D
+13. D
+14. A
+15. A
+16. B
+17. D
+18. D
+19. A
+20. A

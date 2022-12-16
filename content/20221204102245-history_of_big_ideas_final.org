@@ -2,4 +2,198 @@
 :ID:       333c6ed1-e4ef-4f8f-8136-cffe5c9412b0
 :END:
 #+title: History of Big Ideas - Final
-# [2022-12-04 Sunday - 10:27]:	Start sudying History
+#+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
+#+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+#+OPTIONS: toc:2
+#+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
+#+HTML_HEAD: <script src="anti-cheat.js"></script>
+#+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+#+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
+
+* Study Guide
+1. Cloud Computing: a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services). It uses remote servers to store and access data instead of relying on local hard drives and private data centers.
+2. Big Data: refers to volume, velocity, and variety, value, and includes unstructured and quasi-structured data.
+3. Social Media: started with MySpace and Linkedin (was originally dating sites). Benefits include a new chanel for finding political news, a direct channel for communication between politicians and citizens, mobilization power for mobs, campaign tool in elections.
+4. Bionics: an artificial/biological hybrid technology that allows us to improve ourselves, and to fix people who lost body parts.
+5. AI: search trees and artificial neural networks are two methods used to mimic human behavior. Natural language processing includes voice recognition, natural voice comprehension, and voice synthesis.
+6. The Fourth Industrial Revolution: refers to creating cyber-physical systems, which combines different tech to create a more sophisticated operation. XaaS and cobots are two technologies used in this revolution.
+7. Transhumanism: the use of tech to “upgrade” one’s body & the term was coined by Julian Huxley. Examples include exoskeletons, genetic modification, and neural prosthetics.
+8. Robotics: robots adhere to three laws, and examples include Shakey, The Cart, The Collection Machine, Cog, Wabot-1, Honda's robots, and AIBO.
+9. Healthcare and Biotechnology: gene technologies, cloning, nanotech, and Drexler’s “molecular assembler” are all technologies used in healthcare and biotechnology. Benefits include slowing down aging and disease, improved breeding, and therapeutic cloning.
+
+The Internet has revolutionized communication, commerce and collaboration, while also enabling the emergence of data economies, social media and cloud computing. The tech bubble burst and the cloud changed the way people interact with the Internet, allowing for artificial intelligence and big data analysis to become mainstream. This has resulted in the transformation and convergence of many traditional industries and the emergence of completely new ones. Bionics and human enhancements, robotics, biotechnology and quantum computing are the emerging technologies of the future, with each of them having their own implications for how society functions.
+* Communication and Commerce - Growth of the Web
+The late 1990s was the beginning of the online e-commerce revolution. We could shop, sell, communicate and have access to services that were cheaper, quicker and more convenient than ever before.
+By having the Internet, people could access services with no regards for location, physical abilities, creed and race.
+Email and collaboration also went mainstream and became the standard way to communicate in business, government and academia. These technologies meant the end of the era of letters and less need for face-to-face meetings.
+* The Tech Bubble Burst & The Cloud
+The boom of the late 1990s ended with a bubble bursting in the early 2000s, which put an abrupt end to many early “dot com” ideas. Nevertheless, some survived and the next phase of the Internet began.
+The Internet is clearly established and people are interacting with the first real artificial intelligence: Google.
+Now, people have a “brain in the cloud” that can answer any question and the Internet is no longer a list of catalogued websites, but a true information resource. The impact of Google on academia, science, business and in personal lives is huge.
+In 2006, Amazon created the first large-scale cloud computing platform, and this opened up the world of commerce for millions of people and organizations. It made computing affordable and meant anyone could have a website.
+* New Industries
+How technology has enabled the transformation and convergence of many traditional industries and how it has resulted in the emergence of completely new and novel forms of business.
+* Emergence of Data Economy
+Data science and big data analysis has transformed the way we look at the world and what we expect to predict. Our brain and traditions of mathematics have not been replaced by complex computational systems that can do far more than a person alone.
+e have been able to tame nature and predict more accurately everything from population growth to weather. Big data has enabled us to predict when and where protests and civil unrest will occur, how and when diseases will spread, trends in financial markets and behavior of customers. It gives us abilities to use information from the past to accurately predict our future.
+* Social Media
+
+The early 2000s were dramatically impacted by two major technological changes. First, mobile came and put computing into everyone’s pockets. Then, Silicon Valley focussed its attention on social media and the second version of the Internet, Web 2.0, was born.
+Instead of putting information online, the users of the Internet became the content creators. This meant people could have a voice, communicate in novel ways, share a variety of media and network with people who otherwise would have never come into their lives.
+How this helped us as humans is under intense debate today. Is social media causing widespread addiction? It is the greatest communication tool ever created? Is is causing people to become socially paranoid and reclusive? Have we lost all concept of privacy?
+* Bionics and Human Enhancements
+The field of bionics was started in the 1950s but the rapid development of technologies such as bio-printing (3D printing with cells) has meant it is going to develop more in the coming years. This session will look back at the history of the field and forward to the possibilities.
+* Artificial Intelligence
+Artificial intelligence is the focus of Silicon Valley today. All large technology companies are racing to find the best solutions to help us perform all manner of tasks. Artificial intelligence will be the ultimate enhancement of humans, giving us a digital helper that can traverse the Internet and help us achieve real-world tasks. Artificial intelligence has the potential to evolve into super intelligence, which is something more intelligent that humans. That could mean it is the last and most important discovery in our history, and it could do anything we need.
+* The Fourth Industrial Revolution
+The future of industry is a combination of many technologies that will mean a new way of doing business. Customized and on-demand products that can be created either in futuristic smart factories or even at home using 3D printing will be explained. The use of Big Data and e-commerce to make the process of doing business much more automated and efficient will also be introduced and we will see the ethical dilemmas brought up by the possibility of mass automation.
+* Trans-humanism
+Transhumanism is a philosophy that considers that we are still at an early stage of development as a species. According to Max More “Transhumanism is a class of philosophies of life that seek the continuation and acceleration of the evolution of intelligent life beyond its currently human form and human limitations by means of science and technology, guided by life-promoting principles and values.” (1990). In this session we will explore this concept and look at the ethical implications.
+* Robotics Revolution
+A look at the history of robotics and what it could hold for us in the future. Robots are going to form the physical manifestations of AI in our world and in recent years, we have seen huge advances. From robotic factory workers to robot chefs and even as extreme as robot soldiers. The implications of this technology are huge for our future.
+* Healthcare and Biotechnology
+Biotechnology has allowed us to perform what early civilizations called miracles. It has enhanced our world, our bodies and the lives of everyone. We will look at the development of this exciting field of science and debate future implications and whether it is ethical to play God.
+* Quantum Future
+uantum computing is the next step for computer technology. With systems requiring the same temperature as outer space, these systems are nothing like their silicon counterparts. We will look at the technology and examine ow it works and how it is going to allow us to move to the next level of computation.
+* Practice Questions
+
+1. What is the most important discovery of our history according to the Transhumanism philosophy?
+   1. Artificial Intelligence
+   2. Big Data
+   3. Robotics Revolution
+   4. Quantum Computing
+
+2. What was the impact of Google on academia, science, business and in personal lives?
+   1. Increased collaboration
+   2. Ability to access services without geographical limitations
+   3. Ability to answer any question
+   4. All of the above
+
+3. What was the first large-scale cloud computing platform created in 2006?
+   1. Amazon Web Services
+   2. Google Cloud Platform
+   3. Microsoft Azure
+   4. IBM Cloud
+
+4. What is the purpose of bionics?
+   1. To enhance humans
+   2. To create artificial intelligence
+   3. To improve communication
+   4. To predict the future
+
+5. What is the fourth industrial revolution?
+   1. Automating industries with robots
+   2. Combining many technologies to create new forms of business
+   3. Using Big Data to automate and predict the future
+   4. Creating customized, on-demand products
+
+6. What did the Internet enable in the late 1990s?
+   1. Shopping online
+   2. Faster communication
+   3. Access to services
+   4. All of the above
+
+7. What led to the end of the tech bubble in the early 2000s?
+   1. The emergence of data economy
+   2. The development of artificial intelligence
+   3. The burst of the dot com bubble
+   4. The invention of the cloud
+
+8. What are the ethical implications of transhumanism?
+   1. Playing god
+   2. Loss of privacy
+   3. Social paranoia
+   4. Addiction to social media
+
+9. What is the name of the philosophy that seeks to accelerate and continue the evolution of intelligent life beyond its current form?
+   1. Transhumanism
+   2. Bionics
+   3. Robotics Revolution
+   4. Quantum Computing
+
+10. What did people have access to with the Internet that they didn't have before?
+    1. Quicker and cheaper services
+    2. Services without geographical limitations
+    3. Access to artificial intelligence
+    4. All of the above
+
+11. What has biotechnology allowed us to do?
+    1. Enhance our world
+    2. Enhance our bodies
+    3. Live longer
+    4. All of the above
+
+12. What technologies enabled the transformation and convergence of many traditional industries?
+    1. Robotics
+    2. Big Data
+    3. Artificial Intelligence
+    4. All of the above
+
+13. What is the name of the first version of the Internet?
+    1. Web 0.0
+    2. Web 1.0
+    3. Web 2.0
+    4. Web 3.0
+
+14. What is the most common way to communicate in business, government and academia?
+    1. Letters
+    2. Face-to-face meetings
+    3. Social media
+    4. Email and collaboration
+
+15. What is the difference between Web 1.0 and Web 2.0?
+    1. Web 1.0 was a list of catalogued websites, Web 2.0 is a true information resource
+    2. Web 1.0 was a true information resource, Web 2.0 was a list of catalogued websites
+    3. Web 1.0 was a content creator, Web 2.0 was a content viewer
+    4. Web 1.0 was a content viewer, Web 2.0 was a content creator
+
+16. What did Amazon create in 2006?
+    1. The first large-scale cloud computing platform
+    2. The first artificial intelligence
+    3. The first robotic factory
+    4. The first 3D printing technology
+
+17. What is the purpose of quantum computing?
+    1. To move to the next level of computation
+    2. To simulate outer space temperatures
+    3. To create artificial intelligence
+    4. To improve communication
+
+18. What is the primary difference between quantum computing and silicon computing?
+    1. Quantum computing requires the same temperature as outer space
+    2. Quantum computing requires more power
+    3. Quantum computing is faster
+    4. Quantum computing is more precise
+
+19. What can robots do?
+    1. Work in factories
+    2. Cook meals
+    3. Study the stars
+    4. All of the above
+
+20. What is the purpose of Big Data?
+    1. To predict population growth
+    2. To predict weather
+    3. To predict protests and civil unrest
+    4. All of the above
+** Answers
+1. D. Quantum Computing
+2. D. All of the above
+3. A. Amazon Web Services
+4. A. To enhance humans
+5. B. Combining many technologies to create new forms of business
+6. D. All of the above
+7. C. The burst of the dot com bubble
+8. D. Addiction to social media
+9. A. Transhumanism
+10. D. All of the above
+11. D. All of the above
+12. D. All of the above
+13. B. Web 1.0
+14. D. Email and collaboration
+15. D. Web 1.0 was a content viewer, Web 2.0 was a content creator
+16. A. The first large-scale cloud computing platform
+17. A. To move to the next level of computation
+18. C. Quantum computing is faster
+19. D. All of the above
+20. D. All of the above
