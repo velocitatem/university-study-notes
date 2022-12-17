@@ -2,14 +2,13 @@
 :ID:       7abedd78-d1e5-4686-be6d-1a231047d4da
 :END:
 #+title: Fundamentals of Probability and Statistics - Final
-#+html_head_extra: <link rel="favicon" type="image/x-icon" href="favicon.png"/>
-#+OPTIONS: num:nil timestamp:nil toc:nil author:nil
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="extra.css" />
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="bq.css"></link>
-#+html: <div id="back"></div>
+#+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
+#+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+#+OPTIONS: toc:2
+#+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
+#+HTML_HEAD: <script src="anti-cheat.js"></script>
 #+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-#+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);</script>
-
+#+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
 
 
 
@@ -25,18 +24,212 @@ Key concepts which were on the midterm:
 + Types of Studies (Enumerative, Analytical)
 + Stem and Leaf Plots
 + Box Plots
+
+You can find these in the midterm notes.
+* Random Variables
+In any experiment, we are concerned with the value of some *random variable* (RV) $X$. We can also define a random variable in terms of some other variable ($\omega$), in that case we say that $X$ is *associated with the outcome* of $\omega$.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+If the *random variabe* can only have *two possible outcomes* (0,1) we call it a *Bernoulli Random Variable*. For any other outcomesl, we then have *two types* or random variables: Discrete and Continuous.
 * Discrete Random Variable
-There are two fundamentally different types of random variables -discrete random variables and continuous random variables. In this topic, we examine the basic propoerties and discuss the most important examples of discrete variables.
-Definition of random variable. Probability distributions for discrete random variables. Properties of discrete random variables: Expected value, variance. Bernouilli distribution. Binomial distribution. Hypergeometric distribution. Negative Binomial distribution. Poisson distribution.
+This is a random variable which can take on only a *finite amount* of possible values. For example, the number of heads in 10 coin flips.
+
+#+begin_example
+Example: The number of heads in 10 coin flips
+#+end_example
+** Distributions
+We can assign a certain probability to each possible value of a random variable. This is called a *probability distribution*. Here are some key characteristics of a distribution:
++ The sum of all probabilities must be 1
++ The probability of a value is always between 0 and 1
++ The probability of a value is always non-negative
+
+
+*** Probability Mass Function ($pmf$)
+We denote the probability of a value $x$ as $P(X=x)$ - this is called elementary probability. We can also use tables to represent the distribution of a random variable. For example, the distribution of the number of heads in 10 coin flips is:
+
+\begin{tabular}{|c|c|}
+\hline
+x & P(X=x) \\
+\hline
+0 & 0.001 \\
+1 & 0.01 \\
+2 & 0.05 \\
+3 & 0.15 \\
+4 & 0.25 \\
+5 & 0.25 \\
+6 & 0.15 \\
+7 & 0.05 \\
+8 & 0.01 \\
+9 & 0.001 \\
+\hline
+\end{tabular}
+
+
+This function specifies the probability of each value. This is called the *probability mass function* of the random variable. It is denoted as $pmf(x)$. To be able to solve problems involving random variables, and their probabilities, it is important to understand probability itself.
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+
+We can also define a probability distribution in terms of some *parameter* $\alpha$. For simplicity, lets start with Bernouilli:
+
+\begin{tabular}{|c|c|}
+\hline
+x & P(X=x) \\
+\hline
+0 & 1-\alpha \\
+1 & \alpha \\
+\hline
+\end{tabular}
+
+We would denote this function as $p(x;\alpha)$. Where $\alpha$ is the *parameter* of the distribution and can take a value $0 < \alpha < 1$.
+
+
+
+*** Cumulative Distribution Function ($cdf$)
+We can also use make use of elementary probability to compute the probability of a range of values. For example, the probability of getting between 3 and 5 heads in 10 coin flips is:
+
+\[
+P(3\leq X\leq 5) = P(X=3) + P(X=4) + P(X=5) = {120\over 1024} + {210\over 1024} + {252\over 1024} = {582\over 1024} = {29\over 51} = 0.5686
+\]
+
+This kind of probability is called *cumulative probability*. A cumulative function gives us the sum of all the probabilities of all the values less than or equal to a certain value. For a discrete random variable we define it as:
+
+\[
+F(x) = P(X\leq x) = \sum_{i=-\infty}^{x} \text{pmf}(i)
+\]
+
+You may notice that it is somewhat related to integrals in calculus, as we denote the 'area' with a capital F. Another way to relate this to calculus is the definition of a defined integral. If we want the probability of a range of values, we can use the following definition:
+
+\[
+P(a\leq X\leq b) = F(b) - F(a)
+\]
+
+Here are some approaches to calculating various cumulative probabilities:
++ $P(x > a)$ = $1 - P(x \leq a)$
++ $P(x < a)$ = $P(x \leq a)$
++ $P(x \geq a)$ = $1 - P(x < a)$
++ $P(x \leq a)$ = $P(x < a) + P(x = a)$
++ $P(x \geq a)$ = $P(x > a) + P(x = a)$
++ $P(a < x < b)$ = $P(x < b) - P(x < a)$
++ $P(a \leq x \leq b)$ = $P(x \leq b) - P(x \leq a)$
+
+
+
+*** Expected Values
+We can also compute the *expected value* of a random variable. This is the *average* value of the random variable. For example, the expected value of the number of heads in 10 coin flips is:
+
+\[
+E(X) = \sum_{i=-\infty}^{\infty} i \cdot \text{pmf}(i) = 0 \cdot {1\over 2} + 1 \cdot {1\over 2} = {1\over 2}
+\]
+
+Here you can see the use of the formula to compute the expected value of a discrete rv $X$:
+
+\[
+E(X) = \mu_x = \sum_{i=-\infty}^{\infty} i \cdot \text{pmf}(i)
+\]
+
+
+We might also need to comput the standard deviation. This is the *average distance* of the random variable from the expected value. To compute this, we use the following formula:
+
+\[
+\sigma_x = \sqrt{\sum_{i=-\infty}^{\infty} (i - \mu_x)^2 \cdot \text{pmf}(i)}
+\]
+
+We can also compute the variance using the expected values:
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+\[
+\sigma_x^2 = E(X^2) - E(X)^2
+\]
+
+*** Binomial Distribution
+The binomial distribution is a discrete distribution that is used to model the number of successes in a sequence of independent experiments. For example, the number of heads in 10 coin flips. The binomial distribution is defined by two parameters:
++ $n$ - the number of trials
++ $\alpha$ - the probability of success
+
+The binomial distribution is defined as:
+
+\[
+P(X=x) = {n\choose x} \alpha^x (1-\alpha)^{n-x}
+\]
+
+Where ${n\choose x}$ is the binomial coefficient. This is the number of ways to choose $x$ elements from a set of $n$ elements. This is defined as: ${n\choose x} = {n! \over x!(n-x)!}$
+
+We can use this formula to calculate the probability of an exact number of successes. For example, the probability of getting 5 heads in 10 coin flips is: ${10\choose 5} \cdot {1\over 2}^5 \cdot {1\over 2}^5 = {120\over 1024} = {3\over 32} = 0.0938$
+
+
+
+
+*** Geometric Distribution
+The geometric distribution is a discrete distribution that is used to model the number of trials until the first success. For example, the number of coin flips until the first head. The geometric distribution is defined by one parameter: $\alpha$ - the probability of success. The geometric distribution is defined as:
+
+\[
+P(X=x) = (1-\alpha)^{x-1} \alpha
+\]
+
+We can use this formula to calculate the probability of an exact number of trials. For example, the probability of getting 5 coin flips until the first head is: $(1-{1\over 2})^{5-1} \cdot {1\over 2} = {1\over 32} = 0.0312$
+
+*** Poisson Distribution
+# The poisson distribution is a discrete distribution that is used to model the number of events in a fixed interval of time. For example, the number of cars that pass a certain point in an hour. The poisson distribution is defined by one parameter: $\lambda$ - the average number of events per interval. The poisson distribution is defined as:
+
+This is a distribution which can help us model the number of events for some interval of time. The poisson distribution is defined by one parameter: $\lambda$ - the average number of events per interval. The poisson distribution is defined as:
+
+\[
+P(X=x) = \frac{\lambda^x e^{-\lambda}}{x!}
+\]
+
+It will gives us the probability of getting a certain amount $x$ of events in a certain interval. For example, the probability of getting 5 cars in an hour if the average is 71.5 cars per hour is:
+
+\[
+P(X=5) = \frac{71.5^5 e^{-71.5}}{5!} = 0.0001 = 0.01\%
+\]
+
+#+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+Important: The poisson distribution is only valid for large values of $\lambda$. For small values, the binomial distribution is more accurate.
+
 * Continuous Probability Distributions
-There are two fundamentally different types of random variables -discrete random variables and continuous random variables. In this topic, we examine the basic propoerties and discuss the most important examples of continuous variables.
-Probability Density Functions. Cumulative Distribution Functions and Expected Values. The Normal Distribution. The Exponential and Gamma Distributions. The Chi-Squared Distribution. Other distributions.
+Back to random variables. If the two following condisions are met, we can call a random variable continuous:
+1. The random variable can take on any value in an interval (can be inifinite)
+2. The probability of the random variable taking on any value in an interval is 0 ($P(X = c) = 0$)
+
+#+begin_example
+Example: The height of a person
+#+end_example
+** Normal Distribution
+A continuous probability distribution with a symmetric bell-shaped graph and a single peak, characterized by its mean, variance, and standard deviation.
+
+** Uniform Distribution
+A continuous probability distribution where all outcomes have an equal probability of occurring.
+
+** Exponential Distribution
+A continuous probability distribution characterized by a single parameter, usually denoted by λ, that describes the rate of decay of the probability of a given event occurring.
+
+** Chi-Squared Distribution
+A continuous probability distribution that is used to test the goodness-of-fit of an observed data set and to compare data sets from different sources or to compare a theoretical model to observed data.
+
+** Gamma Distribution
+A continuous probability distribution characterized by two parameters, a shape parameter, k, and a scale parameter, θ. It is often used to model the time between events, such as the time between arrivals of customers at a retail store.
+
+** Beta Distribution
+A continuous probability distribution characterized by two shape parameters, α and β. It is often used to model the behavior of random variables that are restricted to a particular range, such as percentages and proportions.
+
 * Joint Probability Distributions
 Many problems in probability and statistics involve working simultaneously with two or more random variables. For example, X and Y might be the income and willingness to pay for a good, respectively, of a randomly selected individual. This topic address the concept of joint probability distributions.
 Jointly Distributed Random Variables. Expected Values, Covariance, and Correlation. Statistics and Their Distributions. The Distribution of the Sample Mean. The Distribution of a Linear Combination
-* Point Estimation
-Given a parameter of interest, such as population mean or population proportion, the objective of point estimation is to use a sample to compute a number that represents in some sense an educated guess for the true value of the parameter. The resulting number is called a point estimate. This topic describes and illustrates two important methods for obtaining point estimates.
 * Practice Questions
+** Questions from Book
+1. The number of pumps in use at both a six-pump station and a four-pump station will be determined. Give the possible values for each of the following random variables:
+   1. $T$ = The number of pumps in use
+   2. $X$ = Difference between the number in use at station 1 and 2
+   3. $U$ = The max number of pumps in use at either station
+   4. $Z$ = The number of stations have exactly two pumps in use
+
+   Answer:
+    1. $T \in \{0,1,2,3,4,5,6,7\}$
+    2. $X \in \{-2,-1,0,1,2\}$
+    3. $U \in \{0,1,2,3,4,5,6,7\}$
+    4. $Z \in \{0,1\}$
+
+
 ** Short Answer
 1. What are the two fundamentally different types of random variables?
    - Answer: Discrete random variables and continuous random variables.
@@ -282,124 +475,126 @@ Given a parameter of interest, such as population mean or population proportion,
 
 ** Questions 5
 1. What is the probability of getting exactly two heads when flipping a fair coin three times?
-    A. \frac{1}{4}
-    B. \frac{3}{8}
-    C. \frac{1}{8}
-    D. \frac{3}{4}
+   1. $\frac{1}{4}$
+      #+HTML <span id="correct">
+   2. $\frac{3}{8}$
+      #+HTML </span>
+   3. $\frac{1}{8}$
+   4. $\frac{3}{4}$
 
 2. What is the expected value of a discrete random variable X with probability mass function P(X) = {x : 0.2, 1 : 0.4, 2 : 0.4}?
-    A. 1
-    B. 1.2
-    C. 0.4
-    D. 0.8
+   1. 1
+   2. 1.2
+   3. 0.4
+   4. 0.8
 
 3. What is the variance of a discrete random variable X with probability mass function P(X) = {x : 0.2, 1 : 0.4, 2 : 0.4}?
-    A. 0.64
-    B. 1.2
-    C. 0.8
-    D. 0.4
+   1. 0.64
+   2. 1.2
+   3. 0.8
+   4. 0.4
 
 4. What is the standard deviation of a discrete random variable X with probability mass function P(X) = {x : 0.2, 1 : 0.4, 2 : 0.4}?
-    A. 0.8
-    B. 1.2
-    C. 0.4
-    D. 0.64
+   1. 0.8
+   2. 1.2
+   3. 0.4
+   4. 0.64
 
 5. What is the probability mass function of a binomial distribution with n = 5 and p = 0.2?
-    A. P(X = x) = (5x) (0.2)^x (0.8)^(5-x)
-    B. P(X = x) = (5x) (0.2)^(5-x) (0.8)^x
-    C. P(X = x) = (5x) (0.2)^(5x) (0.8)^(5-x)
-    D. P(X = x) = (5x) (0.8)^x (0.2)^(5-x)
+   1. $P(X = x) = (5x) (0.2)^x (0.8)^(5-x)$
+   2. $P(X = x) = (5x) (0.2)^(5-x) (0.8)^x$
+   3. $P(X = x) = (5x) (0.2)^(5x) (0.8)^(5-x)$
+   4. $P(X = x) = (5x) (0.8)^x (0.2)^(5-x)$
 
 6. What is the expected value of a binomial distribution with n = 5 and p = 0.2?
-    A. 0.8
-    B. 1
-    C. 0.2
-    D. 1.0
+   1. 0.8
+   2. 1
+   3. 0.2
+   4. 1.0
 
 7. What is the variance of a binomial distribution with n = 5 and p = 0.2?
-    A. 0.8
-    B. 0.2
-    C. 1.0
-    D. 0.64
+   1. 0.8
+   2. 0.2
+   3. 1.0
+   4. 0.64
 
 8. What is the standard deviation of a binomial distribution with n = 5 and p = 0.2?
-    A. 0.8
-    B. 0.2
-    C. 1.0
-    D. 0.8
+   1. 0.8
+   2. 0.2
+   3. 1.0
+   4. 0.8
 
 9. What is the probability density function of a normal distribution with mean μ = 10 and standard deviation σ = 2?
-    A. f(x) = \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-    B. f(x) = \frac{1}{\sqrt{2\pi} \mu}e^{-\frac{(x-\sigma)^2}{2\mu^2}}
-    C. f(x) = \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\sigma)^2}{2\mu^2}}
-    D. f(x) = \frac{1}{\sqrt{2\pi} \mu}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+   1. $f(x) = \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$
+   2. $f(x) = \frac{1}{\sqrt{2\pi} \mu}e^{-\frac{(x-\sigma)^2}{2\mu^2}}$
+   3. $f(x) = \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\sigma)^2}{2\mu^2}}$
+   4. $f(x) = \frac{1}{\sqrt{2\pi} \mu}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$
 
 10. What is the cumulative distribution function of a normal distribution with mean μ = 10 and standard deviation σ = 2?
-    A. F(x) = \frac{1}{2}[1 + erf(\frac{x-\mu}{\sqrt{2}\sigma})]
-    B. F(x) = \frac{1}{2}[1 + erf(\frac{x-\sigma}{\sqrt{2}\mu})]
-    C. F(x) = \frac{1}{2}[1 + erf(\frac{x-\mu}{\sqrt{2}\mu})]
-    D. F(x) = \frac{1}{2}[1 + erf(\frac{x-\sigma}{\sqrt{2}\sigma})]
+    1. $F(x) = \frac{1}{2}[1 + erf(\frac{x-\mu}{\sqrt{2}\sigma})]$
+    2. $F(x) = \frac{1}{2}[1 + erf(\frac{x-\sigma}{\sqrt{2}\mu})]$
+    3. $F(x) = \frac{1}{2}[1 + erf(\frac{x-\mu}{\sqrt{2}\mu})]$
+    4. $F(x) = \frac{1}{2}[1 + erf(\frac{x-\sigma}{\sqrt{2}\sigma})]$
 
 11. What is the expected value of a normal distribution with mean μ = 10 and standard deviation σ = 2?
-    A. 0.2
-    B. 10
-    C. 1.0
-    D. 0.8
+    1. 0.2
+    2. 10
+    3. 1.0
+    4. 0.8
 
 12. What is the variance of a normal distribution with mean μ = 10 and standard deviation σ = 2?
-    A. 0.2
-    B. 0.8
-    C. 10
-    D. 4
+    1. 0.2
+    2. 0.8
+    3. 10
+    4. 4
 
 13. What is the standard deviation of a normal distribution with mean μ = 10 and standard deviation σ = 2?
-    A. 0.2
-    B. 0.8
-    C. 10
-    D. 2
+    1. 0.2
+    2. 0.8
+    3. 10
+    4. 2
 
 14. What is the probability density function of an exponential distribution with parameter λ = 0.5?
-    A. f(x) = \frac{1}{\lambda}e^{-\frac{x}{\lambda}}
-    B. f(x) = \frac{\lambda}{x}e^{-\frac{x}{\lambda}}
-    C. f(x) = \frac{\lambda}{x^2}e^{-\frac{x}{\lambda}}
-    D. f(x) = \frac{x}{\lambda}e^{-\frac{x}{\lambda}}
+    1. $f(x) = \frac{1}{\lambda}e^{-\frac{x}{\lambda}}$
+    2. $f(x) = \frac{\lambda}{x}e^{-\frac{x}{\lambda}}$
+    3. $f(x) = \frac{\lambda}{x^2}e^{-\frac{x}{\lambda}}$
+    4. $f(x) = \frac{x}{\lambda}e^{-\frac{x}{\lambda}}$
 
 15. What is the cumulative distribution function of an exponential distribution with parameter λ = 0.5?
-    A. F(x) = 1 - e^{-\frac{x}{\lambda}}
-    B. F(x) = 1 - \frac{x}{\lambda}e^{-\frac{x}{\lambda}}
-    C. F(x) = 1 - \frac{\lambda}{x}e^{-\frac{x}{\lambda}}
-    D. F(x) = 1 - \frac{\lambda}{x^2}e^{-\frac{x}{\lambda}}
+    1. $F(x) = 1 - e^{-\frac{x}{\lambda}}$
+    2. $F(x) = 1 - \frac{x}{\lambda}e^{-\frac{x}{\lambda}}$
+    3. $F(x) = 1 - \frac{\lambda}{x}e^{-\frac{x}{\lambda}}$
+    4. $F(x) = 1 - \frac{\lambda}{x^2}e^{-\frac{x}{\lambda}}$
 
 16. What is the expected value of an exponential distribution with parameter λ = 0.5?
-    A. 0.5
-    B. 1.0
-    C. 0.2
-    D. 2.0
+    1. 0.5
+    2. 1.0
+    3. 0.2
+    4. 2.0
 
 17. What is the variance of an exponential distribution with parameter λ = 0.5?
-    A. 0.5
-    B. 0.2
-    C. 2.0
-    D. 0.25
+    1. 0.5
+    2. 0.2
+    3. 2.0
+    4. 0.25
 
 18. What is the standard deviation of an exponential distribution with parameter λ = 0.5?
-    A. 0.5
-    B. 0.2
-    C. 2.0
-    D. 0.5
+    1. 0.5
+    2. 0.2
+    3. 2.0
+    4. 0.5
 
 19. What is the probability density function of a uniform distribution with lower bound a = 1 and upper bound b = 4?
-    A. f(x) = \frac{1}{b-a}
-    B. f(x) = \frac{1}{a-b}
-    C. f(x) = \frac{1}{b}
-    D. f(x) = \frac{1}{a}
+    1. $f(x) = \frac{1}{b-a}$
+    2. $f(x) = \frac{1}{a-b}$
+    3. $f(x) = \frac{1}{b}$
+    4. $f(x) = \frac{1}{a}$
 
 20. What is the cumulative distribution function of a uniform distribution with lower bound a = 1 and upper bound b = 4?
-    A. F(x) = \frac{x-a}{b-a}
-    B. F(x) = \frac{x-b}{a-b}
-    C. F(x) = \frac{x-a}{b}
-    D. F(x) = \frac{x-b}{a}
+    1. $F(x) = \frac{x-a}{b-a}$
+    2. $F(x) = \frac{x-b}{a-b}$
+    3. $F(x) = \frac{x-a}{b}$
+    4. $F(x) = \frac{x-b}{a}$
 
 *** Answers
 1. C

@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-12-17 Sat 09:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fundamentals of Probability and Statistics - Final</title>
+<meta name="author" content="Daniel Rosel" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
+<style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+<script src="https://alves.world/tracking.js" ></script>
+<script src="anti-cheat.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Fundamentals of Probability and Statistics - Final</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgeb3a362">1. First Part</a></li>
+<li><a href="#org6e86918">2. Random Variables</a></li>
+<li><a href="#orgaf7b1f5">3. Discrete Random Variable</a></li>
+<li><a href="#org2a0042c">4. Continuous Probability Distributions</a></li>
+<li><a href="#org04ae39d">5. Joint Probability Distributions</a></li>
+<li><a href="#org721d7d6">6. Practice Questions</a>
+<ul>
+<li><a href="#org5a64b71">6.1. Questions from Book</a></li>
+<li><a href="#org142b8ed">6.2. Short Answer</a></li>
+<li><a href="#org79b154e">6.3. Questions 1</a></li>
+<li><a href="#orgb506112">6.4. Questions 2</a></li>
+<li><a href="#org70d1804">6.5. Questions 3</a></li>
+<li><a href="#org68f1d49">6.6. Questions 4</a></li>
+<li><a href="#orgaaec4b1">6.7. Questions 5</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+<script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
+
+
+
+<div id="outline-container-orgeb3a362" class="outline-2">
+<h2 id="orgeb3a362"><span class="section-number-2">1.</span> First Part</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Key concepts which were on the midterm:
+</p>
+<ul class="org-ul">
+<li>Computing Means and Variances</li>
+<li>Five Number Summary</li>
+<li>Probability of independent compound events</li>
+<li>Conditional Probability</li>
+<li>Bayes Theorem</li>
+<li>Empirical Rule and Chebyshev's Theorem</li>
+<li>Linear Relationships and Correlation</li>
+<li>Types of Studies (Enumerative, Analytical)</li>
+<li>Stem and Leaf Plots</li>
+<li>Box Plots</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6e86918" class="outline-2">
+<h2 id="org6e86918"><span class="section-number-2">2.</span> Random Variables</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+In any experiment, we are concerned with the value of some <b>random variable</b> (RV) \(X\). We can also define a random variable in terms of some other variable (\(\omega\)), in that case we say that \(X\) is <b>associated with the outcome</b> of \(\omega\).
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+If the <b>random variabe</b> can only have <b>two possible outcomes</b> (0,1) we call it a <b>Bernoulli Random Variable</b>. For any other outcomesl, we then have <b>two types</b> or random variables: Discrete and Continuous.
+</p>
+</div>
+</div>
+<div id="outline-container-orgaf7b1f5" class="outline-2">
+<h2 id="orgaf7b1f5"><span class="section-number-2">3.</span> Discrete Random Variable</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+This is a random variable which can take on only a <b>finite amount</b> of possible values. For example, the number of heads in 10 coin flips.
+</p>
+
+<pre class="example" id="org046c041">
+Example: The number of heads in 10 coin flips
+</pre>
+</div>
+</div>
+
+
+
+<div id="outline-container-org2a0042c" class="outline-2">
+<h2 id="org2a0042c"><span class="section-number-2">4.</span> Continuous Probability Distributions</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Back to random variables. If the two following condisions are met, we can call a random variable continuous:
+</p>
+<ol class="org-ol">
+<li>The random variable can take on any value in an interval (can be inifinite)</li>
+<li>The probability of the random variable taking on any value in an interval is 0 (\(P(X = c) = 0\))</li>
+</ol>
+
+<pre class="example" id="orgc2fcd91">
+Example: The height of a person
+</pre>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org04ae39d" class="outline-2">
+<h2 id="org04ae39d"><span class="section-number-2">5.</span> Joint Probability Distributions</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Many problems in probability and statistics involve working simultaneously with two or more random variables. For example, X and Y might be the income and willingness to pay for a good, respectively, of a randomly selected individual. This topic address the concept of joint probability distributions.
+Jointly Distributed Random Variables. Expected Values, Covariance, and Correlation. Statistics and Their Distributions. The Distribution of the Sample Mean. The Distribution of a Linear Combination
+</p>
+</div>
+</div>
+<div id="outline-container-org721d7d6" class="outline-2">
+<h2 id="org721d7d6"><span class="section-number-2">6.</span> Practice Questions</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org5a64b71" class="outline-3">
+<h3 id="org5a64b71"><span class="section-number-3">6.1.</span> Questions from Book</h3>
+<div class="outline-text-3" id="text-6-1">
+<ol class="org-ol">
+<li><p>
+The number of pumps in use at both a six-pump station and a four-pump station will be determined. Give the possible values for each of the following random variables:
+</p>
+<ol class="org-ol">
+<li>\(T\) = The number of pumps in use</li>
+<li>\(X\) = Difference between the number in use at station 1 and 2</li>
+<li>\(U\) = The max number of pumps in use at either station</li>
+<li>\(Z\) = The number of stations have exactly two pumps in use</li>
+</ol>
+
+<p>
+Answer:
+</p>
+<ol class="org-ol">
+<li>\(T \in \{0,1,2,3,4,5,6,7\}\)</li>
+<li>\(X \in \{-2,-1,0,1,2\}\)</li>
+<li>\(U \in \{0,1,2,3,4,5,6,7\}\)</li>
+<li>\(Z \in \{0,1\}\)</li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org142b8ed" class="outline-3">
+<h3 id="org142b8ed"><span class="section-number-3">6.2.</span> Short Answer</h3>
+<div class="outline-text-3" id="text-6-2">
+<ol class="org-ol">
+<li>What are the two fundamentally different types of random variables?
+<ul class="org-ul">
+<li>Answer: Discrete random variables and continuous random variables.</li>
+</ul></li>
+
+<li>What are the three basic principles of probability?
+<ul class="org-ul">
+<li>Answer: The three basic principles of probability are sample spaces and events, axioms and properties of probability, and counting techniques.</li>
+</ul></li>
+
+<li>What is the expected value for a discrete random variable?
+<ul class="org-ul">
+<li>Answer: The expected value for a discrete random variable is the sum of the values of each outcome multiplied by the probability of that outcome.</li>
+</ul></li>
+
+<li>What is the difference between a probability density function and a cumulative distribution function?
+<ul class="org-ul">
+<li>Answer: A probability density function is a formula that describes the relative likelihood of a random variable taking on a given value, while a cumulative distribution function is a formula that describes the cumulative probability of a random variable taking on a value less than or equal to a given value.</li>
+</ul></li>
+
+<li>What is the purpose of point estimation?
+<ul class="org-ul">
+<li>Answer: The purpose of point estimation is to use a sample to compute a number that represents in some sense an educated guess for the true value of a parameter such as a population mean or population proportion.</li>
+</ul></li>
+
+<li>What is the distribution of the sample mean?
+<ul class="org-ul">
+<li>Answer: The distribution of the sample mean is a normal distribution with mean equal to the population mean and standard deviation equal to the population standard deviation divided by the square root of the sample size.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org79b154e" class="outline-3">
+<h3 id="org79b154e"><span class="section-number-3">6.3.</span> Questions 1</h3>
+<div class="outline-text-3" id="text-6-3">
+<ol class="org-ol">
+<li><p>
+What type of data does Fundamentals of Statistics examine?
+</p>
+<ol class="org-ol">
+<li>Graphical methods</li>
+<li>Numerical methods</li>
+<li>Random variables</li>
+<li>Quantitative and qualitative data</li>
+</ol>
+
+<p>
+Answer: D. Quantitative and qualitative data
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+What is the purpose of studying Probability?
+</p>
+<ol class="org-ol">
+<li>To quantify the chances of different outcomes in a given situation</li>
+<li>To measure the variance in a population</li>
+<li>To study randomness and uncertainty</li>
+<li>To estimate population mean or proportion</li>
+</ol>
+
+<p>
+Answer: C. To study randomness and uncertainty
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+What are examples of discrete random variables?
+</p>
+<ol class="org-ol">
+<li>Bernouilli distribution, Normal Distribution, Exponential Distribution</li>
+<li>Binomial distribution, Poisson distribution, Gamma Distribution</li>
+<li>Stem-and-leaf displays, dotplots, histograms, boxplots</li>
+<li>Mean, median, sample proportions, variance</li>
+</ol>
+
+<p>
+Answer: B. Binomial distribution, Poisson distribution, Gamma Distribution
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+How can we calculate Expected Value for a discrete random variable?
+</p>
+<ol class="org-ol">
+<li>By using the formula \(\mathbb{E}(X) = \sum_{i=1}^{n}x_iP(x_i)\)</li>
+<li>By computing the average value of a set of numbers</li>
+<li>By summing up the probability distributions for all outcomes</li>
+<li>By calculating the variance in a population</li>
+</ol>
+
+<p>
+Answer: A. By using the formula \(\mathbb{E}(X) = \sum_{i=1}^{n}x_iP(x_i)\)
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+What is the role of Joint Probability Distributions in probability and statistics?
+</p>
+<ol class="org-ol">
+<li>To measure the variance in a population</li>
+<li>To study randomness and uncertainty</li>
+<li>To provide methods for quantifying the chances of different outcomes</li>
+<li>To work with two or more random variables simultaneously</li>
+</ol>
+
+<p>
+Answer: D. To work with two or more random variables simultaneously
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+What is the purpose of Point Estimation?
+</p>
+<ol class="org-ol">
+<li>To study randomness and uncertainty</li>
+<li>To quantify the chances of different outcomes in a given situation</li>
+<li>To use a sample to compute an estimate for the true value of a parameter</li>
+<li>To measure the variance in a population</li>
+</ol>
+
+<p>
+Answer: C. To use a sample to compute an estimate for the true value of a parameter
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+What is a Probability Density Function?
+</p>
+<ol class="org-ol">
+<li>A function that describes the probability of occurrence of different possible outcomes in a given situation</li>
+<li>A graph which shows the relationship between two variables</li>
+<li>A function which defines the probability of an event occurring within a continuous range of values</li>
+<li>A function which assigns probabilities to individual outcomes</li>
+</ol>
+
+<p>
+Answer: C. A function which defines the probability of an event occurring within a continuous range of values
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+What is the cumulative distribution function of a continuous random variable?
+</p>
+<ol class="org-ol">
+<li>A graph which shows the relationship between two variables</li>
+<li>A function which assigns probabilities to individual outcomes</li>
+<li>A function which defines the probability of an event occurring within a continuous range of values</li>
+<li>The probability that the random variable takes on a value less than or equal to a given value</li>
+</ol>
+
+<p>
+Answer: D. The probability that the random variable takes on a value less than or equal to a given value
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+What are the two types of random variables?
+</p>
+<ol class="org-ol">
+<li>Graphical and Numerical methods</li>
+<li>Discrete and Continuous Probability Distributions</li>
+<li>Descriptive and Inferential Statistics</li>
+<li>Quantitative and Qualitative Data</li>
+</ol>
+
+<p>
+Answer: B. Discrete and Continuous Probability Distributions
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+What is the Distribution of a Linear Combination?
+</p>
+<ol class="org-ol">
+<li>The probability that the linear combination takes on a value less than or equal to a given value</li>
+<li>The distribution of probabilities across a set of outcomes</li>
+<li>A function which assigns probabilities to individual outcomes</li>
+<li>The sum of two random variables</li>
+</ol>
+
+<p>
+Answer: A. The probability that the linear combination takes on a value less than or equal to a given value
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb506112" class="outline-3">
+<h3 id="orgb506112"><span class="section-number-3">6.4.</span> Questions 2</h3>
+<div class="outline-text-3" id="text-6-4">
+<ol class="org-ol">
+<li>What is a stem-and-leaf display?
+<ol class="org-ol">
+<li>A graphical way of organizing and displaying numerical data</li>
+<li>A type of bar graph</li>
+<li>A probability distribution</li>
+<li>A method of counting technique</li>
+</ol></li>
+
+<li>What is the expected value of a discrete random variable?
+<ol class="org-ol">
+<li>The sum of all possible outcomes</li>
+<li>The most likely outcome</li>
+<li>The average of the probabilities associated with the sample space</li>
+<li>The average of all possible outcomes</li>
+</ol></li>
+
+<li>What is the equation for the normal distribution?
+<ol class="org-ol">
+<li>N(x) = 1/σ√2π e<sup>-x</sup><sup>2</sup>/2σ<sup>2</sup></li>
+<li>N(x) = 1/σ√2π e^-(x-μ)<sup>2</sup>/2σ<sup>2</sup></li>
+<li>N(x) = 1/σ√2π e^-(x+μ)<sup>2</sup>/2σ<sup>2</sup></li>
+<li>N(x) = 1/σ√2π e<sup>-x</sup>/σ<sup>2</sup></li>
+</ol></li>
+
+<li>What is the formula for calculating variance?
+<ol class="org-ol">
+<li>Var(X) = E[X<sup>2</sup>] – (E[X])<sup>2</sup></li>
+<li>Var(X) = E[(X-μ)<sup>2</sup>]</li>
+<li>Var(X) = E[X] – (E[X])<sup>2</sup></li>
+<li>Var(X) = E[X - μ]</li>
+</ol></li>
+
+<li>What is the definition of joint probability distribution?
+<ol class="org-ol">
+<li>The sum of probabilities for each possible outcome of two events</li>
+<li>The probability of two events occurring simultaneously</li>
+<li>The probability of one event occurring given that another already occurred</li>
+<li>The mutual dependence between two variables in a probability distribution</li>
+</ol></li>
+
+<li>What is a point estimate?
+<ol class="org-ol">
+<li>An educated guess for the true value of the parameter based on a sample</li>
+<li>A numerical value representing the average of a sample set</li>
+<li>A measure of how closely two variables are related to one another</li>
+<li>The probability of an event occurring based on given conditions</li>
+</ol></li>
+
+<li>Determine the probability of selecting an even number when a six-sided die is rolled.
+<ol class="org-ol">
+<li>1/6</li>
+<li>1/2</li>
+<li>2/3</li>
+<li>3/4</li>
+</ol></li>
+
+<li>What is the variance of a Bernouilli distribution with a probability of 0.3?
+<ol class="org-ol">
+<li>0.7</li>
+<li>0.9</li>
+<li>0.21</li>
+<li>0.03</li>
+</ol></li>
+
+<li>What is the cumulative distribution function of the exponential distribution?
+<ol class="org-ol">
+<li>P(x &lt;= x) = 1 - e<sup>-λx</sup></li>
+<li>P(x&gt;x) = e<sup>-λx</sup></li>
+<li>P(x&lt;=x) = e<sup>-λx</sup></li>
+<li>P(x&gt;x) = 1 - e<sup>-λx</sup></li>
+</ol></li>
+
+<li>A sample contains 3, 9, 12, 4, 5, 8 and 11. What is the mean of the sample?
+<ol class="org-ol">
+<li>7</li>
+<li>8</li>
+<li>9</li>
+<li>10</li>
+</ol></li>
+</ol>
+
+
+
+<p>
+<b>Answers: 1. 1; 2. 4; 3. 2; 4. 1; 5. 2; 6. 1; 7. 2; 8. 3; 9. 1; 10. 4</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org70d1804" class="outline-3">
+<h3 id="org70d1804"><span class="section-number-3">6.5.</span> Questions 3</h3>
+<div class="outline-text-3" id="text-6-5">
+<ol class="org-ol">
+<li>What is the expected value of a discrete random variable?
+<ol class="org-ol">
+<li>The average value of a random variable</li>
+<li>The sum of all possible values of a random variable</li>
+<li>The most likely value of a random variable</li>
+<li>The median value of a random variable</li>
+</ol></li>
+
+<li>What is the variance of a continuous random variable?
+<ol class="org-ol">
+<li>The average change in the value of a random variable</li>
+<li>The sum of all possible values of a random variable</li>
+<li>The most likely value of a random variable</li>
+<li>The median value of a random variable</li>
+</ol></li>
+
+<li>What is the probability density function of a uniform distribution?
+<ol class="org-ol">
+<li>A function that assigns a probability to each value of a random variable</li>
+<li>A function that assigns a probability to each range of values of a random variable</li>
+<li>A function that assigns a probability to each combination of values of a random variable</li>
+<li>A function that assigns a probability to each interval of values of a random variable</li>
+</ol></li>
+
+<li>What is the cumulative distribution function of a normal distribution?
+<ol class="org-ol">
+<li>A function that assigns a probability to each value of a random variable</li>
+<li>A function that assigns a probability to each range of values of a random variable</li>
+<li>A function that assigns a probability to each combination of values of a random variable</li>
+<li>A function that assigns a probability to each interval of values of a random variable</li>
+</ol></li>
+
+<li>What is the expected value of a binomial distribution?
+<ol class="org-ol">
+<li>The mean of a random variable</li>
+<li>The sum of all possible values of a random variable</li>
+<li>The most likely value of a random variable</li>
+<li>The median value of a random variable</li>
+</ol></li>
+</ol>
+</div>
+<div id="outline-container-org5796a11" class="outline-4">
+<h4 id="org5796a11"><span class="section-number-4">6.5.1.</span> Answers</h4>
+<div class="outline-text-4" id="text-6-5-1">
+<ol class="org-ol">
+<li>The expected value of a discrete random variable is the sum of all possible values of a random variable.</li>
+<li>The variance of a continuous random variable is the average change in the value of a random variable.</li>
+<li>The probability density function of a uniform distribution is a function that assigns a probability to each interval of values of a random variable.</li>
+<li>The cumulative distribution function of a normal distribution is a function that assigns a probability to each combination of values of a random variable.</li>
+<li>The expected value of a binomial distribution is the mean of a random variable.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org68f1d49" class="outline-3">
+<h3 id="org68f1d49"><span class="section-number-3">6.6.</span> Questions 4</h3>
+<div class="outline-text-3" id="text-6-6">
+<ol class="org-ol">
+<li><p>
+Calculate the expected value of a discrete random variable with the following probability mass function: P(X=1) = 0.3, P(X=2) = 0.4, P(X=3) = 0.2, P(X=4) = 0.1
+</p>
+
+<p>
+Answer: 2.3
+</p></li>
+
+<li><p>
+If X is a continuous random variable with probability density function f(x) = 4x<sup>2</sup>, calculate the cumulative distribution function F(x).
+</p>
+
+<p>
+Answer: F(x) = x<sup>3</sup>
+</p></li>
+
+<li><p>
+Calculate the variance of a binomial distribution with n = 10 and p = 0.3.
+</p>
+
+<p>
+Answer: 2.7
+</p></li>
+
+<li><p>
+Calculate the probability of x successes in a Poisson distribution with a mean of 5.
+</p>
+
+<p>
+Answer: P(X=x) = (e<sup>-5</sup>)*(5<sup>x</sup>)/x!
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+Calculate the expected value of a uniform distribution with a = 3 and b = 8.
+</p>
+
+<p>
+Answer: 5.5
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+Calculate the standard deviation of a chi-squared distribution with 6 degrees of freedom.
+</p>
+
+<p>
+Answer: 2.449
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+Calculate the probability density function of a student's t distribution with 3 degrees of freedom.
+</p>
+
+<p>
+Answer: f(t) = (Gamma((3+1)/2)/(sqrt(3π)Gamma(3/2)))*(1+t<sup>2</sup>/3)^-((3+1)/2)
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgaaec4b1" class="outline-3">
+<h3 id="orgaaec4b1"><span class="section-number-3">6.7.</span> Questions 5</h3>
+<div class="outline-text-3" id="text-6-7">
+<ol class="org-ol">
+<li>What is the probability of getting exactly two heads when flipping a fair coin three times?
+<ol class="org-ol">
+<li>\(\frac{1}{4}\)
+#+HTML &lt;span id="correct"&gt;</li>
+<li>\(\frac{3}{8}\)
+#+HTML &lt;/span&gt;</li>
+<li>\(\frac{1}{8}\)</li>
+<li>\(\frac{3}{4}\)</li>
+</ol></li>
+
+<li>What is the expected value of a discrete random variable X with probability mass function P(X) = {x : 0.2, 1 : 0.4, 2 : 0.4}?
+<ol class="org-ol">
+<li>1</li>
+<li>1.2</li>
+<li>0.4</li>
+<li>0.8</li>
+</ol></li>
+
+<li>What is the variance of a discrete random variable X with probability mass function P(X) = {x : 0.2, 1 : 0.4, 2 : 0.4}?
+<ol class="org-ol">
+<li>0.64</li>
+<li>1.2</li>
+<li>0.8</li>
+<li>0.4</li>
+</ol></li>
+
+<li>What is the standard deviation of a discrete random variable X with probability mass function P(X) = {x : 0.2, 1 : 0.4, 2 : 0.4}?
+<ol class="org-ol">
+<li>0.8</li>
+<li>1.2</li>
+<li>0.4</li>
+<li>0.64</li>
+</ol></li>
+
+<li>What is the probability mass function of a binomial distribution with n = 5 and p = 0.2?
+<ol class="org-ol">
+<li>\(P(X = x) = (5x) (0.2)^x (0.8)^(5-x)\)</li>
+<li>\(P(X = x) = (5x) (0.2)^(5-x) (0.8)^x\)</li>
+<li>\(P(X = x) = (5x) (0.2)^(5x) (0.8)^(5-x)\)</li>
+<li>\(P(X = x) = (5x) (0.8)^x (0.2)^(5-x)\)</li>
+</ol></li>
+
+<li>What is the expected value of a binomial distribution with n = 5 and p = 0.2?
+<ol class="org-ol">
+<li>0.8</li>
+<li>1</li>
+<li>0.2</li>
+<li>1.0</li>
+</ol></li>
+
+<li>What is the variance of a binomial distribution with n = 5 and p = 0.2?
+<ol class="org-ol">
+<li>0.8</li>
+<li>0.2</li>
+<li>1.0</li>
+<li>0.64</li>
+</ol></li>
+
+<li>What is the standard deviation of a binomial distribution with n = 5 and p = 0.2?
+<ol class="org-ol">
+<li>0.8</li>
+<li>0.2</li>
+<li>1.0</li>
+<li>0.8</li>
+</ol></li>
+
+<li>What is the probability density function of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+<ol class="org-ol">
+<li>\(f(x) = \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</li>
+<li>\(f(x) = \frac{1}{\sqrt{2\pi} \mu}e^{-\frac{(x-\sigma)^2}{2\mu^2}}\)</li>
+<li>\(f(x) = \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\sigma)^2}{2\mu^2}}\)</li>
+<li>\(f(x) = \frac{1}{\sqrt{2\pi} \mu}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</li>
+</ol></li>
+
+<li>What is the cumulative distribution function of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+<ol class="org-ol">
+<li>\(F(x) = \frac{1}{2}[1 + erf(\frac{x-\mu}{\sqrt{2}\sigma})]\)</li>
+<li>\(F(x) = \frac{1}{2}[1 + erf(\frac{x-\sigma}{\sqrt{2}\mu})]\)</li>
+<li>\(F(x) = \frac{1}{2}[1 + erf(\frac{x-\mu}{\sqrt{2}\mu})]\)</li>
+<li>\(F(x) = \frac{1}{2}[1 + erf(\frac{x-\sigma}{\sqrt{2}\sigma})]\)</li>
+</ol></li>
+
+<li>What is the expected value of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+<ol class="org-ol">
+<li>0.2</li>
+<li>10</li>
+<li>1.0</li>
+<li>0.8</li>
+</ol></li>
+
+<li>What is the variance of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+<ol class="org-ol">
+<li>0.2</li>
+<li>0.8</li>
+<li>10</li>
+<li>4</li>
+</ol></li>
+
+<li>What is the standard deviation of a normal distribution with mean μ = 10 and standard deviation σ = 2?
+<ol class="org-ol">
+<li>0.2</li>
+<li>0.8</li>
+<li>10</li>
+<li>2</li>
+</ol></li>
+
+<li>What is the probability density function of an exponential distribution with parameter λ = 0.5?
+<ol class="org-ol">
+<li>\(f(x) = \frac{1}{\lambda}e^{-\frac{x}{\lambda}}\)</li>
+<li>\(f(x) = \frac{\lambda}{x}e^{-\frac{x}{\lambda}}\)</li>
+<li>\(f(x) = \frac{\lambda}{x^2}e^{-\frac{x}{\lambda}}\)</li>
+<li>\(f(x) = \frac{x}{\lambda}e^{-\frac{x}{\lambda}}\)</li>
+</ol></li>
+
+<li>What is the cumulative distribution function of an exponential distribution with parameter λ = 0.5?
+<ol class="org-ol">
+<li>\(F(x) = 1 - e^{-\frac{x}{\lambda}}\)</li>
+<li>\(F(x) = 1 - \frac{x}{\lambda}e^{-\frac{x}{\lambda}}\)</li>
+<li>\(F(x) = 1 - \frac{\lambda}{x}e^{-\frac{x}{\lambda}}\)</li>
+<li>\(F(x) = 1 - \frac{\lambda}{x^2}e^{-\frac{x}{\lambda}}\)</li>
+</ol></li>
+
+<li>What is the expected value of an exponential distribution with parameter λ = 0.5?
+<ol class="org-ol">
+<li>0.5</li>
+<li>1.0</li>
+<li>0.2</li>
+<li>2.0</li>
+</ol></li>
+
+<li>What is the variance of an exponential distribution with parameter λ = 0.5?
+<ol class="org-ol">
+<li>0.5</li>
+<li>0.2</li>
+<li>2.0</li>
+<li>0.25</li>
+</ol></li>
+
+<li>What is the standard deviation of an exponential distribution with parameter λ = 0.5?
+<ol class="org-ol">
+<li>0.5</li>
+<li>0.2</li>
+<li>2.0</li>
+<li>0.5</li>
+</ol></li>
+
+<li>What is the probability density function of a uniform distribution with lower bound a = 1 and upper bound b = 4?
+<ol class="org-ol">
+<li>\(f(x) = \frac{1}{b-a}\)</li>
+<li>\(f(x) = \frac{1}{a-b}\)</li>
+<li>\(f(x) = \frac{1}{b}\)</li>
+<li>\(f(x) = \frac{1}{a}\)</li>
+</ol></li>
+
+<li>What is the cumulative distribution function of a uniform distribution with lower bound a = 1 and upper bound b = 4?
+<ol class="org-ol">
+<li>\(F(x) = \frac{x-a}{b-a}\)</li>
+<li>\(F(x) = \frac{x-b}{a-b}\)</li>
+<li>\(F(x) = \frac{x-a}{b}\)</li>
+<li>\(F(x) = \frac{x-b}{a}\)</li>
+</ol></li>
+</ol>
+</div>
+
+<div id="outline-container-org2a1ab87" class="outline-4">
+<h4 id="org2a1ab87"><span class="section-number-4">6.7.1.</span> Answers</h4>
+<div class="outline-text-4" id="text-6-7-1">
+<ol class="org-ol">
+<li>C</li>
+<li>A</li>
+<li>A</li>
+<li>D</li>
+<li>D</li>
+<li>B</li>
+<li>D</li>
+<li>D</li>
+<li>D</li>
+<li>A</li>
+<li>B</li>
+<li>D</li>
+<li>D</li>
+<li>A</li>
+<li>A</li>
+<li>B</li>
+<li>D</li>
+<li>D</li>
+<li>A</li>
+<li>A</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Daniel Rosel</p>
+<p class="date">Created: 2022-12-17 Sat 09:16</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
