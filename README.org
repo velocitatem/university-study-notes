@@ -12,9 +12,11 @@ For Mac and Windows:
 2. Install the org-mode plugin (https://vscode-org-mode.github.io/vscode-org-mode/)
 
 Taking Notes:
-1. Clone the repository onto your computer (=git clone https://gitlab.com/velocitatem/university-study-notes=)
-2. Create a new branch for your notes (=git checkout -b <your-name>=)
-3. Open the repository in vs-code.
+1. Fork the repository (=https://gitlab.com/velocitatem/university-study-notes=)
+2. Download your forked repository to your computer.
+3. Create a new branch for your notes (e.g. =notes/physics/[name]=)
+4. Open the folder in vs-code.
+5. Edit the notes in the =/content= folder.
 
 The notes are structured in a way that they are not structured. Each class has its own file in the =/content= directory. For each file, the structure should be intuitive enough.
 
