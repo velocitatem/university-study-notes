@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       a41030c6-f8ca-46bc-9041-0dc6e4f4b823
+:END:
+#+title: Principles of Programming - Class Notes

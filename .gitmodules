@@ -1,0 +1,3 @@
+[submodule "content/CheatSheet"]
+	path = content/CheatSheet
+	url = https://github.com/alhassy/CheatSheet.git

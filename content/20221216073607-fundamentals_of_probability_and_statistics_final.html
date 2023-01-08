@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-17 Sat 09:16 -->
+<!-- 2022-12-18 Sun 13:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fundamentals of Probability and Statistics - Final</title>
@@ -226,20 +226,46 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgeb3a362">1. First Part</a></li>
-<li><a href="#org6e86918">2. Random Variables</a></li>
-<li><a href="#orgaf7b1f5">3. Discrete Random Variable</a></li>
-<li><a href="#org2a0042c">4. Continuous Probability Distributions</a></li>
-<li><a href="#org04ae39d">5. Joint Probability Distributions</a></li>
-<li><a href="#org721d7d6">6. Practice Questions</a>
+<li><a href="#orgee75ac0">1. First Part</a></li>
+<li><a href="#org221298c">2. Random Variables</a></li>
+<li><a href="#orgce97876">3. Discrete Random Variable</a>
 <ul>
-<li><a href="#org5a64b71">6.1. Questions from Book</a></li>
-<li><a href="#org142b8ed">6.2. Short Answer</a></li>
-<li><a href="#org79b154e">6.3. Questions 1</a></li>
-<li><a href="#orgb506112">6.4. Questions 2</a></li>
-<li><a href="#org70d1804">6.5. Questions 3</a></li>
-<li><a href="#org68f1d49">6.6. Questions 4</a></li>
-<li><a href="#orgaaec4b1">6.7. Questions 5</a></li>
+<li><a href="#orgedeef11">3.1. Distributions</a></li>
+<li><a href="#orgd21b56e">3.2. Probability Mass Function (\(pmf\))</a></li>
+<li><a href="#org4a52332">3.3. Cumulative Distribution Function (\(cdf\))</a></li>
+<li><a href="#org35027eb">3.4. Expected Values</a></li>
+<li><a href="#org107bb41">3.5. Binomial Distribution</a></li>
+<li><a href="#org383d2a3">3.6. Geometric Distribution</a></li>
+<li><a href="#org6fd547a">3.7. Poisson Distribution</a></li>
+</ul>
+</li>
+<li><a href="#org8731d0e">4. Continuous Probability Distributions</a>
+<ul>
+<li><a href="#org3cad4e6">4.1. Probability Density Function</a></li>
+<li><a href="#org9db7ee2">4.2. Cumulative Distribution Function</a></li>
+<li><a href="#org8093b12">4.3. Percentiles</a></li>
+<li><a href="#orge6aa4f1">4.4. Mean, Median and Variance</a></li>
+<li><a href="#org0924948">4.5. Normal Distribution</a></li>
+<li><a href="#orgf876cc9">4.6. Binomial Distribution Approximation</a></li>
+<li><a href="#orgb03f623">4.7. Uniform Distribution</a></li>
+<li><a href="#orgc0cbaa5">4.8. Gamma Distribution</a></li>
+<li><a href="#org3b41b9d">4.9. Exponential Distribution</a></li>
+<li><a href="#org217b09e">4.10. Chi-Squared Distribution</a></li>
+<li><a href="#orgbd30c04">4.11. The Weibull Distribution</a></li>
+<li><a href="#orgc770f7a">4.12. The Log normal Distribution</a></li>
+<li><a href="#org29fd337">4.13. Beta Distribution</a></li>
+</ul>
+</li>
+<li><a href="#orga3b44cd">5. Joint Probability Distributions</a></li>
+<li><a href="#org7d91b26">6. Practice Questions</a>
+<ul>
+<li><a href="#org7b5654a">6.1. Questions from Book</a></li>
+<li><a href="#orgd3192cd">6.2. Short Answer</a></li>
+<li><a href="#org6e81fb1">6.3. Questions 1</a></li>
+<li><a href="#orgd27c402">6.4. Questions 2</a></li>
+<li><a href="#orgea0c33c">6.5. Questions 3</a></li>
+<li><a href="#org97c7e06">6.6. Questions 4</a></li>
+<li><a href="#orgbe564c8">6.7. Questions 5</a></li>
 </ul>
 </li>
 </ul>
@@ -250,8 +276,8 @@
 
 
 
-<div id="outline-container-orgeb3a362" class="outline-2">
-<h2 id="orgeb3a362"><span class="section-number-2">1.</span> First Part</h2>
+<div id="outline-container-orgee75ac0" class="outline-2">
+<h2 id="orgee75ac0"><span class="section-number-2">1.</span> First Part</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Key concepts which were on the midterm:
@@ -268,10 +294,14 @@ Key concepts which were on the midterm:
 <li>Stem and Leaf Plots</li>
 <li>Box Plots</li>
 </ul>
+
+<p>
+You can find these in the midterm notes.
+</p>
 </div>
 </div>
-<div id="outline-container-org6e86918" class="outline-2">
-<h2 id="org6e86918"><span class="section-number-2">2.</span> Random Variables</h2>
+<div id="outline-container-org221298c" class="outline-2">
+<h2 id="org221298c"><span class="section-number-2">2.</span> Random Variables</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 In any experiment, we are concerned with the value of some <b>random variable</b> (RV) \(X\). We can also define a random variable in terms of some other variable (\(\omega\)), in that case we say that \(X\) is <b>associated with the outcome</b> of \(\omega\).
@@ -283,23 +313,334 @@ If the <b>random variabe</b> can only have <b>two possible outcomes</b> (0,1) we
 </p>
 </div>
 </div>
-<div id="outline-container-orgaf7b1f5" class="outline-2">
-<h2 id="orgaf7b1f5"><span class="section-number-2">3.</span> Discrete Random Variable</h2>
+<div id="outline-container-orgce97876" class="outline-2">
+<h2 id="orgce97876"><span class="section-number-2">3.</span> Discrete Random Variable</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 This is a random variable which can take on only a <b>finite amount</b> of possible values. For example, the number of heads in 10 coin flips.
 </p>
 
-<pre class="example" id="org046c041">
+<pre class="example" id="orgb02d7f5">
 Example: The number of heads in 10 coin flips
 </pre>
 </div>
+<div id="outline-container-orgedeef11" class="outline-3">
+<h3 id="orgedeef11"><span class="section-number-3">3.1.</span> Distributions</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+We can assign a certain probability to each possible value of a random variable. This is called a <b>probability distribution</b>. Here are some key characteristics of a distribution:
+</p>
+<ul class="org-ul">
+<li>The sum of all probabilities must be 1</li>
+<li>The probability of a value is always between 0 and 1</li>
+<li>The probability of a value is always non-negative</li>
+</ul>
+</div>
 </div>
 
 
+<div id="outline-container-orgd21b56e" class="outline-3">
+<h3 id="orgd21b56e"><span class="section-number-3">3.2.</span> Probability Mass Function (\(pmf\))</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+We denote the probability of a value \(x\) as \(P(X=x)\) - this is called elementary probability. We can also use tables to represent the distribution of a random variable. For example, the distribution of the number of heads in 10 coin flips is:
+</p>
 
-<div id="outline-container-org2a0042c" class="outline-2">
-<h2 id="org2a0042c"><span class="section-number-2">4.</span> Continuous Probability Distributions</h2>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x</th>
+<th scope="col" class="org-right">P(X=x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0.001</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0.01</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">0.05</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0.15</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">0.25</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">0.25</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">0.15</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-right">0.05</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">0.01</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-right">0.001</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+This function specifies the probability of each value. This is called the <b>probability mass function</b> of the random variable. It is denoted as \(pmf(x)\). To be able to solve problems involving random variables, and their probabilities, it is important to understand probability itself.
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+
+<p>
+We can also define a probability distribution in terms of some <b>parameter</b> \(\alpha\). For simplicity, lets start with Bernouilli:
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(x\)</th>
+<th scope="col" class="org-left">\(P(X=x)\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">1-\(\alpha\)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">\(\alpha\)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>
+We would denote this function as \(p(x;\alpha)\). Where \(\alpha\) is the <b>parameter</b> of the distribution and can take a value \(0 < \alpha < 1\).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4a52332" class="outline-3">
+<h3 id="org4a52332"><span class="section-number-3">3.3.</span> Cumulative Distribution Function (\(cdf\))</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+We can also use make use of elementary probability to compute the probability of a range of values. For example, the probability of getting between 3 and 5 heads in 10 coin flips is:
+</p>
+
+<p>
+\[
+P(3\leq X\leq 5) = P(X=3) + P(X=4) + P(X=5) = {120\over 1024} + {210\over 1024} + {252\over 1024} = {582\over 1024} = {29\over 51} = 0.5686
+\]
+</p>
+
+<p>
+This kind of probability is called <b>cumulative probability</b>. A cumulative function gives us the sum of all the probabilities of all the values less than or equal to a certain value. For a discrete random variable we define it as:
+</p>
+
+<p>
+\[
+F(x) = P(X\leq x) = \sum_{i=-\infty}^{x} \text{pmf}(i)
+\]
+</p>
+
+<p>
+You may notice that it is somewhat related to integrals in calculus, as we denote the 'area' with a capital F. Another way to relate this to calculus is the definition of a defined integral. If we want the probability of a range of values, we can use the following definition:
+</p>
+
+<p>
+\[
+P(a\leq X\leq b) = F(b) - F(a)
+\]
+</p>
+
+<p>
+Here are some approaches to calculating various cumulative probabilities:
+</p>
+<ul class="org-ul">
+<li>\(P(x > a)\) = \(1 - P(x \leq a)\)</li>
+<li>\(P(x < a)\) = \(P(x \leq a)\)</li>
+<li>\(P(x \geq a)\) = \(1 - P(x < a)\)</li>
+<li>\(P(x \leq a)\) = \(P(x < a) + P(x = a)\)</li>
+<li>\(P(x \geq a)\) = \(P(x > a) + P(x = a)\)</li>
+<li>\(P(a < x < b)\) = \(P(x < b) - P(x < a)\)</li>
+<li>\(P(a \leq x \leq b)\) = \(P(x \leq b) - P(x \leq a)\)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org35027eb" class="outline-3">
+<h3 id="org35027eb"><span class="section-number-3">3.4.</span> Expected Values</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+We can also compute the <b>expected value</b> of a random variable. This is the <b>average</b> value of the random variable. For example, the expected value of the number of heads in 10 coin flips is:
+</p>
+
+<p>
+\[
+E(X) = \sum_{i=-\infty}^{\infty} i \cdot \text{pmf}(i) = 0 \cdot {1\over 2} + 1 \cdot {1\over 2} = {1\over 2}
+\]
+</p>
+
+<p>
+Here you can see the use of the formula to compute the expected value of a discrete rv \(X\):
+</p>
+
+<p>
+\[
+E(X) = \mu_x = \sum_{i=-\infty}^{\infty} i \cdot \text{pmf}(i)
+\]
+</p>
+
+
+<p>
+We might also need to comput the standard deviation. This is the <b>average distance</b> of the random variable from the expected value. To compute this, we use the following formula:
+</p>
+
+<p>
+\[
+\sigma_x = \sqrt{\sum_{i=-\infty}^{\infty} (i - \mu_x)^2 \cdot \text{pmf}(i)}
+\]
+</p>
+
+<p>
+We can also compute the variance using the expected values:
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+\[
+\sigma_x^2 = E(X^2) - E(X)^2
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org107bb41" class="outline-3">
+<h3 id="org107bb41"><span class="section-number-3">3.5.</span> Binomial Distribution</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+The binomial distribution is a discrete distribution that is used to model the number of successes in a sequence of independent experiments. For example, the number of heads in 10 coin flips. The binomial distribution is defined by two parameters:
+</p>
+<ul class="org-ul">
+<li>\(n\) - the number of trials</li>
+<li>\(\alpha\) - the probability of success</li>
+</ul>
+
+<p>
+The binomial distribution is defined as:
+</p>
+
+<p>
+\[
+P(X=x) = {n\choose x} \alpha^x (1-\alpha)^{n-x}
+\]
+</p>
+
+<p>
+Where \({n\choose x}\) is the binomial coefficient. This is the number of ways to choose \(x\) elements from a set of \(n\) elements. This is defined as: \({n\choose x} = {n! \over x!(n-x)!}\)
+</p>
+
+<p>
+We can use this formula to calculate the probability of an exact number of successes. For example, the probability of getting 5 heads in 10 coin flips is: \({10\choose 5} \cdot {1\over 2}^5 \cdot {1\over 2}^5 = {120\over 1024} = {3\over 32} = 0.0938\)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org383d2a3" class="outline-3">
+<h3 id="org383d2a3"><span class="section-number-3">3.6.</span> Geometric Distribution</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+The geometric distribution is a discrete distribution that is used to model the number of trials until the first success. For example, the number of coin flips until the first head. The geometric distribution is defined by one parameter: \(\alpha\) - the probability of success. The geometric distribution is defined as:
+</p>
+
+<p>
+\[
+P(X=x) = (1-\alpha)^{x-1} \alpha
+\]
+</p>
+
+<p>
+We can use this formula to calculate the probability of an exact number of trials. For example, the probability of getting 5 coin flips until the first head is: \((1-{1\over 2})^{5-1} \cdot {1\over 2} = {1\over 32} = 0.0312\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6fd547a" class="outline-3">
+<h3 id="org6fd547a"><span class="section-number-3">3.7.</span> Poisson Distribution</h3>
+<div class="outline-text-3" id="text-3-7">
+<p>
+This is a distribution which can help us model the number of events for some interval of time. The poisson distribution is defined by one parameter: \(\lambda\) - the average number of events per interval. The poisson distribution is defined as:
+</p>
+
+<p>
+\[
+P(X=x) = \frac{\lambda^x e^{-\lambda}}{x!}
+\]
+</p>
+
+<p>
+It will gives us the probability of getting a certain amount \(x\) of events in a certain interval. For example, the probability of getting 5 cars in an hour if the average is 71.5 cars per hour is:
+</p>
+
+<p>
+\[
+P(X=5) = \frac{71.5^5 e^{-71.5}}{5!} = 0.0001 = 0.01\%
+\]
+</p>
+
+<div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
+<p>
+Important: The poisson distribution is only valid for large values of \(\lambda\). For small values, the binomial distribution is more accurate.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8731d0e" class="outline-2">
+<h2 id="org8731d0e"><span class="section-number-2">4.</span> Continuous Probability Distributions</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Back to random variables. If the two following condisions are met, we can call a random variable continuous:
@@ -309,17 +650,517 @@ Back to random variables. If the two following condisions are met, we can call a
 <li>The probability of the random variable taking on any value in an interval is 0 (\(P(X = c) = 0\))</li>
 </ol>
 
-<pre class="example" id="orgc2fcd91">
+<pre class="example" id="org00b3f53">
 Example: The height of a person
 </pre>
 </div>
+
+<div id="outline-container-org3cad4e6" class="outline-3">
+<h3 id="org3cad4e6"><span class="section-number-3">4.1.</span> Probability Density Function</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+If we have such a continuous random variable, we can compute the probability is given by the <b>pdf</b>. We can use this pdf to compute probabilities on a certain interval using integrals:
+</p>
+
+<p>
+\[
+P(a \leq X \leq b) = \int_a^b f(x) \, dx
+\]
+</p>
+
+<p>
+Here are some requirements for the pdf:
+</p>
+<ol class="org-ol">
+<li>The pdf must be non-negative: \(f(x) \geq 0\)</li>
+<li>The area under the pdf must be 1: \(\int_{-\infty}^{\infty} f(x) \, dx = 1\)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org9db7ee2" class="outline-3">
+<h3 id="org9db7ee2"><span class="section-number-3">4.2.</span> Cumulative Distribution Function</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+We can also compute the <b>cdf</b> of a continuous random variable. This is the probability that the random variable is less than or equal to a certain value. We can compute this using the pdf:
+</p>
+
+<p>
+\[
+F(x) = \int_{-\infty}^x f(x) \, dx
+\]
+</p>
+
+<p>
+Similar to the pdf, the cdf must be non-negative and integrate to 1. We can also use some properties of the cdf to compute probabilities:
+</p>
+<ul class="org-ul">
+<li>\(P(X \leq x) = F(x)\)</li>
+<li>\(P(a \leq X \leq b) = F(b) - F(a)\)</li>
+<li>\(P(X > x) = 1 - F(x)\)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8093b12" class="outline-3">
+<h3 id="org8093b12"><span class="section-number-3">4.3.</span> Percentiles</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+The percentile of a random variable is the value such that a certain percentage of the random variable is less than or equal to that value. For example, the 50th percentile is the value such that 50% of the random variable is less than or equal to that value.
+</p>
+
+<p>
+Given that \(p\) is some proportion (value between 0 and 1) we can compute the percentile using the cdf:
+</p>
+
+<p>
+\[
+p = F(\eta (p)) = \int_{-\infty}^{\eta (p)} f(x) \, dx
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge6aa4f1" class="outline-3">
+<h3 id="orge6aa4f1"><span class="section-number-3">4.4.</span> Mean, Median and Variance</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+The mean of a continuous random variable is defined as:
+</p>
+
+<p>
+\[
+\mu_x = E(X) = \int_{-\infty}^{\infty} x \cdot f(x) \, dx
+\]
+</p>
+
+<p>
+The median of a continuous random variable is defined as (It is the 50th percentile):
+</p>
+
+<p>
+\[
+\tilde{\mu}_x = \eta (0.5) = \int_{-\infty}^{\eta (0.5)} x \cdot f(x) \, dx
+\]
+</p>
+
+<p>
+The variance of a continuous random variable is defined as:
+</p>
+
+<p>
+\[
+\sigma_x^2 = E(x-\mu)^2 = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot f(x) \, dx = E(X^2) - E(X)^2
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0924948" class="outline-3">
+<h3 id="org0924948"><span class="section-number-3">4.5.</span> Normal Distribution</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+The normal distribution is a continuous distribution that is used to model a random variable that is normally distributed. The normal distribution is defined by two parameters: \(\mu\) - the mean and \(\sigma\) - the standard deviation. The normal distribution is defined as:
+</p>
+
+<p>
+\[
+f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\]
+</p>
+
+<p>
+This formula is useless. What we are mostly concerned with are <b>z scores</b>. They can tell us the probability of a certain value. For example. If we have a normal distribution with mean 0 and standard deviation 1, the probability of getting a value less than or equal to 1 is: \(\Phi(1) = \int_{-\infty}^1 \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \, dx = 0.8413\) We can also figure this out with the z-table.
+</p>
+
+<p>
+To calculate a z-score we can use the following formula: \(z = \frac{x-\mu}{\sigma}\). From this we can derive the probability of a certain interval:
+</p>
+
+<p>
+\[
+P(a \leq X \leq b) = \Phi(\frac{b-\mu}{\sigma}) - \Phi(\frac{a-\mu}{\sigma})
+\]
+</p>
+
+<p>
+It is also important to remember the empirical rule:
+</p>
+<ul class="org-ul">
+<li>68% of the data is within 1 standard deviation of the mean</li>
+<li>95% of the data is within 2 standard deviations of the mean</li>
+<li>99.7% of the data is within 3 standard deviations of the mean</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf876cc9" class="outline-3">
+<h3 id="orgf876cc9"><span class="section-number-3">4.6.</span> Binomial Distribution Approximation</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+The binomial distribution is a discrete distribution that is used to model the number of successes in a fixed number of trials. For example, the number of heads in 10 coin flips. The binomial distribution is defined by two parameters: \(n\) - the number of trials and \(p\) - the probability of success. We can approximate this distribution with the normal distribution if the following conditions are met:
+</p>
+<ol class="org-ol">
+<li>\(np \geq 10\)</li>
+<li>\(n(1-p) \geq 10\)</li>
+</ol>
+
+<p>
+The formula for approximation using simply phi notation is:
+</p>
+
+<p>
+\[
+P(X \leq x) = B(x,n,p) \approx \Phi(\frac{x+0.5-np}{\sqrt{np(1-p)}})
+\]
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgb03f623" class="outline-3">
+<h3 id="orgb03f623"><span class="section-number-3">4.7.</span> Uniform Distribution</h3>
+<div class="outline-text-3" id="text-4-7">
+<p>
+A continuous probability distribution where all outcomes have an equal probability of occurring. It is said to be <b>uniform</b> if the <b>pdf</b> of X is:
+</p>
+
+<p>
+\[
+f(x) = \begin{cases}
+{1\over b-a} & \text{if } a \leq x \leq b \\
+0 & \text{otherwise}
+\end{cases}
+\]
+</p>
+
+<p>
+What this is saying is that the function on the interval \([a,b]\) is a constant. The probability of getting any value in the interval is the same. For example, the probability of getting a number between 1 and 10 is the same as getting a number between 100 and 1000. The probability of getting a number between 1 and 10 is: \({1\over 10-1} = {1\over 9} = 0.1111\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc0cbaa5" class="outline-3">
+<h3 id="orgc0cbaa5"><span class="section-number-3">4.8.</span> Gamma Distribution</h3>
+<div class="outline-text-3" id="text-4-8">
+<p>
+The gamma distribution relies on the <i>gamma function</i>. This function is defined as:
+</p>
+
+<p>
+\[
+\Gamma(x) = \int_0^\infty t^{x-1} e^{-t} \, dt
+\]
+</p>
+
+<p>
+It has the following properties:
+</p>
+<ul class="org-ul">
+<li>\(\Gamma(x) = (x-1)!\) for all positive integers</li>
+<li>\(\Gamma(1\over 2) = \sqrt{\pi}\)</li>
+</ul>
+
+
+<p>
+From this function we can get to the Gamma distribution. This distribution is defined by two parameters: \(\alpha\) and \(\beta\). The pdf of the Gamma distribution is:
+</p>
+
+<p>
+\[
+f(x;\alpha,\beta) = \begin{cases}
+\frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+</p>
+
+<p>
+There are many variations of this distribution. The most common is the <b>standard Gamma distribution</b>. This distribution is defined by one parameter: \(\alpha\) and \(\beta\) is given the value of 1. The pdf of the standard Gamma distribution is:
+</p>
+
+<p>
+\[
+f(x;\alpha) = \begin{cases}
+\frac{1}{\Gamma(\alpha)} x^{\alpha-1} e^{-x} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+</p>
+
+<p>
+We can also derive the exponential distribution from the Gamma distribution. We do this by setting \(\alpha = 1\) and \(\beta = {1 \over \lambda}\). The pdf of the exponential distribution can be seen above.
+</p>
+
+<p>
+There are plenty of other derivations of the gamma function, this graphic shows some of them:
+</p>
+
+
+
+<div id="org196446b" class="figure">
+<p><img src="Continuous_Probability_Distributions/2022-12-18_10-43-19_screenshot.png" alt="2022-12-18_10-43-19_screenshot.png" />
+</p>
 </div>
 
 
 
+<p>
+The mean and variance of the Gamma distribution are:
+</p>
 
-<div id="outline-container-org04ae39d" class="outline-2">
-<h2 id="org04ae39d"><span class="section-number-2">5.</span> Joint Probability Distributions</h2>
+<p>
+\[
+\mu = \frac{\alpha}{\beta} \qquad \sigma^2 = \frac{\alpha}{\beta^2}
+\]
+</p>
+</div>
+
+
+
+<div id="outline-container-org84c59ee" class="outline-4">
+<h4 id="org84c59ee"><span class="section-number-4">4.8.1.</span> Cumulative Distribution Function</h4>
+<div class="outline-text-4" id="text-4-8-1">
+<p>
+The <b>cdf</b> of the <b>standard</b> Gamma distribution is:
+</p>
+
+<p>
+\[
+F(x;\alpha,\beta) = \begin{cases}
+\int_0^x \frac{\beta^\alpha}{\Gamma(\alpha)} t^{\alpha-1} e^{-\beta t} \, dt & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+</p>
+
+<p>
+This is also called the <b>incomplete gamma function</b>. This is what we will mostly use, because we can find the values in a table.
+</p>
+
+
+<p>
+For an arbitrary gamma distribution, the cdf is:
+</p>
+
+<p>
+\[
+P(X \leq x) = F(x;\alpha,\beta) = F(\frac{x}{\beta};\alpha)
+\]
+</p>
+
+<p>
+Where \(F\) is the cdf of the standard Gamma distribution or the <i>incomplete gamma function</i>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3b41b9d" class="outline-3">
+<h3 id="org3b41b9d"><span class="section-number-3">4.9.</span> Exponential Distribution</h3>
+<div class="outline-text-3" id="text-4-9">
+<p>
+If we have some data which is not normally distributed, we can make use of the <b>family of gamma functions</b>. We will first look at the exponential distribution. The pdf of the exponential distribution is:
+</p>
+
+<p>
+\[
+f(x;\lambda) = \begin{cases}
+\lambda e^{-\lambda x} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+</p>
+
+<p>
+The exponential distribution is a continuous distribution that is used to model the time between events. For example, the time between failures of a machine. The parameter \(\lambda\) is the rate of the distribution. The <b>mean and variance</b> of the distribution are:
+</p>
+
+<p>
+\[
+\mu = \frac{1}{\lambda} \qquad \sigma^2 = \frac{1}{\lambda^2}
+\]
+</p>
+
+<p>
+The <b>cdf</b> of the exponential distribution is:
+</p>
+
+<p>
+\[
+F(x;\lambda) = \begin{cases}
+1 - e^{-\lambda x} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+</p>
+
+<p>
+The exponential distribution will tell us the probability of an event occurring in a certain time interval. For example, the probability of a machine failing in the next 10 minutes is: \(1 - e^{-\lambda \cdot 10} = 1 - e^{-\lambda \cdot 10} = 0.9999\). Here we assume that the machine fails at a constant rate \(\lambda\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org217b09e" class="outline-3">
+<h3 id="org217b09e"><span class="section-number-3">4.10.</span> Chi-Squared Distribution</h3>
+<div class="outline-text-3" id="text-4-10">
+<p>
+We use this distribution to test the goodness of a fit for a model. It is a very important distribution in statistical inference. The pdf of the chi-squared distribution is:
+</p>
+
+<p>
+\[
+f(x;k) = \frac{1}{2^{k/2}\Gamma(k/2)} x^{k/2-1} e^{-x/2}
+\]
+</p>
+
+<p>
+This so for any \(x \geq 0\) and \(k\) is a positive integer. The parameter \(k\) si the degrees of freedom.
+</p>
+
+<p>
+The mean and variance of the chi-squared distribution are:
+</p>
+
+<p>
+\[
+\mu = k \qquad \sigma^2 = 2k
+\]
+</p>
+
+<p>
+The way we might use this distribution is to test the goodness of a fit for a model. For example, we might have a model that predicts the number of failures of a machine. We can then compare the predicted number of failures to the actual number of failures. If the model is a good fit, then the predicted number of failures should be close to the actual number of failures. We can then use the chi-squared distribution to test the goodness of the fit.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbd30c04" class="outline-3">
+<h3 id="orgbd30c04"><span class="section-number-3">4.11.</span> The Weibull Distribution</h3>
+<div class="outline-text-3" id="text-4-11">
+<p>
+This is a kind of distribution used generally for reliability analysis. The pdf of the Weibull distribution is:
+</p>
+
+<p>
+\[
+f(x; \alpha; \beta) = \begin{cases}
+\frac{\alpha}{\beta} \left(\frac{x}{\beta}\right)^{\alpha-1} e^{-\left(\frac{x}{\beta}\right)^\alpha} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+</p>
+
+<p>
+The mean and variance of the Weibull distribution are (awful):
+</p>
+
+<p>
+\[
+\mu = \beta \Gamma(1 + \frac{1}{\alpha}) \qquad \sigma^2 = \beta^2 \left[\Gamma(1 + \frac{2}{\alpha}) - \left(\Gamma(1 + \frac{1}{\alpha})\right)^2\right]
+\]
+</p>
+
+<p>
+As for the cdf, it is:
+</p>
+
+<p>
+\[
+F(x;\alpha,\beta) = \begin{cases}
+1 - e^{-\left(\frac{x}{\beta}\right)^\alpha} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc770f7a" class="outline-3">
+<h3 id="orgc770f7a"><span class="section-number-3">4.12.</span> The Log normal Distribution</h3>
+<div class="outline-text-3" id="text-4-12">
+<p>
+This is a continuous distribution that is used to model the time between events. For example, the time between failures of a machine. This <b>distribution is used if the \(ln(X)\) is a normal distribution</b>. The pdf of the log normal distribution is:
+</p>
+
+<p>
+\[
+f(x;\mu,\sigma) = \frac{1}{x \sigma \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{\ln(x) - \mu}{\sigma}\right)^2}
+\]
+</p>
+
+<p>
+In this case, the parameters \(\mu\) and \(\sigma\) are the mean and standard deviation of the normal distribution of \(ln(X)\). The mean and variance of the log normal distribution are:
+</p>
+
+<p>
+\[
+\mu = e^{\mu + \frac{\sigma^2}{2}} \qquad \sigma^2 = \left(e^{\sigma^2} - 1\right) e^{2\mu + \sigma^2}
+\]
+</p>
+
+
+<p>
+Since the log distribution should be normal, we can express the <b>cdf</b> in terms of the normal distribution:
+</p>
+
+<p>
+\[
+F(x;\mu;\sigma) = P(Z \leq \frac{\ln(x) - \mu}{\sigma}) = \Phi\left(\frac{\ln(x) - \mu}{\sigma}\right)
+\]
+</p>
+
+<p>
+Where \(\Phi\) is the cdf of the standard normal distribution.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org29fd337" class="outline-3">
+<h3 id="org29fd337"><span class="section-number-3">4.13.</span> Beta Distribution</h3>
+<div class="outline-text-3" id="text-4-13">
+<p>
+Once of the biggest differentiating factors of the beta distribution is that it is a <b>continuous distribution</b> which maintains an above 0 probability for all values of \(x\). The pdf of the general beta distribution is:
+</p>
+
+<p>
+\[
+f(x;\alpha,\beta;A;B) = \frac{1}{B-A} \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1}
+\]
+</p>
+
+<p>
+The standard beta distribution is defined by \(A=0\) and \(B=1\).
+</p>
+
+
+<p>
+The mean and variance of the beta distribution are:
+</p>
+
+<p>
+\[
+\mu = \frac{\alpha}{\alpha + \beta} \qquad \sigma^2 = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}
+\]
+</p>
+
+
+<p>
+The cdf of the beta distribution is:
+</p>
+
+<p>
+\[
+F(x;\alpha,\beta;A,B) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \int_0^x t^{\alpha-1} (1-t)^{\beta-1} dt
+\]
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga3b44cd" class="outline-2">
+<h2 id="orga3b44cd"><span class="section-number-2">5.</span> Joint Probability Distributions</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Many problems in probability and statistics involve working simultaneously with two or more random variables. For example, X and Y might be the income and willingness to pay for a good, respectively, of a randomly selected individual. This topic address the concept of joint probability distributions.
@@ -327,12 +1168,13 @@ Jointly Distributed Random Variables. Expected Values, Covariance, and Correlati
 </p>
 </div>
 </div>
-<div id="outline-container-org721d7d6" class="outline-2">
-<h2 id="org721d7d6"><span class="section-number-2">6.</span> Practice Questions</h2>
+
+<div id="outline-container-org7d91b26" class="outline-2">
+<h2 id="org7d91b26"><span class="section-number-2">6.</span> Practice Questions</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org5a64b71" class="outline-3">
-<h3 id="org5a64b71"><span class="section-number-3">6.1.</span> Questions from Book</h3>
+<div id="outline-container-org7b5654a" class="outline-3">
+<h3 id="org7b5654a"><span class="section-number-3">6.1.</span> Questions from Book</h3>
 <div class="outline-text-3" id="text-6-1">
 <ol class="org-ol">
 <li><p>
@@ -359,8 +1201,8 @@ Answer:
 </div>
 
 
-<div id="outline-container-org142b8ed" class="outline-3">
-<h3 id="org142b8ed"><span class="section-number-3">6.2.</span> Short Answer</h3>
+<div id="outline-container-orgd3192cd" class="outline-3">
+<h3 id="orgd3192cd"><span class="section-number-3">6.2.</span> Short Answer</h3>
 <div class="outline-text-3" id="text-6-2">
 <ol class="org-ol">
 <li>What are the two fundamentally different types of random variables?
@@ -395,8 +1237,8 @@ Answer:
 </ol>
 </div>
 </div>
-<div id="outline-container-org79b154e" class="outline-3">
-<h3 id="org79b154e"><span class="section-number-3">6.3.</span> Questions 1</h3>
+<div id="outline-container-org6e81fb1" class="outline-3">
+<h3 id="org6e81fb1"><span class="section-number-3">6.3.</span> Questions 1</h3>
 <div class="outline-text-3" id="text-6-3">
 <ol class="org-ol">
 <li><p>
@@ -569,8 +1411,8 @@ Answer: A. The probability that the linear combination takes on a value less tha
 </div>
 </div>
 
-<div id="outline-container-orgb506112" class="outline-3">
-<h3 id="orgb506112"><span class="section-number-3">6.4.</span> Questions 2</h3>
+<div id="outline-container-orgd27c402" class="outline-3">
+<h3 id="orgd27c402"><span class="section-number-3">6.4.</span> Questions 2</h3>
 <div class="outline-text-3" id="text-6-4">
 <ol class="org-ol">
 <li>What is a stem-and-leaf display?
@@ -662,8 +1504,8 @@ Answer: A. The probability that the linear combination takes on a value less tha
 </div>
 </div>
 
-<div id="outline-container-org70d1804" class="outline-3">
-<h3 id="org70d1804"><span class="section-number-3">6.5.</span> Questions 3</h3>
+<div id="outline-container-orgea0c33c" class="outline-3">
+<h3 id="orgea0c33c"><span class="section-number-3">6.5.</span> Questions 3</h3>
 <div class="outline-text-3" id="text-6-5">
 <ol class="org-ol">
 <li>What is the expected value of a discrete random variable?
@@ -707,8 +1549,8 @@ Answer: A. The probability that the linear combination takes on a value less tha
 </ol></li>
 </ol>
 </div>
-<div id="outline-container-org5796a11" class="outline-4">
-<h4 id="org5796a11"><span class="section-number-4">6.5.1.</span> Answers</h4>
+<div id="outline-container-org72f70cd" class="outline-4">
+<h4 id="org72f70cd"><span class="section-number-4">6.5.1.</span> Answers</h4>
 <div class="outline-text-4" id="text-6-5-1">
 <ol class="org-ol">
 <li>The expected value of a discrete random variable is the sum of all possible values of a random variable.</li>
@@ -720,8 +1562,8 @@ Answer: A. The probability that the linear combination takes on a value less tha
 </div>
 </div>
 </div>
-<div id="outline-container-org68f1d49" class="outline-3">
-<h3 id="org68f1d49"><span class="section-number-3">6.6.</span> Questions 4</h3>
+<div id="outline-container-org97c7e06" class="outline-3">
+<h3 id="org97c7e06"><span class="section-number-3">6.6.</span> Questions 4</h3>
 <div class="outline-text-3" id="text-6-6">
 <ol class="org-ol">
 <li><p>
@@ -792,8 +1634,8 @@ Answer: f(t) = (Gamma((3+1)/2)/(sqrt(3π)Gamma(3/2)))*(1+t<sup>2</sup>/3)^-((3+1
 </div>
 </div>
 
-<div id="outline-container-orgaaec4b1" class="outline-3">
-<h3 id="orgaaec4b1"><span class="section-number-3">6.7.</span> Questions 5</h3>
+<div id="outline-container-orgbe564c8" class="outline-3">
+<h3 id="orgbe564c8"><span class="section-number-3">6.7.</span> Questions 5</h3>
 <div class="outline-text-3" id="text-6-7">
 <ol class="org-ol">
 <li>What is the probability of getting exactly two heads when flipping a fair coin three times?
@@ -960,8 +1802,8 @@ Answer: f(t) = (Gamma((3+1)/2)/(sqrt(3π)Gamma(3/2)))*(1+t<sup>2</sup>/3)^-((3+1
 </ol>
 </div>
 
-<div id="outline-container-org2a1ab87" class="outline-4">
-<h4 id="org2a1ab87"><span class="section-number-4">6.7.1.</span> Answers</h4>
+<div id="outline-container-orgd7e1360" class="outline-4">
+<h4 id="orgd7e1360"><span class="section-number-4">6.7.1.</span> Answers</h4>
 <div class="outline-text-4" id="text-6-7-1">
 <ol class="org-ol">
 <li>C</li>
@@ -992,7 +1834,7 @@ Answer: f(t) = (Gamma((3+1)/2)/(sqrt(3π)Gamma(3/2)))*(1+t<sup>2</sup>/3)^-((3+1
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel Rosel</p>
-<p class="date">Created: 2022-12-17 Sat 09:16</p>
+<p class="date">Created: 2022-12-18 Sun 13:18</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

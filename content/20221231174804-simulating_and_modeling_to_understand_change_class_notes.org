@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       a66d2149-cb01-4124-bcc8-c5e9f1669d3d
+:END:
+#+title: Simulating and Modeling to Understand Change - Class Notes
+#+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
+#+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+#+OPTIONS: toc:2
+#+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
+#+HTML_HEAD: <script src="anti-cheat.js"></script>
+#+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+#+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
+
+
+
+
+
+#+HTML: <footer style="height: 20vh;"></footer>
+
+
+* Introduction
+* Python Programming for Simulations and Models
+* Random Numbers Generation
+* Random Variable Simulation
+* Monte Carlo Simulation
+* Discrete Events Simulation
+* Model Building
+* Regression Models
+* Classification Models

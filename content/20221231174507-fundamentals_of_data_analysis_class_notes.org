@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       4ea2e0d3-f2f4-4083-b3e3-7ea638872d56
+:END:
+#+title: Fundamentals of Data Analysis - Class Notes
+#+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
+#+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+#+OPTIONS: toc:2
+#+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
+#+HTML_HEAD: <script src="anti-cheat.js"></script>
+#+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+#+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
+
+
+#+HTML: <footer style="height: 20vh;"></footer>
+* Data Manipulation
+* Single Sample Intervals
+** Confidence Intervals
+** Mean and Proportion Confidence Intervals
+** Confidence Intervals for Normal Distributions
+** Variance and Standard Deviation Confidence Intervals
+* Single Sample Hypothesis Testing
+** Hypothesis Testing
+** Hypothesis Testing for Normal Distributions
+** Hypothesis Testing for Proportions
+** Hypothesis Testing for Variances
+* Two Sample Hypotheses Testing
+** Hypothesis Testing for Two Means
+** Hypothesis Testing for Two Proportions
+** Hypothesis Testing for Two Variances
+* Analysis of Variance: Single Factor
+** Analysis of Variance
+** Analysis of Variance for Normal Distributions
+** Analysis of Variance for Proportions
+** Analysis of Variance for Variances
+* Analysis of Variance: Multi Factor
+** Analysis of Variance for Two Factors
+** Analysis of Variance for Three Factors
+* Goodness-of-fit Tests
+** Goodness-of-fit Tests for Normal Distributions
+** Goodness-of-fit Tests for Proportions
+** Goodness-of-fit Tests for Variances
+* Categorical Data Analysis
+** Chi-Square Tests for Independence
+** Chi-Square Tests for Homogeneity
+** Chi-Square Tests for Goodness-of-fit
+
+#+HTML: <footer style="height: 20vh;"></footer>

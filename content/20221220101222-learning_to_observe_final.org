@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       ed8204f4-8065-471b-a314-0b88558441e4
+:END:
+#+title: Learning to Observe - Final
+
+
+*
+
+* Definitions
+1. Selection effect
+   When a sample is biased because it consists of a specific population
+2. Maturation effect
+   A natural progression or evolution, not caused by external effects
+3. History effect
+   This is a kind of effect which affects the results of an experiment due to some events which occurred in the environment.
+4. Non-equivalent control group design
+   This is a quasi-experimental control group designed where we measure both the control and treatment groups before and after.
+5. Interrupted time series design
+   We take various measurements before and after some treatment
+6. Test-retest reliability
+   We perform the same test at two different times
+7. Internal consistency
+   Concept of having a degree of homogeneity in the test sample.
+8. Barnum effect
+   Tendency to believe and associate with very general and vague properties.
+9. Open-ended vs. closed-ended questions
+
+10. Acquiescence bias
+    Tendency to respond in favor of the researcher might want.
+11. Saturation
+    Have enough responses such that any new ones make no difference when it comes to the data.
+
+12. Informant vs. Respondent
+    Informant know something about a topic, a respondent is a regular joe
+13. Snowball sampling
+    Having each of your respondents get more respondents
+14. Anonymity
+    Making sure that information stays separate from the respondents identity
+16. Convenience sample
+    A sample take from the population most convenient

@@ -1,0 +1,424 @@
+:PROPERTIES:
+:ID:       e10181bb-553a-40c6-b281-1b74b9fcba3e
+:END:
+#+title: Fundamentals of Probability and Statistics - Final Cheat Sheet
+#+LATEX_HEADER: \def\cheatsheetcols{3}
+#+LATEX_HEADER: \landscapefalse
+#+LATEX_HEADER: \usepackage{emerald}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+
+
+* Cheat Sheet
+** Probability
+*** Probability
+\[
+P(A) = \frac{\text{number of favorable outcomes}}{\text{number of possible outcomes}}
+\]
+
+*** Conditional Probability
+\[
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+\]
+
+*** Bayes' Theorem
+\[
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+\]
+
+*** Independence
+Two events are independent if the occurrence of one event does not affect the probability of the other event. In other words, the probability of the second event is the same whether or not the first event occurs.
+
+\[
+P(A|B) = P(A)
+\]
+
+*** Disjoint
+Two events are disjoint if they cannot occur at the same time. In other words, the probability of the second event is 0 if the first event occurs.
+
+\[
+P(A \cap B) = 0
+\]
+
+*** Mutually Exclusive
+Two events are mutually exclusive if they cannot occur at the same time. In other words, the probability of the second event is 0 if the first event occurs.
+
+\[
+P(A \cap B) = 0
+\]
+
+*** Complement
+The complement of an event is the set of outcomes that are not in the event. The complement of an event A is denoted by A'.
+
+\[
+P(A') = 1 - P(A)
+\]
+
+*** Union
+The union of two events is the set of outcomes that are in either event. The union of two events A and B is denoted by A $\cup$ B.
+
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]
+
+*** Intersection
+The intersection of two events is the set of outcomes that are in both events. The intersection of two events A and B is denoted by A $\cap$ B.
+
+\[
+P(A \cap B) = P(A) \cdot P(B|A)
+\]
+
+*** Venn Diagrams
+Venn diagrams are a useful tool for visualizing the relationships between events. The area of the circle represents the probability of the event. The area of the intersection of two circles represents the probability of the intersection of the two events.
+
+*** Tree Diagrams
+Tree diagrams are a useful tool for visualizing the relationships between events. The probability of each branch is the product of the probabilities of the events in that branch.
+
+** Random Variables
+*** Discrete Random Variables
+A discrete random variable is a random variable that can take on a countable number of values. For example, the number of heads in 10 coin flips.
+
+**** Probability Mass Function
+The probability mass function (PMF) of a discrete random variable is a function that gives the probability that the random variable is exactly equal to some value.
+
+\[
+P(X=x) = \frac{\text{number of outcomes }}{\text{total number}}
+\]
+
+**** Cumulative Distribution Function
+The cumulative distribution function (CDF) of a discrete random variable is a function that gives the probability that the random variable is less than or equal to some value.
+
+\[
+F(x) = P(X \leq x) = \sum_{i=1}^x P(X=i)
+\]
+**** Expected Value
+The expected value of a random variable is the average value of the random variable. It is denoted by E(X).
+
+\[
+E(X) = \sum_{i=1}^n x_i \cdot P(X=x_i)
+\]
+
+**** Variance
+The variance of a random variable is a measure of how spread out the values of the random variable are. It is denoted by Var(X).
+
+\[
+Var(X) = E((X - E(X))^2)
+\]
+
+*** Continuous Random Variables
+A continuous random variable is a random variable that can take on any value in an interval. For example, the height of a person.
+
+**** Probability Density Function
+The probability density function (PDF) of a continuous random variable is a function that gives the probability that the random variable is equal to some value.
+
+\[
+f(x) = P(X=x) = \frac{dF(x)}{dx}
+\]
+
+**** Cumulative Distribution Function
+The cumulative distribution function (CDF) of a continuous random variable is a function that gives the probability that the random variable is less than or equal to some value.
+
+\[
+F(x) = P(X \leq x) = \int_{-\infty}^x f(x) dx
+\]
+
+**** Expected Value
+The expected value of a random variable is the average value of the random variable. It is denoted by E(X).
+
+\[
+E(X) = \int_{-\infty}^\infty x \cdot f(x) dx
+\]
+
+**** Variance
+The variance of a random variable is a measure of how spread out the values of the random variable are. It is denoted by Var(X).
+
+\[
+Var(X) = E((X - E(X))^2)
+\]
+
+** Distributions
+*** Uniform Distribution
+A continuous probability distribution where all outcomes have an equal probability of occurring.
+
+**** Probability Density Function
+\[
+f(x) = \begin{cases}
+\frac{1}{b-a} & \text{if } a \leq x \leq b \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+**** Cumulative Distribution Function
+\[
+F(x) = \begin{cases}
+0 & \text{if } x < a \\
+\frac{x-a}{b-a} & \text{if } a \leq x \leq b \\
+1 & \text{if } x > b
+\end{cases}
+\]
+
+**** Expected Value and Variance
+
+\[
+E(X) = \frac{a+b}{2}
+\]
+
+\[
+Var(X) = \frac{(b-a)^2}{12}
+\]
+
+
+*** Normal Distribution
+A continuous probability distribution characterized by two shape parameters, α and β. It is often used to model the behavior of random variables that are restricted to a particular range, such as percentages and proportions.
+
+**** Probability Density Function
+\[
+f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot e^{-\frac{(x - \mu)^2}{2 \sigma^2}}
+\]
+
+**** Cumulative Distribution Function
+\[
+F(x) = \frac{1}{2} \cdot \left[1 + erf\left(\frac{x - \mu}{\sqrt{2 \sigma^2}}\right)\right]
+\]
+
+**** Expected Value and Variance
+
+\[
+E(X) = \mu
+\]
+
+\[
+Var(X) = \sigma^2
+\]
+
+
+*** Binomial Distribution
+A discrete probability distribution that models the number of successes in a sequence of independent trials.
+
+**** Probability Mass Function
+\[
+P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}
+\]
+
+**** Cumulative Distribution Function
+\[
+F(k) = \sum_{i=0}^k \binom{n}{i} p^i (1-p)^{n-i}
+\]
+
+**** Expected Value and Variance
+
+\[
+E(X) = np
+\]
+
+\[
+Var(X) = np(1-p)
+\]
+
+
+
+*** Poisson Distribution
+A discrete probability distribution that models the number of events that occur in a fixed interval of time or space.
+
+**** Probability Mass Function
+\[
+P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}
+\]
+
+**** Cumulative Distribution Function
+\[
+F(k) = \sum_{i=0}^k \frac{\lambda^i e^{-\lambda}}{i!}
+\]
+
+**** Expected Value and Variance
+
+\[
+E(X) = \lambda
+\]
+
+\[
+Var(X) = \lambda
+\]
+
+
+*** Geometric Distribution
+A discrete probability distribution that models the number of trials needed to get the first success in a sequence of independent trials.
+
+**** Probability Mass Function
+\[
+P(X=k) = (1-p)^{k-1} p
+\]
+
+**** Cumulative Distribution Function
+\[
+F(k) = 1 - (1-p)^k
+\]
+
+**** Expected Value and Variance
+
+\[
+E(X) = \frac{1}{p}
+\]
+
+\[
+Var(X) = \frac{1-p}{p^2}
+\]
+
+
+*** Exponential Distribution
+A continuous probability distribution that models the time between events in a Poisson process.
+
+**** Probability Density Function
+\[
+f(x) = \lambda e^{-\lambda x}
+\]
+
+**** Cumulative Distribution Function
+\[
+F(x) = 1 - e^{-\lambda x}
+\]
+
+**** Expected Value and Variance
+
+\[
+E(X) = \frac{1}{\lambda}
+\]
+
+
+*** Chi-Squared Distribution
+A continuous probability distribution that models the sum of the squares of k independent standard normal random variables.
+
+**** Probability Density Function
+\[
+f(x) = \frac{1}{2^{\frac{k}{2}} \cdot \Gamma\left(\frac{k}{2}\right)} x^{\frac{k}{2}-1} e^{-\frac{x}{2}}
+\]
+
+**** Cumulative Distribution Function
+\[
+F(x) = \frac{1}{2} \cdot \left[1 + erf\left(\frac{x}{\sqrt{2}}\right)\right]
+\]
+
+
+
+*** Weibull Distribution
+A continuous probability distribution that models the time to failure of a system.
+
+**** Probability Density Function
+\[
+f(x) = \frac{k}{\lambda} \left(\frac{x}{\lambda}\right)^{k-1} e^{-\left(\frac{x}{\lambda}\right)^k}
+\]
+
+**** Cumulative Distribution Function
+\[
+F(x) = 1 - e^{-\left(\frac{x}{\lambda}\right)^k}
+\]
+
+**** Expected Value and Variance
+
+\[
+E(X) = \lambda \cdot \Gamma(1 + \frac{1}{k})
+\]
+
+\[
+Var(X) = \lambda^2 \cdot \left[\Gamma(1 + \frac{2}{k}) - \Gamma^2(1 + \frac{1}{k})\right]
+\]
+
+*** Gamma Distribution
+A continuous probability distribution that models the waiting time until k independent events occur.
+
+**** Probability Density Function
+\[
+f(x) = \frac{\lambda^k}{\Gamma(k)} x^{k-1} e^{-\lambda x}
+\]
+
+**** Cumulative Distribution Function
+\[
+F(x) = \int_0^x \frac{\lambda^k}{\Gamma(k)} x^{k-1} e^{-\lambda x} dx
+\]
+
+**** Expected Value and Variance
+
+\[
+E(X) = \frac{k}{\lambda}
+\]
+
+\[
+Var(X) = \frac{k}{\lambda^2}
+\]
+
+*** Beta Distribution
+A continuous probability distribution that models the probability of success in a sequence of independent Bernoulli trials.
+
+**** Probability Density Function
+\[
+f(x) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \cdot \Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1}
+\]
+
+**** Cumulative Distribution Function
+\[
+F(x) = \int_0^x \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \cdot \Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1} dx
+\]
+
+**** Expected Value and Variance
+
+\[
+E(X) = \frac{\alpha}{\alpha + \beta}
+\]
+
+\[
+Var(X) = \frac{\alpha \cdot \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}
+\]
+
+** Joint Probability Distributions
+A joint probability distribution is a probability distribution over two or more random variables. The joint probability distribution of two random variables X and Y is denoted by P(X, Y). The joint probability distribution of three random variables X, Y, and Z is denoted by P(X, Y, Z).
+
+*** Joint Discrete Probability Distribution
+A joint discrete probability distribution is a probability distribution over two or more discrete random variables.
+
+**** Probability Mass Function
+\[
+P(X=x, Y=y) = P(X=x) \cdot P(Y=y)
+\]
+
+**** Cumulative Distribution Function
+\[
+F(x, y) = \sum_{i=0}^x \sum_{j=0}^y P(X=i, Y=j)
+\]
+
+*** Joint Continuous Probability Distribution
+A joint continuous probability distribution is a probability distribution over two or more continuous random variables.
+
+**** Probability Density Function
+\[
+f(x, y) = f_X(x) \cdot f_Y(y)
+\]
+
+**** Cumulative Distribution Function
+\[
+F(x, y) = \int_{-\infty}^x \int_{-\infty}^y f(x, y) dx dy
+\]
+
+*** Independence
+Two random variables X and Y are independent if and only if P(X, Y) = P(X) \cdot P(Y). In other words, the probability of X and Y occurring together is equal to the probability of X occurring times the probability of Y occurring.
+
+
+
+
+
+** Hypothesis Testing
+*** Null Hypothesis
+The null hypothesis is the hypothesis that is being tested. It is often denoted by H0. The null hypothesis is often a statement of no difference.
+
+*** Alternative Hypothesis
+The alternative hypothesis is the hypothesis that is being tested against the null hypothesis. It is often denoted by H1. The alternative hypothesis is often a statement of a difference.
+
+*** Type I Error
+A type I error is a false positive. It is the result of rejecting the null hypothesis when it is actually true.
+
+*** Type II Error
+A type II error is a false negative. It is the result of failing to reject the null hypothesis when it is actually false.
+
+*** P-Value
+The p-value is the probability of observing a test statistic at least as extreme as the one observed, given that the null hypothesis is true.
+
+*** Confidence Interval
+A confidence interval is a range of values that is likely to contain the true value of a parameter. It is often denoted by CI.

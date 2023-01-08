@@ -1,0 +1,663 @@
+% Created 2022-12-18 Sun 15:30
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[mathletters]{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{titling,parskip}
+\usepackage{eufrak} % for mathfrak fonts
+\usepackage{multicol,xparse,newunicodechar}
+\usepackage{etoolbox}
+\newif\iflandscape
+\landscapetrue
+\def\cheatsheetcols{2}
+\AfterEndPreamble{\begin{multicols}{\cheatsheetcols}}
+\AtEndDocument{ \end{multicols} }
+\let\multicolmulticols\multicols
+\let\endmulticolmulticols\endmulticols
+\RenewDocumentEnvironment{multicols}{mO{}}{\ifnum#1=1 #2 \def\columnbreak{} \else \multicolmulticols{#1}[#2] \fi}{\ifnum#1=1 \else \endmulticolmulticols\fi}
+\def\maketitle{}
+\def\cheatsheeturl{}
+\usepackage[dvipsnames]{xcolor} % named colours
+\usepackage{color}
+\definecolor{darkgreen}{rgb}{0.0, 0.3, 0.1}
+\definecolor{darkblue}{rgb}{0.0, 0.1, 0.3}
+\hypersetup{colorlinks,linkcolor=darkblue,citecolor=darkblue,urlcolor=darkgreen}
+\setlength{\parindent}{0pt}
+\def\cheatsheetitemsep{-0.5em}
+\let\olditem\item
+\makeatletter
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\makeatother
+\RequirePackage{fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\scriptsize}
+\def\cheatsheetcols{3}
+\landscapefalse
+\usepackage{emerald}
+\usepackage[T1]{fontenc}
+\iflandscape \usepackage[landscape, margin=0.5in]{geometry} \else \usepackage[margin=0.5in]{geometry} \fi
+\def\item{\vspace{\cheatsheetitemsep}\olditem}
+\author{Daniel Rosel}
+\date{\today}
+\title{Fundamentals of Probability and Statistics - Final Cheat Sheet}
+\hypersetup{
+ pdfauthor={Daniel Rosel},
+ pdftitle={Fundamentals of Probability and Statistics - Final Cheat Sheet},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.2 (Org mode 9.5.5)},
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+
+
+\fontsize{9}{10}\selectfont
+
+\theauthor \hfill {\tiny \mbox{\url{\cheatsheeturl}}} \hfill \thedate
+\hrule
+
+\vspace{1em}
+{\center \large\bf \thetitle \\ }
+
+\definecolor{grey}{rgb}{0.5,0.5,0.5}
+
+
+%
+% Note the * makes the numbering dissapear;
+% See §7.2 of the manual: http://mirror.its.dal.ca/ctan/macros/latex/base/classes.pdf
+%
+% See here for terse docs on \@startsection: https://tex.stackexchange.com/a/31795/69371
+%
+\makeatletter
+\renewcommand\section[1]{
+  \@startsection {section}{1}{0ex}% Level is 1, and indentation is 0
+                 {1em}%{-3.5ex \@plus -1ex \@minus -.2ex}% space before heading
+                 {-1em}% space after heading
+                 % style:
+         { \color{black}\normalfont\bfseries}* {\fbox{#1} \vspace{2ex}\newline }}
+\makeatother
+
+% The black-colour is to ensure no accidental spill-over when using other colour; e.g. \invisibleHI
+
+\makeatletter
+\renewcommand\subsection[1]{ \room \hrule \vspace{-0.3em} }
+\makeatother
+
+\def\labelitemi{$\diamond$}
+\def\labelitemii{$\circ$}
+\def\labelitemiii{$\star$}
+
+% Level 0                 Level 0
+% + Level 1               ⋄ Level 1
+%   - Level 2       --->      ∘ Level 2
+%     * Level 3                   ⋆ Level 3
+%
+
+
+\renewenvironment{parallel}[1][2] % one argument, whose default value is literal `2`.
+ {
+  \setlength{\columnseprule}{2pt}
+  \begin{minipage}[t]{\linewidth} % width of minipage is 100% times of \linewidth
+  \begin{multicols}{#1}  % default is `2`
+ }
+ {
+  \end{multicols}
+  \end{minipage}
+ }
+
+% Common case is to have three columns, want to avoid invoking the attribute via org, so making this.
+\newenvironment{parallel3}
+ {
+  \setlength{\columnseprule}{2pt}
+  \begin{minipage}[t]{\linewidth} % width of minipage is 100% times of \linewidth
+  \begin{multicols}{3}
+ }
+ {
+  \end{multicols}
+  \end{minipage}
+ }
+
+
+% paralellNB, this is paralell enviro but with `N`o  `B`ar in-between the columns.
+
+\newenvironment{parallelNB}[1][2] % one argument, whose default value is literal `2`.
+ {
+  \setlength{\columnseprule}{0pt}
+  \begin{minipage}[t]{\linewidth} % width of minipage is 100% times of \linewidth
+  \begin{multicols}{#1}  % default is `2`
+ }
+ {
+  \end{multicols}
+  \end{minipage}
+ }
+
+\newenvironment{parallel3NB}
+ {
+  \setlength{\columnseprule}{0pt}
+  \begin{minipage}[t]{\linewidth} % width of minipage is 100% times of \linewidth
+  \begin{multicols}{3}
+ }
+ {
+  \end{multicols}
+  \end{minipage}
+ }
+
+\def\providedS{ \qquad\Leftarrow\qquad }
+
+\def\impliesS{ \qquad\Rightarrow\qquad }
+
+\def\landS{ \qquad\land\qquad }
+\def\lands{ \quad\land\quad }
+
+\def\eqs{ \quad=\quad}
+
+\def\equivs{ \quad\equiv\quad}
+\def\equivS{ \qquad\equiv\qquad}
+
+\def\begineqns{ \begingroup\setlength{\abovedisplayskip}{-1pt}\setlength{\belowdisplayskip}{-1pt} }
+\def\endeqns{ \endgroup }
+
+\def\room{\vspace{0.5em}}
+
+% Usage: \eqn{name}{formula}
+\setlength{\abovedisplayskip}{5pt} \setlength{\belowdisplayskip}{2pt}
+\def\eqn#1#2{ \begin{flalign*} #2 && \tag*{\sc #1} \label{#1} \end{flalign*}  }
+
+% \setlength{\parskip}{1em}
+
+
+\def\invisibleHI{ \invisible{Hi} }
+\def\invisible#1{ {\color{white}{#1}}  }
+
+\def\forcenewline{ {\color{white} .} \newline }
+\def\forcenewpage{ {\color{white} .} \newpage }
+
+
+
+\section{Cheat Sheet}
+\label{sec:orgb9124ce}
+\subsection{Probability}
+\label{sec:org4aecc9d}
+\subsubsection{Probability}
+\label{sec:orgdd110b0}
+\[
+P(A) = \frac{\text{number of favorable outcomes}}{\text{number of possible outcomes}}
+\]
+
+\subsubsection{Conditional Probability}
+\label{sec:org333200d}
+\[
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+\]
+
+\subsubsection{Bayes' Theorem}
+\label{sec:orgd5903ca}
+\[
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+\]
+
+\subsubsection{Independence}
+\label{sec:orgca6bfdd}
+Two events are independent if the occurrence of one event does not affect the probability of the other event. In other words, the probability of the second event is the same whether or not the first event occurs.
+
+\[
+P(A|B) = P(A)
+\]
+
+\subsubsection{Disjoint}
+\label{sec:orgfa7d4b0}
+Two events are disjoint if they cannot occur at the same time. In other words, the probability of the second event is 0 if the first event occurs.
+
+\[
+P(A \cap B) = 0
+\]
+
+\subsubsection{Mutually Exclusive}
+\label{sec:orgbf90091}
+Two events are mutually exclusive if they cannot occur at the same time. In other words, the probability of the second event is 0 if the first event occurs.
+
+\[
+P(A \cap B) = 0
+\]
+
+\subsubsection{Complement}
+\label{sec:org90f3275}
+The complement of an event is the set of outcomes that are not in the event. The complement of an event A is denoted by A'.
+
+\[
+P(A') = 1 - P(A)
+\]
+
+\subsubsection{Union}
+\label{sec:orgaea4a01}
+The union of two events is the set of outcomes that are in either event. The union of two events A and B is denoted by A \(\cup\) B.
+
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]
+
+\subsubsection{Intersection}
+\label{sec:org2c55943}
+The intersection of two events is the set of outcomes that are in both events. The intersection of two events A and B is denoted by A \(\cap\) B.
+
+\[
+P(A \cap B) = P(A) \cdot P(B|A)
+\]
+
+\subsubsection{Venn Diagrams}
+\label{sec:orgd411314}
+Venn diagrams are a useful tool for visualizing the relationships between events. The area of the circle represents the probability of the event. The area of the intersection of two circles represents the probability of the intersection of the two events.
+
+\subsubsection{Tree Diagrams}
+\label{sec:orgd5be66b}
+Tree diagrams are a useful tool for visualizing the relationships between events. The probability of each branch is the product of the probabilities of the events in that branch.
+
+\subsection{Random Variables}
+\label{sec:org1cc580f}
+\subsubsection{Discrete Random Variables}
+\label{sec:org70b3992}
+A discrete random variable is a random variable that can take on a countable number of values. For example, the number of heads in 10 coin flips.
+
+\begin{enumerate}
+\item Probability Mass Function
+\label{sec:org3651ae6}
+The probability mass function (PMF) of a discrete random variable is a function that gives the probability that the random variable is exactly equal to some value.
+
+\[
+P(X=x) = \frac{\text{number of outcomes }}{\text{total number}}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:org0f4074f}
+The cumulative distribution function (CDF) of a discrete random variable is a function that gives the probability that the random variable is less than or equal to some value.
+
+\[
+F(x) = P(X \leq x) = \sum_{i=1}^x P(X=i)
+\]
+\item Expected Value
+\label{sec:org73241e6}
+The expected value of a random variable is the average value of the random variable. It is denoted by E(X).
+
+\[
+E(X) = \sum_{i=1}^n x_i \cdot P(X=x_i)
+\]
+
+\item Variance
+\label{sec:orgdee2ed5}
+The variance of a random variable is a measure of how spread out the values of the random variable are. It is denoted by Var(X).
+
+\[
+Var(X) = E((X - E(X))^2)
+\]
+\end{enumerate}
+
+\subsubsection{Continuous Random Variables}
+\label{sec:org0b77c5b}
+A continuous random variable is a random variable that can take on any value in an interval. For example, the height of a person.
+
+\begin{enumerate}
+\item Probability Density Function
+\label{sec:org764379f}
+The probability density function (PDF) of a continuous random variable is a function that gives the probability that the random variable is equal to some value.
+
+\[
+f(x) = P(X=x) = \frac{dF(x)}{dx}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:org7baa156}
+The cumulative distribution function (CDF) of a continuous random variable is a function that gives the probability that the random variable is less than or equal to some value.
+
+\[
+F(x) = P(X \leq x) = \int_{-\infty}^x f(x) dx
+\]
+
+\item Expected Value
+\label{sec:org339f19c}
+The expected value of a random variable is the average value of the random variable. It is denoted by E(X).
+
+\[
+E(X) = \int_{-\infty}^\infty x \cdot f(x) dx
+\]
+
+\item Variance
+\label{sec:org757ae35}
+The variance of a random variable is a measure of how spread out the values of the random variable are. It is denoted by Var(X).
+
+\[
+Var(X) = E((X - E(X))^2)
+\]
+\end{enumerate}
+
+\subsection{Distributions}
+\label{sec:org689fc40}
+\subsubsection{Uniform Distribution}
+\label{sec:org3dba0a5}
+A continuous probability distribution where all outcomes have an equal probability of occurring.
+
+\begin{enumerate}
+\item Probability Density Function
+\label{sec:orgaeddf7d}
+\[
+f(x) = \begin{cases}
+\frac{1}{b-a} & \text{if } a \leq x \leq b \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:orgc0467cd}
+\[
+F(x) = \begin{cases}
+0 & \text{if } x < a \\
+\frac{x-a}{b-a} & \text{if } a \leq x \leq b \\
+1 & \text{if } x > b
+\end{cases}
+\]
+
+\item Expected Value and Variance
+\label{sec:org1b06a5a}
+
+\[
+E(X) = \frac{a+b}{2}
+\]
+
+\[
+Var(X) = \frac{(b-a)^2}{12}
+\]
+\end{enumerate}
+
+
+\subsubsection{Normal Distribution}
+\label{sec:org3578859}
+A continuous probability distribution characterized by two shape parameters, α and β. It is often used to model the behavior of random variables that are restricted to a particular range, such as percentages and proportions.
+
+\begin{enumerate}
+\item Probability Density Function
+\label{sec:orgefa0c9d}
+\[
+f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot e^{-\frac{(x - \mu)^2}{2 \sigma^2}}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:org290f6b4}
+\[
+F(x) = \frac{1}{2} \cdot \left[1 + erf\left(\frac{x - \mu}{\sqrt{2 \sigma^2}}\right)\right]
+\]
+
+\item Expected Value and Variance
+\label{sec:org537bc7f}
+
+\[
+E(X) = \mu
+\]
+
+\[
+Var(X) = \sigma^2
+\]
+\end{enumerate}
+
+
+\subsubsection{Binomial Distribution}
+\label{sec:orgb17d8a6}
+A discrete probability distribution that models the number of successes in a sequence of independent trials.
+
+\begin{enumerate}
+\item Probability Mass Function
+\label{sec:orgc6ce761}
+\[
+P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:org82a71c0}
+\[
+F(k) = \sum_{i=0}^k \binom{n}{i} p^i (1-p)^{n-i}
+\]
+
+\item Expected Value and Variance
+\label{sec:org0058c9f}
+
+\[
+E(X) = np
+\]
+
+\[
+Var(X) = np(1-p)
+\]
+\end{enumerate}
+
+
+
+\subsubsection{Poisson Distribution}
+\label{sec:org4dd32de}
+A discrete probability distribution that models the number of events that occur in a fixed interval of time or space.
+
+\begin{enumerate}
+\item Probability Mass Function
+\label{sec:orgc58cf1c}
+\[
+P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:org99b5c65}
+\[
+F(k) = \sum_{i=0}^k \frac{\lambda^i e^{-\lambda}}{i!}
+\]
+
+\item Expected Value and Variance
+\label{sec:orgab66592}
+
+\[
+E(X) = \lambda
+\]
+
+\[
+Var(X) = \lambda
+\]
+\end{enumerate}
+
+
+\subsubsection{Geometric Distribution}
+\label{sec:org7519f84}
+A discrete probability distribution that models the number of trials needed to get the first success in a sequence of independent trials.
+
+\begin{enumerate}
+\item Probability Mass Function
+\label{sec:org8fd37ac}
+\[
+P(X=k) = (1-p)^{k-1} p
+\]
+
+\item Cumulative Distribution Function
+\label{sec:org2036136}
+\[
+F(k) = 1 - (1-p)^k
+\]
+
+\item Expected Value and Variance
+\label{sec:orgb8cb32d}
+
+\[
+E(X) = \frac{1}{p}
+\]
+
+\[
+Var(X) = \frac{1-p}{p^2}
+\]
+\end{enumerate}
+
+
+\subsubsection{Exponential Distribution}
+\label{sec:orged67808}
+A continuous probability distribution that models the time between events in a Poisson process.
+
+\begin{enumerate}
+\item Probability Density Function
+\label{sec:orgdb92fca}
+\[
+f(x) = \lambda e^{-\lambda x}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:orgc8c85b7}
+\[
+F(x) = 1 - e^{-\lambda x}
+\]
+
+\item Expected Value and Variance
+\label{sec:org54e02c0}
+
+\[
+E(X) = \frac{1}{\lambda}
+\]
+\end{enumerate}
+
+
+\subsubsection{Chi-Squared Distribution}
+\label{sec:orgf0bd8b2}
+A continuous probability distribution that models the sum of the squares of k independent standard normal random variables.
+
+\begin{enumerate}
+\item Probability Density Function
+\label{sec:orgf3684c9}
+\[
+f(x) = \frac{1}{2^{\frac{k}{2}} \cdot \Gamma\left(\frac{k}{2}\right)} x^{\frac{k}{2}-1} e^{-\frac{x}{2}}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:orgef6f939}
+\[
+F(x) = \frac{1}{2} \cdot \left[1 + erf\left(\frac{x}{\sqrt{2}}\right)\right]
+\]
+\end{enumerate}
+
+
+
+\subsubsection{Weibull Distribution}
+\label{sec:org3373f1f}
+A continuous probability distribution that models the time to failure of a system.
+
+\begin{enumerate}
+\item Probability Density Function
+\label{sec:org432a55a}
+\[
+f(x) = \frac{k}{\lambda} \left(\frac{x}{\lambda}\right)^{k-1} e^{-\left(\frac{x}{\lambda}\right)^k}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:orgf8c66b2}
+\[
+F(x) = 1 - e^{-\left(\frac{x}{\lambda}\right)^k}
+\]
+
+\item Expected Value and Variance
+\label{sec:org0593230}
+
+\[
+E(X) = \lambda \cdot \Gamma(1 + \frac{1}{k})
+\]
+
+\[
+Var(X) = \lambda^2 \cdot \left[\Gamma(1 + \frac{2}{k}) - \Gamma^2(1 + \frac{1}{k})\right]
+\]
+\end{enumerate}
+
+\subsubsection{Gamma Distribution}
+\label{sec:org853d9c2}
+A continuous probability distribution that models the waiting time until k independent events occur.
+
+\begin{enumerate}
+\item Probability Density Function
+\label{sec:org58f5a87}
+\[
+f(x) = \frac{\lambda^k}{\Gamma(k)} x^{k-1} e^{-\lambda x}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:org7b0ce59}
+\[
+F(x) = \int_0^x \frac{\lambda^k}{\Gamma(k)} x^{k-1} e^{-\lambda x} dx
+\]
+
+\item Expected Value and Variance
+\label{sec:org672c699}
+
+\[
+E(X) = \frac{k}{\lambda}
+\]
+
+\[
+Var(X) = \frac{k}{\lambda^2}
+\]
+\end{enumerate}
+
+\subsubsection{Beta Distribution}
+\label{sec:org2237ddd}
+A continuous probability distribution that models the probability of success in a sequence of independent Bernoulli trials.
+
+\begin{enumerate}
+\item Probability Density Function
+\label{sec:orge525be8}
+\[
+f(x) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \cdot \Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1}
+\]
+
+\item Cumulative Distribution Function
+\label{sec:org5209ee1}
+\[
+F(x) = \int_0^x \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \cdot \Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1} dx
+\]
+
+\item Expected Value and Variance
+\label{sec:org49ff00f}
+
+\[
+E(X) = \frac{\alpha}{\alpha + \beta}
+\]
+
+\[
+Var(X) = \frac{\alpha \cdot \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}
+\]
+\end{enumerate}
+
+
+\subsection{Hypothesis Testing}
+\label{sec:orgdb0fb8f}
+\subsubsection{Null Hypothesis}
+\label{sec:org9c190f4}
+The null hypothesis is the hypothesis that is being tested. It is often denoted by H0. The null hypothesis is often a statement of no difference.
+
+\subsubsection{Alternative Hypothesis}
+\label{sec:org80ef8ef}
+The alternative hypothesis is the hypothesis that is being tested against the null hypothesis. It is often denoted by H1. The alternative hypothesis is often a statement of a difference.
+
+\subsubsection{Type I Error}
+\label{sec:orgb13d635}
+A type I error is a false positive. It is the result of rejecting the null hypothesis when it is actually true.
+
+\subsubsection{Type II Error}
+\label{sec:orge78438d}
+A type II error is a false negative. It is the result of failing to reject the null hypothesis when it is actually false.
+
+\subsubsection{P-Value}
+\label{sec:org870efde}
+The p-value is the probability of observing a test statistic at least as extreme as the one observed, given that the null hypothesis is true.
+
+\subsubsection{Confidence Interval}
+\label{sec:org1e83000}
+A confidence interval is a range of values that is likely to contain the true value of a parameter. It is often denoted by CI.
+\end{document}

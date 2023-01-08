@@ -1,0 +1,114 @@
+:PROPERTIES:
+:ID:       66095265-766f-4c3f-8fdc-b275373bb62d
+:END:
+#+title: Physics for Computer Science - Class Notes
+#+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
+#+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+#+OPTIONS: toc:2
+#+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
+#+HTML_HEAD: <script src="anti-cheat.js"></script>
+#+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+#+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
+
+
+
+
+
+
+* Electromagnetism: Static Fields
+** Electrostatic Fields
+*** Electric Charge
+*** Polarization
+*** Electric Force
+*** Electrostatic Field
+*** Electric Flux
+*** Gauss's Law
+*** Electric Potential
+*** Electric Work
+*** Potential Energy
+*** Electric Dipole
+*** Dielectrics
+*** Capacitors
+** Magneto-static Fields
+*** Electric Current
+*** Ohm's Law
+*** Electromotive Force
+*** Magnetic Force
+*** Magnetic Field
+*** Magnetic Flux
+*** Gauss's Law of Magnetism
+*** Ampere's Circuital Law
+*** Magnetic Dipole
+*** Hall Effect
+* Electromagnetism: Dynamic Fields
+** Motional Electromotive Force
+** Faraday's Law
+** Alternators
+** Mutual Inductance
+** Self-Inductance
+** Eddy Currents
+** Waves
+*** Displacement Current
+*** Maxwell's Equations
+*** Electromagnetic Waves
+*** Plane Waves
+*** Electromagnetic Spectrum
+*** Poyntig Vector
+*** Electromagnetic Waves on Boundaries
+*** Standing Waves
+
+* Electric Circuits (DC)
+** Circuits
+** Passive Components
+** Active Components
+** Electrical Measurements
+** Kirchoff's Laws
+** Transient and Steady-State
+** Electric Power
+** Systematics Circuit Analysis
+** Circuit Theorems
+* Electric Circuits (AC)
+** Phasors
+** Generalized Kirchhoff's Laws
+** AC Power
+** Frequency Response Analysis
+** Filters
+* Semiconductors
+** In Equilibrium
+*** Band Theory
+*** Intrinsic Semiconductors
+*** Extrinsic Semiconductors
+** Out of Equilibrium
+*** Electric Conductivity in Semiconductors
+*** Generation and Recombination of Charge Carriers
+** PN Junctions
+*** In Equilibrium
+*** Polarized Junctions
+*** Characteristic I-V Curve of the Diode
+*** Optoelectronic Devices
+* Transistors
+** Bipolar Junction Transistors
+*** Basic Functioning
+*** Polarization
+*** Modeling
+*** Circuit Analysis with Transistors
+*** Digital Circuits
+** MOSFETs
+*** Work Function
+*** MOS
+*** MOSFET
+*** Qualitative Functioning
+*** Polarization
+*** Modeling
+*** Circuit Analysis with MOSFETs
+*** CMOS
+*** Logic Gates with CMOS
+** Comparison of Bipolar and MOSFETs
+* Quantum Mechanics
+** Laws of Quantum Physics
+** Superconducting Circuits
+* Final Project
+** Project Proposal
+** Project Report
+
+#+HTML: <footer style="height: 20vh;"></footer>

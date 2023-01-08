@@ -44,25 +44,22 @@ We can assign a certain probability to each possible value of a random variable.
 + The probability of a value is always non-negative
 
 
-*** Probability Mass Function ($pmf$)
+** Probability Mass Function ($pmf$)
 We denote the probability of a value $x$ as $P(X=x)$ - this is called elementary probability. We can also use tables to represent the distribution of a random variable. For example, the distribution of the number of heads in 10 coin flips is:
 
-\begin{tabular}{|c|c|}
-\hline
-x & P(X=x) \\
-\hline
-0 & 0.001 \\
-1 & 0.01 \\
-2 & 0.05 \\
-3 & 0.15 \\
-4 & 0.25 \\
-5 & 0.25 \\
-6 & 0.15 \\
-7 & 0.05 \\
-8 & 0.01 \\
-9 & 0.001 \\
-\hline
-\end{tabular}
+
+| x | P(X=x) |
+|---+--------|
+| 0 | 0.001  |
+| 1 | 0.01   |
+| 2 | 0.05   |
+| 3 | 0.15   |
+| 4 | 0.25   |
+| 5 | 0.25   |
+| 6 | 0.15   |
+| 7 | 0.05   |
+| 8 | 0.01   |
+| 9 | 0.001  |
 
 
 This function specifies the probability of each value. This is called the *probability mass function* of the random variable. It is denoted as $pmf(x)$. To be able to solve problems involving random variables, and their probabilities, it is important to understand probability itself.
@@ -71,20 +68,18 @@ This function specifies the probability of each value. This is called the *proba
 
 We can also define a probability distribution in terms of some *parameter* $\alpha$. For simplicity, lets start with Bernouilli:
 
-\begin{tabular}{|c|c|}
-\hline
-x & P(X=x) \\
-\hline
-0 & 1-\alpha \\
-1 & \alpha \\
-\hline
-\end{tabular}
+
+| $x$ | $P(X=x)$ |
+|-----+----------|
+| 0   | 1-$\alpha$ |
+| 1   | $\alpha$  |
+
+
 
 We would denote this function as $p(x;\alpha)$. Where $\alpha$ is the *parameter* of the distribution and can take a value $0 < \alpha < 1$.
 
 
-
-*** Cumulative Distribution Function ($cdf$)
+** Cumulative Distribution Function ($cdf$)
 We can also use make use of elementary probability to compute the probability of a range of values. For example, the probability of getting between 3 and 5 heads in 10 coin flips is:
 
 \[
@@ -112,9 +107,7 @@ Here are some approaches to calculating various cumulative probabilities:
 + $P(a < x < b)$ = $P(x < b) - P(x < a)$
 + $P(a \leq x \leq b)$ = $P(x \leq b) - P(x \leq a)$
 
-
-
-*** Expected Values
+** Expected Values
 We can also compute the *expected value* of a random variable. This is the *average* value of the random variable. For example, the expected value of the number of heads in 10 coin flips is:
 
 \[
@@ -141,7 +134,7 @@ We can also compute the variance using the expected values:
 \sigma_x^2 = E(X^2) - E(X)^2
 \]
 
-*** Binomial Distribution
+** Binomial Distribution
 The binomial distribution is a discrete distribution that is used to model the number of successes in a sequence of independent experiments. For example, the number of heads in 10 coin flips. The binomial distribution is defined by two parameters:
 + $n$ - the number of trials
 + $\alpha$ - the probability of success
@@ -157,9 +150,7 @@ Where ${n\choose x}$ is the binomial coefficient. This is the number of ways to 
 We can use this formula to calculate the probability of an exact number of successes. For example, the probability of getting 5 heads in 10 coin flips is: ${10\choose 5} \cdot {1\over 2}^5 \cdot {1\over 2}^5 = {120\over 1024} = {3\over 32} = 0.0938$
 
 
-
-
-*** Geometric Distribution
+** Geometric Distribution
 The geometric distribution is a discrete distribution that is used to model the number of trials until the first success. For example, the number of coin flips until the first head. The geometric distribution is defined by one parameter: $\alpha$ - the probability of success. The geometric distribution is defined as:
 
 \[
@@ -168,7 +159,20 @@ P(X=x) = (1-\alpha)^{x-1} \alpha
 
 We can use this formula to calculate the probability of an exact number of trials. For example, the probability of getting 5 coin flips until the first head is: $(1-{1\over 2})^{5-1} \cdot {1\over 2} = {1\over 32} = 0.0312$
 
-*** Poisson Distribution
+** Hyper Geometric Distribution
+The hyper geometric distribution is a discrete distribution that is used to model the number of successes in a sequence of independent experiments. For example, the number of heads in 10 coin flips. The hyper geometric distribution is defined by three parameters:
++ $N$ - the total number of elements
++ $n$ - the number of elements of interest
++ $k$ - the number of elements drawn
+
+The hyper geometric distribution is defined as:
+
+\[
+P(X=x) = {n\choose x} {N-n\choose k-x} {N\choose k}
+\]
+
+Where ${n\choose x}$ is the binomial coefficient. This is the number of ways to choose $x$ elements from a set of $n$ elements. This is defined as: ${n\choose x} = {n! \over x!(n-x)!}$
+** Poisson Distribution
 # The poisson distribution is a discrete distribution that is used to model the number of events in a fixed interval of time. For example, the number of cars that pass a certain point in an hour. The poisson distribution is defined by one parameter: $\lambda$ - the average number of events per interval. The poisson distribution is defined as:
 
 This is a distribution which can help us model the number of events for some interval of time. The poisson distribution is defined by one parameter: $\lambda$ - the average number of events per interval. The poisson distribution is defined as:
@@ -194,27 +198,290 @@ Back to random variables. If the two following condisions are met, we can call a
 #+begin_example
 Example: The height of a person
 #+end_example
+
+** Probability Density Function
+If we have such a continuous random variable, we can compute the probability is given by the *pdf*. We can use this pdf to compute probabilities on a certain interval using integrals:
+
+\[
+P(a \leq X \leq b) = \int_a^b f(x) \, dx
+\]
+
+Here are some requirements for the pdf:
+1. The pdf must be non-negative: $f(x) \geq 0$
+2. The area under the pdf must be 1: $\int_{-\infty}^{\infty} f(x) \, dx = 1$
+
+** Cumulative Distribution Function
+We can also compute the *cdf* of a continuous random variable. This is the probability that the random variable is less than or equal to a certain value. We can compute this using the pdf:
+
+\[
+F(x) = \int_{-\infty}^x f(x) \, dx
+\]
+
+Similar to the pdf, the cdf must be non-negative and integrate to 1. We can also use some properties of the cdf to compute probabilities:
++ $P(X \leq x) = F(x)$
++ $P(a \leq X \leq b) = F(b) - F(a)$
++ $P(X > x) = 1 - F(x)$
+
+** Percentiles
+The percentile of a random variable is the value such that a certain percentage of the random variable is less than or equal to that value. For example, the 50th percentile is the value such that 50% of the random variable is less than or equal to that value.
+
+Given that $p$ is some proportion (value between 0 and 1) we can compute the percentile using the cdf:
+
+\[
+p = F(\eta (p)) = \int_{-\infty}^{\eta (p)} f(x) \, dx
+\]
+
+** Mean, Median and Variance
+The mean of a continuous random variable is defined as:
+
+\[
+\mu_x = E(X) = \int_{-\infty}^{\infty} x \cdot f(x) \, dx
+\]
+
+The median of a continuous random variable is defined as (It is the 50th percentile):
+
+\[
+\tilde{\mu}_x = \eta (0.5) = \int_{-\infty}^{\eta (0.5)} x \cdot f(x) \, dx
+\]
+
+The variance of a continuous random variable is defined as:
+
+\[
+\sigma_x^2 = E(x-\mu)^2 = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot f(x) \, dx = E(X^2) - E(X)^2
+\]
+
 ** Normal Distribution
-A continuous probability distribution with a symmetric bell-shaped graph and a single peak, characterized by its mean, variance, and standard deviation.
+The normal distribution is a continuous distribution that is used to model a random variable that is normally distributed. The normal distribution is defined by two parameters: $\mu$ - the mean and $\sigma$ - the standard deviation. The normal distribution is defined as:
+
+\[
+f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\]
+
+This formula is useless. What we are mostly concerned with are *z scores*. They can tell us the probability of a certain value. For example. If we have a normal distribution with mean 0 and standard deviation 1, the probability of getting a value less than or equal to 1 is: $\Phi(1) = \int_{-\infty}^1 \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \, dx = 0.8413$ We can also figure this out with the z-table.
+
+To calculate a z-score we can use the following formula: $z = \frac{x-\mu}{\sigma}$. From this we can derive the probability of a certain interval:
+
+\[
+P(a \leq X \leq b) = \Phi(\frac{b-\mu}{\sigma}) - \Phi(\frac{a-\mu}{\sigma})
+\]
+
+It is also important to remember the empirical rule:
++ 68% of the data is within 1 standard deviation of the mean
++ 95% of the data is within 2 standard deviations of the mean
++ 99.7% of the data is within 3 standard deviations of the mean
+
+** Binomial Distribution Approximation
+The binomial distribution is a discrete distribution that is used to model the number of successes in a fixed number of trials. For example, the number of heads in 10 coin flips. The binomial distribution is defined by two parameters: $n$ - the number of trials and $p$ - the probability of success. We can approximate this distribution with the normal distribution if the following conditions are met:
+1. $np \geq 10$
+2. $n(1-p) \geq 10$
+
+The formula for approximation using simply phi notation is:
+
+\[
+P(X \leq x) = B(x,n,p) \approx \Phi(\frac{x+0.5-np}{\sqrt{np(1-p)}})
+\]
+
 
 ** Uniform Distribution
-A continuous probability distribution where all outcomes have an equal probability of occurring.
+A continuous probability distribution where all outcomes have an equal probability of occurring. It is said to be *uniform* if the *pdf* of X is:
 
-** Exponential Distribution
-A continuous probability distribution characterized by a single parameter, usually denoted by λ, that describes the rate of decay of the probability of a given event occurring.
+\[
+f(x) = \begin{cases}
+{1\over b-a} & \text{if } a \leq x \leq b \\
+0 & \text{otherwise}
+\end{cases}
+\]
 
-** Chi-Squared Distribution
-A continuous probability distribution that is used to test the goodness-of-fit of an observed data set and to compare data sets from different sources or to compare a theoretical model to observed data.
+What this is saying is that the function on the interval $[a,b]$ is a constant. The probability of getting any value in the interval is the same. For example, the probability of getting a number between 1 and 10 is the same as getting a number between 100 and 1000. The probability of getting a number between 1 and 10 is: ${1\over 10-1} = {1\over 9} = 0.1111$
 
 ** Gamma Distribution
-A continuous probability distribution characterized by two parameters, a shape parameter, k, and a scale parameter, θ. It is often used to model the time between events, such as the time between arrivals of customers at a retail store.
+The gamma distribution relies on the /gamma function/. This function is defined as:
+
+\[
+\Gamma(x) = \int_0^\infty t^{x-1} e^{-t} \, dt
+\]
+
+It has the following properties:
++ $\Gamma(x) = (x-1)!$ for all positive integers
++ $\Gamma(1\over 2) = \sqrt{\pi}$
+
+
+From this function we can get to the Gamma distribution. This distribution is defined by two parameters: $\alpha$ and $\beta$. The pdf of the Gamma distribution is:
+
+\[
+f(x;\alpha,\beta) = \begin{cases}
+\frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+There are many variations of this distribution. The most common is the *standard Gamma distribution*. This distribution is defined by one parameter: $\alpha$ and $\beta$ is given the value of 1. The pdf of the standard Gamma distribution is:
+
+\[
+f(x;\alpha) = \begin{cases}
+\frac{1}{\Gamma(\alpha)} x^{\alpha-1} e^{-x} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+We can also derive the exponential distribution from the Gamma distribution. We do this by setting $\alpha = 1$ and $\beta = {1 \over \lambda}$. The pdf of the exponential distribution can be seen above.
+
+There are plenty of other derivations of the gamma function, this graphic shows some of them:
+
+
+#+DOWNLOADED: screenshot @ 2022-12-18 10:43:19
+[[file:Continuous_Probability_Distributions/2022-12-18_10-43-19_screenshot.png]]
+
+
+
+The mean and variance of the Gamma distribution are:
+
+\[
+\mu = \frac{\alpha}{\beta} \qquad \sigma^2 = \frac{\alpha}{\beta^2}
+\]
+
+
+
+*** Cumulative Distribution Function
+The *cdf* of the *standard* Gamma distribution is:
+
+\[
+F(x;\alpha,\beta) = \begin{cases}
+\int_0^x \frac{\beta^\alpha}{\Gamma(\alpha)} t^{\alpha-1} e^{-\beta t} \, dt & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+This is also called the *incomplete gamma function*. This is what we will mostly use, because we can find the values in a table.
+
+
+For an arbitrary gamma distribution, the cdf is:
+
+\[
+P(X \leq x) = F(x;\alpha,\beta) = F(\frac{x}{\beta};\alpha)
+\]
+
+Where $F$ is the cdf of the standard Gamma distribution or the /incomplete gamma function/.
+
+** Exponential Distribution
+If we have some data which is not normally distributed, we can make use of the *family of gamma functions*. We will first look at the exponential distribution. The pdf of the exponential distribution is:
+
+\[
+f(x;\lambda) = \begin{cases}
+\lambda e^{-\lambda x} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+The exponential distribution is a continuous distribution that is used to model the time between events. For example, the time between failures of a machine. The parameter $\lambda$ is the rate of the distribution. The *mean and variance* of the distribution are:
+
+\[
+\mu = \frac{1}{\lambda} \qquad \sigma^2 = \frac{1}{\lambda^2}
+\]
+
+The *cdf* of the exponential distribution is:
+
+\[
+F(x;\lambda) = \begin{cases}
+1 - e^{-\lambda x} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+The exponential distribution will tell us the probability of an event occurring in a certain time interval. For example, the probability of a machine failing in the next 10 minutes is: $1 - e^{-\lambda \cdot 10} = 1 - e^{-\lambda \cdot 10} = 0.9999$. Here we assume that the machine fails at a constant rate $\lambda$.
+
+** Chi-Squared Distribution
+We use this distribution to test the goodness of a fit for a model. It is a very important distribution in statistical inference. The pdf of the chi-squared distribution is:
+
+\[
+f(x;k) = \frac{1}{2^{k/2}\Gamma(k/2)} x^{k/2-1} e^{-x/2}
+\]
+
+This so for any $x \geq 0$ and $k$ is a positive integer. The parameter $k$ si the degrees of freedom.
+
+The mean and variance of the chi-squared distribution are:
+
+\[
+\mu = k \qquad \sigma^2 = 2k
+\]
+
+The way we might use this distribution is to test the goodness of a fit for a model. For example, we might have a model that predicts the number of failures of a machine. We can then compare the predicted number of failures to the actual number of failures. If the model is a good fit, then the predicted number of failures should be close to the actual number of failures. We can then use the chi-squared distribution to test the goodness of the fit.
+
+** The Weibull Distribution
+This is a kind of distribution used generally for reliability analysis. The pdf of the Weibull distribution is:
+
+\[
+f(x; \alpha; \beta) = \begin{cases}
+\frac{\alpha}{\beta} \left(\frac{x}{\beta}\right)^{\alpha-1} e^{-\left(\frac{x}{\beta}\right)^\alpha} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+The mean and variance of the Weibull distribution are (awful):
+
+\[
+\mu = \beta \Gamma(1 + \frac{1}{\alpha}) \qquad \sigma^2 = \beta^2 \left[\Gamma(1 + \frac{2}{\alpha}) - \left(\Gamma(1 + \frac{1}{\alpha})\right)^2\right]
+\]
+
+As for the cdf, it is:
+
+\[
+F(x;\alpha,\beta) = \begin{cases}
+1 - e^{-\left(\frac{x}{\beta}\right)^\alpha} & \text{if } x \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+** The Log normal Distribution
+This is a continuous distribution that is used to model the time between events. For example, the time between failures of a machine. This *distribution is used if the $ln(X)$ is a normal distribution*. The pdf of the log normal distribution is:
+
+\[
+f(x;\mu,\sigma) = \frac{1}{x \sigma \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{\ln(x) - \mu}{\sigma}\right)^2}
+\]
+
+In this case, the parameters $\mu$ and $\sigma$ are the mean and standard deviation of the normal distribution of $ln(X)$. The mean and variance of the log normal distribution are:
+
+\[
+\mu = e^{\mu + \frac{\sigma^2}{2}} \qquad \sigma^2 = \left(e^{\sigma^2} - 1\right) e^{2\mu + \sigma^2}
+\]
+
+
+Since the log distribution should be normal, we can express the *cdf* in terms of the normal distribution:
+
+\[
+F(x;\mu;\sigma) = P(Z \leq \frac{\ln(x) - \mu}{\sigma}) = \Phi\left(\frac{\ln(x) - \mu}{\sigma}\right)
+\]
+
+Where $\Phi$ is the cdf of the standard normal distribution.
+
 
 ** Beta Distribution
-A continuous probability distribution characterized by two shape parameters, α and β. It is often used to model the behavior of random variables that are restricted to a particular range, such as percentages and proportions.
+Once of the biggest differentiating factors of the beta distribution is that it is a *continuous distribution* which maintains an above 0 probability for all values of $x$. The pdf of the general beta distribution is:
+
+\[
+f(x;\alpha,\beta;A;B) = \frac{1}{B-A} \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1}
+\]
+
+The standard beta distribution is defined by $A=0$ and $B=1$.
+
+
+The mean and variance of the beta distribution are:
+
+\[
+\mu = \frac{\alpha}{\alpha + \beta} \qquad \sigma^2 = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}
+\]
+
+
+The cdf of the beta distribution is:
+
+\[
+F(x;\alpha,\beta;A,B) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \int_0^x t^{\alpha-1} (1-t)^{\beta-1} dt
+\]
 
 * Joint Probability Distributions
 Many problems in probability and statistics involve working simultaneously with two or more random variables. For example, X and Y might be the income and willingness to pay for a good, respectively, of a randomly selected individual. This topic address the concept of joint probability distributions.
 Jointly Distributed Random Variables. Expected Values, Covariance, and Correlation. Statistics and Their Distributions. The Distribution of the Sample Mean. The Distribution of a Linear Combination
+
 * Practice Questions
 ** Questions from Book
 1. The number of pumps in use at both a six-pump station and a four-pump station will be determined. Give the possible values for each of the following random variables:
@@ -444,15 +711,15 @@ Jointly Distributed Random Variables. Expected Values, Covariance, and Correlati
 ** Questions 4
 1. Calculate the expected value of a discrete random variable with the following probability mass function: P(X=1) = 0.3, P(X=2) = 0.4, P(X=3) = 0.2, P(X=4) = 0.1
 
-  Answer: 2.3
+  Answer: 2.1
 
 2. If X is a continuous random variable with probability density function f(x) = 4x^2, calculate the cumulative distribution function F(x).
 
-  Answer: F(x) = x^3
+  Answer: F(x) = \frac{4}{3}x^3
 
 3. Calculate the variance of a binomial distribution with n = 10 and p = 0.3.
 
- Answer: 2.7
+ Answer: 2.1
 
 4. Calculate the probability of x successes in a Poisson distribution with a mean of 5.
 
@@ -466,7 +733,7 @@ Jointly Distributed Random Variables. Expected Values, Covariance, and Correlati
 
 6. Calculate the standard deviation of a chi-squared distribution with 6 degrees of freedom.
 
-  Answer: 2.449
+  Answer: 2
 
 
 7. Calculate the probability density function of a student's t distribution with 3 degrees of freedom.
@@ -476,9 +743,9 @@ Jointly Distributed Random Variables. Expected Values, Covariance, and Correlati
 ** Questions 5
 1. What is the probability of getting exactly two heads when flipping a fair coin three times?
    1. $\frac{1}{4}$
-      #+HTML <span id="correct">
+      #+HTML: <span id="correct">
    2. $\frac{3}{8}$
-      #+HTML </span>
+      #+HTML: </span>
    3. $\frac{1}{8}$
    4. $\frac{3}{4}$
 
