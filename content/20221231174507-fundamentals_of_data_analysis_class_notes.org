@@ -12,7 +12,240 @@
 
 
 #+HTML: <footer style="height: 20vh;"></footer>
-* Data Manipulation
+* Data Manipulation & Python
+** Pandas DataFrames
+It is best to imagine a DataFrame as spreadsheet.
+
+#+BEGIN_SRC python
+  import pandas as pd
+
+  # Create a DataFrame from a dictionary
+  df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
+                    'age': [34, 25, 67],
+                    'height': [1.78, 1.65, 1.89]})
+
+  # Create a DataFrame from a list of lists
+  df = pd.DataFrame([['John', 34, 1.78],
+                    ['Jane', 25, 1.65],
+                    ['Joe', 67, 1.89]],
+                    columns=['name', 'age', 'height'])
+
+#+END_SRC
+
+Here are some of the most useful methods for working with DataFrames:
++ =.head()= :: returns the first 5 rows of the DataFrame
++ =.tail()= :: returns the last 5 rows of the DataFrame
++ =.transpose()= :: returns the transpose of the DataFrame
++ =.plot.scatter(/cols/)= ::
++ =.shape= :: returns the number of rows and columns in the DataFrame
++ =.dtypes= :: returns the data types of each column in the DataFrame
+
+** Filtering DataFrames
+#+begin_src python
+  # Create a DataFrame from a dictionary
+  df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
+                    'age': [34, 25, 67],
+                    'height': [1.78, 1.65, 1.89]})
+
+  # Filter the DataFrame to only include people over 30
+  df[df['age'] > 30]
+#+end_src
+
+The general syntax for filtering a DataFrame is: =df[condition]=. The =condition= is a boolean expression that evaluates to either =True= or =False= for each row in the DataFrame. The result of the filter is a new DataFrame containing only the rows where the condition is =True=.
+
+We can also use the =.loc= method to filter a DataFrame. The =.loc= method takes a list of row labels and a list of column labels as arguments. The result is a new DataFrame containing only the rows and columns specified. Here is an example:
+
+#+begin_src python
+  # Create a DataFrame from a dictionary
+  df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
+                    'age': [34, 25, 67],
+                    'height': [1.78, 1.65, 1.89]})
+
+  # Filter the DataFrame to only include people over 30
+  df.loc[df['age'] > 30, ['name', 'age']]
+#+end_src
+
+The main difference between the =.loc= method and the =[]= operator is that the =.loc= method can be used to filter rows and columns at the same time. We might want to do that if we want to filter a DataFrame by rows and then select a subset of the columns.
+
+** =np.where()=
+The =np.where()= function is a vectorized version of the =if= statement. It takes a condition, a value to return if the condition is =True=, and a value to return if the condition is =False=. Here is an example:
+
+#+begin_src python :results output :exports both
+  import numpy as np
+
+  # Create a NumPy array
+  arr = np.array([1, 2, 3, 4, 5])
+
+  # Use np.where() to replace all values less than 3 with 0
+  res = np.where(arr < 3, 0, arr)
+  print(res)
+#+end_src
+
+#+RESULTS:
+: [0 0 3 4 5]
+
+** Sorting
+We can use the =.sort_values()= method to sort a DataFrame by one or more columns. Here is an example:
+
+#+begin_src python :results output :exports both
+  import pandas as pd
+  # Create a DataFrame from a dictionary
+  df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
+                    'age': [34, 25, 67],
+                    'height': [1.78, 1.65, 1.89]})
+
+  # Sort the DataFrame by age
+  print(df.sort_values('age'))
+#+end_src
+
+#+RESULTS:
+:    name  age  height
+: 1  Jane   25    1.65
+: 0  John   34    1.78
+: 2   Joe   67    1.89
+
+** Grouping
+To avoid redundant filtering and aggregation, we can use the =.groupby()= method to group a DataFrame by one or more columns. Here is an example:
+
+#+begin_src python :results output :exports both
+  import pandas as pd
+  # Create a DataFrame from a dictionary
+  df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
+                    'age': [34, 25, 67],
+                    'gender': ["M", "F", "M"],
+                    'height': [1.78, 1.65, 1.89]})
+
+  # Group the DataFrame by gender
+  print(df.groupby('gender').describe())
+  # Group the DataFrame by gender and calculate the mean of each group
+  print(df.groupby('gender').mean())
+  # calculate the mean age for each gender
+  print(df.groupby('gender')['age'].mean())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+         age                                ... height
+       count  mean        std   min    25%  ...    min     25%    50%     75%   max
+gender                                      ...
+F        1.0  25.0        NaN  25.0  25.00  ...   1.65  1.6500  1.650  1.6500  1.65
+M        2.0  50.5  23.334524  34.0  42.25  ...   1.78  1.8075  1.835  1.8625  1.89
+
+[2 rows x 16 columns]
+         age  height
+gender
+F       25.0   1.650
+M       50.5   1.835
+gender
+F    25.0
+M    50.5
+Name: age, dtype: float64
+#+end_example
+
+* Python: Descriptive Statistics
+#+begin_src python
+import matplotlib.pyplot as plt
+plt.style.use("seaborn")
+#+end_src
+
+We will be
+
+** Histograms
+#+begin_src python
+df['some_values'].hist(bins=15, edgecolor='white')
+#+end_src
+
+We can also set some other parameters such as the title and labels:
+
+#+begin_src python
+  plt.title('Some Title')
+  plt.xlabel('Some X Label')
+  plt.ylabel('Some Y Label')
+#+end_src
+
+** Histograms: Side by Side
+If we have two different groups of data, we can plot them side by side:
+
+#+begin_src python
+  group1 = DataFrame
+  group2 = DataFrame
+  plt.hist([group1, group2], bins=15, edgecolor='white', label=['Group 1', 'Group 2'])
+  plt.legend()
+#+end_src
+
+** Bar Plots
+We can also plot bar plots (they are very similar to histograms, but plot the frequency of categorical data):
+
+#+begin_src python
+  categories = ['A', 'B', 'C', 'D']
+  frequencies = [10, 20, 30, 40]
+  plt.bar(categories, frequencies, edgecolor='white')
+#+end_src
+
+** Box Plots
+Box plots are a great way to visualize the distribution of data. They are very useful for comparing different groups of data.
+
+#+begin_src python
+  plt.boxplot([group1, group2])
+  plt.xticks([1, 2], ['Group 1', 'Group 2'])
+#+end_src
+
+** Annotations
+We can also add annotations to our plots:
+
+#+begin_src python
+  plt.annotate('Some Text', xy=(x, y), xytext=(x, y), arrowprops={'arrowstyle': '->'})
+#+end_src
+
+The =xy= and =xytext= parameters are the coordinates of the text and the arrow, respectively.
+
+** Centrality and Spread
+We can use the =mean= and =median= functions to calculate the mean and median of a dataset:
+
+#+begin_src python
+  mean = df['some_values'].mean()
+  median = df['some_values'].median()
+#+end_src
+
+We can also use the =std= function to calculate the standard deviation:
+
+#+begin_src python
+  std = df['some_values'].std()
+#+end_src
+
+To get a summary of the descriptive statistics of a dataset, we can use the =describe= function:
+
+#+begin_src python
+  df['some_values'].describe()
+#+end_src
+
+All of these functions are methods on the DataFrame object.
+
+
++ Minimum :: =df['some_values'].min()=
++ Quartile :: =df['some_values'].quantile(0.25)=
++ IQR :: =df['some_values'].quantile(0.75) - df['some_values'].quantile(0.25)=
++ Mode :: =df['some_values'].mode()=
++ Skew ::  =df['some_values'].skew()=
+** Using =numpy=
+
+For each of the following methods, we need to pass the dataframe column as a numpy array:
++ =np.mean= :: The mean of the array
++ =np.median= :: The median of the array
++ =np.std= :: The standard deviation of the array
++ =np.var= :: The variance of the array
++ =np.percentile= :: The percentile of the array
++ =np.quantile= :: The quantile of the array
++ =np.corrcoef= :: The correlation coefficient of the array
+
+** Using =scipy.stats=
+Here we assume it is imported as =ss=. We can use the following methods:
+
++ =ss.mode= :: The mode of the array
++ =ss.skew= :: The skew of the array
++ =ss.iqr= :: The interquartile range of the array
++ =ss.pearsonr= :: The Pearson correlation coefficient of two arrays
+
 * Single Sample Intervals
 ** Confidence Intervals
 ** Mean and Proportion Confidence Intervals

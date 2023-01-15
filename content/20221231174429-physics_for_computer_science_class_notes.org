@@ -14,7 +14,6 @@
 
 
 
-
 * Electromagnetism: Static Fields
 ** Electrostatic Fields
 *** Electric Charge
@@ -110,5 +109,7 @@
 * Final Project
 ** Project Proposal
 ** Project Report
+* Mind Map
+[[./physics_mind_map.svg]]
 
 #+HTML: <footer style="height: 20vh;"></footer>
