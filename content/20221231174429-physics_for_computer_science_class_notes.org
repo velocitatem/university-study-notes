@@ -15,12 +15,120 @@
 
 
 * Electromagnetism: Static Fields
+There are 4 fundamental forces in nature: Gravity, Electromagnetism, Weak Nuclear Force and Strong Nuclear Force. Electromagnetic forces rely on particles which have a charge.
 ** Electrostatic Fields
 *** Electric Charge
-*** Polarization
+Charge, is something as fundamental as mass. It is what determines how intense electromagnetic forces are. Here are some fundamental laws which govern charge:
+- Charge is conserved. If you have a positive charge, you can't have a negative charge. If you have a negative charge, you can't have a positive charge.
+- Charge is quantized. Charge is measured in units of elementary charge, which is $e = 1.602176634 \times 10^{-19} C$. This means that you can't have a charge of $1.5e$.
+- Charge is additive. If you have two charges, you can add them together to get the total charge. For example, if you have a charge of $+1e$ and a charge of $-1e$, you can add them together to get a total charge of $0e$.
+- Opposite charges attract, and like charges will repel.
+
+
+*** Ions
+An Ion is just a charged particle. It is a particle which has a charge. For example, a proton is an ion with a charge of $+1e$. A neutron is an ion with a charge of $0e$. An electron is an ion with a charge of $-1e$.
++ What determines if an Ion is positive or negative? :: It is determined by the number of protons and electrons. If the number of protons is greater than the number of electrons, then the Ion is positive. If the number of electrons is greater than the number of protons, then the Ion is negative. If the number of protons is equal to the number of electrons, then the Ion is neutral.
+*** Conductivity of Matter
+There are three main types:
++ Insulators :: This type of matter does not conduct electricity. For example, glass is an insulator.
++ Semiconductors :: This type of matter is a bit of an in-between. It can conduct electricity, but not very well. For example, silicon is a semiconductor.
++ Conductors :: This type of matter conducts electricity very well. For example, copper is a conductor.
+*** Charging
+We can charge on object in three ways: Friction, Induction and Conduction.
++ Friction :: This is when you rub two objects together. For example, if you rub a balloon on your hair, you will get a static charge on the balloon. Here the electrons are transferred from your hair to the balloon through friction.
++ Induction :: This is when you bring a charged object near another object.
++ Conduction :: Electrons get transferred from one object to another, through direct contact.
+
+*** Electric Polarization
+If you have a neutrally charged object and you subject it to an electric field, it will become polarized. Meaning that the electrons will move to one side of the object, and the protons will move to the other side of the object.
++ Why does this happen? :: Because bodies charges have a tendency to align themselves with the electric field.
+
 *** Electric Force
-*** Electrostatic Field
+This is a force which is exerted between two charged objects. It is given by the equation, also knows as Coulomb's Law:
+
+\[
+F = k \frac{q_1 q_2}{r^2}
+\]
+
+
+Where $k$ is the Coulomb constant, $q_1$ and $q_2$ are the charges of the two objects, and $r$ is the distance between the two objects. The simplest definition of $k$ is:
+
+\[
+k = \frac{1}{4 \pi \epsilon_0}
+\]
+
+Where $\epsilon_0$ is the permittivity of free space. The permittivity of vacuum is a constant which is equal to $8.8541878128 \times 10^{-12} F/m$.
+
+We can generally approximate $k$ as:
+
+\[
+k = 9 \times 10^9 N \cdot m^2/C^2
+\]
+
+
+The electric force abides by the third law of Newtonian mechanics. This means that if object $A$ exerts a force on object $B$, then object $B$ will exert a force on object $A$ which is equal in magnitude, but opposite in direction.
+
+*** Superposition of Forces
+Give two charges, $q_1$ and $q_2$ and a third charge $q_3$, the net force on $q_3$ is given by the vector sum of the forces exerted by $q_1$ and $q_2$.
+
+Vector sum: [[Vector Sum]]
+
+*** Electric Field
+How do charges exert forces on other charges? They do so through the electric field. The electric field is a vector field which is defined as:
+
+\[
+\vec{E} = \frac{\vec{F}}{q}
+\]
+
+Where $F$ is the force exerted on the charge, and $q$ is the charge. The electric field is a vector field, which means that it has a direction and a magnitude. The direction of the electric field is the direction of the force. The magnitude of the electric field is the magnitude of the force divided by the charge.
+
+
+Useful video on electric field: [[https://www.youtube.com/watch?v=bHIhgxav9LY]]
+
+We can re-arrange this equation to get the force exerted on a specific point:
+
+\[
+\vec{F} = q \vec{E}
+\]
+
+For this to be possible, we need to know the electric field at that point. We can find the electric field at a point by many means. This is also only valid for point charges.
+
+Some other key properties of the electric field:
++ The electric field is a vector field. This means that it has a direction and a magnitude.
+
+*** Electric Field of a Point Charge
+The electric field of a point charge is given by:
+
+\[
+\vec{E} = \frac{k q}{r^2} \hat{r}
+\]
+
+Where $k$ is the Coulomb constant, $q$ is the charge of the point charge, and $r$ is the distance between the point charge and the test charge. The electric field is a vector field, which means that it has a direction and a magnitude.
+
+*** Electric Field Lines
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftikz.net%2Ffiles%2Felectric_fieldlines2-004.png%3Fis-pending-load%3D1&f=1&nofb=1&ipt=c93f07fc015e2e0a5b5bc37a6ef2854c7e9a6bc3732b55a22e6047cda8cb8725&ipo=images @ 2023-01-29 17:07:48
+[[file:./Electromagnetism:_Static_Fields/2023-01-29_17-07-48_.png]]
+
+One of the most important properties of the electric field is that it is *symmetrical*. The spacing of the lines is proportional to the magnitude of the electric field. The closer the lines are together, the stronger the electric field. The further apart the lines are, the weaker the electric field. The direction of the lines is the direction of the electric field.
++ The electric field lines are a visual representation of the electric field. They are not a physical object.
+
+*** Uniform Electric Filed
+
+#+DOWNLOADED: https://phys.libretexts.org/@api/deki/files/2861/Figure_20_02_01a.jpg?revision=1&size=bestfit&width=195&height=369 @ 2023-01-29 17:14:41
+[[file:./Electromagnetism:_Static_Fields/2023-01-29_17-14-41_Figure_20_02_01a.jpg.jpeg]]
+
+
+A uniform electric field is an electric field which is constant in all directions. The electric field lines are parallel to each other, and are equidistant from each other. The electric field lines are also perpendicular to the surface of the object.
+
+Although not electric, gravity can be thought of as a uniform field, at least near the surface of the earth. It only goes down.
 *** Electric Flux
+The electric flux is the amount of electric field passing through a surface. It is given by the equation:
+
+\[
+\Phi = \int_S \vec{E} \cdot d\vec{A}
+\]
+
 *** Gauss's Law
 *** Electric Potential
 *** Electric Work
@@ -113,3 +221,10 @@
 [[./physics_mind_map.svg]]
 
 #+HTML: <footer style="height: 20vh;"></footer>
+* References
+** Vector Sum
+A vector sum is just the addition of two vectors. For example, if you have two vectors, $\vec{a}$ and $\vec{b}$, then the vector sum of $\vec{a}$ and $\vec{b}$ is given by:
+
+\[
+\vec{a} + \vec{b} = \begin{bmatrix} a_x \\ a_y \end{bmatrix} + \begin{bmatrix} b_x \\ b_y \end{bmatrix} = \begin{bmatrix} a_x + b_x \\ a_y + b_y \end{bmatrix}
+\]
