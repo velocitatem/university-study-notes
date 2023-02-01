@@ -95,6 +95,8 @@ For this to be possible, we need to know the electric field at that point. We ca
 
 Some other key properties of the electric field:
 + The electric field is a vector field. This means that it has a direction and a magnitude.
++ Inside a conductor, the electric field is zero.
+
 
 *** Electric Field of a Point Charge
 The electric field of a point charge is given by:
@@ -129,13 +131,194 @@ The electric flux is the amount of electric field passing through a surface. It 
 \Phi = \int_S \vec{E} \cdot d\vec{A}
 \]
 
+The flux will primarily depend on two factors: the angle relative to the surface and which side of the surface we are measuring.
+
 *** Gauss's Law
+It equates flux, to the charge enclosed by the surface. It is given by the equation:
+
+\[
+\Phi = \frac{Q}{\epsilon_0}
+\]
+
+Where $\Phi$ is the electric flux, $Q$ is the charge enclosed by the surface, and $\epsilon_0$ is the permittivity of free space. The permittivity of vacuum is a constant which is equal to $8.8541878128 \times 10^{-12} F/m$.
+
+It is valid for anything. When we talk about an enclosed surface, it does not have to be a physical surface.
+
+
+
+#+DOWNLOADED: https://phys.libretexts.org/@api/deki/files/8041/CNX_UPhysics_23_02_MultiCharg.jpg?revision=1 @ 2023-02-01 14:59:07
+[[file:Electromagnetism:_Static_Fields/2023-02-01_14-59-07_CNX_UPhysics_23_02_MultiCharg.jpg.jpeg]]
+
+
+#+DOWNLOADED: https://phys.libretexts.org/@api/deki/files/8043/CNX_UPhysics_23_02_GauExample.jpg?revision=1 @ 2023-02-01 15:01:31
+[[file:Electromagnetism:_Static_Fields/2023-02-01_15-01-31_CNX_UPhysics_23_02_GauExample.jpg.jpeg]]
+
+# a. Φ=2.0μCϵ0=2.3×105N⋅m2/C
+
+# .
+
+# b. Φ=−2.0μCϵ0=−2.3×105N⋅m2/C
+
+# .
+
+# c. Φ=2.0μCϵ0=2.3×105N⋅m2/C
+
+# .
+
+# d. −4.0μC+6.0μC−1.0μCϵ0=1.1×105N⋅m2/C
+
+# .
+
+# e. 4.0μC+6.0μC−10.0μCϵ0=0
+# .
+
+
+1. $\Phi = \frac{2.0 \mu C}{\epsilon_0} = 2.3 \times 10^5 N \cdot m^2/C$
+2. $\Phi = -\frac{2.0 \mu C}{\epsilon_0} = -2.3 \times 10^5 N \cdot m^2/C$
+3. $\Phi = \frac{2.0 \mu C}{\epsilon_0} = 2.3 \times 10^5 N \cdot m^2/C$
+4. $\Phi = \frac{4.0 \mu C + 6.0 \mu C - 1.0 \mu C}{\epsilon_0} = 1.1 \times 10^5 N \cdot m^2/C$
+5. $\Phi = \frac{4.0 \mu C + 6.0 \mu C - 10.0 \mu C}{\epsilon_0} = 0$
+
+**** Gauss's Law for Conductors
+In a conductor, the electric field is zero. Any excess charge will only be at the surface. This means that
 *** Electric Potential
+First we have to understand the concept of potential energy. Potential energy is the energy that an object has due to its position (or configuration). It is given by the equation:
+
+\[
+U = mgh
+\]
+
+This is gravitational potential energy.
+
+Electric potential energy is the amount of work that needs to be done when moving a unit charge against an electric field. It is given by the equation:
+
+\[
+V(\vec{r}) = \frac{1}{4\pi\epsilon_0} \frac{q_1}{\vec{r} - \vec{r}^\prime}
+\]
+
+Where $V(\vec{r})$ is the electric potential energy, $\epsilon_0$ is the permittivity of free space, $q_1$ is the charge, $\vec{r}$ is the position of the charge, and $\vec{r}^\prime$ is the position of the point where we are measuring the electric potential energy.
+
+
+The entire system is also governed by:
+
+# latex gradient symbol: \nabla
+\[
+\vec{E} = -\nabla V (\vec{r})
+\]
+
+Where $\vec{E}$ is the electric field, $\vec{r}$ is the position vector, and $V$ is the electric potential.
+
+The scalar function for the electric potential is called the electric potential function. It is given by the equation:
+
+\[
+U = q_1 \cdot V(\vec{r})
+\]
+
+Where $U$ is the electric potential energy, $q_0$ is the charge, and $V$ is the electric potential.
+
+Some key points about the electric potential:
++ If a force does positive work, then the potential energy decreases
++ The slightest difference in potential energy. *We must have some sort of reference point* where $U = 0$, this is called the *ground*.
+
+
+
+*** Voltage
+Voltage is the difference in electric potential energy between two points. It is given by the equation:
+
+\[
+V = V_2 - V_1
+\]
+
+Where $V$ is the voltage, $V_1$ is the electric potential energy at point 1, and $V_2$ is the electric potential energy at point 2.
+
 *** Electric Work
-*** Potential Energy
+Here we are talking about a force acting on a moving particle. The work done by the force is given by the equation:
+
+\[
+W = \int \vec{F} \cdot d\vec{r}
+\]
+
+Where $W$ is the work done, $\vec{F}$ is the force, and $\vec{r}$ is the position vector. This is what is called a [[Line Integral]].
+
+If we are in an uniform electric field, the work done by the electric field is given by the equation:
+
+\[
+W_{a\to b} = Fd = q_0 Ed
+\]
+
+Where $W_{a\to b}$ is the work done by the electric field, $F$ is the force, $q_0$ is the charge, $E$ is the electric field, and $d$ is the distance.
+
 *** Electric Dipole
+An electric dipole is a system of two equal and opposite charges separated by a distance $d$. The electric dipole moment is given by the equation:
+
+\[
+\vec{p} = q_0 \vec{d}
+\]
+
+Where $\vec{p}$ is the electric dipole moment, $q_0$ is the charge, and $\vec{d}$ is the distance between the two charges. What is a moment? It is a measure of how much an electric field will rotate a dipole. The electric dipole moment is a vector quantity.
+
+If we take a dipole, and pop it into an electric field, it will rotate to *align itself*. The torque is given by the equation:
+
+\[
+\vec{\tau} = \vec{p} \times \vec{E}
+\]
+
+Where $\vec{\tau}$ is the torque, $\vec{p}$ is the electric dipole moment, and $\vec{E}$ is the electric field. This is just an extra.
+
+What is important, is the potential energy of a dipole. The potential energy of a dipole is given by the equation:
+
+\[
+U = -\vec{p} \cdot \vec{E}
+\]
+
+Where $U$ is the potential energy, $\vec{p}$ is the electric dipole moment, and $\vec{E}$ is the electric field.
+
 *** Dielectrics
+This is an insulator, that gets polarized when an electric field is applied. The polarization is the separation of charge.
+
+We talked a lot about permittivity and dielectric constant. The permittivity of a dielectric is given by the equation:
+
+\[
+\epsilon = \epsilon_0 \epsilon_r
+\]
+
+Where $\epsilon$ is the permittivity, $\epsilon_0$ is the permittivity of free space, and $\epsilon_r$ is the relative permittivity.
+
+You can find a table of relative permittivity here: [[Relative Permittivity Table]].
+
 *** Capacitors
+A capacitor is like a battery, but it stores energy in the form of electric charge. It consists of two conductors separated by an insulator.
+
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-Mynz5eHeW48%2FVf8JRZ8RiwI%2FAAAAAAAAADk%2FPqdQw_OHWmU%2Fs640%2FCapacitor.png&f=1&nofb=1&ipt=462af8ab894a02db349f7b0a9f0f90b1d15456353db2cedc3ed33a3a7616bf85&ipo=images @ 2023-02-01 16:00:42
+[[file:Electromagnetism:_Static_Fields/2023-02-01_16-00-42_.png]]
+
+How do we charge a capacitor? We can charge it by connecting it to a battery. The battery will supply a constant current to the capacitor. The capacitor will charge up until the voltage across the capacitor is equal to the voltage of the battery. The current will then stop flowing.
+
+The capacitance of a capacitor is given by the equation:
+
+\[
+C = \frac{Q}{V}
+\]
+
+Where $C$ is the capacitance, $Q$ is the charge, and $V$ is the voltage. This is given in the units of Farads.
+
+Some factors which affect the capacitance:
++ The area of the plates
++ The distance between the plates
++ The permittivity of the dielectric
+
+The capacitance of a parallel plate capacitor is given by the equation:
+
+\[
+C = \frac{\epsilon_0 A}{d}
+\]
+
+Where $C$ is the capacitance, $\epsilon_0$ is the permittivity of free space, $A$ is the area of the plates, and $d$ is the distance between the plates.
+
+
+
+
 ** Magneto-static Fields
 *** Electric Current
 *** Ohm's Law
@@ -217,10 +400,6 @@ The electric flux is the amount of electric field passing through a surface. It 
 * Final Project
 ** Project Proposal
 ** Project Report
-* Mind Map
-[[./physics_mind_map.svg]]
-
-#+HTML: <footer style="height: 20vh;"></footer>
 * References
 ** Vector Sum
 A vector sum is just the addition of two vectors. For example, if you have two vectors, $\vec{a}$ and $\vec{b}$, then the vector sum of $\vec{a}$ and $\vec{b}$ is given by:
@@ -228,3 +407,38 @@ A vector sum is just the addition of two vectors. For example, if you have two v
 \[
 \vec{a} + \vec{b} = \begin{bmatrix} a_x \\ a_y \end{bmatrix} + \begin{bmatrix} b_x \\ b_y \end{bmatrix} = \begin{bmatrix} a_x + b_x \\ a_y + b_y \end{bmatrix}
 \]
+** Line Integral
+A definite integral gives use the area under the curve. This is done by taking very small slices of the curve and adding them together. A line integral is the same thing, but instead of taking slices of the curve, we take slices of the line and then multiply the slides by the vector filed.
+
++ https://www.khanacademy.org/math/multivariable-calculus/integrating-multivariable-functions/line-integrals/v/introduction-to-the-line-integral
+
+** Relative Permittivity Table
+
+Equation for permittivity of a dielectric:
+
+\[
+\epsilon = \epsilon_0 \epsilon_r
+\]
+
+\[
+\epsilon_0 = 8.854187817 \times 10^{-12} \text{ F/m}
+\]
+
+
+| Material | Relative Permittivity |
+|----------+-----------------------|
+| Air      |                1.0059 |
+| Water    |                80.000 |
+| Glass    |                4.0000 |
+| Diamond  |                9.0000 |
+| Silicon  |                11.000 |
+| Teflon   |                2.1000 |
+| Mylar    |                2.2000 |
+| Copper   |                1.0000 |
+| Gold     |                1.0000 |
+
+
+* Mind Map
+[[./physics_mind_map.svg]]
+
+#+HTML: <footer style="height: 20vh;"></footer>
