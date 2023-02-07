@@ -246,11 +246,94 @@ Here we assume it is imported as =ss=. We can use the following methods:
 + =ss.iqr= :: The interquartile range of the array
 + =ss.pearsonr= :: The Pearson correlation coefficient of two arrays
 
+* Statistical Distributions
+A statistic is a metric, which can be calculated for any sample. Before that sample is collected, we do not know what the values are going to be. That is why we can represent a statistic as a *random variable*.
+
+For example, the sample mean of a distribution, before we actually take the samples, is going to be $\bar{X}$. Once we take the samples, and calculate the statistics, we get $\bar{x}$.
+
+Since any statistic can also be a random variable, we can make distributions for these random variables. This distribution, is called the *sampling distribution*.
+
+** Random Samples
+So what determines the distribution of a statistic? It is determined by the *random samples* that we take from the population. If we take a random sample from a population, and calculate the statistic, we get a value. If we take another random sample, and calculate the statistic, we get another value. And so on.
+
+The key factors which determine the distribution of a statistic are:
++ The size of the sample
++ The distribution of the population
++ Sampling method
+
+For our sample to be representative or valid, they must be *independent* and *identically distributed*. This means that the samples must be independent of each other, and the distribution of the population must be the same for each sample.
+
+These conditions will be satisfied if:
++ We have no replacement
++ We have a large enough sample size
+Generally, if at most, we sample 5% of the populations, we can assume that the X_i distribution is a random sample.
+
+Here is an implementation of the example 5.12 from the book:
+#+begin_src python
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_style('whitegrid')
+mu = 106
+variance = 244
+sigma = np.sqrt(variance)
+og_population = {
+    80: 0.2,
+    100: 0.3,
+    120: 0.5
+}
+samples = np.arange(10, 110, 30)
+fig, axes = plt.subplots(1, len(samples), figsize=(15, 5))
+for sampleSize in samples:
+    sample_means = []
+    for i in range(1000):
+        sample = np.random.choice(list(og_population.keys()), size=sampleSize, p=list(og_population.values()))
+        sample_mean = np.mean(sample)
+        sample_means.append(sample_mean)
+    sns.distplot(sample_means, ax=axes[samples.tolist().index(sampleSize)])
+    axes[samples.tolist().index(sampleSize)].set_title('Sample Size: {}'.format(sampleSize))
+    axes[samples.tolist().index(sampleSize)].set_xlabel('Sample Mean')
+    axes[samples.tolist().index(sampleSize)].set_ylabel('Probability')
+plt.show()
+#+end_src
+
+And here is the output:
+
+[[./sampling-distributions-5.21-extra.png]]
+
+You can see that as the sample size increases, the distribution of the sample means becomes more normal (I think).
+
+** Derivation
+Let's say we have a population with a mean of $\mu$, a standard deviation of $\sigma$ and any probability distribution. We take a random sample of size $n$ from this population. We calculate the sample mean, and we get $\bar{x}$. We can represent this as a random variable, $\bar{X}$.
+We have to consider all the possible values of $\bar{x}$, and their probabilities. From this, we can then calculate the distribution of $\bar{X}$.
+
+To now calculate the statistics for the distribution of $\bar{X}$, we can use the following formulas
++ Mean :: $\mu_{\bar{X}} = \mu$
++ Variance :: $\sigma_{\bar{X}}^2 = \frac{\sigma^2}{n}$ (this is also called the *standard error [se]*)
+** Sample Mean
+The sample mean is the most common statistic. It is the average of the sample. It is also the most common statistic to use in hypothesis testing.
+
+We previously defined the mean and variance for sampling distributions. Now we change that up a bit. We first sum up all the random statistics $T_O = X_0 + X_1 + \dots + X_n$. From there on, we can get the expected value and variance of this *sample total*:
++ Expected Value :: $E(T_O) =n \mu$
++ Variance :: $V(T_O) = n \sigma^2$
+
+
+** Central Limit Theorem
+The central limit theorem states that the sampling distribution of the sample mean will be approximately normal, as long as the sample size is large enough.
+
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmiro.medium.com%2Fmax%2F3796%2F1*AhMCbLVd5s82XV6M4KTK6A.png&f=1&nofb=1&ipt=97b377a92d82bc9e139bde10c247423e784e7efe723096cc5cbb9fa2013d7e78&ipo=images @ 2023-02-07 13:00:52
+[[file:./Statistical_Distributions/2023-02-07_13-00-52_.png]]
+
+
+
+
 * Single Sample Intervals
 ** Confidence Intervals
 ** Mean and Proportion Confidence Intervals
 ** Confidence Intervals for Normal Distributions
 ** Variance and Standard Deviation Confidence Intervals
+
 * Single Sample Hypothesis Testing
 ** Hypothesis Testing
 ** Hypothesis Testing for Normal Distributions

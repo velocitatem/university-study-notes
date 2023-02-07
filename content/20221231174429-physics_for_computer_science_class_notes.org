@@ -4,7 +4,7 @@
 #+title: Physics for Computer Science - Class Notes
 #+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
 #+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
-#+OPTIONS: toc:2
+#+OPTIONS: toc:3
 #+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
 #+HTML_HEAD: <script src="anti-cheat.js"></script>
 #+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
@@ -14,36 +14,34 @@
 
 
 
-* Electromagnetism: Static Fields
 There are 4 fundamental forces in nature: Gravity, Electromagnetism, Weak Nuclear Force and Strong Nuclear Force. Electromagnetic forces rely on particles which have a charge.
-** Electrostatic Fields
-*** Electric Charge
+* Electrostatic Fields
+** Electric Charge
 Charge, is something as fundamental as mass. It is what determines how intense electromagnetic forces are. Here are some fundamental laws which govern charge:
 - Charge is conserved. If you have a positive charge, you can't have a negative charge. If you have a negative charge, you can't have a positive charge.
 - Charge is quantized. Charge is measured in units of elementary charge, which is $e = 1.602176634 \times 10^{-19} C$. This means that you can't have a charge of $1.5e$.
 - Charge is additive. If you have two charges, you can add them together to get the total charge. For example, if you have a charge of $+1e$ and a charge of $-1e$, you can add them together to get a total charge of $0e$.
 - Opposite charges attract, and like charges will repel.
 
-
-*** Ions
+** Ions
 An Ion is just a charged particle. It is a particle which has a charge. For example, a proton is an ion with a charge of $+1e$. A neutron is an ion with a charge of $0e$. An electron is an ion with a charge of $-1e$.
 + What determines if an Ion is positive or negative? :: It is determined by the number of protons and electrons. If the number of protons is greater than the number of electrons, then the Ion is positive. If the number of electrons is greater than the number of protons, then the Ion is negative. If the number of protons is equal to the number of electrons, then the Ion is neutral.
-*** Conductivity of Matter
+** Conductivity of Matter
 There are three main types:
 + Insulators :: This type of matter does not conduct electricity. For example, glass is an insulator.
 + Semiconductors :: This type of matter is a bit of an in-between. It can conduct electricity, but not very well. For example, silicon is a semiconductor.
 + Conductors :: This type of matter conducts electricity very well. For example, copper is a conductor.
-*** Charging
+** Charging
 We can charge on object in three ways: Friction, Induction and Conduction.
 + Friction :: This is when you rub two objects together. For example, if you rub a balloon on your hair, you will get a static charge on the balloon. Here the electrons are transferred from your hair to the balloon through friction.
 + Induction :: This is when you bring a charged object near another object.
 + Conduction :: Electrons get transferred from one object to another, through direct contact.
 
-*** Electric Polarization
+** Electric Polarization
 If you have a neutrally charged object and you subject it to an electric field, it will become polarized. Meaning that the electrons will move to one side of the object, and the protons will move to the other side of the object.
 + Why does this happen? :: Because bodies charges have a tendency to align themselves with the electric field.
 
-*** Electric Force
+** Electric Force
 This is a force which is exerted between two charged objects. It is given by the equation, also knows as Coulomb's Law:
 
 \[
@@ -68,12 +66,12 @@ k = 9 \times 10^9 N \cdot m^2/C^2
 
 The electric force abides by the third law of Newtonian mechanics. This means that if object $A$ exerts a force on object $B$, then object $B$ will exert a force on object $A$ which is equal in magnitude, but opposite in direction.
 
-*** Superposition of Forces
+** Superposition of Forces
 Give two charges, $q_1$ and $q_2$ and a third charge $q_3$, the net force on $q_3$ is given by the vector sum of the forces exerted by $q_1$ and $q_2$.
 
 Vector sum: [[Vector Sum]]
 
-*** Electric Field
+** Electric Field
 How do charges exert forces on other charges? They do so through the electric field. The electric field is a vector field which is defined as:
 
 \[
@@ -97,8 +95,7 @@ Some other key properties of the electric field:
 + The electric field is a vector field. This means that it has a direction and a magnitude.
 + Inside a conductor, the electric field is zero.
 
-
-*** Electric Field of a Point Charge
+** Electric Field of a Point Charge
 The electric field of a point charge is given by:
 
 \[
@@ -107,7 +104,7 @@ The electric field of a point charge is given by:
 
 Where $k$ is the Coulomb constant, $q$ is the charge of the point charge, and $r$ is the distance between the point charge and the test charge. The electric field is a vector field, which means that it has a direction and a magnitude.
 
-*** Electric Field Lines
+** Electric Field Lines
 
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftikz.net%2Ffiles%2Felectric_fieldlines2-004.png%3Fis-pending-load%3D1&f=1&nofb=1&ipt=c93f07fc015e2e0a5b5bc37a6ef2854c7e9a6bc3732b55a22e6047cda8cb8725&ipo=images @ 2023-01-29 17:07:48
 [[file:./Electromagnetism:_Static_Fields/2023-01-29_17-07-48_.png]]
@@ -115,7 +112,7 @@ Where $k$ is the Coulomb constant, $q$ is the charge of the point charge, and $r
 One of the most important properties of the electric field is that it is *symmetrical*. The spacing of the lines is proportional to the magnitude of the electric field. The closer the lines are together, the stronger the electric field. The further apart the lines are, the weaker the electric field. The direction of the lines is the direction of the electric field.
 + The electric field lines are a visual representation of the electric field. They are not a physical object.
 
-*** Uniform Electric Filed
+** Uniform Electric Filed
 
 #+DOWNLOADED: https://phys.libretexts.org/@api/deki/files/2861/Figure_20_02_01a.jpg?revision=1&size=bestfit&width=195&height=369 @ 2023-01-29 17:14:41
 [[file:./Electromagnetism:_Static_Fields/2023-01-29_17-14-41_Figure_20_02_01a.jpg.jpeg]]
@@ -124,7 +121,7 @@ One of the most important properties of the electric field is that it is *symmet
 A uniform electric field is an electric field which is constant in all directions. The electric field lines are parallel to each other, and are equidistant from each other. The electric field lines are also perpendicular to the surface of the object.
 
 Although not electric, gravity can be thought of as a uniform field, at least near the surface of the earth. It only goes down.
-*** Electric Flux
+** Electric Flux
 The electric flux is the amount of electric field passing through a surface. It is given by the equation:
 
 \[
@@ -133,7 +130,7 @@ The electric flux is the amount of electric field passing through a surface. It 
 
 The flux will primarily depend on two factors: the angle relative to the surface and which side of the surface we are measuring.
 
-*** Gauss's Law
+** Gauss's Law
 It equates flux, to the charge enclosed by the surface. It is given by the equation:
 
 \[
@@ -147,11 +144,11 @@ It is valid for anything. When we talk about an enclosed surface, it does not ha
 
 
 #+DOWNLOADED: https://phys.libretexts.org/@api/deki/files/8041/CNX_UPhysics_23_02_MultiCharg.jpg?revision=1 @ 2023-02-01 14:59:07
-[[file:Electromagnetism:_Static_Fields/2023-02-01_14-59-07_CNX_UPhysics_23_02_MultiCharg.jpg.jpeg]]
+[[file:./Electromagnetism:_Static_Fields/2023-02-01_14-59-07_CNX_UPhysics_23_02_MultiCharg.jpg.jpeg]]
 
 
 #+DOWNLOADED: https://phys.libretexts.org/@api/deki/files/8043/CNX_UPhysics_23_02_GauExample.jpg?revision=1 @ 2023-02-01 15:01:31
-[[file:Electromagnetism:_Static_Fields/2023-02-01_15-01-31_CNX_UPhysics_23_02_GauExample.jpg.jpeg]]
+[[file:./Electromagnetism:_Static_Fields/2023-02-01_15-01-31_CNX_UPhysics_23_02_GauExample.jpg.jpeg]]
 
 # a. Φ=2.0μCϵ0=2.3×105N⋅m2/C
 
@@ -179,9 +176,9 @@ It is valid for anything. When we talk about an enclosed surface, it does not ha
 4. $\Phi = \frac{4.0 \mu C + 6.0 \mu C - 1.0 \mu C}{\epsilon_0} = 1.1 \times 10^5 N \cdot m^2/C$
 5. $\Phi = \frac{4.0 \mu C + 6.0 \mu C - 10.0 \mu C}{\epsilon_0} = 0$
 
-**** Gauss's Law for Conductors
+*** Gauss's Law for Conductors
 In a conductor, the electric field is zero. Any excess charge will only be at the surface. This means that
-*** Electric Potential
+** Electric Potential
 First we have to understand the concept of potential energy. Potential energy is the energy that an object has due to its position (or configuration). It is given by the equation:
 
 \[
@@ -220,9 +217,7 @@ Some key points about the electric potential:
 + If a force does positive work, then the potential energy decreases
 + The slightest difference in potential energy. *We must have some sort of reference point* where $U = 0$, this is called the *ground*.
 
-
-
-*** Voltage
+** Voltage
 Voltage is the difference in electric potential energy between two points. It is given by the equation:
 
 \[
@@ -231,7 +226,7 @@ V = V_2 - V_1
 
 Where $V$ is the voltage, $V_1$ is the electric potential energy at point 1, and $V_2$ is the electric potential energy at point 2.
 
-*** Electric Work
+** Electric Work
 Here we are talking about a force acting on a moving particle. The work done by the force is given by the equation:
 
 \[
@@ -248,7 +243,7 @@ W_{a\to b} = Fd = q_0 Ed
 
 Where $W_{a\to b}$ is the work done by the electric field, $F$ is the force, $q_0$ is the charge, $E$ is the electric field, and $d$ is the distance.
 
-*** Electric Dipole
+** Electric Dipole
 An electric dipole is a system of two equal and opposite charges separated by a distance $d$. The electric dipole moment is given by the equation:
 
 \[
@@ -273,7 +268,7 @@ U = -\vec{p} \cdot \vec{E}
 
 Where $U$ is the potential energy, $\vec{p}$ is the electric dipole moment, and $\vec{E}$ is the electric field.
 
-*** Dielectrics
+** Dielectrics
 This is an insulator, that gets polarized when an electric field is applied. The polarization is the separation of charge.
 
 We talked a lot about permittivity and dielectric constant. The permittivity of a dielectric is given by the equation:
@@ -286,12 +281,12 @@ Where $\epsilon$ is the permittivity, $\epsilon_0$ is the permittivity of free s
 
 You can find a table of relative permittivity here: [[Relative Permittivity Table]].
 
-*** Capacitors
+** Capacitors
 A capacitor is like a battery, but it stores energy in the form of electric charge. It consists of two conductors separated by an insulator.
 
 
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-Mynz5eHeW48%2FVf8JRZ8RiwI%2FAAAAAAAAADk%2FPqdQw_OHWmU%2Fs640%2FCapacitor.png&f=1&nofb=1&ipt=462af8ab894a02db349f7b0a9f0f90b1d15456353db2cedc3ed33a3a7616bf85&ipo=images @ 2023-02-01 16:00:42
-[[file:Electromagnetism:_Static_Fields/2023-02-01_16-00-42_.png]]
+[[file:./Electromagnetism:_Static_Fields/2023-02-01_16-00-42_.png]]
 
 How do we charge a capacitor? We can charge it by connecting it to a battery. The battery will supply a constant current to the capacitor. The capacitor will charge up until the voltage across the capacitor is equal to the voltage of the battery. The current will then stop flowing.
 
@@ -316,20 +311,155 @@ C = \frac{\epsilon_0 A}{d}
 
 Where $C$ is the capacitance, $\epsilon_0$ is the permittivity of free space, $A$ is the area of the plates, and $d$ is the distance between the plates.
 
+* Magneto-static Fields
+** Electric Current
+This is pretty much the same type of current as we can observe in water. It is the flow of charge through space. That is why, we can define it as a function of time and space $Q(\vec{r})$, or better yet, represent it as a derivative the previous function:
+
+\[
+I = \frac{dQ}{dt}
+\]
+
+Where $\vec{I}$ is the current, $Q$ is the charge, and $t$ is time. Alternatively, we can define it as:
+
+\[
+I = nqv_d A
+\]
+
+Where $I$ is the current, $n$ is the number of particles per unit volume, $q$ is the charge of a single particle, $v_d$ is the drift velocity, and $A$ is the cross-sectional area which we are focusing on.
+Current is not a vector, but it is a scalar quantity. It is a measure in amperes (A).
+
+*** Vector Current Density
+What is this? It is the current per unit volume. It is given by the equation:
+
+\[
+\vec{J} = nq\vec{v_d}
+\]
+
+Where $\vec{J}$ is the vector current density, $n$ is the number of particles per unit volume, $q$ is the charge of a single particle, and $\vec{v_d}$ is the drift velocity.
+The magnitude is given by the equation:
+
+\[
+\vert \vec{J} \vert = I / A
+\]
+
+Where $\vert \vec{J} \vert$ is the vector current density, $I$ is the current, and $A$ is the cross-sectional area.
 
 
+*The key difference here is that the current is a scalar quantity, and the vector current density is a vector quantity.*
+** Drift Velocity
+We have already mentioned this a few times. To better understand what this is, imagine a lot of bouncy-balls thrown into a tube. If we look at a certain part of the tube, we can see that the bouncy-balls are moving in all directions, but if we zoom out and look at the tube as a whole, we can see that the bouncy-balls are moving in one direction. This is the drift velocity.
 
-** Magneto-static Fields
-*** Electric Current
-*** Ohm's Law
-*** Electromotive Force
-*** Magnetic Force
-*** Magnetic Field
-*** Magnetic Flux
-*** Gauss's Law of Magnetism
-*** Ampere's Circuital Law
-*** Magnetic Dipole
-*** Hall Effect
+Now replace the tube with a wire, and the bouncy-balls with charges. The drift velocity is the average velocity of the charges in a wire. There will be a certain electric field which goes through the wire, the negative charges will feel a force opposite to the direction of the electric field, and they will move in the direction opposite of the electric field.
++ Negative charges move against the electric field
++ Positive charges move with the electric field
+** Ohm's Law
+Here we focus on the law in vector form. This means that we are going to focus on the vector current density, and not the current. The law is given by the equation:
+
+\[
+\vec{J} = \sigma \vec{E}
+\]
+
+Where $\vec{J}$ is the vector current density, $\sigma$ is the conductivity, and $\vec{E}$ is the electric field. We can also replace $\sigma$ with $\rho$ but have to adjust a bit, since $\rho$ is the resistivity. The equation then becomes:
+
+\[
+\vec{J} = \frac{1}{\rho} \vec{E}
+\]
+
+** Resistance
+#+HTML: <div style="width:100%;height:0;padding-bottom:73%;position:relative;"><iframe src="https://giphy.com/embed/6ozwFj8FgXGAo" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/favorite-aliens-dragonslayers-6ozwFj8FgXGAo">via GIPHY</a></p>
+
+Resistance is the opposition to the flow of current. It is given by the equation:
+
+\[
+R = \rho L / A
+\]
+
+Where $R$ is the resistance, $\rho$ is the resistivity, $L$ is the length of the wire, and $A$ is the cross-sectional area of the wire. The units of resistance are ohms ($\Omega$).
+
+** Resistivity
+Resistivity is the resistance per unit length. It is given by the equation:
+
+\[
+\rho = \frac{R}{L}
+\]
+
+Where $\rho$ is the resistivity, $R$ is the resistance, and $L$ is the length of the wire. The units of resistivity are ohm-meters ($\Omega m$).
+
+Important not to confuse the two.
+** Electromotive Force
+Another day another force. This is the force which causes the current to flow. It is given by the equation:
+
+\[
+\Epsilon = V_{ab}
+\]
+
+Where $\Epsilon$ is the electromotive force, and $V_{ab}$ is the voltage between two points. The units of electromotive force are volts ($V$).
+** Magnetic Force
+Now things might get a bit tricky. This is a force which occurs due to the motion of charges. It is given by the equation:
+
+\[
+\vec{F} = \frac{\mu_0}{4\pi} \frac{q\vec{v}\times\vec{B}}{r^2}
+\]
+
+Where $\vec{F}$ is the magnetic force, $\mu_0$ is the permeability of free space, $q$ is the charge, $\vec{v}$ is the velocity, $\vec{B}$ is the magnetic field, and $r$ is the distance between the charge and the magnetic field. The units of magnetic force are newtons ($N$).
+
+Thats a hell of a lot of variables. Lets break it down a bit.
++ $\mu_0$ is the permeability of free space
++ $q$ is the charge
++ $\vec{v}$ is the velocity
++ $\vec{B}$ is the magnetic field
++ $r$ is the distance between the charge and the magnetic field
+
+The key conceptual thing here is the cross product of two vectors. This is a vector perpendicular to both vectors. This is the direction of the magnetic force. How can we better understand this? We use the right hand rule. If we have two vectors, we can put our right hand in the direction of the first vector, we then curl our fingers in the direction of the second vector, and our thumb will point in the direction of the cross product. This is the direction of the magnetic force.
+
+
+** Magnetic Field
+When a charge moves, it creates a magnetic field. This is given by the equation:
+
+\[
+\vec{F} = q\vec{v}\times\vec{B}
+\]
+
+Where $\vec{F}$ is the magnetic force, $q$ is the charge, $\vec{v}$ is the velocity, and $\vec{B}$ is the magnetic field. The units of magnetic field are tesla ($T$).
+
+Some key concepts related to the magnetic field:
++ The magnetic field is a vector quantity
++ It is always perpendicular to the velocity of the charge
+
+** Magnetic Field Lines
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpixfeeds.com%2Fimages%2F41%2F611533%2F1280-magnetic-field-lines.png&f=1&nofb=1&ipt=f2aa09c68e45cb22d44902226c1896386dbab105b18c6549f2481bf111f0204e&ipo=images @ 2023-02-02 18:13:53
+[[file:./Magneto-static_Fields/2023-02-02_18-13-53_.png]]
+
+The magnetic field lines are the lines which show the direction of the magnetic field. They are perpendicular to the velocity of the charge. The magnetic field lines are closed loops.
+
+They share some traits with the electric field lines:
++ They spacing is proportional to the magnitude of the field
++ They never intersect
+
+** Magnetic Flux
+Similar to the electric flux, this is the amount of magnetic field passing through a surface. It is given by the equation:
+
+\[
+\Phi = \int_S \vec{B}\cdot d\vec{A}
+\]
+
+Where $\Phi$ is the magnetic flux, $\vec{B}$ is the magnetic field, and $d\vec{A}$ is the differential area. The units of magnetic flux are webers ($Wb$).
+
+** Gauss's Law of Magnetism
+When you take a magnet, split it in half, each half will still have two poles. This is because the magnetic field is continuous. This is the law of magnetism. It is given by the equation:
+
+\[
+\oint_C \vec{B}\cdot d\vec{l} = 0
+\]
+
+Where $\oint_C$ is the integral around a closed loop, $\vec{B}$ is the magnetic field, and $d\vec{l}$ is the differential length. The units of Gauss's Law of Magnetism are tesla-meters ($Tm$).
+** Ampere's Circuital Law
+
+** Magnetic Dipole
+
+** Hall Effect
+
 * Electromagnetism: Dynamic Fields
 ** Motional Electromotive Force
 ** Faraday's Law

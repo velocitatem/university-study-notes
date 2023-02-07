@@ -62,6 +62,47 @@ A seed is any number that can be used to replicate semi-random experiments and s
 
 * Python Programming for Simulations and Models
 * Random Numbers Generation
++ getting randomness is almost impossible
++ People confuse randomness with strangeness
++ Continuous distribution to discrete on range 0 to 1 - can be done by rounding
++ Properties of pseudo-random numbers: uniform, independent, unpredictable
++ Testing the randomness of a sequence of numbers:
+  + Look at the distribution of the numbers (visual) - should be uniform
+  + See if there is any pattern
++ Algorithms:
+  + must be fast
+  + must be long
+  + should be repeatable with a seed
++ Setting seed in python =random.seed(2023)=
+** Linear Congruential Method
++ We get a random like pattern.
++ It is a linear transformation of a previous number
++ Equation: $x_{n} = (a x_{n-1} + c) \mod m$
+#+begin_src python :results output
+
+  import numpy as np
+  def LCM(n, seed, a, c, m):
+      x = [seed]
+      for i in range(1,n+1):
+          x.append((a*x[i-1] + c) % m)
+      u = np.array(x)/m
+      return u
+
+  seq =LCM(n=8, seed=4, a=13, c=0, m=64)
+  print(seq)
+#+end_src
+
+#+RESULTS:
+: [0.0625 0.8125 0.5625 0.3125 0.0625 0.8125 0.5625 0.3125 0.0625]
+
++ Those results are pretty bad
+** Testing Uniformity
++ We test using hypothesis testing
++ In this case the null hypothesis is that the sequence is uniform and the alternative hypothesis is that it is not uniform
++ We use an alpha level of 0.05. If our $p$ is less than 0.05 we reject the null hypothesis, otherwise we fail to reject the null hypothesis
++ We want to fail to reject the null hypothesis to have uniformity.
++ The test we use is Kolmogrov-Smirnov test
++ We use the function =stats.kstest= from the =scipy.stats= library
 * Random Variable Simulation
 * Monte Carlo Simulation
 * Discrete Events Simulation
