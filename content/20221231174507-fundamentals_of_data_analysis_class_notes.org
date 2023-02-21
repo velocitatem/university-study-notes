@@ -317,7 +317,6 @@ We previously defined the mean and variance for sampling distributions. Now we c
 + Expected Value :: $E(T_O) =n \mu$
 + Variance :: $V(T_O) = n \sigma^2$
 
-
 ** Central Limit Theorem
 The central limit theorem states that the sampling distribution of the sample mean will be approximately normal, as long as the sample size is large enough.
 
@@ -326,9 +325,66 @@ The central limit theorem states that the sampling distribution of the sample me
 [[file:./Statistical_Distributions/2023-02-07_13-00-52_.png]]
 
 
+| Population | Sample Size | Sample |
+|------------+-------------+--------|
+| Normal     | Any         | Normal |
+| Unknown    | Huge        | Normal |
+
+* Point Estimation
+With point estimation, we are trying to estimate a single value, which is the best estimate of the population parameter. We can use the sample statistics to do this.
+
+The core idea is that if we take a random sample from a population, and calculate the sample statistics, *also a random variable*, we can use that to estimate the population parameter.
+
+** Properties
+\begin{align}
+\text{Estimator} = \bar{X} \quad \text{Estimate} \quad \bar{x} \quad \text{Population Parameter} \quad \mu \\
+\end{align}
+
+Generally, any estimator $\hat{\theta}$ is just a function of the population parameter $\theta$.
+
+\[
+\hat{\theta} = \theta + \epsilon
+\]
+
+Where $\epsilon$ is the error term. This error term is the difference between the estimator and the actual population parameter.
+
+A way to measure the accuracy of an estimator is to use the *mean squared error*:
+
+\[
+MSE = \frac{1}{n} \sum_{i=1}^{n} (\hat{\theta} - \theta)^2
+\]
+
+The smaller the MSE, the better the estimator.
+
+** Estimator Bias
+An estimator is unbiased only if the expected value of the estimator is equal to the population parameter. This is represented by the following formula:
+
+\[
+E(\hat{\theta}) = \theta
+\]
+
+If there is any difference, that difference is the bias of the estimator.
+
+If $X$ is a random variable given by a *binomial* distribution, then $\hat{p} = \frac{X}{n}$ is an unbiased estimator of $p$.
+
+We previously defined the estimate for the mean, now lets take a look at the estimate for the variance:
+
+\[
+\hat{\sigma}^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
+\]
+
+This is an unbiased estimator of $\sigma^2$.
+
+** Maximum Likelihood Estimation
+Maximum likelihood estimation is a method of estimating the parameters of a statistical model, given observations. It uses calculus to find the maximum likelihood of the parameters.
+
+
+
+
 
 
 * Single Sample Intervals
+
 ** Confidence Intervals
 ** Mean and Proportion Confidence Intervals
 ** Confidence Intervals for Normal Distributions

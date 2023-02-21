@@ -190,6 +190,8 @@ P(X=5) = \frac{71.5^5 e^{-71.5}}{5!} = 0.0001 = 0.01\%
 #+html: <div style="text-align: right;/*! align-self: end; */width: 100%;background-color: #ff8000;padding-right: 10px;padding-top: 10px;color: white;font-style: italic;padding-bottom: 5px;">Should be on the exam</div>
 Important: The poisson distribution is only valid for large values of $\lambda$. For small values, the binomial distribution is more accurate.
 
+$\lambda$ can only be positive. If $\lambda$ is negative, the distribution is undefined.
+
 * Continuous Probability Distributions
 Back to random variables. If the two following condisions are met, we can call a random variable continuous:
 1. The random variable can take on any value in an interval (can be inifinite)

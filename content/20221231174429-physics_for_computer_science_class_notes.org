@@ -412,7 +412,6 @@ Thats a hell of a lot of variables. Lets break it down a bit.
 
 The key conceptual thing here is the cross product of two vectors. This is a vector perpendicular to both vectors. This is the direction of the magnetic force. How can we better understand this? We use the right hand rule. If we have two vectors, we can put our right hand in the direction of the first vector, we then curl our fingers in the direction of the second vector, and our thumb will point in the direction of the cross product. This is the direction of the magnetic force.
 
-
 ** Magnetic Field
 When a charge moves, it creates a magnetic field. This is given by the equation:
 
@@ -462,16 +461,169 @@ Where $\oint_C$ is the integral around a closed loop, $\vec{B}$ is the magnetic 
 
 * Electromagnetism: Dynamic Fields
 ** Motional Electromotive Force
-** Faraday's Law
+If we have a conductive object moving through a magnetic field, it will create an electromotive force. This is given by the equation:
+
+\[
+\epsilon = \cint \vec{v} \times \vec{B} \cdot d\vec{l}
+\]
+
+Where $\epsilon$ is the motional electromotive force, $\vec{v}$ is the velocity, $\vec{B}$ is the magnetic field, and $d\vec{l}$ is the length of the conductive object. The units of motional electromotive force are volts ($V$).
+
+** Faraday's Law of Induction
+In this law, we learn that a change in the magnetic flux, will create an electromotive force. You can also think of the change of flux as the second derivative of the magnetic field. This is given by the equation:
+
+\[
+\epsilon = -\frac{d\Phi}{dt}
+\]
+
+Where $\epsilon$ is the motional electromotive force, $\Phi$ is the magnetic flux, and $t$ is time. The units of Faraday's Law of Induction are volts per second ($V/s$).
+
++ If the flux is changing, only then will there be an electromotive force
++ A change in flux, does not only depend on the magnetic field, but also the area of the surface.
+
+
+The direction of an electromotive force is given by the right hand rule. Since the law of induction has a minus sign in front of it, the direction of the electromotive force is opposite to the direction which will be indicated by the right hand rule, *unless the flux is changing*.
+** Lenz's Law
+The induced emf or current in a circuit opposes the change in magnetic flux. This law describes the natural tendency of a circuit to resist any change in the magnetic flux.
+
+
+#+DOWNLOADED: https://atomstalk.com/wp-content/uploads/2020/07/Demonstration-of-Lenzs-Law-1024x688.png @ 2023-02-20 18:40:52
+[[file:./Electromagnetism:_Dynamic_Fields/2023-02-20_18-40-52_Demonstration-of-Lenzs-Law-1024x688.png]]
+
 ** Alternators
-** Mutual Inductance
+An alternator is device which converts mechanical rotational energy into electrical energy. It is a type of generator which makes use of the Faraday's Law of Induction. It is given by the equation:
+
+\[
+\epsilon = -N\frac{d\Phi}{dt} = -\frac{d}{dt} (BA \cos{\omega t}) = \omega B A \sin{\omega t}
+\]
+
+Where $\epsilon$ is the motional electromotive force, $N$ is the number of turns, $\Phi$ is the magnetic flux, $t$ is time, $\omega$ is the angular frequency, $B$ is the magnetic field, and $A$ is the area. The units of alternators are volts ($V$).
+
+
 ** Self-Inductance
+First, we need to redefine the emf as the change in current, because if we have a circuit, which is in a steady state, the emf will be zero, unless there is a change in current. This is given by the equation:
+
+\[
+\epsilon = -L\frac{dI}{dt}
+\]
+
+Where $\epsilon$ is the motional electromotive force, $L$ is the self-inductance, $I$ is the current, and $t$ is time. The units of self-inductance are henrys ($H$).
+
+** Inductors
+We can see self-inductance in circuits with these components:
+
+#+DOWNLOADED: https://5.imimg.com/data5/SELLER/Default/2021/2/LI/SS/WC/26841306/whatsapp-image-2021-02-10-at-12-58-37-pm-1-.jpg @ 2023-02-20 18:48:42
+[[file:Electromagnetism:_Dynamic_Fields/2023-02-20_18-48-42_whatsapp-image-2021-02-10-at-12-58-37-pm-1-.jpg]]
+
+To calculate the self-inductance, we need to know the number of turns, the area of the coil, and the magnetic field. This is given by the equation:
+
+\[
+L = \frac{\muN^2 A}{2 \pi R}
+\]
+
+In a circuit we represent the component with a coil-like symbol. Why would we want to use such a component? Well, we can use it to store energy. This is because the emf is proportional to the change in current, and the change in current is proportional to the change in voltage. This means that if we have a circuit with a battery, and an inductor, the current will increase, and the voltage will decrease. This is because the battery is trying to increase the current, but the inductor is trying to decrease the current. This is called an inductive reactance.
+
+** Mutual Inductance
+If we have two coils, and we change the current in one coil, the other coil will also change its current. This is because the magnetic field is changing, and the magnetic field is changing because the current is changing.
+
+For these kinds of problems, it is important to remember that any change in the magnetic field will create an electromotive force.
 ** Eddy Currents
-** Waves
+Eddy currents, are currents which are created by a changing magnetic field. Although this might not be good for fine technology, as it can interfere, here are some applications of eddy currents:
++ Metal Detectors - detect eddy currents in metal
++ Heating - eddy currents create heat
++ Magnetic Breaking
+
+* Waves
 *** Displacement Current
+If the electric field changes, so will the magnetic field. This is because the magnetic field is proportional to the electric field.
+
+We take amperes circuital law, and include the magnetic field:
+
+\[
+\oint_C \vec{B}\cdot d\vec{l} = \mu_0 (i_c + i_D)_\text{enc}
+\]
+
+where:
+
+
+\[
+i_D = \epsilon_0 \frac{d\Phi_E}{dt}
+\]
+
+Where $\Phi_E$ is the electric flux, and $t$ is time. The units of displacement current are amperes ($A$).
+
+
+
 *** Maxwell's Equations
+Finally, the good stuff. Maxwell's equations are the equations which describe the relationship between the electric and magnetic fields. They are given by the equations:
+
+\begin{align}
+\oint \vec{E} \cdot d\vec{A} &= \frac{Q_{enc}}{\epsilon_0} \\
+\oint \vec{B} \cdot d\vec{A} &= 0 \\
+\oint \vec{B} \cdot d\vec{A} &= \mu_0 (i_c + i_D)_\text{enc} \\
+\oint \vec{E} \cdot d\vec{A} &= - \frac{d\Phi_B}{dt}
+\end{align}
+
+This is a compilation of:
+1. Gauss's Law for Electric Fields
+2. Gauss's Law for Magnetic Fields
+3. Extended Ampere's Law
+4. Faraday's Law of Induction
+
+They will often be expressed in differential form:
+
+\begin{align}
+\nabla \cdot \vec{E} &= \frac{\rho}{\epsilon_0} \\
+\nabla \cdot \vec{B} &= 0 \\
+\nabla \times \vec{E} &= -\frac{\partial \vec{B}}{\partial t} \\
+\nabla \times \vec{B} &= \mu_0 (\vec{J} + \vec{D})_\text{enc}
+\end{align}
+
 *** Electromagnetic Waves
-*** Plane Waves
+The key relationship here, is modeled by these equations:
+
+\begin{align}
+\oint \vec{B} \cdot d\vec{l} &= \epsilon_0 \mu_0 \frac{d}{dt}\int\vec{E} \cdot d\vec{A} \\
+\oint \vec{E} \cdot d\vec{l} &= -\frac{d}{dt}\int\vec{B} \cdot d\vec{A}
+\end{align}
+
+One of the most important properties, is $\vec{k}$. This is the wave vector, and it is given by:
+
+\[
+\vec{k} \tilda \vec{E} \times \vec{B}
+\]
+
+Also, all waves in a vacuum travel at the speed of light, which is given by:
+
+\[
+c=\frac{1}{\sqrt{\mu_{0} \varepsilon_{0}}}=2.99792458 \times 10^{8} \mathrm{m} / \mathrm{s}
+\]
+*** Monochromatic Plane Waves
+We first need to understand a wave in 1D:
+
+\[
+y(x,t) = A \sin(kx - \omega t)
+\]
+
+Where $A$ is the amplitude, $k$ is the wave number, and $\omega$ is the angular frequency. The units of the wave number are radians per meter ($rad/m$). The units of the angular frequency are radians per second ($rad/s$).
+
+Now, we can extend this to 3D:
+
+\[
+E(\vec{r},t) = \vec{E}_\text{max} \cos(k\ctod\vec{r} - \omega t)
+\]
+
+Thats pretty awful looking, now we make it even worse by splitting it into two components, each wave being for the electric and magnetic fields:
+
+\begin{align}
+\vec{E}(x,t) &= \hat{j} \vec{E}_\text{max} \cos(k\vec{r} - \omega t) \\
+\vec{B}(x,t) &= \hat{k} \vec{B}_\text{max} \cos(k\vec{r} - \omega t)
+\end{align}
+
+Where $\hat{j}$ and $\hat{k}$ are unit vectors in the $x$ and $y$ directions respectively. The units of the magnetic field are tesla ($T$).
+
+
+
 *** Electromagnetic Spectrum
 *** Poyntig Vector
 *** Electromagnetic Waves on Boundaries

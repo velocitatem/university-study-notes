@@ -19,34 +19,14 @@
 
 * Introduction
 ** Systems
-# example of a system is a computer sytem
-# it is a group of objects trying to achieve a goal
-# two enivronments: inside and outside
-# In a system we have entities/objects
-# Each entity has attributes or can do activities
-# a state can be defined both for a system or entity
-# other examples of a system: forest, restaurant
-# overall key components: entity, attribute, activity, state, event
-# A system can be discrete or continuous people in a bank, water levels
 A system is a group of objects that work together to achieve a goal. It consists of two environments: the inside and the outside. Each entity in the system has attributes or can do activities. A state can be defined for the system or components of the system. Examples of systems include computer systems, forests, restaurants, and banks. The key components of a system are the entities, attributes, activities, states, and events. Systems can be either discrete or continuous, such as the people in a bank or the water levels in a river.
 ** Models
-# A model is an abstraction of some real life situation
-# the more variables the higher the complexity
-# This is determined by the simplicity or realism of a model [define]
 A model is an abstraction of a real-life situation, where the complexity of the model increases with the number of variables that are taken into account. The simplicity or realism of a model is determined by how closely it reflects the actual situation it is representing.
 ** Simulation
-# A simulation can be done for almost any system given some model.
-# stochastic simulation: uses randomness to predict events
-# deterministic simulation: [define]
-# example simulation: restaurant/shop - has two attributes: customers, employees. We have to make some assumptions.
-# Why simulate? it is cheaper and it is faster than real life, replicable, safer, ethical and legal
-# deterministic vs stochastic simulations:
 
 Simulation is a great tool to use when attempting to gain insights into the behavior of complex systems. Stochastic simulations rely on randomness to predict events, while deterministic simulations are based on predetermined inputs. For example, a restaurant/shop system can be simulated by making assumptions about the number of customers and employees in the system. Simulations are advantageous because they are cheaper, faster, replicable, safer, ethical, and legal when compared to real-life experiments. The decision between using a stochastic or deterministic simulation depends on the circumstances and the desired outputs.
 *** Deterministic
-# deterministic - physics, there is no probability no variable change.
-# example: gaining and losing followers on an account
-# [generate python code to simulate an account gaining and losing followers]
+
 In physics, determinism is the idea that all events are predetermined. There is no room for randomness or probability, as all changes are predetermined by the laws of nature. An example of this is an account gaining and losing followers, which is predetermined by the actions of the account holder. To simulate this process in Python, one could create a loop that tracks the number of followers gained and lost over time and stores it in a variable. This variable could then be used to print out the number of followers at any given time.
 *** Stochastic
 # stochastic - has randomness, uses random variables
@@ -60,7 +40,6 @@ Simulations are typically classified as either static or dynamic. In a static si
 # allows us to replicate semi-random experiments
 A seed is any number that can be used to replicate semi-random experiments and simulations. It allows for the same experiment to be repeated in the same way, with the same conditions and results, by using the same seed each time. This makes it easy to compare results from different experiments and simulations, as the same starting point can be replicated.
 
-* Python Programming for Simulations and Models
 * Random Numbers Generation
 + getting randomness is almost impossible
 + People confuse randomness with strangeness
@@ -74,6 +53,8 @@ A seed is any number that can be used to replicate semi-random experiments and s
   + must be long
   + should be repeatable with a seed
 + Setting seed in python =random.seed(2023)=
++ We can generate $n$ random numbers with python by using =np.random.uniform(min,max,nax)=
+
 ** Linear Congruential Method
 + We get a random like pattern.
 + It is a linear transformation of a previous number
@@ -96,15 +77,73 @@ A seed is any number that can be used to replicate semi-random experiments and s
 : [0.0625 0.8125 0.5625 0.3125 0.0625 0.8125 0.5625 0.3125 0.0625]
 
 + Those results are pretty bad
+* Testing Randomness
+To check if we have an actually random generator, we need to test *uniformity* and *independence*.
 ** Testing Uniformity
 + We test using hypothesis testing
-+ In this case the null hypothesis is that the sequence is uniform and the alternative hypothesis is that it is not uniform
+  + Null hypothesis = sequence is uniform
+  + Alternative hypothesis = sequence is not uniform
 + We use an alpha level of 0.05. If our $p$ is less than 0.05 we reject the null hypothesis, otherwise we fail to reject the null hypothesis
 + We want to fail to reject the null hypothesis to have uniformity.
-+ The test we use is Kolmogrov-Smirnov test
++ The test we use is *Kolmogrov-Smirnov* test
 + We use the function =stats.kstest= from the =scipy.stats= library
+
+** Testing Independence
++ We again make use of hypothesis testing
+  + Null hypothesis = sequence is independent
+  + Alternative hypothesis = sequence is not independent
++ To test for the dependence of each number, we use correlation
++ The specific type of correlation we use is *autocorrelation*
+  + This means that we correlate the number and the sequence
++ When we auto-correlate, we need to have a lag
+  + This is the number of steps we take ahead in the sequence
++ We can use a pandas data frame:
+#+begin_src python :tangle yes :results file :exports both :noweb yes
+  import numpy as np
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  seq = np.random.uniform(0,1,100)
+  df = pd.DataFrame(seq, columns=['values'])
+  pd.plotting.autocorrelation_plot(df['values'])
+  plt.savefig("autocorrelation.png")
+  return "autocorrelation.png"
+#+end_src
+
+#+RESULTS:
+[[file:./autocorrelation.png]]
+
+In the above plot:
++ If the line is within the dashed lines, we fail to reject the null hypothesis
+
+We need a more robust way of assessing if the sequence is independent:
+#+begin_src python :tangle yes :results output :exports both :noweb yes
+  acf, confint = statstools.acf(seq, alpha=0.05, nlags=10)
+  lbvalue, pvalue = statstools.q_stat(acf[1:], len(seq))
+  print("p-value: ", pvalue)
+#+end_src
+
+Now we can use the p-value to test for independence.
+
+
 * Random Variable Simulation
+
 * Monte Carlo Simulation
+First, what is the Monte Carlo method? It is the aggregation of multiple simulations, to infer something.
+
+Characteristics:
++ Randomness - has to have a large period between repeats
++ Large sample
++ Valid algorithm
++ Accurately simulates
+** Process
+1. Define the domain of imputes
+2. Generate the inputs from a distribution
+3. Run a deterministic simulation
+4. Replicate
+5. Aggregate
+** Inferential Statistics
++ We use inferential statistics to make inferences about a population from a sample
++ We simulate a sample, calculate the statistics and then use the statistics to make inferences about the population
 * Discrete Events Simulation
 * Model Building
 * Regression Models
