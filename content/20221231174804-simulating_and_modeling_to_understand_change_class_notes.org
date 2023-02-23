@@ -125,7 +125,54 @@ We need a more robust way of assessing if the sequence is independent:
 Now we can use the p-value to test for independence.
 
 
-* Random Variable Simulation
+* Discrete Random Variable Simulation
+A random variable is a variable, with some potential outcomes, that is determined by their respective probabilities.
++ Probability Mass Function :: This is a function that gives the probability of a discrete random variable taking on a specific value.
++ Cumulative Distribution Function :: This is a function that gives the probability of a discrete random variable taking on a value less than or equal to a specific value.
+
+** Bernoulli Distribution
++ This is a discrete random variable with two possible outcomes
++ The probability of the first outcome is $p$
++ The probability of the second outcome is $1-p$
++ The general pmf is given by $f(x) = p^x(1-p)^{1-x}$
++ Expected value and variance are given by $E(X) = p$ and $Var(X) = p(1-p)$
++ We can simulate this in python using =np.random.binomial(1,p,n)=
+
+** Binomial Distribution
++ Very similar to the Bernoulli distribution
+  + Key difference is that we have $n$ trials
++ The general pmf is given by $f(x) = \binom{n}{x}p^x(1-p)^{n-x}$
++ Expected value and variance are given by $E(X) = np$ and $Var(X) = np(1-p)$
++ We can simulate this in python using =np.random.binomial(n,p,n_1)=
+  + This will give us $n_1$ samples of $n$ trials with probability $p$
+
+** Geometric Distribution
++ This distributions gives us the probability of the first success in $n$ trials
++ The general pmf is given by $f(X = x) = (1-p)^x p$
++ Expected value and variance are given by $E(X) = \frac{1 - p}{p}$ and $Var(X) = \frac{1-p}{p^2}$
++ We can simulate this in python using =np.random.geometric(p,n)=
++ There is also the stats library which gives
+  + =stats.geom.pmf(x,p)= and =stats.geom.cdf(x,p)=
+
+** Poisson Distribution
++ This distribution gives us the probability of $k$ events in a given time period
++ The general pmf is given by $f(x) = \frac{\lambda^x e^{-\lambda}}{x!}$
+  + Turns into an exponential distribution when $\lambda \rightarrow \infty$
+  + $\lambda$ is the mean number of events in the time period
++ Expected value and variance are given by $E(X) = \lambda$ and $Var(X) = \lambda$
++ We can simulate this in python using =np.random.poisson(lam,n)=
+
+* Continuous Random Variable Simulation
+** Cumulative Distribution Function
++ This is a function that gives the probability of a continuous random variable taking on a value less than or equal to a specific value.
++ The general cdf is given by $F(x) = \int_{-\infty}^{x} f(x) dx$
+
+** Uniform Distribution
++ In this distribution, all values are equally likely
++ The pdf is given by $f(x) = \frac{1}{b-a}$
++ Expected value and variance are given by $E(X) = \frac{a+b}{2}$ and $Var(X) = \frac{(b-a)^2}{12}$
++ The cumulative distribution function is given by $F(x) = \frac{x-a}{b-a}$
++ We can simulate this in python using =np.random.uniform(a,b,n)=
 
 * Monte Carlo Simulation
 First, what is the Monte Carlo method? It is the aggregation of multiple simulations, to infer something.

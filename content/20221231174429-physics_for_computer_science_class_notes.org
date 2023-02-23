@@ -631,14 +631,144 @@ Where $\hat{j}$ and $\hat{k}$ are unit vectors in the $x$ and $y$ directions res
 
 * Electric Circuits (DC)
 ** Circuits
+First, we need to define some terms:
++ Terminal :: The point where a component is connected to a circuit
++ Connection :: A wire, which has no resistance, and connects two terminals.
++ Node or Junction :: A point where two or more connections meet.
++ Loop :: A closed path in a circuit.
++ Branch :: A path in a circuit, which is not a loop and has no nodes.
++ Mesh :: A closed path in a circuit, which has no branches or no internal loops.
+
 ** Passive Components
+These are components which absorb energy, they are the following:
+*** Resistors
+Resistors are components which have a resistance. The resistance $R$ is given by:
+
+\[
+R = \rho \frac{l}{A}
+\]
+
+Where $\rho$ is the resistivity, $l$ is the length, and $A$ is the cross-sectional area. The units of resistance are ohms ($\Omega$).
+
+We can combine resistors, either *in series* or *in parallel*. In series, the total resistance is the sum of the individual resistances. In parallel, the total resistance is the sum of the reciprocals of the individual resistances.
+
+How can you calculate the resistance of a resistor, based on the bands? The first two bands are the first two digits of the resistance, the third band is the multiplier, and the fourth band is the tolerance.
+
+You can use [[https://www.calculator.net/resistor-calculator.html][this tool]] to calculate the resistance of a resistor, based on the bands.
+
+*** Capacitors
+This component accumulates charge. The capacitance $C$ is given by:
+
+\[
+C = \frac{Q}{V}
+\]
+
+Where $Q$ is the charge, and $V$ is the voltage. The units of capacitance are farads ($F$).
+
+As for the order, it is reversed from resistors. Capacitance in series is given by the sum of the reciprocal of the individual capacitances. Capacitance in parallel is given by the sum of the individual capacitances.
+
+*** Inductors
+An inductor is a component which stores energy in the form of a magnetic field. The inductance $L$ is given by:
+
+\[
+L = \frac{\Phi}{I}
+\]
+
+Where $\Phi$ is the flux, and $I$ is the current. The units of inductance are henrys ($H$).
+
+Parallel inductors are given by the sum of the reciprocal of the individual inductances. Series inductors are given by the sum of the individual inductances.
+
+*** Diodes
+A diode is a component which allows current to flow in one direction, and blocks it in the other.
+
+There is a special type of diode, the light emitting diode (LED). This is a diode which emits light when current flows through it.
 ** Active Components
+These are components which generate energy, they are the sources of energy in a circuit. They can supply current or voltage.
+
+*** Current Supplying Components
+| Current | Voltage  |
+|---------+----------|
+| Fixed   | Variable |
+
+Graphically, the current supplying components are the following:
+
+#+DOWNLOADED: screenshot @ 2023-02-23 14:33:46
+[[file:./Electric_Circuits_(DC)/2023-02-23_14-33-46_screenshot.png]]
+
+*** Voltage Supplying Components
+| Current | Voltage  |
+|---------+----------|
+| Variable | Fixed    |
+
+Graphically, the voltage supplying components are the following:
+
+
+#+DOWNLOADED: screenshot @ 2023-02-23 14:53:41
+[[file:./Electric_Circuits_(DC)/2023-02-23_14-53-41_screenshot.png]]
+
+
 ** Electrical Measurements
+To measure almost everything in a circuit, you need a multimeter. This is a device which can measure voltage, current, and resistance.
+
+Usually looks something like this:
+
+
+#+DOWNLOADED: https://www.electronics-lab.com/wp-content/uploads/2020/12/6_000_Count_True_RMS_High_Performance_Waterproof_IP67_Digital_Multim_%E2%80%94_Triplett_Test_Equipment_Tools.jpg @ 2023-02-23 14:55:44
+[[file:./Electric_Circuits_(DC)/2023-02-23_14-55-44_6_000_Count_True_RMS_High_Performance_Waterproof_IP67_Digital_Multim_%E2%80%94_Triplett_Test_Equipment_Tools.jpg]]
+
+
+
 ** Kirchoff's Laws
+This law tells us that the sum of currents in a node, or the sum of voltages in a loop, is always zero.
+
+\[
+\sum_j I_j = 0
+\]
+
+Why? Since a node, has not property which would allow it to cumulate charge, the current must be zero.
+
+This also means, that the current leaving a node, must be equal to the sum of the currents entering the node.
+
+We can apply this to a circuit, but constructing equations for each of the nodes. We can then solve these equations to find the currents in the circuit.
+
+As for loops, we know that the sum of all the voltages in a loop is zero. This means that the voltage drop across each component in the loop must be equal to the voltage drop across the loop.
 ** Transient and Steady-State
+A transient state is a state where the circuit is changing with *respect to time*. Whereas a steady-state is a state where the circuit that has constant or period magnitudes.
++ For a steady state, the current and voltage are constant.
++ For a transient state, the current and voltage are changing.
+** RC Circuits
+An RC circuit is a type of circuit which contains a resistor and a capacitor connected in series or parallel to each other. The resistor controls the amount of current running through the circuit and the capacitor acts as a storage device for electric charge.
+
+These two components work to create a transient state and steady state within the RC circuit, which means that the current and voltage in the circuit will initially change over time before reaching a steady, constant rate.
+
+The RC circuit is used in many applications, such as in the power supply of a computer, in the circuitry of a radio, and in the circuitry of a television.
+
 ** Electric Power
-** Systematics Circuit Analysis
+In classical mechanics, power is defined as the rate of doing work. In electromagnetism, power is defined as the rate of energy transfer. The power $P$ is given by:
+
+\[
+P = \frac{dW}{dt} = \frac{VdQ}{dt} = VI
+\]
+
+Probably the nicest equation in this course. The units of power are watts ($W$).
+** Mesh Analysis
+Mesh analysis is a method of solving a circuit, by constructing equations for each of the meshes in the circuit. We can then solve these equations to find the currents in the circuit.
+
+1. Identify all the meshes in the circuit.
+2. Apply the Kirchoff's Voltage Law to each of the meshes.
+3. Solve the equations to find the currents in the circuit.
 ** Circuit Theorems
+*** Superposition Theorem
+Just as any other application of the superposition theorem.
+
+The superposition theorem states that the current in a circuit is the sum of the currents in the circuit, when each of the sources are turned on one at a time.
+
+*** Thevenin's Theorem
+Given any circuit with multiple voltages and resistances, we can replace the circuit with a single voltage source and a single resistance.
+This helps us decrease complexity in our circuits.
+
+Why? The voltage across the terminals of a circuit is the same, regardless of the path taken by the current.
+
 * Electric Circuits (AC)
 ** Phasors
 ** Generalized Kirchhoff's Laws
