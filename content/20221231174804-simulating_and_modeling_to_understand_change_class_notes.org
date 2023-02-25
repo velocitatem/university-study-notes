@@ -25,6 +25,10 @@ A model is an abstraction of a real-life situation, where the complexity of the 
 ** Simulation
 
 Simulation is a great tool to use when attempting to gain insights into the behavior of complex systems. Stochastic simulations rely on randomness to predict events, while deterministic simulations are based on predetermined inputs. For example, a restaurant/shop system can be simulated by making assumptions about the number of customers and employees in the system. Simulations are advantageous because they are cheaper, faster, replicable, safer, ethical, and legal when compared to real-life experiments. The decision between using a stochastic or deterministic simulation depends on the circumstances and the desired outputs.
+
+
+
+
 *** Deterministic
 
 In physics, determinism is the idea that all events are predetermined. There is no room for randomness or probability, as all changes are predetermined by the laws of nature. An example of this is an account gaining and losing followers, which is predetermined by the actions of the account holder. To simulate this process in Python, one could create a loop that tracks the number of followers gained and lost over time and stores it in a variable. This variable could then be used to print out the number of followers at any given time.
@@ -35,6 +39,63 @@ Stochastic simulation is a modelling technique which incorporates randomness, ma
 # Static: there is no time variable
 # Dymanic: there is a time variable
 Simulations are typically classified as either static or dynamic. In a static simulation, there is no time variable; the system is unchanging and the same set of conditions is used throughout the simulation. In a dynamic simulation, time is a variable, meaning that the system is constantly changing and the conditions of the simulation can evolve over time.
+
+*** Decision Tree
+#+BEGIN_SRC plantuml
+@startuml
+start
+if (Is there randomness?) then (yes)
+  :Stochastic;
+  if (Is there time?) then (yes)
+    :Dynamic;
+    if (Is there a continuous variable?) then (yes)
+      :Continuous;
+      stop
+    else (no)
+      :Discrete;
+      stop
+    endif
+  else (no)
+    :Static;
+    if (Is there a continuous variable?) then (yes)
+      :Continuous;
+      stop
+    else (no)
+      :Discrete;
+      stop
+    endif
+  endif
+else (no)
+  :Deterministic;
+  if (Is there time?) then (yes)
+    :Dynamic;
+    if (Is there a continuous variable?) then (yes)
+      :Continuous;
+      stop
+    else (no)
+      :Discrete;
+      stop
+    endif
+  else (no)
+    :Static;
+    if (Is there a continuous variable?) then (yes)
+      :Continuous;
+      stop
+    else (no)
+      :Discrete;
+      stop
+    endif
+  endif
+stop
+@enduml
+#+END_SRC
+
+
+#+DOWNLOADED: https://www.plantuml.com/plantuml/png/xP0n3i8m34Ntdi9ZUmKwCD25cHEOr5KjDGwANQJU7jEY2Weh4WDJag_thFYhORQ2EoYF2jPJ9iWeROf2gllg7WcK4sbL0EnEbaAFQXngVxvOnf6sl1lD91WNV2CWX2J6CgPHuOgPyJnycE0p3YjNFoArT9clD2X1AMbb6zQGoUYTb9QxOcluHcY_zBtbVFBSSJv75lxt_ktUv_W6 @ 2023-02-25 16:21:50
+[[file:./Introduction/2023-02-25_16-21-50_xP0n3i8m34Ntdi9ZUmKwCD25cHEOr5KjDGwANQJU7jEY2Weh4WDJag_thFYhORQ2EoYF2jPJ9iWeROf2gllg7WcK4sbL0EnEbaAFQXngVxvOnf6sl1lD91WNV2CWX2J6CgPHuOgPyJnycE0p3YjNFoArT9clD2X1AMbb6zQGoUYTb9QxOcluHcY_zBtbVFBSSJv75lxt_ktUv_W6.png]]
+
+I hope this is right.
+
 ** A Seed
 # it can be any number
 # allows us to replicate semi-random experiments
@@ -161,6 +222,7 @@ A random variable is a variable, with some potential outcomes, that is determine
   + $\lambda$ is the mean number of events in the time period
 + Expected value and variance are given by $E(X) = \lambda$ and $Var(X) = \lambda$
 + We can simulate this in python using =np.random.poisson(lam,n)=
+  + To compute the pdf we can use =stats.poisson.pmf(x,lam)=
 
 * Continuous Random Variable Simulation
 ** Cumulative Distribution Function
@@ -173,9 +235,41 @@ A random variable is a variable, with some potential outcomes, that is determine
 + Expected value and variance are given by $E(X) = \frac{a+b}{2}$ and $Var(X) = \frac{(b-a)^2}{12}$
 + The cumulative distribution function is given by $F(x) = \frac{x-a}{b-a}$
 + We can simulate this in python using =np.random.uniform(a,b,n)=
+  + We can get the pdf using =stats.uniform.pdf(x,a,b)=
+** Exponential Distribution
++ This distribution gives us the probability of the time between events in Poisson processes.
+  + It answers a question such as: "What is the probability that something will happen in the next n minutes?"
++ The pdf is given by $f(x) = \lambda e^{-\lambda x}$ where $\lambda = \frac{1}{E(X)}$
++ Expected value and variance are given by $E(X) = \frac{1}{\lambda}$ and $Var(X) = \frac{1}{\lambda^2}$
++ The cumulative distribution function is given by $F(x) = 1 - e^{-\lambda x}$
++ We can simulate this in python using =np.random.exponential(scale,n)=
+  + The scale is the inverse of the rate parameter $\lambda$
+  + We can get the pdf using =stats.expon.pdf(x,scale)= or
 
-* Monte Carlo Simulation
+** Normal Distribution
++ This distribution is the most common distribution
++ The pdf is given by $f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$ - This is horrible.
++ Expected value and variance are given by $E(X) = \mu$ and $Var(X) = \sigma^2$
++ We can simulate this in python using =np.random.normal(mu,sigma,n)=
+  + We can get the pdf using =stats.norm.pdf(x,mu,sigma)=
+  + We can get the cdf using =stats.norm.cdf(x,mu,sigma)=
+* Monte Carlo Method
 First, what is the Monte Carlo method? It is the aggregation of multiple simulations, to infer something.
+This should not be confused with the Monte Carlo simulation, which is a simulation of a random variable. Here is a table to help you remember the difference, it highlights the key differences between the two:
+
+| Monte Carlo Method                                                                               | Monte Carlo Simulation                                                                                     |
+|--------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------|
+| A mathematical technique used for solving problems through repeated random sampling              | A type of Monte Carlo method that involves generating random input values to simulate a system             |
+| Used to estimate the value of an unknown quantity based on a sample of random data               | Used to simulate the behavior of a system under different scenarios                                        |
+| Can be used to solve problems in various fields like finance, engineering, and physics           | Can be used to analyze the behavior of systems in various fields like finance, engineering, and physics    |
+| Can be used to generate random numbers, simulate random walks, and perform numerical integration | Can be used to answer the "what if" questions and incorporate a wider variety of scenarios than historical data |
+| Samples are independent and identically distributed                                              | Samples can be positively correlated and thereby increases the variance of your estimates                  |
+| Can be used in combination with Markov chains                                                    | Can be used to estimate the probability of a particular outcome or the range of possible outcomes          |
+
+[[https://phind.com/search?q=Create+a+table+of+the+key+differences+between+the+monte+carlo+method+and+monte+carlo+simulation][ref]]
+* Monte Carlo Simulation
+Now that we have a basic understanding of the Monte Carlo method, let's talk about the Monte Carlo simulation. This is a simulation of a random variable. We can use this to estimate the expected value of a random variable.
+
 
 Characteristics:
 + Randomness - has to have a large period between repeats
@@ -183,15 +277,120 @@ Characteristics:
 + Valid algorithm
 + Accurately simulates
 ** Process
-1. Define the domain of imputes
-2. Generate the inputs from a distribution
+1. Define the domain of inputs (What kind of inputs are we going to use?)
+2. Generate the inputs from a distribution (How are we going to generate the inputs?)
 3. Run a deterministic simulation
 4. Replicate
 5. Aggregate
+
+** Using Python
+We will often have to select some categorical value when it comes to MCS. In python, we can make use of =numpy.random.choice()= to do this. This function takes in a list of values and a probability distribution and returns a random value from the list. For example, if we wanted to simulate a coin flip, we could do the following:
+
+#+BEGIN_SRC python
+  import numpy as np
+  np.random.choice(['heads', 'tails'], p=[0.5, 0.5])
+#+END_SRC
+
+We do not have to give it the probability distribution, if we do not, it will assume that all values are equally likely. For example, if we wanted to simulate a die roll, we could do the following:
+
+#+BEGIN_SRC python
+  import numpy as np
+  np.random.choice([1, 2, 3, 4, 5, 6])
+#+END_SRC
+
 ** Inferential Statistics
 + We use inferential statistics to make inferences about a population from a sample
 + We simulate a sample, calculate the statistics and then use the statistics to make inferences about the population
 * Discrete Events Simulation
+In this type of simulation, we model real-world systems as a sequence of discrete events. We can use this to model things like a manufacturing process, a supply chain, or a financial market. We can use this to answer questions like "What is the probability that a product will be delivered on time?" or "What is the probability that a customer will buy a product?".
+
+We can also answer questions about how efficient a system is or howmany resources are needed to run a system. For example, we can answer questions like "How many employees are needed to run a manufacturing process?" or "How many machines are needed to run a manufacturing process?".
+
+
+** Types
++ Activity Oriented
+  + We model the system as a series of activities
++ Event Oriented
+  + We create various events
+  + Benefit: we can keep track of time
++ Process Oriented
+  + Models entire life cycles
+  + Benefit: we can keep track of time and resources
+
+** =simpy= Library
+We can create these simulations using =simpy=, a python library for discrete event simulation. We can install it using =pip install simpy=. We can then import it using =import simpy=.
+
+The structure of a simulation in =simpy= designed with functional programming is as follows:
+
+1. Define the environment
+2. Define the resources
+3. Define the processes
+4. Run the simulation
+
+What is a process? A process is a function that defines the behavior of an entity in the simulation. For example, if we were simulating a manufacturing process, we could have a process that defines the behavior of a machine.
+
+We make use of generators to simulate new entities entering the system. We can then use =yield= to wait for a certain amount of time or for a resource to become available. We can then use =env.run()= to run the simulation.
+
+** Designing Process
+Let's take a look at a very simple example of a DES to learn how to use generators within discrete eventsimulations. The following graph describes a very simple experiment in which we simulate the queue ofpatients arriving at a weight loss clinic. We will have inter-arrival times of consultations, the entities aspatients, and the activity times will be represented by the consultation time of the patients with the nurse.
+
+This is the process of how to design this simulation:
+
+1. create a patient generator that generates patients at a certain rate
+2. create an activity generator for each of the patients
+   1. Request a resource (nurse)
+   2. Create a queue time for the patient
+   3. Create a consultation time for the patient
+   4. Release the resource (nurse)
+3. Run the simulation
+
+
+#+BEGIN_SRC plantuml
+@startuml
+PatientGenerator -> ActivityGenerator: Generates a patient
+ActivityGenerator --> Resource: Requests a nurse
+Resource --> ActivityGenerator: Gives the nurse to the patient
+ActivityGenerator --> QueueTime: Calculates queue time
+QueueTime --> ConsultationTime: Calculates consultation time
+ConsultationTime --> Resource: Releases the nurse
+@enduml
+
+#+END_SRC
+
+
+#+DOWNLOADED: https://www.plantuml.com/plantuml/png/XP1H2i8m38RVUufSO1VOWqpsuAkA5mWrOA5hNPCClBtjDeTQnBVip_VnP-rOC8aEtXnH70KvKA244XCqEzXRSPEJnnQsi8x4W71V55DXq6JvJ1mrMMhpD2gn52LeOZAl5JG_IjoK2-H62myIoyUVlfEIqiKDkR17RzNFLuub1Sanc8sO-Ju6LYyeBePAis_BrVxcgv_qXFnnjZ4TXMjvt2S0 @ 2023-02-25 16:47:11
+[[file:./Discrete_Events_Simulation/2023-02-25_16-47-11_XP1H2i8m38RVUufSO1VOWqpsuAkA5mWrOA5hNPCClBtjDeTQnBVip_VnP-rOC8aEtXnH70KvKA244XCqEzXRSPEJnnQsi8x4W71V55DXq6JvJ1mrMMhpD2gn52LeOZAl5JG_IjoK2-H62myIoyUVlfEIqiKDkR17RzNFLuub1Sanc8sO-Ju6LYyeBePAis_BrVxcgv_qXFnnjZ4TXMjvt2S0.png]]
+
+
+** Example
+Let's say we have a manufacturing process that has 3 machines. We want to know how many products we can make in a day. We can model this using =simpy= as follows:
+
+#+BEGIN_SRC python
+  import simpy
+  import numpy as np
+
+  # Define the environment
+  env = simpy.Environment()
+
+  # Define the resources
+  machine = simpy.Resource(env, capacity=3)
+
+  # Define the processes
+  def manufacturing_process(env, machine):
+      # Wait for a machine to become available
+      with machine.request() as request:
+          # Wait for the machine to become available
+          yield request
+          # Wait for the manufacturing process to complete
+          yield env.timeout(np.random.uniform(0, 1))
+
+  # Run the simulation
+  env.process(manufacturing_process(env, machine))
+  env.run(until=1)
+#+END_SRC
+
+
+
 * Model Building
 * Regression Models
 * Classification Models
