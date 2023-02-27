@@ -16,6 +16,42 @@
 
 #+HTML: <footer style="height: 20vh;"></footer>
 
+* Programming (Python)
++ Optional Arguments :: This is a great way to make code more flexible. It is used in function definitions like so:
+  #+BEGIN_SRC python
+  def my_function(a, b, c=1, d=2):
+      print(a, b, c, d)
+  #+END_SRC
+** Lists
++ Adding normal lists :: If we add normal, lists we get a new list with the elements of both lists
+  #+BEGIN_SRC python :results output
+  a = [1, 2, 3]
+  b = [4, 5, 6]
+  c = a + b
+  print(c)
+  #+END_SRC
+
+  #+RESULTS:
+  : [1, 2, 3, 4, 5, 6]
+
++ Numpy *atomic* vector :: This is a vector, that can only store *one* type of data.
++ Dataframe Statistics :: We can get statistics from a dataframe using the describe() function
+  #+BEGIN_SRC python :results output
+  import pandas as pd
+  df = pd.DataFrame({'a': [1, 2, 3], 'b': [4, 5, 6]})
+  print(df.describe())
+  #+END_SRC
+
+  #+RESULTS:
+  :          a    b
+  : count  3.0  3.0
+  : mean   2.0  5.0
+  : std    1.0  1.0
+  : min    1.0  4.0
+  : 25%    1.5  4.5
+  : 50%    2.0  5.0
+  : 75%    2.5  5.5
+  : max    3.0  6.0
 
 * Introduction
 ** Systems
@@ -26,7 +62,7 @@ A model is an abstraction of a real-life situation, where the complexity of the 
 
 Simulation is a great tool to use when attempting to gain insights into the behavior of complex systems. Stochastic simulations rely on randomness to predict events, while deterministic simulations are based on predetermined inputs. For example, a restaurant/shop system can be simulated by making assumptions about the number of customers and employees in the system. Simulations are advantageous because they are cheaper, faster, replicable, safer, ethical, and legal when compared to real-life experiments. The decision between using a stochastic or deterministic simulation depends on the circumstances and the desired outputs.
 
-
++ The point in which the state of a system changes is called an event.
 
 
 *** Deterministic
@@ -185,6 +221,14 @@ We need a more robust way of assessing if the sequence is independent:
 
 Now we can use the p-value to test for independence.
 
+A key point here, is the difference between correlation and autocorrelation.
+| Correlation              | Autocorrelation                   |
+|--------------------------+-----------------------------------|
+| Correlates two variables | Correlates a variable with itself |
+| No lag                   | Lag                               |
+
+
+
 
 * Discrete Random Variable Simulation
 A random variable is a variable, with some potential outcomes, that is determined by their respective probabilities.
@@ -220,6 +264,8 @@ A random variable is a variable, with some potential outcomes, that is determine
 + The general pmf is given by $f(x) = \frac{\lambda^x e^{-\lambda}}{x!}$
   + Turns into an exponential distribution when $\lambda \rightarrow \infty$
   + $\lambda$ is the mean number of events in the time period
+  + It can take negative values
+  + Values can be non-integer
 + Expected value and variance are given by $E(X) = \lambda$ and $Var(X) = \lambda$
 + We can simulate this in python using =np.random.poisson(lam,n)=
   + To compute the pdf we can use =stats.poisson.pmf(x,lam)=
@@ -253,6 +299,75 @@ A random variable is a variable, with some potential outcomes, that is determine
 + We can simulate this in python using =np.random.normal(mu,sigma,n)=
   + We can get the pdf using =stats.norm.pdf(x,mu,sigma)=
   + We can get the cdf using =stats.norm.cdf(x,mu,sigma)=
+* Choosing the right distribution
+How do we know which distribution to use? We can use the following table to help us out.
+
+| Distribution | Use Case                                 |
+|--------------+------------------------------------------|
+| Bernoulli    | Binary outcome                           |
+| Binomial     | Number of successes in $n$ trials        |
+| Geometric    | Number of trials until first success     |
+| Poisson      | Number of events in a given time period  |
+| Uniform      | All values are equally likely            |
+| Exponential  | Time between events in Poisson processes |
+| Normal       | Most common distribution                 |
+
+# Key variable characteristics:
+# + Discrete or continuous
+# + Symmetric or asymmetric
+# + Binary or non-binary
+
+# | Distribution | Discrete | Continuous | Symmetric | Asymmetric | Binary | Non-Binary |
+# |--------------+----------+------------+-----------+------------+--------+------------|
+# | Bernoulli    | Yes      | No         | No        | Yes        | Yes    | No         |
+# | Binomial     | Yes      | No         | No        | Yes        | No     | Yes        |
+# | Geometric    | Yes      | No         | No        | Yes        | No     | Yes        |
+# | Poisson      | Yes      | No         | No        | Yes        | No     | Yes        |
+# | Uniform      | No       | Yes        | Yes       | No         | No     | Yes        |
+# | Exponential  | No       | Yes        | Yes       | No         | No     | Yes        |
+# | Normal       | No       | Yes        | Yes       | No         | No     | Yes        |
+
+
+# Flow chart to help us choose the right distribution:
+# #+BEGIN_SRC plantuml
+# @startuml
+# start
+# :Discrete or continuous?;
+# if (Discrete) then (Yes)
+#   :Symmetric or asymmetric?;
+#   if (Symmetric) then (Yes)
+#     :Binary or non-binary?;
+#     if (Binary) then (Yes)
+#       :Bernoulli;
+#     else (No)
+#       :Binomial;
+#     endif
+#   else (No)
+#     :Binary or non-binary?;
+#     if (Binary) then (Yes)
+#       :Geometric;
+#     else (No)
+#       :Poisson;
+#     endif
+#   endif
+# else (No)
+#   :Symmetric or asymmetric?;
+#   if (Symmetric) then (Yes)
+#     :Uniform;
+#   else (No)
+#     :Exponential;
+#   endif
+# endif
+# stop
+# @enduml
+# #+END_SRC
+
+
+
+
+file:./Choosing_the_right_distribution/plot.png
+
+
 * Monte Carlo Method
 First, what is the Monte Carlo method? It is the aggregation of multiple simulations, to infer something.
 This should not be confused with the Monte Carlo simulation, which is a simulation of a random variable. Here is a table to help you remember the difference, it highlights the key differences between the two:
@@ -272,14 +387,14 @@ Now that we have a basic understanding of the Monte Carlo method, let's talk abo
 
 
 Characteristics:
-+ Randomness - has to have a large period between repeats
++ Randomness - has to have a large period between repeats (stochastic)
 + Large sample
 + Valid algorithm
 + Accurately simulates
 ** Process
 1. Define the domain of inputs (What kind of inputs are we going to use?)
 2. Generate the inputs from a distribution (How are we going to generate the inputs?)
-3. Run a deterministic simulation
+3. Run a simulation
 4. Replicate
 5. Aggregate
 
@@ -305,6 +420,11 @@ We do not have to give it the probability distribution, if we do not, it will as
 In this type of simulation, we model real-world systems as a sequence of discrete events. We can use this to model things like a manufacturing process, a supply chain, or a financial market. We can use this to answer questions like "What is the probability that a product will be delivered on time?" or "What is the probability that a customer will buy a product?".
 
 We can also answer questions about how efficient a system is or howmany resources are needed to run a system. For example, we can answer questions like "How many employees are needed to run a manufacturing process?" or "How many machines are needed to run a manufacturing process?".
+
+** Components
++ Entities :: These are the objects that are being modeled. For example, in a manufacturing process, the entities could be products.
++ Events :: These are the actions that are performed on the entities. For example, in a manufacturing process, the events could be the actions that are performed on the products.
++ Resources :: These are the things that perform the events. For example, in a manufacturing process, the resources could be the machines that perform the actions on the products.
 
 
 ** Types
