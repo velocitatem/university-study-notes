@@ -12,6 +12,10 @@
 
 
 #+HTML: <footer style="height: 20vh;"></footer>
+
+Useful Resources:
++ [[https://seeing-theory.brown.edu/frequentist-inference/index.html#section1][Seeing Theory - Frequentist Inference]]
+
 * Data Manipulation & Python
 ** Pandas DataFrames
 It is best to imagine a DataFrame as spreadsheet.
@@ -330,6 +334,29 @@ The central limit theorem states that the sampling distribution of the sample me
 | Normal     | Any         | Normal |
 | Unknown    | Huge        | Normal |
 
+** Linear Combinations
+If we have a random variable $X$, and come constants $c$, we can define a new random variable $Y$ as a linear combination of $X$ and $c$:
+
+\[
+Y = c_1 X_1 + c_2 X_2 + \dots + c_n X_n
+\]
+
+Where the expected value and variance of $Y$ are:
+
+\[
+E(Y) = c_1 E(X_1) + c_2 E(X_2) + \dots + c_n E(X_n)
+\]
+
+\[
+V(Y) = c_1^2 V(X_1) + c_2^2 V(X_2) + \dots + c_n^2 V(X_n)
+\]
+
+For the above, we assume that the $X_i$ are independent of each other. If they are not, we have to add the covariance terms.
+
+\[
+V(Y) = c_1^2 V(X_1) + c_2^2 V(X_2) + \dots + c_n^2 V(X_n) + 2c_1c_2Cov(X_1, X_2) + \dots + 2c_1c_nCov(X_1, X_n) + \dots + 2c_2c_nCov(X_2, X_n)
+\]
+
 * Point Estimation
 With point estimation, we are trying to estimate a single value, which is the best estimate of the population parameter. We can use the sample statistics to do this.
 
@@ -337,8 +364,9 @@ The core idea is that if we take a random sample from a population, and calculat
 
 ** Properties
 \begin{align}
-\text{Estimator} = \bar{X} \quad \text{Estimate} \quad \bar{x} \quad \text{Population Parameter} \quad \mu \\
+\text{Estimator} = \bar{X} \quad \text{Estimate} = \bar{x} \quad \text{Population Parameter} = \mu \\
 \end{align}
+
 
 Generally, any estimator $\hat{\theta}$ is just a function of the population parameter $\theta$.
 
@@ -348,7 +376,7 @@ Generally, any estimator $\hat{\theta}$ is just a function of the population par
 
 Where $\epsilon$ is the error term. This error term is the difference between the estimator and the actual population parameter.
 
-A way to measure the accuracy of an estimator is to use the *mean squared error*:
+A way to measure the *accuracy* of an estimator is to use the *mean squared error*:
 
 \[
 MSE = \frac{1}{n} \sum_{i=1}^{n} (\hat{\theta} - \theta)^2
@@ -375,20 +403,264 @@ We previously defined the estimate for the mean, now lets take a look at the est
 
 This is an unbiased estimator of $\sigma^2$.
 
+** Minimum Variance Estimators
+We look at all the unbiased estimators of $\theta$, and we choose the one with the smallest variance. This is called the *minimum variance estimator*.
++ The less variance, the more accurate the estimator
+
+The primary influence over the estimator, is still the original distribution.
+
+** Estimator Reporting
+When we report an estimator, we have to report the *standard error* of the estimator. This is the standard deviation of the estimator.
+
++ $\hat{\theta}$ has a normal distribution :: The value of $\theta$ lies within $\pm 2 se$ of $\hat{\theta}$
++ $\hat{\theta}$ has a non-normal distribution :: The value of $\theta$ lies within $\pm 4 se$ of $\hat{\theta}$
+
+* Point Estimation (Methods)
+
+** Method of Moments
+The method of moments is a method to estimate the parameters of a distribution. We use the sample moments to estimate the population moments. In simpler terms, we use the sample statistics to estimate the population parameters.
+
++ What is a moment? A moment is a function of the random variable $X$: $E(X^k)$ (where $k$ is the order of the moment)
+
+The way we go about this is by using the following formula:
+
+\[
+\hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} x_i^k
+\]
+
+**** Example
+Let $X$ be a random variable with a normal distribution with mean $\mu$ and variance $\sigma^2$. We take a random sample of size $n$ from the population, and calculate the sample mean $\bar{x}$. We want to estimate $\mu$ using the method of moments.
+
+Solution:
+
+The first step to solving this problem is to find the sample mean $\bar{x}$:
+
+\[
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\]
+
+The next step is to find the sample variance $s^2$:
+
+\[
+s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
+\]
+
+Now we can use the method of moments to estimate $\mu$:
+
+\[
+\hat{\mu} = \bar{x}
+\]
+
 ** Maximum Likelihood Estimation
 Maximum likelihood estimation is a method of estimating the parameters of a statistical model, given observations. It uses calculus to find the maximum likelihood of the parameters.
 
+First, we need a likelihood function. This is a function of the parameters, which gives the probability of the observations. The likelihood function is defined as:
 
+\[
+L(\theta) = P(X_1, X_2, \dots, X_n | \theta)
+\]
 
+Where $\theta$ is the parameter of the distribution. The likelihood function is the probability of the observations, given the parameter.
 
+The maximum likelihood estimator is the value of the parameter that maximizes the likelihood function. This is represented by the following formula:
+
+\[
+\hat{\theta} = \underset{\theta}{\text{argmax}} L(\theta)
+\]
+
+We will not be using this formula, but it is a good step to understanding. We will take our likelihood function and wrap a natural log around it. This is called the *log-likelihood function*. The log-likelihood function is defined as:
+
+\[
+l(\theta) = \ln L(\theta)
+\]
+
+We will then take the derivative of the log-likelihood function, and set it equal to zero. This will give us the maximum likelihood estimator.
+
+#+BEGIN_QUOTE
+This might seem a bit pointless, but as AI students, this somewhat resembles the process of backpropagation. We take the derivative of the loss function, and set it equal to zero. This gives us the gradient of the loss function, which we can use to update the weights of the neural network. (This is a very basic explanation, but it is a good way to understand the concept)
+#+END_QUOTE
 
 
 * Single Sample Intervals
+[[file:./Animations/cls.mp4][Animation]]
+
+In this section, we will look at confidence intervals for a single sample. This will combine the idea id random variables, and the idea of sampling distributions.
 
 ** Confidence Intervals
-** Mean and Proportion Confidence Intervals
-** Confidence Intervals for Normal Distributions
-** Variance and Standard Deviation Confidence Intervals
+This is a range between two values, which we are P% confident that the population parameter lies in. To better understand this, here is a very 'boilerplate' example:
+
+1. We choose a confidence level, $P$.
+2. We get its z-score
+
+\[
+(\bar{X} - z_P \frac{\sigma}{\sqrt{n}}, \bar{X} + z_P \frac{\sigma}{\sqrt{n}})
+\]
+
+Where $\bar{X}$ is the sample mean, and $\sigma$ is the population standard deviation, therefore $\frac{\sigma}{\sqrt{n}}$ is the standard error.
+
+We can also write this as:
+
+\[
+\bar{X} \pm z_P \frac{\sigma}{\sqrt{n}}
+\]
+
+So what does this tell us? It tells us that we are P% confident that the population mean lies within the interval $\bar{X} \pm z_P \frac{\sigma}{\sqrt{n}}$.
++ The more confident we want to be, the larger the confidence level $P$. But, the larger the confidence level, the larger the interval, the lower the precision.
+
+
+*** Interpretation
+Since we only know $\bar{x}, \sigma \text{ and } n$, we *cannot conclude that* the population mean lies within the interval $\bar{X} \pm z_P \frac{\sigma}{\sqrt{n}}$.
+
+Why? Because we are not using a random sample for the mean. We can only conclude that if we repeated the experiment many times, the result we obtain would occur P% of the time. In other words, *if we get 100 different confidence intervals, $P%$ of them would contain the population mean.*
+
+
+
+#+DOWNLOADED: screenshot @ 2023-03-04 13:30:04
+[[file:./Single_Sample_Intervals/2023-03-04_13-30-04_screenshot.png]]
+
+Diagram of the process of creating confidence intervals and interpreting them:
+#+BEGIN_SRC plantuml :exports none
+@startuml
+(*) --> "1. Choose a confidence level, P"
+--> "2. Get the z-score"
+note left
+<latex>
+z_P = \Phi^{-1}(P)
+</latex>
+end note
+--> "3. Calculate the interval"
+note right
+<latex>
+(\bar{X} - z_P \frac{\sigma}{\sqrt{n}}, \bar{X} + z_P \frac{\sigma}{\sqrt{n}})
+</latex>
+end note
+--> "4. Interpret the interval"
+note left
+Important: We cannot conclude
+that the population mean lies
+within the interval.
+end note
+--> "5. Repeat the experiment"
+note right
+We can only conclude that if we
+repeated the experiment many times,
+the result we obtain would occur P% of the time.
+end note
+@enduml
+#+END_SRC
+
+
+
+file:./Single_Sample_Intervals/inchart.png
+
+
+** Confidence Levels
+Thus far, we used a variable confidence level $P$. But, we can also use a fixed confidence level, such as 95%. This is the same as using a confidence level of 0.95. (You must use the decimal form, not the percentage form.)
+Normaly, the variable which is used to represent the confidence level is $\alpha$. So, we can write the confidence interval as:
+
+\[
+\bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}
+\]
+
+Where $z_{\alpha/2}$ is the z-score for the confidence level $\alpha/2$. Why divide by 2? Because we are looking at the area under the curve on both sides of the mean. So, we are looking at the area under the curve for $\alpha/2$ on each side of the mean.
+
+
+#+DOWNLOADED: screenshot @ 2023-03-04 13:49:22
+[[file:Single_Sample_Intervals/2023-03-04_13-49-22_screenshot.png]]
+
+** Precision and Sample Size
+First, we need to define the width of the interval as: $2*z_P \frac{\sigma}{\sqrt{n}}$. This is the width of the interval.
++ Higher the confidence level, the wider the interval.
++ Higher the sample size, the narrower the interval.
++ Lower the population standard deviation, the narrower the interval.
++ Higher the confidence level, the higher the sample size required to achieve a given precision.
+
+We might want to ensure, that a confidence interval has a certain width. In this case, we can use the following formula:
+
+\[
+n = (2*z_{\alpha/2} \frac{\sigma}{\text{width}})^2
+\]
+
+
+** TODO Derivation of the Confidence Interval
+If we have a random sample of size $n$ from a population, we can construct a confidence interval for some parameter $\theta$ using the following steps:
+1. Check if the conditions are met:
+   + The variable depends on the sample and parameter $\theta$.
+   + The probability distribution of the variable is known.
+* Large Sample Confidence Intervals (Mean & Proportion)
+Previously, we assumed that the population standard deviation $\sigma$ was known and that the population distribution was normal. If we cannot assume these things, we can use the large sample confidence interval.
+** Large Sample Confidence Interval for the Mean
+It goes back to the central limit theorem. If we take a random sample of size $n$ from a population, we can assume that the sample mean $\bar{X}$ is normally distributed. Therefore, we can use the following formula:
+
+\[
+Z = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}}
+\]
+
+Where $\mu$ is the population mean, and $\sigma$ is the population standard deviation. Thus, we can write the confidence interval as:
+
+\[
+\frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \pm z_{\alpha/2}
+\]
+
+\[
+P(\frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \pm z_{\alpha/2}) \approx 1 - \alpha
+\]
+
+the last equation tells us that we are 100% - $\alpha$% confident that the population mean lies within the interval $\frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \pm z_{\alpha/2}$.
+
+
+What happens if we replace $\sigma$ with $s$ in the above equation? Since we adding a new random variable to the denominator, we get that:
++ The confidence interval is wider.
+
+But, if our sample size is large enough, the difference between $\sigma$ and $s$ is small, and the confidence interval is not much wider. *What is large enough?* If $n \geq 40$, then the difference between $\sigma$ and $s$ is small enough.
+
+
+# ** Mean and Proportion Confidence Intervals
+# ** Confidence Intervals for Normal Distributions
+# ** Variance and Standard Deviation Confidence Intervals
+
+* Confidence Intervals (Python)
+We can make our life easier by using Python to calculate confidence intervals. We will use the following packages:
++ scipy.stats
++ numpy
++ pandas
++ matplotlib
+
+
+** Simple Confidence Intervals
+For ease, we will use built-in datasets from pandas, such as the iris dataset. We will use the sepal length of the iris dataset.
+
+#+BEGIN_SRC python :exports both :results output :session *Python*
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+iris = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv")
+sepal_length = iris["sepal_length"]
+print(sepal_length.head())
+#+END_SRC
+
+#+RESULTS:
+: 0    5.1
+: 1    4.9
+: 2    4.7
+: 3    4.6
+: 4    5.0
+: Name: sepal_length, dtype: float64
+
+Now we have, the data. Lets create a confidence interval for the mean of the sepal length. We will use a confidence level of 95%.
+
+#+BEGIN_SRC python :exports both :results output :session *Python*
+interval = stats.norm.interval(0.95, loc=np.mean(sepal_length), scale=np.std(sepal_length))
+print(interval)
+#+END_SRC
+
+#+RESULTS:
+: (4.2257725250400755, 7.460894141626592)
+
+We can see that the confidence interval is between 4.23 and 7.46.
+
 
 * Single Sample Hypothesis Testing
 ** Hypothesis Testing

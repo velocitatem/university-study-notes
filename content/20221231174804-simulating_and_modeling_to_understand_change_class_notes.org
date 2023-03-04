@@ -22,6 +22,17 @@
   def my_function(a, b, c=1, d=2):
       print(a, b, c, d)
   #+END_SRC
++ Global Variables :: This is a variable that can be accessed from anywhere in the code. It is defined outside of any function. Here is an example:
+  #+BEGIN_SRC python
+    x = 1
+    def my_function():
+        global x
+        x = 2
+    my_function()
+    print(x)
+  #+END_SRC
+
+
 ** Lists
 + Adding normal lists :: If we add normal, lists we get a new list with the elements of both lists
   #+BEGIN_SRC python :results output
@@ -53,6 +64,7 @@
   : 75%    2.5  5.5
   : max    3.0  6.0
 
+
 * Introduction
 ** Systems
 A system is a group of objects that work together to achieve a goal. It consists of two environments: the inside and the outside. Each entity in the system has attributes or can do activities. A state can be defined for the system or components of the system. Examples of systems include computer systems, forests, restaurants, and banks. The key components of a system are the entities, attributes, activities, states, and events. Systems can be either discrete or continuous, such as the people in a bank or the water levels in a river.
@@ -77,54 +89,54 @@ Stochastic simulation is a modelling technique which incorporates randomness, ma
 Simulations are typically classified as either static or dynamic. In a static simulation, there is no time variable; the system is unchanging and the same set of conditions is used throughout the simulation. In a dynamic simulation, time is a variable, meaning that the system is constantly changing and the conditions of the simulation can evolve over time.
 
 *** Decision Tree
-#+BEGIN_SRC plantuml
-@startuml
-start
-if (Is there randomness?) then (yes)
-  :Stochastic;
-  if (Is there time?) then (yes)
-    :Dynamic;
-    if (Is there a continuous variable?) then (yes)
-      :Continuous;
-      stop
-    else (no)
-      :Discrete;
-      stop
-    endif
-  else (no)
-    :Static;
-    if (Is there a continuous variable?) then (yes)
-      :Continuous;
-      stop
-    else (no)
-      :Discrete;
-      stop
-    endif
-  endif
-else (no)
-  :Deterministic;
-  if (Is there time?) then (yes)
-    :Dynamic;
-    if (Is there a continuous variable?) then (yes)
-      :Continuous;
-      stop
-    else (no)
-      :Discrete;
-      stop
-    endif
-  else (no)
-    :Static;
-    if (Is there a continuous variable?) then (yes)
-      :Continuous;
-      stop
-    else (no)
-      :Discrete;
-      stop
-    endif
-  endif
-stop
-@enduml
-#+END_SRC
+# #+BEGIN_SRC plantuml
+# @startuml
+# start
+# if (Is there randomness?) then (yes)
+#   :Stochastic;
+#   if (Is there time?) then (yes)
+#     :Dynamic;
+#     if (Is there a continuous variable?) then (yes)
+#       :Continuous;
+#       stop
+#     else (no)
+#       :Discrete;
+#       stop
+#     endif
+#   else (no)
+#     :Static;
+#     if (Is there a continuous variable?) then (yes)
+#       :Continuous;
+#       stop
+#     else (no)
+#       :Discrete;
+#       stop
+#     endif
+#   endif
+# else (no)
+#   :Deterministic;
+#   if (Is there time?) then (yes)
+#     :Dynamic;
+#     if (Is there a continuous variable?) then (yes)
+#       :Continuous;
+#       stop
+#     else (no)
+#       :Discrete;
+#       stop
+#     endif
+#   else (no)
+#     :Static;
+#     if (Is there a continuous variable?) then (yes)
+#       :Continuous;
+#       stop
+#     else (no)
+#       :Discrete;
+#       stop
+#     endif
+#   endif
+# stop
+# @enduml
+# #+END_SRC
 
 
 #+DOWNLOADED: https://www.plantuml.com/plantuml/png/xP0n3i8m34Ntdi9ZUmKwCD25cHEOr5KjDGwANQJU7jEY2Weh4WDJag_thFYhORQ2EoYF2jPJ9iWeROf2gllg7WcK4sbL0EnEbaAFQXngVxvOnf6sl1lD91WNV2CWX2J6CgPHuOgPyJnycE0p3YjNFoArT9clD2X1AMbb6zQGoUYTb9QxOcluHcY_zBtbVFBSSJv75lxt_ktUv_W6 @ 2023-02-25 16:21:50
@@ -269,7 +281,8 @@ A random variable is a variable, with some potential outcomes, that is determine
 + Expected value and variance are given by $E(X) = \lambda$ and $Var(X) = \lambda$
 + We can simulate this in python using =np.random.poisson(lam,n)=
   + To compute the pdf we can use =stats.poisson.pmf(x,lam)=
-
++ Approximation
+  +
 * Continuous Random Variable Simulation
 ** Cumulative Distribution Function
 + This is a function that gives the probability of a continuous random variable taking on a value less than or equal to a specific value.
@@ -421,6 +434,8 @@ In this type of simulation, we model real-world systems as a sequence of discret
 
 We can also answer questions about how efficient a system is or howmany resources are needed to run a system. For example, we can answer questions like "How many employees are needed to run a manufacturing process?" or "How many machines are needed to run a manufacturing process?".
 
++ Warmup Period :: This is a period of time where the simulation is preparing, data is being loaded.
+
 ** Components
 + Entities :: These are the objects that are being modeled. For example, in a manufacturing process, the entities could be products.
 + Events :: These are the actions that are performed on the entities. For example, in a manufacturing process, the events could be the actions that are performed on the products.
@@ -439,6 +454,7 @@ We can also answer questions about how efficient a system is or howmany resource
 
 ** =simpy= Library
 We can create these simulations using =simpy=, a python library for discrete event simulation. We can install it using =pip install simpy=. We can then import it using =import simpy=.
++ The type of simulation is process oriented
 
 The structure of a simulation in =simpy= designed with functional programming is as follows:
 
@@ -465,17 +481,18 @@ This is the process of how to design this simulation:
 3. Run the simulation
 
 
-#+BEGIN_SRC plantuml
-@startuml
-PatientGenerator -> ActivityGenerator: Generates a patient
-ActivityGenerator --> Resource: Requests a nurse
-Resource --> ActivityGenerator: Gives the nurse to the patient
-ActivityGenerator --> QueueTime: Calculates queue time
-QueueTime --> ConsultationTime: Calculates consultation time
-ConsultationTime --> Resource: Releases the nurse
-@enduml
+# #+BEGIN_SRC plantuml
+# @startuml
+# PatientGenerator -> ActivityGenerator: Generates a patient
+# ActivityGenerator --> Resource: Requests a nurse
+# Resource --> ActivityGenerator: Gives the nurse to the patient
+# ActivityGenerator --> QueueTime: Calculates queue time
+# QueueTime --> ConsultationTime: Calculates consultation time
+# ConsultationTime --> Resource: Releases the nurse
+# @enduml
 
-#+END_SRC
+# #+END_SRC
+
 
 
 #+DOWNLOADED: https://www.plantuml.com/plantuml/png/XP1H2i8m38RVUufSO1VOWqpsuAkA5mWrOA5hNPCClBtjDeTQnBVip_VnP-rOC8aEtXnH70KvKA244XCqEzXRSPEJnnQsi8x4W71V55DXq6JvJ1mrMMhpD2gn52LeOZAl5JG_IjoK2-H62myIoyUVlfEIqiKDkR17RzNFLuub1Sanc8sO-Ju6LYyeBePAis_BrVxcgv_qXFnnjZ4TXMjvt2S0 @ 2023-02-25 16:47:11
@@ -489,7 +506,6 @@ Let's say we have a manufacturing process that has 3 machines. We want to know h
   import simpy
   import numpy as np
 
-  # Define the environment
   env = simpy.Environment()
 
   # Define the resources
