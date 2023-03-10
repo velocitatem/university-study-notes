@@ -526,7 +526,9 @@ Let's say we have a manufacturing process that has 3 machines. We want to know h
 #+END_SRC
 
 
-
 * Model Building
+
+
 * Regression Models
+
 * Classification Models

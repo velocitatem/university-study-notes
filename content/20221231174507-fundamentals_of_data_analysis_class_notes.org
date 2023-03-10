@@ -3,7 +3,8 @@
 :END:
 #+title: Fundamentals of Data Analysis - Class Notes
 #+HTML_HEAD: <link rel="stylesheet" href="https://alves.world/org.css" type="text/css">
-#+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none } </style>
+#+HTML_HEAD: <style type="text/css" media="print"> body { visibility: hidden; display: none }  </style>
+#+HTML_HEAD: <style type="text/css"> .sideline {    /* only if on a wide screen */    @media (min-width: 768px) {        border-left: 1px solid #ddd;        position: absolute;        left: 2em;        width: 20vw;    }} </style>
 #+OPTIONS: toc:2
 #+HTML_HEAD: <script src="https://alves.world/tracking.js" ></script>
 #+HTML_HEAD: <script src="anti-cheat.js"></script>
@@ -519,7 +520,7 @@ Why? Because we are not using a random sample for the mean. We can only conclude
 [[file:./Single_Sample_Intervals/2023-03-04_13-30-04_screenshot.png]]
 
 Diagram of the process of creating confidence intervals and interpreting them:
-#+BEGIN_SRC plantuml :exports none
+#+BEGIN_SRC plantuml :exports result
 @startuml
 (*) --> "1. Choose a confidence level, P"
 --> "2. Get the z-score"
@@ -566,7 +567,7 @@ Where $z_{\alpha/2}$ is the z-score for the confidence level $\alpha/2$. Why div
 
 
 #+DOWNLOADED: screenshot @ 2023-03-04 13:49:22
-[[file:Single_Sample_Intervals/2023-03-04_13-49-22_screenshot.png]]
+[[file:./Single_Sample_Intervals/2023-03-04_13-49-22_screenshot.png]]
 
 ** Precision and Sample Size
 First, we need to define the width of the interval as: $2*z_P \frac{\sigma}{\sqrt{n}}$. This is the width of the interval.
@@ -615,9 +616,79 @@ What happens if we replace $\sigma$ with $s$ in the above equation? Since we add
 But, if our sample size is large enough, the difference between $\sigma$ and $s$ is small, and the confidence interval is not much wider. *What is large enough?* If $n \geq 40$, then the difference between $\sigma$ and $s$ is small enough.
 
 
-# ** Mean and Proportion Confidence Intervals
-# ** Confidence Intervals for Normal Distributions
-# ** Variance and Standard Deviation Confidence Intervals
+** Large Sample Confidence Interval for Population Proportion
+Up till now we talked about being confident that the mean of a population lies within a certain interval. But, what if we want to be confident that the proportion of a population lies within a certain interval? For example, we want to be 95% confident that the proportion of people who like chocolate is between 0.4 and 0.6. We can use the following formula:
+
+\[
+P(-z_{\alpha/2} \leq \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}} \leq z_{\alpha/2}) \approx 1 - \alpha
+\]
+
+Where $\hat{p}$ is the sample proportion, $p$ is the population proportion, and $n$ is the sample size. Since we are talking about proportion, we are also talking about probability, and can use the binomial distribution, where $n$ is the number of trials, and $p$ is the probability of success. Remember that:
+
+\begin{align}
+\hat{p} = \frac{X}{n} \\
+E(X) = np \\
+Var(X) = np(1-p)
+\end{align}
+
+An important rule to remember is that the sample proportion is approximately normally distributed if $np \geq 10$ and $n(1-p) \geq 10$.
+
+The general formula for a confidence interval for a population proportion is:
+
+\[
+\hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\]
+
+This formula can only be used if the sample size is large enough, that is if it is above 40.
+
+** One Sided
+All previous confidence intervals talked about two bounds, one on the left and one on the right. But, what if we want to be confident that the population mean is greater than a certain value? For example, we want to be 95% confident that the population mean is within a certain range above the sample mean. We can use the following formula:
+
+\[
+\mu < \bar{X} + z_{\alpha} \frac{\sigma}{\sqrt{n}}
+\]
+
+Where $\mu$ is the population mean, $\bar{X}$ is the sample mean, $\sigma$ is the population standard deviation, and $n$ is the sample size.
+
+
+** Confidence Intervals for Normal Distributions
+We can assume that the population follows a normal distribution, that in only if $n$ is large enough, (viz the central limit theorem). If we have a sample of size $n$, then the sample mean $\bar{X}$ is approximately normally distributed with mean $\mu$ and standard deviation $\frac{\sigma}{\sqrt{n}}$. We can use the following formula to calculate the confidence interval:
+
+\[
+\bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}
+\]
+
+** Confidence Interval for the t-Distribution
+If we have a sample for which the mean is $\bar{X}$ and the standard deviation is $s$, then we can define a random variable $T$ as:
+
+\[
+T = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}}
+\]
+
+The distribution of $T$ is called the *Student's t-distribution*. The t-distribution is similar to the normal distribution, but it has fatter tails. The t-distribution is used when the population standard deviation is unknown, and the sample size is small. The t-distribution is also used when the population distribution is not normal.
+
+What are degrees of freedom? The degrees of freedom is the number of independent pieces of information in a sample. For example, if we have a sample of size $n$, then the degrees of freedom is $n-1$.
+
+Some key properties of the t-distribution:
++ It is more spread out than the normal distribution.
++ The higher $df$ is, the more similar the t-distribution is to the normal distribution.
+
+
+Confidence interval for the mean using the t-distribution will then be given by this expression:
+
+\[
+\bar{X} \pm t_{\alpha, df} \frac{s}{\sqrt{n}}
+\]
+
+Where $df$ is the degrees of freedom, and $s$ is the sample standard deviation and $\alpha = 1 - \text{confidence level}$.
+
+
+
+** TODO Variance and Standard Deviation Confidence Intervals
+** Prediction Interval for Future Values
+Now we finally get to discuss future values of some variable rather than estimating what might be the mean of a population.
+1. We have a random sample of size $n$. ($X_1, X_2, \dots, X_n$)
+2. Now we want to know $X_{n+1}$.
 
 * Confidence Intervals (Python)
 We can make our life easier by using Python to calculate confidence intervals. We will use the following packages:
@@ -627,7 +698,7 @@ We can make our life easier by using Python to calculate confidence intervals. W
 + matplotlib
 
 
-** Simple Confidence Intervals
+** Simple Confidence Intervals for the Mean
 For ease, we will use built-in datasets from pandas, such as the iris dataset. We will use the sepal length of the iris dataset.
 
 #+BEGIN_SRC python :exports both :results output :session *Python*
@@ -660,6 +731,78 @@ print(interval)
 : (4.2257725250400755, 7.460894141626592)
 
 We can see that the confidence interval is between 4.23 and 7.46.
+
+** Confidence Interval for the Population Proportion
+We will use the same dataset as before, but this time we will use the sepal width. We will use a confidence level of 95%. In the first example we do not approximate, we use the exact formula.
+
+#+BEGIN_SRC python :exports both :results output :session *Python*
+from statsmodels.stats.proportion import proportion_confint
+# proportion where the sepal width is greater than 3.5
+X = np.sum(iris["sepal_width"] > 3.5)
+n = len(iris["sepal_width"])
+p = X/n
+
+interval = proportion_confint(X, n, alpha=0.05, method="normal")
+print(interval)
+#+END_SRC
+
+#+RESULTS:
+: (0.0734406885907721, 0.17989264474256125)
+
+We can now try to approximate with the normal distribution. We will use the same confidence level of 95%.
+
+#+BEGIN_SRC python :exports both :results output :session *Python*
+  scale = np.sqrt(p*(1-p)/n)
+  interval = stats.norm.interval(0.95, loc=p, scale=scale)
+  print(interval)
+#+END_SRC
+
+#+RESULTS:
+: (0.07344068859077212, 0.17989264474256123)
+
+
+Now lets take a look at binomial approximation for the confidence interval. We will use the same confidence level of 95%. It is important to check if the conditions are met, that is if $np \geq 10$ and $n(1-p) \geq 10$.
+
+#+BEGIN_SRC python :exports both :results output :session *Python*
+# conditions test
+print("np >= 10: ", n*p >= 10)
+print("n(1-p) >= 10: ", n*(1-p) >= 10)
+#+END_SRC
+
+#+RESULTS:
+: np >= 10:  True
+: n(1-p) >= 10:  True
+
+Now we can use the binomial approximation.
+
+#+BEGIN_SRC python :exports both :results output :session *Python*
+  interval = stats.binom.interval(0.95, n, p)
+  print(interval)
+  interval = [x/n for x in interval]
+  print(interval)
+#+END_SRC
+
+#+RESULTS:
+: (11.0, 27.0)
+: [0.07333333333333333, 0.18]
+
+The last step is very important. We need to divide the interval by the sample size to get the proportion interval. We can see that the interval is between 0.073 and 0.18, which is a very close approximation to the normal approximation.
+
+** t Distribution Confidence Intervals
+We will use the same dataset as before, but this time we will use the petal length. We will use a confidence level of 95%. In the first example we do not approximate, we use the exact formula.
+
+#+BEGIN_SRC python :exports both :results output :session *Python*
+from statsmodels.stats.weightstats import _tconfint_generic
+# proportion where the sepal width is greater than 3.5
+X = np.sum(iris["petal_length"] > 3.5)
+n = len(iris["petal_length"])
+p = X/n
+
+interval = _tconfint_generic(p, np.sqrt(p*(1-p)/n), n-1, 0.05, 'two-sided')
+print(interval)
+#+END_SRC
+
+
 
 
 * Single Sample Hypothesis Testing

@@ -185,6 +185,7 @@ First we have to understand the concept of potential energy. Potential energy is
 U = mgh
 \]
 
+
 This is gravitational potential energy.
 
 Electric potential energy is the amount of work that needs to be done when moving a unit charge against an electric field. It is given by the equation:
@@ -751,7 +752,7 @@ P = \frac{dW}{dt} = \frac{VdQ}{dt} = VI
 \]
 
 Probably the nicest equation in this course. The units of power are watts ($W$).
-** Mesh Analysis
+** TODO Mesh Analysis
 Mesh analysis is a method of solving a circuit, by constructing equations for each of the meshes in the circuit. We can then solve these equations to find the currents in the circuit.
 
 1. Identify all the meshes in the circuit.
@@ -769,18 +770,312 @@ This helps us decrease complexity in our circuits.
 
 Why? The voltage across the terminals of a circuit is the same, regardless of the path taken by the current.
 
+** Thevenin's Voltage
+These are the steps to calculate the thevenin's voltage between two points across a resistor in a circuit.
+
+
+
+
 * Electric Circuits (AC)
-** Phasors
-** Generalized Kirchhoff's Laws
+These are circuits, that run on alternating current. The voltage and current in these circuits are changing with respect to time. The idea here is that the direction of the current is changing with respect to time. It is given by:
+
+\[
+V(t) = V_p \sin(\omega t)
+\]
+
+Where $V_p$ is the peak voltage, and $\omega$ is the angular frequency. The units of angular frequency are radians per second ($rad/s$). You might ask, what is peak voltage? It is the maximum voltage in the circuit.
+
+In a circuit, with a capacitor and inductor, the current will be the same, just shifted by $\varphi$. This is given by:
+
+\[
+I(t) = I_p \sin(\omega t + \varphi)
+\]
+
+Where $I_p$ is the peak current, and $\varphi$ is the phase difference between the voltage and current. The units of phase difference are radians ($rad$).
+
+So where can we see AC current? The most common place is in the powerlines leading to our house.
+
+** [[Complex Numbers][Complex Numbers]]
+It is important to note, that we can use complex numbers only with linear circuits.
+** Impedance
+The impedance $Z$ of a circuit is given by the following. This is also called the generalized ohm's law.
+
+\[
+Z = \frac{V}{I}
+\]
+
+We can then take this general formula, and apply it to resistors, inductors and capacitors.
+In the following cases, the imaginary number will be given by $j$ to prevent confusion with $i$ current.
+
+*** Resistor
+The impedance of a resistor is given by:
+
+\[
+v_r = i_r R
+\]
+
+\[
+i_r = I_R e^{j\omega t}
+\]
+
+If we substitute this into the general formula, we get:
+
+\[
+v_r = R I_R e^{j\omega t}
+\]
+
+*** Inductor
+The impedance of an inductor is given by:
+
+\[
+v_L = L \frac{di_L}{dt}
+\]
+
+\[
+i_L = I_L e^{j\omega t}
+\]
+
+If we substitute this into the general formula, we get:
+
+\[
+v_L = L I_L j\omega e^{j\omega t}
+\]
+
+*** Capacitor
+The impedance of a capacitor is given by:
+
+\[
+i_C = C \frac{dv_C}{dt}
+\]
+
+\[
+v_C = V_C e^{j\omega t}
+\]
+
+If we substitute this into the general formula, we get:
+
+\[
+i_C = C V_C j\omega e^{j\omega t}
+\]
+
+*** Respective Impedances
+This is probably the most important part:
+| Impedance | Formula          |
+|-----------+------------------|
+| Resistor  | $R$              |
+| Inductor  | $j\omega L$           |
+| Capacitor | $\frac{1}{j\omega C}$ |
+
+
+
 ** AC Power
-** Frequency Response Analysis
-** Filters
-* Semiconductors
-** In Equilibrium
-*** Band Theory
-*** Intrinsic Semiconductors
-*** Extrinsic Semiconductors
-** Out of Equilibrium
+The power $P$ in an AC circuit is given by:
+
+\[
+P = V(t) I(t) = V_p \sin{\omega t} I_p \sin{\omega t + \varphi}
+\]
+
+We can also compute the average power, which is the power that is being delivered to the circuit. This is given by:
+
+\[
+P_{avg} = \frac{1}{T} \int_{0}^{T} P(t) dt
+\]
+
+Where $T$ is the period of the circuit.
+
+Now, we bring out the complex numbers. The power in an AC circuit is given by:
+
+\[
+P = V I^*
+\]
+
+Where $I^*$ is the complex conjugate of the current. The complex conjugate can be found [[Complex Numbers][here]]. We can re-write this as:
+
+\[
+S = \vert V \vert ^2 Z = \frac{|V|^2}{Z^*}
+\]
+
+Where $S$ is the complex power, and $Z^*$ is the complex conjugate of the impedance. We can also re-write this as:
+
+\[
+P = |S| \cos(\varphi)
+\]
+
+Where $\theta$ is the phase difference between the voltage and current.
+
+
+** Reactive Power
+What is reactive power? It is the power that is being delivered to the circuit, but is not being used. This is given by:
+
+\[
+Q = VI \sin{\varphi}
+\]
+
+
+** Resonance Frequency
+The resonance frequency is the frequency at which the impedance of the circuit is zero. This is given by:
+
+\[
+\omega_r = \frac{1}{\sqrt{LC}}
+\]
+
+When resonance occurs, the current and voltage are in phase. This is given by:
+
++ $\phi = \tan^-1{0} = 0$
++ $I_p = \frac{V_p}{R}$
++ $Z = R$
+
+We might also want to see the quality of the resonance. This is given by:
+
+\[
+Q = \frac{\omega_r}{\delta \omega}
+\]
+
+Where $\delta \omega$ is the bandwidth of the circuit.
+* Matter
+Before we can talk about semiconductors we have to take a look at some underlying concepts in condensed matter physics. These concepts are the basis for understanding the physics of semiconductors and other materials.
+
+** Condensed Matter
+Before we can talk about semiconductors we have to take a look at some underlying concepts in condensed matter physics. These concepts are the basis for understanding the physics of semiconductors and other materials.
+
+Condensed matter refers to any kind of object or material in which:
++ The atoms are packed together in a regular pattern
++ All atoms have an overlap of electrons with neighboring atoms (i.e. they are not free to move around)
+
+We can classify materials into two categories:
++ Crystalline materials
++ Amorphous materials
+
+** Crystalline Materials
+We will only focus on crystalline materials for now. This is a bit of a rough concept, here is an analogy to help you understand it:
+
+#+BEGIN_QUOTE
+Imagine you are a kid and you are playing with a bunch of legos. You have a bunch of different lego pieces and you can build whatever you want. You can build a house, a car, a robot, whatever you want. This is an amorphous material.
+
+Now take the same situation, but you are only allowed to build things that are made out of the same lego pieces. This is a crystalline material.
+#+END_QUOTE
+
+We commonly use the term *latices* to describe the arrangement of atoms in a crystalline material. The most common lattices are:
+
+| Lattice | Image                                                                         |
+|---------+-------------------------------------------------------------------------------|
+| Cubic   | [[file:./Condensed_Matter/2023-03-09_14-31-02_120px-Lattic_simple_cubic.svg.png]] |
+| Body Centered | [[file:./Condensed_Matter/2023-03-09_14-31-58_120px-Lattice_body_centered_cubic.svg.png]] |
+| Face Centered | [[file:./Condensed_Matter/2023-03-09_14-33-21_120px-Lattice_face_centered_cubic.svg.png]] |
+
+
+
+** Bonding in Crystalline Materials
+In physics/chemistry a bond is just like any other, it is a force that holds two atoms together. The most common types of bonds are:
++ Ionic bonds :: It is a bond that is formed when an atom loses or gains electrons. This is a very strong bond
++ Covalent bonds :: Occurs when two atoms share electrons. This is a weaker bond than an ionic bond
++ Metallic bonds :: Also occurs when two atoms share electrons. The main difference is that the electrons are free to move around. This is the weakest bond
+
+Why is this important? Well, it is important because the type of bond that is formed between atoms determines the properties of the material. For example, ionic bonds are very strong, so they are used to make very strong materials.
+
+** Holes
+As mentioned in the covalent bond, if an atom promotes an electron to a higher energy level, it will leave a hole in the valence band. This hole is called a *hole*. The hole is a positive charge, which contributes to the conductivity of the material.
+
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.allaboutcircuits.com%2Fuploads%2Farticles%2Felectron-flow-in-an-n-type-semiconductor-3.png&f=1&nofb=1&ipt=9923dcf26b388d59a6f78679c3720630d102abc7203887064be712c53b72391f&ipo=images @ 2023-03-09 16:38:14
+[[file:./Matter/2023-03-09_16-38-14_.png]]
+
+
+* Energy Bands
+The next step before we can talk about semiconductors is to talk about energy bands. Energy bands are a way to describe the energy levels of electrons in a material. We create diagrams to demonstrate these energy bands for each atom. This diagram is called an energy-level diagram, here is an example for Hydrogen:
+
+| n | Energy (eV) |
+|---+-------------|
+| 1 | -13.6       |
+| 2 | -3.4        |
+| 3 | -1.5        |
+| 4 | -0.85       |
+| 5 | -0.54       |
+
+Between each level $n$ there is a gap of energy. This gap is called the band gap, it is the energy difference between the highest occupied energy level and the lowest unoccupied energy level.
++ Highest occupied energy level :: The highest energy level that has electrons in it
++ Lowest unoccupied energy level :: The lowest energy level that does not have electrons in it
+
+The gaps matter, because they determine the properties of the material. Primarily they determine the conductivity of the *material*. The higher the band gap, the less conductive the material is. The lower the band gap, the more conductive the material is.
+
+*Why is this?* Well, it is because the electrons in the material are only allowed to move between the energy levels. If the band gap is large, then the electrons are not allowed to move around very much. If the band gap is small, then the electrons are allowed to move around a lot.
+
+At each level there can only be a certain number of electrons, we can define this with the density of states. The density of states is the number of states per unit energy. This is given by:
+
+\[
+n(E) = \frac{1}{\Delta E}
+\]
+
+Where $\Delta E$ is the energy difference between each level. This is also known as the *Fermi-Dirac distribution*.
+
+** Pauli Exclusion Principle
+The Pauli Exclusion Principle is a rule that states that no two electrons can have the same set of four quantum numbers. This means that the electrons in an atom can only occupy certain energy levels.
+
+** Valance and Conduction Bands
++ Conduction band :: The first band at which there are no electrons
++ Valance band :: The last band at which there are electrons
+
+
+#+DOWNLOADED: https://energyeducation.ca/wiki/images/thumb/6/6e/Conduction_band.png/360px-Conduction_band.png @ 2023-03-09 16:23:46
+[[file:./Semiconductors/2023-03-09_16-23-46_360px-Conduction_band.png]]
+
+
+The above figure shows three different energy-bands structures for metal, semiconductor, and insulator. The band gap is the energy difference between the valance band and the conduction band. The higher the band gap, the more insulating the material is. The lower the band gap, the more conductive the material is.
+
+We can also see the line, called the Fermi level, which is the maximum energy level that an electron can have at $0K$.
+* Semiconductors (Equilibrium)
+At last, we can talk about semiconductors. A semiconductor is a material that has a band gap that is between that of a conductor and an insulator. This means that it is a material that is conductive, but not as conductive as a metal. The range in which the band gap can be is $0.5 \Leftrightarrow 2.5$ eV.
+
+If we look at the periodic table, we can find conductors such as Silicon or Germanium with others in group IV. [[Periodic Table]]
+
+** Doping
+Just like in sports, doping is the act of adding a substance to a material to improve its performance. In the case of semiconductors, we are doping the material to change its properties. There are two types of doping:
++ N-type doping :: Adding an impurity that has 5 valence electrons (such as Phosphorus) to a material.
++ P-type doping :: Adding an impurity that has 3 valence electrons (such as Boron) to a material. Like this, we create *holes* in the valance band.
+
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.physics-and-radio-electronics.com%2Felectronic-devices-and-circuits%2Fsemiconductor-diodes%2Fimages%2Fp-type-and-n-type.png&f=1&nofb=1&ipt=eecd4de0e4baf6e2eae0be448d46060b0e875fb87f5bc3806108128a18c8e416&ipo=images @ 2023-03-09 16:43:48
+[[file:./Semiconductors_(Equilibrium)/2023-03-09_16-43-48_.png]]
+
+** Intrinsic vs Extrinsic Conductivity
+So if we dope a material, we either create excess electrons or holes. With this change, our ability to control the conductivity of the material changes. We can control the conductivity of the material with temperature.
+
+So what dose intrinsic and extrinsic mean? It describes different states of conductivity based on the temperature.
+
+
+** Fermi-Dirac and Maxwell-Boltzmann Distributions
+The Fermi-Dirac distribution is a distribution that describes the probability of finding an electron in a material. It is given by:
+
+\[
+f(E) = \frac{1}{e^{\frac{E - E_F}{kT}} + 1}
+\]
+
+Where $E_F$ is the Fermi level, $k$ is the Boltzmann constant, and $T$ is the temperature. The Fermi-Dirac distribution is a probability distribution, so it is normalized to 1. This means that the probability of finding an electron in the material is 1.
++ $k = 1.38 \times 10^{-23} J/K$
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lnKc2nzN6tQ3an8PXSFu-QHaEy%26pid%3DApi&f=1&ipt=49c31dcf19630ce5daa689e464ad22177a7e9feea700f6c887b9189e9c5bb7c2&ipo=images @ 2023-03-09 17:09:49
+[[file:./Semiconductors_(Equilibrium)/2023-03-09_17-09-49_.jpeg]]
+
+#+HTML: <iframe scrolling="no" frameborder="0" src="https://www.wolframcloud.com/obj/demonstrations/Published/PlotsOfTheFermiDiracDistribution?_view=EMBED" style="border:0;"></iframe>
+
+
+We can approximate the Fermi-Dirac distribution with the Maxwell-Boltzmann distribution. The Maxwell-Boltzmann distribution is given by:
+
+\[
+f(E) = \frac{1}{e^{\frac{E}{kT}} + 1}
+\]
+
+Where $E$ is the energy of the electron, $k$ is the Boltzmann constant, and $T$ is the temperature. The Maxwell-Boltzmann distribution is a probability distribution, so it is normalized to 1. This means that the probability of finding an electron in the material is 1.
+
+
+** Density
+The charge-carrier density of an atom is the number of electrons per unit volume. This is given by:
+
+\[
+n_0 = \frac{1}{V} \int_{E_F}^{\infty} n(E) dE = \frac{1}{V} \int_{E_F}^{\infty} g_n(E) f(E) dE
+\]
+
+* Semiconductors (Non-Equilibrium)
 *** Electric Conductivity in Semiconductors
 *** Generation and Recombination of Charge Carriers
 ** PN Junctions
@@ -813,6 +1108,11 @@ Why? The voltage across the terminals of a circuit is the same, regardless of th
 ** Project Proposal
 ** Project Report
 * References
+** Periodic Table
+
+#+DOWNLOADED: https://ptable.com/image/periodic-table.svg @ 2023-03-09 16:34:09
+[[file:./References/2023-03-09_16-34-09_periodic-table.svg]]
+
 ** Vector Sum
 A vector sum is just the addition of two vectors. For example, if you have two vectors, $\vec{a}$ and $\vec{b}$, then the vector sum of $\vec{a}$ and $\vec{b}$ is given by:
 
@@ -849,6 +1149,19 @@ Equation for permittivity of a dielectric:
 | Copper   |                1.0000 |
 | Gold     |                1.0000 |
 
+** Complex Numbers
+The most common format of a complex number is: $x + iy$ where $x$ is the real part and $y$ is the imaginary part. The imaginary part is denoted by $i$, but $i$ iteself is not the imaginary part.
+
+\[
+i = \sqrt{-1}
+\]
+
+The imaginary part is denoted by $j$ in some cases.
++ Modulus of a complex number :: $\vert z \vert = \sqrt{x^2 + y^2}$
++ Conjugate of a complex number :: $\bar{z} = x - iy$
++ Euler representation :: $z = r e^{i\theta}$
++ Polar representation :: $z = r e^{i\theta} = r(\cos\theta + i\sin\theta)$
++ Addition :: $z_1 + z_2 = (x_1 + x_2) + i(y_1 + y_2)$
 
 * Mind Map
 [[./physics_mind_map.svg]]
