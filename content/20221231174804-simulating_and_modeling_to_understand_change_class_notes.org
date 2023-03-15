@@ -16,8 +16,7 @@
 #+HTML: <script src="https://alves.world/fuzzy.js"></script>
 
 
-
-#+HTML: <footer style="height: 20vh;"></footer>
+#+HTML: <a href="https://colab.research.google.com/github/velocitatem/university-study-notes/blob/master/content/20221231174804-simulating_and_modeling_to_understand_change_class_notes.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 * Programming (Python)
 + Optional Arguments :: This is a great way to make code more flexible. It is used in function definitions like so:
