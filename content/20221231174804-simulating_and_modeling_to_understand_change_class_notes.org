@@ -21,12 +21,15 @@
 
 * Programming (Python)
 + Optional Arguments :: This is a great way to make code more flexible. It is used in function definitions like so:
-  #+BEGIN_SRC python
+  #+BEGIN_src ipython :results output
   def my_function(a, b, c=1, d=2):
       print(a, b, c, d)
   #+END_SRC
+
+  #+RESULTS:
+
 + Global Variables :: This is a variable that can be accessed from anywhere in the code. It is defined outside of any function. Here is an example:
-  #+BEGIN_SRC python
+  #+BEGIN_src ipython :results output
     x = 1
     def my_function():
         global x
@@ -35,10 +38,13 @@
     print(x)
   #+END_SRC
 
+  #+RESULTS:
+  : 2
+
 
 ** Lists
 + Adding normal lists :: If we add normal, lists we get a new list with the elements of both lists
-  #+BEGIN_SRC python :results output
+  #+BEGIN_src ipython :results output
   a = [1, 2, 3]
   b = [4, 5, 6]
   c = a + b
@@ -50,7 +56,7 @@
 
 + Numpy *atomic* vector :: This is a vector, that can only store *one* type of data.
 + Dataframe Statistics :: We can get statistics from a dataframe using the describe() function
-  #+BEGIN_SRC python :results output
+  #+BEGIN_src ipython :results output
   import pandas as pd
   df = pd.DataFrame({'a': [1, 2, 3], 'b': [4, 5, 6]})
   print(df.describe())
@@ -170,7 +176,7 @@ A seed is any number that can be used to replicate semi-random experiments and s
 + We get a random like pattern.
 + It is a linear transformation of a previous number
 + Equation: $x_{n} = (a x_{n-1} + c) \mod m$
-#+begin_src python :results output
+#+begin_src ipython :results output
 
   import numpy as np
   def LCM(n, seed, a, c, m):
@@ -209,7 +215,7 @@ To check if we have an actually random generator, we need to test *uniformity* a
 + When we auto-correlate, we need to have a lag
   + This is the number of steps we take ahead in the sequence
 + We can use a pandas data frame:
-#+begin_src python :tangle yes :results file :exports both :noweb yes
+#+begin_src ipython :tangle yes :results file :exports both :noweb yes
   import numpy as np
   import pandas as pd
   import matplotlib.pyplot as plt
@@ -217,17 +223,16 @@ To check if we have an actually random generator, we need to test *uniformity* a
   df = pd.DataFrame(seq, columns=['values'])
   pd.plotting.autocorrelation_plot(df['values'])
   plt.savefig("autocorrelation.png")
-  return "autocorrelation.png"
 #+end_src
 
 #+RESULTS:
-[[file:./autocorrelation.png]]
+[[file:./obipy-resources/6oGzv6.png]]
 
 In the above plot:
 + If the line is within the dashed lines, we fail to reject the null hypothesis
 
 We need a more robust way of assessing if the sequence is independent:
-#+begin_src python :tangle yes :results output :exports both :noweb yes
+#+begin_src ipython :tangle yes :results output :exports both :noweb yes
   acf, confint = statstools.acf(seq, alpha=0.05, nlags=10)
   lbvalue, pvalue = statstools.q_stat(acf[1:], len(seq))
   print("p-value: ", pvalue)
@@ -283,7 +288,6 @@ A random variable is a variable, with some potential outcomes, that is determine
 + We can simulate this in python using =np.random.poisson(lam,n)=
   + To compute the pdf we can use =stats.poisson.pmf(x,lam)=
 + Approximation
-  +
 * Continuous Random Variable Simulation
 ** Cumulative Distribution Function
 + This is a function that gives the probability of a continuous random variable taking on a value less than or equal to a specific value.
@@ -414,17 +418,23 @@ Characteristics:
 ** Using Python
 We will often have to select some categorical value when it comes to MCS. In python, we can make use of =numpy.random.choice()= to do this. This function takes in a list of values and a probability distribution and returns a random value from the list. For example, if we wanted to simulate a coin flip, we could do the following:
 
-#+BEGIN_SRC python
+#+BEGIN_src ipython :results output
   import numpy as np
-  np.random.choice(['heads', 'tails'], p=[0.5, 0.5])
+  print(np.random.choice(['heads', 'tails'], p=[0.5, 0.5]))
 #+END_SRC
+
+#+RESULTS:
+: tails
 
 We do not have to give it the probability distribution, if we do not, it will assume that all values are equally likely. For example, if we wanted to simulate a die roll, we could do the following:
 
-#+BEGIN_SRC python
+#+BEGIN_src ipython :results output
   import numpy as np
-  np.random.choice([1, 2, 3, 4, 5, 6])
+  print(np.random.choice([1, 2, 3, 4, 5, 6]))
 #+END_SRC
+
+#+RESULTS:
+: 4
 
 ** Inferential Statistics
 + We use inferential statistics to make inferences about a population from a sample
@@ -502,7 +512,7 @@ This is the process of how to design this simulation:
 ** Example
 Let's say we have a manufacturing process that has 3 machines. We want to know how many products we can make in a day. We can model this using =simpy= as follows:
 
-#+BEGIN_SRC python
+#+BEGIN_src ipython
   import simpy
   import numpy as np
 
