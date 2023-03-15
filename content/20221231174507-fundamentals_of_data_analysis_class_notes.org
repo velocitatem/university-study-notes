@@ -11,17 +11,26 @@
 #+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 #+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
 
+#+begin_src ipython :session test
+x = [1,2,3,4,5]
+y = [1,4,9,16,25]
+print([a-b for a,b in zip(x,y)])
+#+end_src
 
-#+HTML: <footer style="height: 20vh;"></footer>
+*New* search feature! Make use of the amazing [[https://en.wikipedia.org/wiki/Approximate_string_matching][fuzzy search]] algorithm. Just type in the search box and it will find the closest match in the page. Hit =Enter= to jump to the next match. Lmk if it doesn't work for you.
+#+HTML: <input id="search" type="text" placeholder="Search" /> <span id="resultCount"></span>
+#+HTML: <script src="https://alves.world/fuzzy.js"></script>
+
 
 Useful Resources:
 + [[https://seeing-theory.brown.edu/frequentist-inference/index.html#section1][Seeing Theory - Frequentist Inference]]
++ [[https://online.stat.psu.edu/stat415/][Penn State Notes]]
 
-* Data Manipulation & Python
+* Data Manipulation & ipython
 ** Pandas DataFrames
 It is best to imagine a DataFrame as spreadsheet.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
   import pandas as pd
 
   # Create a DataFrame from a dictionary
@@ -46,7 +55,7 @@ Here are some of the most useful methods for working with DataFrames:
 + =.dtypes= :: returns the data types of each column in the DataFrame
 
 ** Filtering DataFrames
-#+begin_src python
+#+begin_src ipython
   # Create a DataFrame from a dictionary
   df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
                     'age': [34, 25, 67],
@@ -60,7 +69,7 @@ The general syntax for filtering a DataFrame is: =df[condition]=. The =condition
 
 We can also use the =.loc= method to filter a DataFrame. The =.loc= method takes a list of row labels and a list of column labels as arguments. The result is a new DataFrame containing only the rows and columns specified. Here is an example:
 
-#+begin_src python
+#+begin_src ipython
   # Create a DataFrame from a dictionary
   df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
                     'age': [34, 25, 67],
@@ -75,7 +84,7 @@ The main difference between the =.loc= method and the =[]= operator is that the 
 ** =np.where()=
 The =np.where()= function is a vectorized version of the =if= statement. It takes a condition, a value to return if the condition is =True=, and a value to return if the condition is =False=. Here is an example:
 
-#+begin_src python :results output :exports both
+#+begin_src ipython :results output :exports both
   import numpy as np
 
   # Create a NumPy array
@@ -92,7 +101,7 @@ The =np.where()= function is a vectorized version of the =if= statement. It take
 ** Sorting
 We can use the =.sort_values()= method to sort a DataFrame by one or more columns. Here is an example:
 
-#+begin_src python :results output :exports both
+#+begin_src ipython :results output :exports both
   import pandas as pd
   # Create a DataFrame from a dictionary
   df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
@@ -112,7 +121,7 @@ We can use the =.sort_values()= method to sort a DataFrame by one or more column
 ** Grouping
 To avoid redundant filtering and aggregation, we can use the =.groupby()= method to group a DataFrame by one or more columns. Here is an example:
 
-#+begin_src python :results output :exports both
+#+begin_src ipython :results output :exports both
   import pandas as pd
   # Create a DataFrame from a dictionary
   df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
@@ -147,8 +156,8 @@ M    50.5
 Name: age, dtype: float64
 #+end_example
 
-* Python: Descriptive Statistics
-#+begin_src python
+* ipython: Descriptive Statistics
+#+begin_src ipython
 import matplotlib.pyplot as plt
 plt.style.use("seaborn")
 #+end_src
@@ -156,13 +165,13 @@ plt.style.use("seaborn")
 We will be
 
 ** Histograms
-#+begin_src python
+#+begin_src ipython
 df['some_values'].hist(bins=15, edgecolor='white')
 #+end_src
 
 We can also set some other parameters such as the title and labels:
 
-#+begin_src python
+#+begin_src ipython
   plt.title('Some Title')
   plt.xlabel('Some X Label')
   plt.ylabel('Some Y Label')
@@ -171,7 +180,7 @@ We can also set some other parameters such as the title and labels:
 ** Histograms: Side by Side
 If we have two different groups of data, we can plot them side by side:
 
-#+begin_src python
+#+begin_src ipython
   group1 = DataFrame
   group2 = DataFrame
   plt.hist([group1, group2], bins=15, edgecolor='white', label=['Group 1', 'Group 2'])
@@ -181,7 +190,7 @@ If we have two different groups of data, we can plot them side by side:
 ** Bar Plots
 We can also plot bar plots (they are very similar to histograms, but plot the frequency of categorical data):
 
-#+begin_src python
+#+begin_src ipython
   categories = ['A', 'B', 'C', 'D']
   frequencies = [10, 20, 30, 40]
   plt.bar(categories, frequencies, edgecolor='white')
@@ -190,7 +199,7 @@ We can also plot bar plots (they are very similar to histograms, but plot the fr
 ** Box Plots
 Box plots are a great way to visualize the distribution of data. They are very useful for comparing different groups of data.
 
-#+begin_src python
+#+begin_src ipython
   plt.boxplot([group1, group2])
   plt.xticks([1, 2], ['Group 1', 'Group 2'])
 #+end_src
@@ -198,7 +207,7 @@ Box plots are a great way to visualize the distribution of data. They are very u
 ** Annotations
 We can also add annotations to our plots:
 
-#+begin_src python
+#+begin_src ipython
   plt.annotate('Some Text', xy=(x, y), xytext=(x, y), arrowprops={'arrowstyle': '->'})
 #+end_src
 
@@ -207,20 +216,20 @@ The =xy= and =xytext= parameters are the coordinates of the text and the arrow, 
 ** Centrality and Spread
 We can use the =mean= and =median= functions to calculate the mean and median of a dataset:
 
-#+begin_src python
+#+begin_src ipython
   mean = df['some_values'].mean()
   median = df['some_values'].median()
 #+end_src
 
 We can also use the =std= function to calculate the standard deviation:
 
-#+begin_src python
+#+begin_src ipython
   std = df['some_values'].std()
 #+end_src
 
 To get a summary of the descriptive statistics of a dataset, we can use the =describe= function:
 
-#+begin_src python
+#+begin_src ipython
   df['some_values'].describe()
 #+end_src
 
@@ -259,6 +268,9 @@ For example, the sample mean of a distribution, before we actually take the samp
 Since any statistic can also be a random variable, we can make distributions for these random variables. This distribution, is called the *sampling distribution*.
 
 ** Random Samples
+#+HTML: <center>
+#+HTML: <iframe class="centeredIframe" scrolling="NO" src="https://www.statcrunch.com/app/index.html?launch=scapps&amp;app=samplingdist&amp;dist=uniform&amp;firststat=0&amp;secondstat=1" title="Sampling distributions applet" width="650" height="700" frameborder="0"></iframe>
+#+HTML: </center>
 So what determines the distribution of a statistic? It is determined by the *random samples* that we take from the population. If we take a random sample from a population, and calculate the statistic, we get a value. If we take another random sample, and calculate the statistic, we get another value. And so on.
 
 The key factors which determine the distribution of a statistic are:
@@ -274,7 +286,7 @@ These conditions will be satisfied if:
 Generally, if at most, we sample 5% of the populations, we can assume that the X_i distribution is a random sample.
 
 Here is an implementation of the example 5.12 from the book:
-#+begin_src python
+#+begin_src ipython
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -334,6 +346,16 @@ The central limit theorem states that the sampling distribution of the sample me
 |------------+-------------+--------|
 | Normal     | Any         | Normal |
 | Unknown    | Huge        | Normal |
+
+We can infer from the CLT, that with a higher $n$, we will have a lower standard error.
+
+\[
+\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}
+\]
+
+The conditions to satisfy the CLT if the population is not normal are:
++ The population must be *unimodal*
++ The sample size must be large enough (usually $n \geq 30$)
 
 ** Linear Combinations
 If we have a random variable $X$, and come constants $c$, we can define a new random variable $Y$ as a linear combination of $X$ and $c$:
@@ -402,7 +424,42 @@ We previously defined the estimate for the mean, now lets take a look at the est
 \hat{\sigma}^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
 \]
 
-This is an unbiased estimator of $\sigma^2$.
+This is an unbiased estimator of $\sigma^2$. This is because the expected value of the estimator is equal to the population parameter: $E(\hat{\sigma}^2) = \sigma^2$. Really? How? Well, we can use the *linearity of expectation* to show that:
+
+\[
+E(S^2)=E\left[\dfrac{\sigma^2}{n-1}\cdot \dfrac{(n-1)S^2}{\sigma^2}\right]=\dfrac{\sigma^2}{n-1} E\left[\dfrac{(n-1)S^2}{\sigma^2}\right]=\dfrac{\sigma^2}{n-1}\cdot (n-1)=\sigma^2
+\]
+
+Here it is demonstrated in ipython:
+
+#+BEGIN_SRC ipython :results output
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate 1000 samples from a normal distribution
+samples = np.random.normal(0, 1, 1000)
+
+# Calculate the sample mean
+sample_mean = np.mean(samples)
+
+# Calculate the sample variance
+sample_variance = np.var(samples, ddof=1)
+
+# linearity of expectation
+E_hat_sigma_squared = (1/(len(samples)-1)) * np.sum(np.var(samples, ddof=1))
+
+# Print the results
+print("Sample Mean: {}".format(sample_mean))
+print("Sample Variance: {}".format(sample_variance))
+print("E(hat(sigma)^2): {}".format(E_hat_sigma_squared))
+#+END_SRC
+
+#+RESULTS:
+: Sample Mean: 0.05227371951431922
+: Sample Variance: 1.0050258720852923
+: E(hat(sigma)^2): 0.0010060319039892815
+
+
 
 ** Minimum Variance Estimators
 We look at all the unbiased estimators of $\theta$, and we choose the one with the smallest variance. This is called the *minimum variance estimator*.
@@ -429,6 +486,8 @@ The way we go about this is by using the following formula:
 \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} x_i^k
 \]
 
+Where $k$ is the order of the moment, and $x_i$ is the $i^{th}$ observation.
+
 **** Example
 Let $X$ be a random variable with a normal distribution with mean $\mu$ and variance $\sigma^2$. We take a random sample of size $n$ from the population, and calculate the sample mean $\bar{x}$. We want to estimate $\mu$ using the method of moments.
 
@@ -440,11 +499,15 @@ The first step to solving this problem is to find the sample mean $\bar{x}$:
 \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
 \]
 
+In the above equation we can clearly demonstrate how the method of moments applies. In fact, the definition of the method of moments, if we set $k=1$ is the mean of the sample: $\frac{1}{n} \sum_{i=1}^{n} x_i$.
+
 The next step is to find the sample variance $s^2$:
 
 \[
 s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
 \]
+
+For the above, we can see that the method of moments applies again. If we set $k=2$ and consider $x_i$ to be $x_i - \bar{x}$, we get the sample variance. There is of course the matter of the $-1$ in the denominator, this can be explained by the fact that the sample variance is an *unbiased* estimator of the population variance.
 
 Now we can use the method of moments to estimate $\mu$:
 
@@ -453,6 +516,9 @@ Now we can use the method of moments to estimate $\mu$:
 \]
 
 ** Maximum Likelihood Estimation
+
+[[./mle.png]]
+
 Maximum likelihood estimation is a method of estimating the parameters of a statistical model, given observations. It uses calculus to find the maximum likelihood of the parameters.
 
 First, we need a likelihood function. This is a function of the parameters, which gives the probability of the observations. The likelihood function is defined as:
@@ -462,6 +528,14 @@ L(\theta) = P(X_1, X_2, \dots, X_n | \theta)
 \]
 
 Where $\theta$ is the parameter of the distribution. The likelihood function is the probability of the observations, given the parameter.
+
+How can we get this probability? We can use the following formula:
+
+\[
+L(\theta) = \prod_{i=1}^{n} f(x_i | \theta)
+\]
+
+Where $f(x_i | \theta)$ is the probability density function of the distribution, given the parameter $\theta$. $x_i$ is the $i^{th}$ statistic of the sample.
 
 The maximum likelihood estimator is the value of the parameter that maximizes the likelihood function. This is represented by the following formula:
 
@@ -481,6 +555,76 @@ We will then take the derivative of the log-likelihood function, and set it equa
 This might seem a bit pointless, but as AI students, this somewhat resembles the process of backpropagation. We take the derivative of the loss function, and set it equal to zero. This gives us the gradient of the loss function, which we can use to update the weights of the neural network. (This is a very basic explanation, but it is a good way to understand the concept)
 #+END_QUOTE
 
+* Point Estimation (Python)
+For ease, we will use built-in datasets from pandas, such as the iris dataset. We will use the sepal length of the iris dataset.
+
+
+#+begin_src ipython :tangle yes :results output :exports both :noweb yes :session fda
+  import pandas as pd
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from scipy import stats
+  iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
+  # craete a random sample of size 60
+  sample = iris.sample(60)
+#+end_src
+
+#+RESULTS:
+
+We will try to estimate the mean of the sepal length of the iris dataset. We will use the method of moments to estimate the mean.
+
+#+begin_src ipython :tangle yes :results output :exports both :noweb yes :session fda
+  sepal_length = iris['sepal_length']
+  mean = sepal_length.mean()
+  print(mean)
+#+end_src
+
+#+RESULTS:
+: 5.843333333333334
+
+We now know the actual mean of the sepal length of the iris dataset. We will now try to estimate the mean using the method of moments.
+
+#+begin_src ipython :tangle yes :results output :exports both :noweb yes :session fda
+  # \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} x_i^k
+  # we use the sample
+  mean = sample['sepal_length'].sum() / sample['sepal_length'].size
+  print(mean)
+#+end_src
+
+#+RESULTS:
+: 5.691666666666666
+
+Now, we will try to estimate the variance using the maximum likelihood estimator.
+
+#+begin_src ipython :tangle yes :results output :exports both :noweb yes :session fda
+  iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
+  # craete a random sample of size 60
+  n = 10
+  samples = [iris.sample(n*2) for i in range(n)]
+  variances = [sample['sepal_length'].var() for sample in samples]
+
+  # we get the probability density function for each variance
+  f = [stats.norm.pdf(variances[i], iris['sepal_length'].var(), iris['sepal_length'].std()) for i in range(n)]
+
+  # we get the log of the probability density function
+  f_log = np.log(f)
+
+  # we get the maximum likelihood estimator
+  mle = variances[f_log.argmax()]
+
+  # instead of argmax, we could use the following method using derivatives:
+  # 1. we get the derivative of the log-likelihood function
+  # 2. we set the derivative equal to zero
+  # 3. we solve for the variance
+
+  # we can express the estimated variance as a sum of the actual variance and the error
+  print(f"Estimated variance: {mle}, Actual variance: {iris['sepal_length'].var()}")
+  print("Error: ", mle - iris['sepal_length'].var())
+#+end_src
+
+#+RESULTS:
+: Estimated variance: 0.680421052631579, Actual variance: 0.6856935123042507
+: Error:  -0.005272459672671648
 
 * Single Sample Intervals
 [[file:./Animations/cls.mp4][Animation]]
@@ -520,7 +664,7 @@ Why? Because we are not using a random sample for the mean. We can only conclude
 [[file:./Single_Sample_Intervals/2023-03-04_13-30-04_screenshot.png]]
 
 Diagram of the process of creating confidence intervals and interpreting them:
-#+BEGIN_SRC plantuml :exports result
+#+BEGIN_SRC plantuml :exports none
 @startuml
 (*) --> "1. Choose a confidence level, P"
 --> "2. Get the z-score"
@@ -582,6 +726,7 @@ We might want to ensure, that a confidence interval has a certain width. In this
 n = (2*z_{\alpha/2} \frac{\sigma}{\text{width}})^2
 \]
 
+The application of this
 
 ** TODO Derivation of the Confidence Interval
 If we have a random sample of size $n$ from a population, we can construct a confidence interval for some parameter $\theta$ using the following steps:
@@ -684,14 +829,81 @@ Where $df$ is the degrees of freedom, and $s$ is the sample standard deviation a
 
 
 
-** TODO Variance and Standard Deviation Confidence Intervals
 ** Prediction Interval for Future Values
 Now we finally get to discuss future values of some variable rather than estimating what might be the mean of a population.
 1. We have a random sample of size $n$. ($X_1, X_2, \dots, X_n$)
 2. Now we want to know $X_{n+1}$.
 
+\[
+E(\bar{X} - X_{n+1}) = 0
+\]
+
+\[
+Var(\bar{X} - X_{n+1}) = \frac{\sigma^2}{n} + \sigma^2 = \sigma^2(1 + \frac{1}{n})
+\]
+
+Given the above, we can calculate a z-score for the confidence interval:
+
+\[
+Z = \frac{(\bar{X} - X_{n+1}) - 0}{\sigma^2 \frac{1}{\sqrt{n}}}
+\]
+
+...
+
+\[
+T = \frac{(\bar{X} - X_{n+1})}{S\sqrt{1 \frac{1}{n}}}
+\]
+
+
+From this, we can build a confidence interval for the future value of $X_{n+1}$:
+
+\[
+\bar{x} \pm t_{\alpha, df} s \sqrt{1 + \frac{1}{n}}
+\]
+
+We interpret this the same way as we did for the confidence interval for the mean. We are 95% confident that for multiple iterations, the future value of $X_{n+1}$ will be between the two bounds.
+
+
+** Bootstrap
+** Variance and Standard Deviation Confidence Intervals
+If we have a normal distribution, we might also be interested in finding the variance of the population if we do not have it. Given a sample of size $n$, we can define a random variable as follows:
+
+\[
+\frac{(n-1)s^2}{\sigma^2} = \frac{\sum(X_i - \bar{X})^2}{\sigma^2}
+\]
+
+Where $s$ is the sample standard deviation, and $\sigma$ is the population standard deviation. The distribution of this random variable is called the *chi-squared distribution*. The chi-squared distribution is used to find confidence intervals for the variance of a population.
+
+For this distribution, we must also define the degrees of freedom. The degrees of freedom is $n-1$.
+
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Fwww.allaboutlean.com%2Fwp-content%2Fuploads%2F2015%2F08%2FChi-squared-Distribution.png%3Ffit%3D724%252C482%26ssl%3D1&f=1&nofb=1&ipt=d1214ca8c146faba3ec2cea71d64f71a962a6bf8f9f62464ee7bd3bd5a04a0c2&ipo=images @ 2023-03-11 12:13:02
+[[file:Large_Sample_Confidence_Intervals_(Mean_&_Proportion)/2023-03-11_12-13-02_.png]]
+
+Key properties of the chi-squared distribution:
++ It is more spread out than the normal distribution.
++ Only positive values are possible.
++ The higher $df$ is, the more similar the chi-squared distribution is to the normal distribution.
+
+
+Finally, the confidence interval will look like this:
+
+\[
+\frac{(n-1)s^2}{\chi^2_{\alpha/2, df}} \leq \sigma^2 \leq \frac{(n-1)s^2}{\chi^2_{1-\alpha/2, df}}
+\]
+
+We now have to calculate the confidence interval for the variance of the population. We can do this by using the following formula:
+
++ Lower bound: $\frac{(n-1)s^2}{\chi^2_{\alpha/2, df}}$
++ Upper bound: $\frac{(n-1)s^2}{\chi^2_{1-\alpha/2, df}}$
+
+
+Where $\chi^2_{\alpha/2, df}$ is the $\alpha/2$ percentile of the chi-squared distribution with $df$ degrees of freedom.
+
+We can also calculate the confidence interval for the standard deviation of the population. We can do this by using the following formula:
+
 * Confidence Intervals (Python)
-We can make our life easier by using Python to calculate confidence intervals. We will use the following packages:
+We can make our life easier by using ipython to calculate confidence intervals. We will use the following packages:
 + scipy.stats
 + numpy
 + pandas
@@ -701,11 +913,12 @@ We can make our life easier by using Python to calculate confidence intervals. W
 ** Simple Confidence Intervals for the Mean
 For ease, we will use built-in datasets from pandas, such as the iris dataset. We will use the sepal length of the iris dataset.
 
-#+BEGIN_SRC python :exports both :results output :session *Python*
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
+
 
 iris = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv")
 sepal_length = iris["sepal_length"]
@@ -722,7 +935,7 @@ print(sepal_length.head())
 
 Now we have, the data. Lets create a confidence interval for the mean of the sepal length. We will use a confidence level of 95%.
 
-#+BEGIN_SRC python :exports both :results output :session *Python*
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
 interval = stats.norm.interval(0.95, loc=np.mean(sepal_length), scale=np.std(sepal_length))
 print(interval)
 #+END_SRC
@@ -735,7 +948,7 @@ We can see that the confidence interval is between 4.23 and 7.46.
 ** Confidence Interval for the Population Proportion
 We will use the same dataset as before, but this time we will use the sepal width. We will use a confidence level of 95%. In the first example we do not approximate, we use the exact formula.
 
-#+BEGIN_SRC python :exports both :results output :session *Python*
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
 from statsmodels.stats.proportion import proportion_confint
 # proportion where the sepal width is greater than 3.5
 X = np.sum(iris["sepal_width"] > 3.5)
@@ -749,9 +962,14 @@ print(interval)
 #+RESULTS:
 : (0.0734406885907721, 0.17989264474256125)
 
+The =method= parameter can be either =normal= or =wilson=.
++ =normal= uses the normal approximation. We use this one if $np \geq 10$ and $n(1-p) \geq 10$.
++ =wilson= uses the Wilson score interval. If the conditions are not met, we use this one.
+
+
 We can now try to approximate with the normal distribution. We will use the same confidence level of 95%.
 
-#+BEGIN_SRC python :exports both :results output :session *Python*
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
   scale = np.sqrt(p*(1-p)/n)
   interval = stats.norm.interval(0.95, loc=p, scale=scale)
   print(interval)
@@ -763,7 +981,7 @@ We can now try to approximate with the normal distribution. We will use the same
 
 Now lets take a look at binomial approximation for the confidence interval. We will use the same confidence level of 95%. It is important to check if the conditions are met, that is if $np \geq 10$ and $n(1-p) \geq 10$.
 
-#+BEGIN_SRC python :exports both :results output :session *Python*
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
 # conditions test
 print("np >= 10: ", n*p >= 10)
 print("n(1-p) >= 10: ", n*(1-p) >= 10)
@@ -775,7 +993,7 @@ print("n(1-p) >= 10: ", n*(1-p) >= 10)
 
 Now we can use the binomial approximation.
 
-#+BEGIN_SRC python :exports both :results output :session *Python*
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
   interval = stats.binom.interval(0.95, n, p)
   print(interval)
   interval = [x/n for x in interval]
@@ -791,7 +1009,7 @@ The last step is very important. We need to divide the interval by the sample si
 ** t Distribution Confidence Intervals
 We will use the same dataset as before, but this time we will use the petal length. We will use a confidence level of 95%. In the first example we do not approximate, we use the exact formula.
 
-#+BEGIN_SRC python :exports both :results output :session *Python*
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
 from statsmodels.stats.weightstats import _tconfint_generic
 # proportion where the sepal width is greater than 3.5
 X = np.sum(iris["petal_length"] > 3.5)
@@ -802,7 +1020,156 @@ interval = _tconfint_generic(p, np.sqrt(p*(1-p)/n), n-1, 0.05, 'two-sided')
 print(interval)
 #+END_SRC
 
+** Prediction Interval for Future Values
+We will use the same dataset as before, but this time we will use the petal width. We will use a confidence level of 95%. In this example we are trying to predict the future value of the petal width.
 
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
+  from statsmodels.stats.weightstats import _tconfint_generic
+
+
+  sample_mean = np.mean(iris["petal_width"])
+  sample_std = np.std(iris["petal_width"])
+  n = len(iris["petal_width"])
+  alpha = 0.05
+
+  t_score = stats.t.ppf(1-alpha/2, n-1) # t score for 95% confidence
+  interval = (sample_mean - t_score*sample_std/np.sqrt(n), sample_mean + t_score*sample_std/np.sqrt(n))
+  print(interval)
+#+END_SRC
+
+#+RESULTS:
+: (1.0767639167319225, 1.3219027499347447)
+
+So we can now be 95% confident that the future value of the petal width will be between 1.08 and 1.32.
+How can we validate this? We can use the bootstrap method.
+
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
+  from sklearn.utils import resample
+
+  # bootstrap
+  n_iterations = 1000
+  n_size = int(len(iris["petal_width"]) * 0.50)
+  medians = list()
+  for i in range(n_iterations):
+    s = resample(iris["petal_width"], n_samples=n_size)
+    m = np.mean(s)
+    medians.append(m)
+
+  interval = np.percentile(medians, [2.5, 97.5])
+  print(interval)
+#+END_SRC
+
+#+RESULTS:
+: [1.02796667 1.36133333]
+
+
+
+
+
+
+** Confidence Interval for the Population Variance
+We will use the same dataset as before, but this time we will use the petal width. We will use a confidence level of 95%.
+
+#+BEGIN_SRC ipython :exports both :results output :session *Python*
+  s = np.std(iris["petal_width"])
+  var = s**2
+  n = len(iris["petal_width"])
+  alpha = 0.05
+  ucl = (n-1)*var/stats.chi2.ppf(alpha/2, n-1)
+  lcl = (n-1)*var/stats.chi2.ppf(1-alpha/2, n-1)
+  inteval = (lcl, ucl)
+  print(interval)
+#+END_SRC
+
+#+RESULTS:
+: (117.09798286232113, 184.68695493443445)
+
+
+* Midterm Review
+This is a review of the key concepts mentioned in the notes thus far. It is not a complete list of all the concepts that will be on the midterm. It is meant to be a guide to help you study for the midterm.
+
+** Random Variables
+Its a bit like musical chairs, as the music plays, we do not know the final outcome of the people that will end up sitting. Using this analogy, a random sample is a subset of the population that we are interested in. The random variable comes once we use that random sample to compute some statistic.
++ A random variable is a variable whose value is determined by chance.
++ A random variable can be discrete or continuous.
++ When is it representative?
+  + No replacement sampling
+  + Large enough size (at most 5%)
+
+\begin{align}
+\mu_\bar{x} &= \mu \\
+\sigma_\bar{x} &= \frac{\sigma}{\sqrt{n}}
+\end{align}
+
+The variance of a random variable is called the *standard error*.
+
+** Central Limit Theorem
+If we take a sampling distribution of the sample mean. As long as the following are true, the sampling distribution of the sample mean will be approximately normal:
++ The population is uni-modal
++ Our sample size is large enough ($n \geq 30$)
+
+
+** Estimation
+We try to estimate some population parameter using a sample statistic.
+
+\[
+\hat{\theta} = \theta + \epsilon
+\]
+
+Where $\epsilon$ is the error term. The error term is the difference between the population parameter and the sample statistic.
+
+
++ Method of Moments :: We can use this method to computer the estimate given the following formula: $\hat{\theta} = \frac{1}{n}\sum_{i=1}^n x_i^k$. All we need is the *order of the moment* and $x$, the sample.
++ Maximum Likelihood Estimator ::
+
+** Confidence Interval Distributions
+It is important to know which distribution to use when constructing a confidence interval for some population parameter.
+
+#+BEGIN_SRC plantuml :exports none
+@startuml
+start
+if (Sample Size >= 30) then (yes)
+  if (Estimating Mean) then (yes)
+    :Normal;
+    stop
+  else (no)
+    if (Estimating Proportion) then (yes)
+      :Normal;
+      stop
+    else (no)
+      if (Estimating Variance) then (yes)
+        :Chi-Squared;
+        stop
+      else (no)
+        stop
+      endif
+    endif
+  endif
+else (no)
+  if (Estimating Mean) then (yes)
+    :t;
+    stop
+  else (no)
+    if (Estimating Proportion) then (yes)
+      :Binomial;
+      stop
+    else (no)
+      if (Estimating Variance) then (yes)
+        :Chi-Squared;
+        stop
+      else (no)
+        stop
+      endif
+    endif
+  endif
+@enduml
+#+END_SRC
+
+[[file:./confint-dist-decision.png]]
+
+
+
+* Midterm
 
 
 * Single Sample Hypothesis Testing

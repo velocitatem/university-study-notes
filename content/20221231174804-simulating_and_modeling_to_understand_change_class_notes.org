@@ -11,6 +11,9 @@
 #+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
 
 
+*New* search feature! Make use of the amazing [[https://en.wikipedia.org/wiki/Approximate_string_matching][fuzzy search]] algorithm. Just type in the search box and it will find the closest match in the page. Hit =Enter= to jump to the next match. Lmk if it doesn't work for you.
+#+HTML: <input id="search" type="text" placeholder="Search" /> <span id="resultCount"></span>
+#+HTML: <script src="https://alves.world/fuzzy.js"></script>
 
 
 
@@ -63,7 +66,6 @@
   : 50%    2.0  5.0
   : 75%    2.5  5.5
   : max    3.0  6.0
-
 
 * Introduction
 ** Systems
@@ -241,7 +243,6 @@ A key point here, is the difference between correlation and autocorrelation.
 
 
 
-
 * Discrete Random Variable Simulation
 A random variable is a variable, with some potential outcomes, that is determined by their respective probabilities.
 + Probability Mass Function :: This is a function that gives the probability of a discrete random variable taking on a specific value.
@@ -379,7 +380,6 @@ How do we know which distribution to use? We can use the following table to help
 
 
 file:./Choosing_the_right_distribution/plot.png
-
 
 * Monte Carlo Method
 First, what is the Monte Carlo method? It is the aggregation of multiple simulations, to infer something.
@@ -525,10 +525,187 @@ Let's say we have a manufacturing process that has 3 machines. We want to know h
   env.run(until=1)
 #+END_SRC
 
-
 * Model Building
 
 
 * Regression Models
+We start of with SLR (Simple linear regression). There are 3 key steps in this process:
+1. Build the model
+2. Evaluate the model
+3. Use the model
 
+We have two types of basic models, deterministic and probabilistic:
++ Deterministic model :: Describes an exact relationship between the independent and dependent variables: $y = \beta_0 + \beta_1 x$
++ Probabilistic model :: It builds ontop of the deterministic model by adding a random component to the model: $y = \beta_0 + \beta_1 x + \epsilon$
+
+** Probabilistic Model
+The random component is called the error term, it adds an element of randomness to the model. For an ideal model, the error term should be normally distributed with a mean of 0.
+
+We mix this with a bit of statistics, we have the population parameters $\sigma^2_\epsilon$, $\beta_0$, and $\beta_1$. The best we can do is use estimators: $\hat{\sigma}^2_\epsilon$, $\hat{\beta}_0$, and $\hat{\beta}_1$.
+
+** Least Squares
+Say we collect some data from a sample. We now want to build a model that best fits the data. We can do this by minimizing the sum of the squared errors. This is called the least squares method.
+
+The first step in processing this data, is to create a scatter plot of the data. We can then draw a line of best fit through the data. To obtain the equation of that line, we can use the following formulas. We will be using a deterministic example.
+
+The equation:
+
+\[
+\bar{y} = \hat{\beta}_0 + \hat{\beta}_1 \bar{x}
+\]
+
+Sample data:
+| x | y |
+|---+---|
+| 1 | 1 |
+| 2 | 1 |
+| 3 | 2 |
+| 4 | 2 |
+| 5 | 4 |
+
+The formulas to compute $\hat{\beta}_0$ and $\hat{\beta}_1$ are as follows:
+
+\[
+\hat{\beta}_1 = \frac{SS_{xy}}{SS_{xx}}
+\]
+
+\[
+\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}
+\]
+
+Where:
+
+\[
+SS_{xy} = \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})
+\]
+
+\[
+SS_{xx} = \sum_{i=1}^n (x_i - \bar{x})^2
+\]
+
+
+Lets apply this to our example:
+
+#+begin_src ipython :session session01 :exports both :results file
+  import numpy as np
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  import seaborn as sns
+
+  # Create the data
+  x = np.array([1, 2, 3, 4, 5])
+  y = np.array([1, 1, 2, 2, 4])
+
+  # Create the dataframe
+  df = pd.DataFrame({'x': x, 'y': y})
+
+  # Create the scatter plot
+  sns.scatterplot(x='x', y='y', data=df)
+  plt.savefig('scatter_plot.png')
+  print("scatter_plot.png")
+#+end_src
+
+#+RESULTS:
+[[file:./obipy-resources/K8y6k9.png]]
+
+Lets compute the sample mean of x and y:
+
+#+begin_src ipython :session session01 :file ./ipython-TfpviU.png :exports both :results output
+  x_bar = np.mean(x)
+  y_bar = np.mean(y)
+  print(x_bar, y_bar)
+#+end_src
+
+#+RESULTS:
+: 3.0 2.0
+
+We now have everything to compute the coefficients $\hat{\beta}_0$ and $\hat{\beta}_1$:
+
+#+begin_src ipython :session session01 :file ./ipython-6EN8Mx.png :exports both :results output
+  beta_hat_1 = np.sum((x - x_bar) * (y - y_bar)) / np.sum((x - x_bar)**2)
+  beta_hat_0 = y_bar - beta_hat_1 * x_bar
+
+  print(f"y = {beta_hat_0} + {beta_hat_1} * x")
+
+#+end_src
+
+#+RESULTS:
+: y = -0.09999999999999964 + 0.7 * x
+
+And we can plot this line of best fit:
+
+#+begin_src ipython :session session01 :exports both :results file
+  sns.scatterplot(x='x', y='y', data=df)
+  plt.plot(x, beta_hat_0 + beta_hat_1 * x, color='red')
+  plt.savefig('scatter_plot_with_line.png')
+  print("scatter_plot_with_line.png")
+#+end_src
+
+#+RESULTS:
+[[file:./obipy-resources/ZousAl.png]]
+
+With this, we have created a LSRL (Least Squares Regression Line). We can use this to make predictions. This kind of model, should primarily be used within the range of the data. If we want to make predictions outside of the range of the data, we should use a different model.
+
+Confidence in the model can be measured using the coefficient of determination ($R^2$). This is a measure of how well the model fits the data. The closer the value is to 1, the better the model fits the data. The value is always between 0 and 1.
+
+
+** Random Error
+Might have guessed already, the random error $\epsilon$ is a distribution. Lets start with some assumptions:
++ $\epsilon$ is normally distributed $N(\mu, \sigma^2)$
++ $\epsilon$ is independent of $x$
+
+What is left for us to figure out is the variance of epsilon.
++ We know that it will be constant for all values of $x$ (homoscedasticity) [fn:homoscedasticity: This is a fancy way of saying that the variance is the same for all values of x]
+
+We can use the following formula to compute the variance of $\epsilon$:
+
+\[
+\sigma^2_\epsilon = \frac{1}{n-2} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+\]
+
+
+If we return to our example, we can compute the variance of $\epsilon$:
+
+#+begin_src ipython :session session01 :file ./ipython-HRz6dP.png :exports both :results output
+  y_hat = beta_hat_0 + beta_hat_1 * x
+  epsilon = y - y_hat
+  epsilon_var = np.sum((y - y_hat)**2) / (len(x) - 2)
+  print(epsilon_var)
+#+end_src
+
+#+RESULTS:
+: 0.36666666666666664
+
+How do we interpret this result? We use the empirical rule, which tells us that *95% of the observed $y$ values will be within 2 standard deviations of the LSRL*.
+
+With this information, we can build a simple confidence interval: $(\hat{y} - 2\sigma_\epsilon, \hat{y} + 2\sigma_\epsilon)$ which tells us that 95% of the observed $y$ values will be within this interval.
+
+Even better, we can calculate the *mean error*:
+
+\[
+me = \frac{s}{\bar{y}} * 100
+\]
+
+#+begin_src ipython :session session01  :exports both :results output
+  me = np.sqrt(epsilon_var) / y_bar * 100
+  print(me)
+#+end_src
+
+#+RESULTS:
+: 30.276503540974915
+
+From this number, we can infer that *~30% of our estimates are off*.
+
+Summary of assumptions for the error:
+
+| Assumption | Description                                                              |
+|------------+--------------------------------------------------------------------------|
+|          1 | $\epsilon$ is normally distributed $N(0, \sigma^2)$                                   |
+|          2 | $\epsilon$ is independent of $x$                                                |
+|          3 | $\epsilon$ is homoscedastic (constant variance)                                 |
+|          3 | The influence of some $y$ on $\epsilon$ does not influence any other value $y_1$ |
+** Adequacy
+** Usefulness
+** AIC and BIC
+** Prediction
 * Classification Models

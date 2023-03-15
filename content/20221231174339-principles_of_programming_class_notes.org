@@ -11,6 +11,10 @@
 #+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
 
 
+*New* search feature! Make use of the amazing [[https://en.wikipedia.org/wiki/Approximate_string_matching][fuzzy search]] algorithm. Just type in the search box and it will find the closest match in the page. Hit =Enter= to jump to the next match. Lmk if it doesn't work for you.
+#+HTML: <input id="search" type="text" placeholder="Search" /> <span id="resultCount"></span>
+#+HTML: <script src="https://alves.world/fuzzy.js"></script>
+
 
 
 You can download this file [[https://alves.world/university-notes-content/20221231174339-principles_of_programming_class_notes.org][here]]. Then open it in Pycharm, you will get the option to download the extension Org4Idea. Install it and restart Pycharm. Now you can open the file in Pycharm and you will see the file formatted much better.
