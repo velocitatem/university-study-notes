@@ -4,8 +4,6 @@ All the notes which I take to prepare for exams can be found in the =/content= f
 
 The notes are written in org-mode, which is a very simple and intuitive markdown language.
 
-+ Dont have gitlab? :: You can send an email [[mailto:contact-project+velocitatem-university-study-notes-41352476-issue-@incoming.gitlab.com][here]] saying whats wrong.
-
 * Collaborative Note Taking
 For Mac and Windows:
 1. Make sure you have vs-code installed.
