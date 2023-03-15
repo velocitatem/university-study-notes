@@ -26,6 +26,9 @@ Useful Resources:
 + [[https://seeing-theory.brown.edu/frequentist-inference/index.html#section1][Seeing Theory - Frequentist Inference]]
 + [[https://online.stat.psu.edu/stat415/][Penn State Notes]]
 
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+#+HTML: <a href="https://colab.research.google.com/github/velocitatem/university-study-notes/blob/master/content/20221231174507-fundamentals_of_data_analysis_class_notes.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 * Data Manipulation & ipython
 ** Pandas DataFrames
 It is best to imagine a DataFrame as spreadsheet.
