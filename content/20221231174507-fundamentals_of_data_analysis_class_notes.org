@@ -10,12 +10,12 @@
 #+HTML_HEAD: <script src="anti-cheat.js"></script>
 #+HTML: <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="velocitatem24" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 #+HTML: <script>setTimeout(() => {alert("Finding this useful? Consider buying me a coffee! Bottom right cornner :) Takes just a few seconds")}, 60*1000);_paq.push(['trackEvent', 'Exposure', 'Exposed to beg']);</script>
+# do not evaluate the source blocks
+#+OPTIONS: eval:never
 
-#+begin_src ipython :session test
-x = [1,2,3,4,5]
-y = [1,4,9,16,25]
-print([a-b for a,b in zip(x,y)])
-#+end_src
+
+# regex for each line that has "src python" and doesnt have :results
+# ^\s*#\+begin_src python\s*$
 
 *New* search feature! Make use of the amazing [[https://en.wikipedia.org/wiki/Approximate_string_matching][fuzzy search]] algorithm. Just type in the search box and it will find the closest match in the page. Hit =Enter= to jump to the next match. Lmk if it doesn't work for you.
 #+HTML: <input id="search" type="text" placeholder="Search" /> <span id="resultCount"></span>
@@ -33,7 +33,11 @@ Useful Resources:
 ** Pandas DataFrames
 It is best to imagine a DataFrame as spreadsheet.
 
-#+BEGIN_SRC ipython
+#+begin_quote
+Hello There!
+#+end_quote
+
+#+BEGIN_src python :session fda :results output :eval no
   import pandas as pd
 
   # Create a DataFrame from a dictionary
@@ -49,6 +53,8 @@ It is best to imagine a DataFrame as spreadsheet.
 
 #+END_SRC
 
+#+RESULTS:
+
 Here are some of the most useful methods for working with DataFrames:
 + =.head()= :: returns the first 5 rows of the DataFrame
 + =.tail()= :: returns the last 5 rows of the DataFrame
@@ -58,7 +64,7 @@ Here are some of the most useful methods for working with DataFrames:
 + =.dtypes= :: returns the data types of each column in the DataFrame
 
 ** Filtering DataFrames
-#+begin_src ipython
+#+begin_src python :session fda :results output :eval no
   # Create a DataFrame from a dictionary
   df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
                     'age': [34, 25, 67],
@@ -72,7 +78,7 @@ The general syntax for filtering a DataFrame is: =df[condition]=. The =condition
 
 We can also use the =.loc= method to filter a DataFrame. The =.loc= method takes a list of row labels and a list of column labels as arguments. The result is a new DataFrame containing only the rows and columns specified. Here is an example:
 
-#+begin_src ipython
+#+begin_src python :session fda :results output :eval no
   # Create a DataFrame from a dictionary
   df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
                     'age': [34, 25, 67],
@@ -82,12 +88,13 @@ We can also use the =.loc= method to filter a DataFrame. The =.loc= method takes
   df.loc[df['age'] > 30, ['name', 'age']]
 #+end_src
 
+
 The main difference between the =.loc= method and the =[]= operator is that the =.loc= method can be used to filter rows and columns at the same time. We might want to do that if we want to filter a DataFrame by rows and then select a subset of the columns.
 
 ** =np.where()=
 The =np.where()= function is a vectorized version of the =if= statement. It takes a condition, a value to return if the condition is =True=, and a value to return if the condition is =False=. Here is an example:
 
-#+begin_src ipython :results output :exports both
+#+begin_src python :session fda :results output :exports both
   import numpy as np
 
   # Create a NumPy array
@@ -104,7 +111,7 @@ The =np.where()= function is a vectorized version of the =if= statement. It take
 ** Sorting
 We can use the =.sort_values()= method to sort a DataFrame by one or more columns. Here is an example:
 
-#+begin_src ipython :results output :exports both
+#+begin_src python :session fda :results output :exports both
   import pandas as pd
   # Create a DataFrame from a dictionary
   df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
@@ -124,7 +131,7 @@ We can use the =.sort_values()= method to sort a DataFrame by one or more column
 ** Grouping
 To avoid redundant filtering and aggregation, we can use the =.groupby()= method to group a DataFrame by one or more columns. Here is an example:
 
-#+begin_src ipython :results output :exports both
+#+begin_src python :session fda :results output :exports both
   import pandas as pd
   # Create a DataFrame from a dictionary
   df = pd.DataFrame({'name': ['John', 'Jane', 'Joe'],
@@ -160,21 +167,24 @@ Name: age, dtype: float64
 #+end_example
 
 * ipython: Descriptive Statistics
-#+begin_src ipython
+#+begin_src python :session fda :results output
 import matplotlib.pyplot as plt
 plt.style.use("seaborn")
 #+end_src
 
-We will be
+#+RESULTS:
+: /tmp/ipykernel_74156/2522582876.py:2: MatplotlibDeprecationWarning: The seaborn styles shipped by Matplotlib are deprecated since 3.6, as they no longer correspond to the styles shipped by seaborn. However, they will remain available as 'seaborn-v0_8-<style>'. Alternatively, directly use the seaborn API instead.
+:   plt.style.use("seaborn")
+
 
 ** Histograms
-#+begin_src ipython
+#+begin_src python :session fda :eval no
 df['some_values'].hist(bins=15, edgecolor='white')
 #+end_src
 
 We can also set some other parameters such as the title and labels:
 
-#+begin_src ipython
+#+begin_src python :session fda :eval no
   plt.title('Some Title')
   plt.xlabel('Some X Label')
   plt.ylabel('Some Y Label')
@@ -183,7 +193,7 @@ We can also set some other parameters such as the title and labels:
 ** Histograms: Side by Side
 If we have two different groups of data, we can plot them side by side:
 
-#+begin_src ipython
+#+begin_src python :session fda :eval no
   group1 = DataFrame
   group2 = DataFrame
   plt.hist([group1, group2], bins=15, edgecolor='white', label=['Group 1', 'Group 2'])
@@ -193,7 +203,7 @@ If we have two different groups of data, we can plot them side by side:
 ** Bar Plots
 We can also plot bar plots (they are very similar to histograms, but plot the frequency of categorical data):
 
-#+begin_src ipython
+#+begin_src python :session fda :eval no
   categories = ['A', 'B', 'C', 'D']
   frequencies = [10, 20, 30, 40]
   plt.bar(categories, frequencies, edgecolor='white')
@@ -202,7 +212,7 @@ We can also plot bar plots (they are very similar to histograms, but plot the fr
 ** Box Plots
 Box plots are a great way to visualize the distribution of data. They are very useful for comparing different groups of data.
 
-#+begin_src ipython
+#+begin_src python :session fda :eval no
   plt.boxplot([group1, group2])
   plt.xticks([1, 2], ['Group 1', 'Group 2'])
 #+end_src
@@ -210,7 +220,7 @@ Box plots are a great way to visualize the distribution of data. They are very u
 ** Annotations
 We can also add annotations to our plots:
 
-#+begin_src ipython
+#+begin_src python :session fda :eval no
   plt.annotate('Some Text', xy=(x, y), xytext=(x, y), arrowprops={'arrowstyle': '->'})
 #+end_src
 
@@ -219,20 +229,20 @@ The =xy= and =xytext= parameters are the coordinates of the text and the arrow, 
 ** Centrality and Spread
 We can use the =mean= and =median= functions to calculate the mean and median of a dataset:
 
-#+begin_src ipython
+#+begin_src python :session fda :eval no
   mean = df['some_values'].mean()
   median = df['some_values'].median()
 #+end_src
 
 We can also use the =std= function to calculate the standard deviation:
 
-#+begin_src ipython
+#+begin_src python :session fda :eval no
   std = df['some_values'].std()
 #+end_src
 
 To get a summary of the descriptive statistics of a dataset, we can use the =describe= function:
 
-#+begin_src ipython
+#+begin_src python :session fda :eval no
   df['some_values'].describe()
 #+end_src
 
@@ -289,7 +299,7 @@ These conditions will be satisfied if:
 Generally, if at most, we sample 5% of the populations, we can assume that the X_i distribution is a random sample.
 
 Here is an implementation of the example 5.12 from the book:
-#+begin_src ipython
+#+begin_src python :session fda :results output :exports code :eval no
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -316,6 +326,54 @@ for sampleSize in samples:
     axes[samples.tolist().index(sampleSize)].set_ylabel('Probability')
 plt.show()
 #+end_src
+
+#+RESULTS:
+#+begin_example
+/tmp/ipykernel_74156/523053060.py:21: UserWarning:
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(sample_means, ax=axes[samples.tolist().index(sampleSize)])
+/tmp/ipykernel_74156/523053060.py:21: UserWarning:
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(sample_means, ax=axes[samples.tolist().index(sampleSize)])
+/tmp/ipykernel_74156/523053060.py:21: UserWarning:
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(sample_means, ax=axes[samples.tolist().index(sampleSize)])
+/tmp/ipykernel_74156/523053060.py:21: UserWarning:
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(sample_means, ax=axes[samples.tolist().index(sampleSize)])
+#+end_example
 
 And here is the output:
 
@@ -435,7 +493,7 @@ E(S^2)=E\left[\dfrac{\sigma^2}{n-1}\cdot \dfrac{(n-1)S^2}{\sigma^2}\right]=\dfra
 
 Here it is demonstrated in ipython:
 
-#+BEGIN_SRC ipython :results output
+#+BEGIN_src python :session fda :results output
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -458,9 +516,9 @@ print("E(hat(sigma)^2): {}".format(E_hat_sigma_squared))
 #+END_SRC
 
 #+RESULTS:
-: Sample Mean: 0.05227371951431922
-: Sample Variance: 1.0050258720852923
-: E(hat(sigma)^2): 0.0010060319039892815
+: Sample Mean: 0.010814943108814246
+: Sample Variance: 1.0183366045883282
+: E(hat(sigma)^2): 0.001019355960548877
 
 
 
@@ -562,7 +620,7 @@ This might seem a bit pointless, but as AI students, this somewhat resembles the
 For ease, we will use built-in datasets from pandas, such as the iris dataset. We will use the sepal length of the iris dataset.
 
 
-#+begin_src ipython :tangle yes :results output :exports both :noweb yes :session fda
+#+begin_src python :tangle yes :results output :exports both :noweb yes :session fda
   import pandas as pd
   import numpy as np
   import matplotlib.pyplot as plt
@@ -576,7 +634,7 @@ For ease, we will use built-in datasets from pandas, such as the iris dataset. W
 
 We will try to estimate the mean of the sepal length of the iris dataset. We will use the method of moments to estimate the mean.
 
-#+begin_src ipython :tangle yes :results output :exports both :noweb yes :session fda
+#+begin_src python :tangle yes :results output :exports both :noweb yes :session fda
   sepal_length = iris['sepal_length']
   mean = sepal_length.mean()
   print(mean)
@@ -587,7 +645,7 @@ We will try to estimate the mean of the sepal length of the iris dataset. We wil
 
 We now know the actual mean of the sepal length of the iris dataset. We will now try to estimate the mean using the method of moments.
 
-#+begin_src ipython :tangle yes :results output :exports both :noweb yes :session fda
+#+begin_src python :tangle yes :results output :exports both :noweb yes :session fda
   # \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} x_i^k
   # we use the sample
   mean = sample['sepal_length'].sum() / sample['sepal_length'].size
@@ -599,7 +657,7 @@ We now know the actual mean of the sepal length of the iris dataset. We will now
 
 Now, we will try to estimate the variance using the maximum likelihood estimator.
 
-#+begin_src ipython :tangle yes :results output :exports both :noweb yes :session fda
+#+begin_src python :tangle yes :results output :exports both :noweb yes :session fda
   iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
   # craete a random sample of size 60
   n = 10
@@ -916,7 +974,7 @@ We can make our life easier by using ipython to calculate confidence intervals. 
 ** Simple Confidence Intervals for the Mean
 For ease, we will use built-in datasets from pandas, such as the iris dataset. We will use the sepal length of the iris dataset.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -938,7 +996,7 @@ print(sepal_length.head())
 
 Now we have, the data. Lets create a confidence interval for the mean of the sepal length. We will use a confidence level of 95%.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
 interval = stats.norm.interval(0.95, loc=np.mean(sepal_length), scale=np.std(sepal_length))
 print(interval)
 #+END_SRC
@@ -951,7 +1009,7 @@ We can see that the confidence interval is between 4.23 and 7.46.
 ** Confidence Interval for the Population Proportion
 We will use the same dataset as before, but this time we will use the sepal width. We will use a confidence level of 95%. In the first example we do not approximate, we use the exact formula.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
 from statsmodels.stats.proportion import proportion_confint
 # proportion where the sepal width is greater than 3.5
 X = np.sum(iris["sepal_width"] > 3.5)
@@ -972,7 +1030,7 @@ The =method= parameter can be either =normal= or =wilson=.
 
 We can now try to approximate with the normal distribution. We will use the same confidence level of 95%.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
   scale = np.sqrt(p*(1-p)/n)
   interval = stats.norm.interval(0.95, loc=p, scale=scale)
   print(interval)
@@ -984,7 +1042,7 @@ We can now try to approximate with the normal distribution. We will use the same
 
 Now lets take a look at binomial approximation for the confidence interval. We will use the same confidence level of 95%. It is important to check if the conditions are met, that is if $np \geq 10$ and $n(1-p) \geq 10$.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
 # conditions test
 print("np >= 10: ", n*p >= 10)
 print("n(1-p) >= 10: ", n*(1-p) >= 10)
@@ -996,7 +1054,7 @@ print("n(1-p) >= 10: ", n*(1-p) >= 10)
 
 Now we can use the binomial approximation.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
   interval = stats.binom.interval(0.95, n, p)
   print(interval)
   interval = [x/n for x in interval]
@@ -1012,7 +1070,7 @@ The last step is very important. We need to divide the interval by the sample si
 ** t Distribution Confidence Intervals
 We will use the same dataset as before, but this time we will use the petal length. We will use a confidence level of 95%. In the first example we do not approximate, we use the exact formula.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
 from statsmodels.stats.weightstats import _tconfint_generic
 # proportion where the sepal width is greater than 3.5
 X = np.sum(iris["petal_length"] > 3.5)
@@ -1026,7 +1084,7 @@ print(interval)
 ** Prediction Interval for Future Values
 We will use the same dataset as before, but this time we will use the petal width. We will use a confidence level of 95%. In this example we are trying to predict the future value of the petal width.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
   from statsmodels.stats.weightstats import _tconfint_generic
 
 
@@ -1046,7 +1104,7 @@ We will use the same dataset as before, but this time we will use the petal widt
 So we can now be 95% confident that the future value of the petal width will be between 1.08 and 1.32.
 How can we validate this? We can use the bootstrap method.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
   from sklearn.utils import resample
 
   # bootstrap
@@ -1067,13 +1125,10 @@ How can we validate this? We can use the bootstrap method.
 
 
 
-
-
-
 ** Confidence Interval for the Population Variance
 We will use the same dataset as before, but this time we will use the petal width. We will use a confidence level of 95%.
 
-#+BEGIN_SRC ipython :exports both :results output :session *Python*
+#+BEGIN_src python :exports both :results output :session *Python*
   s = np.std(iris["petal_width"])
   var = s**2
   n = len(iris["petal_width"])
@@ -1085,7 +1140,6 @@ We will use the same dataset as before, but this time we will use the petal widt
 #+END_SRC
 
 #+RESULTS:
-: (117.09798286232113, 184.68695493443445)
 
 
 * Midterm Review

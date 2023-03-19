@@ -464,6 +464,7 @@ Where $\oint_C$ is the integral around a closed loop, $\vec{B}$ is the magnetic 
 
 ** Hall Effect
 
+
 * Electromagnetism: Dynamic Fields
 ** Motional Electromotive Force
 If we have a conductive object moving through a magnetic field, it will create an electromotive force. This is given by the equation:
@@ -984,7 +985,6 @@ As mentioned in the covalent bond, if an atom promotes an electron to a higher e
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.allaboutcircuits.com%2Fuploads%2Farticles%2Felectron-flow-in-an-n-type-semiconductor-3.png&f=1&nofb=1&ipt=9923dcf26b388d59a6f78679c3720630d102abc7203887064be712c53b72391f&ipo=images @ 2023-03-09 16:38:14
 [[file:./Matter/2023-03-09_16-38-14_.png]]
 
-
 * Energy Bands
 The next step before we can talk about semiconductors is to talk about energy bands. Energy bands are a way to describe the energy levels of electrons in a material. We create diagrams to demonstrate these energy bands for each atom. This diagram is called an energy-level diagram, here is an example for Hydrogen:
 
@@ -1046,7 +1046,6 @@ So if we dope a material, we either create excess electrons or holes. With this 
 
 So what dose intrinsic and extrinsic mean? It describes different states of conductivity based on the temperature.
 
-
 ** Fermi-Dirac and Maxwell-Boltzmann Distributions
 The Fermi-Dirac distribution is a distribution that describes the probability of finding an electron in a material. It is given by:
 
@@ -1071,7 +1070,6 @@ f(E) = \frac{1}{e^{\frac{E}{kT}} + 1}
 
 Where $E$ is the energy of the electron, $k$ is the Boltzmann constant, and $T$ is the temperature. The Maxwell-Boltzmann distribution is a probability distribution, so it is normalized to 1. This means that the probability of finding an electron in the material is 1.
 
-
 ** Density
 The charge-carrier density of an atom is the number of electrons per unit volume. This is given by:
 
@@ -1080,15 +1078,188 @@ n_0 = \frac{1}{V} \int_{E_F}^{\infty} n(E) dE = \frac{1}{V} \int_{E_F}^{\infty} 
 \]
 
 * Semiconductors (Non-Equilibrium)
-** Drift Velocity
+** Drift Velocity (漂移速度)
+If we have some charge, without the presence of an electric field, it will move in an erratic manner. They move at a thermal *speed* $v_T$. With statistics, we can say:
+
+\[
+\frac{1}{2} m v_T^2 = \frac{3}{2} kT
+\]
+
+Where $m$ is the mass of the electron, $k$ is the Boltzmann constant, and $T$ is the temperature. Typically, we can say that $v_T = 10^6 cm/s$.
+If we now apply an electric field, the charge carriers will move in the direction of the electric field. This is called the *drift velocity* $v_D$. The drift velocity is given by:
+
+\[
+v_D = \frac{q}{m} \tau
+\]
+
+Where $q$ is the charge of the electron, $m$ is the mass of the electron, and $\tau$ is the relaxation time, which can also be seen in this equation:
+
+\[
+m * \frac{dv}{dt} = qE - \frac{m}{\tau} v
+\]
+
+Finally, we can say that the net velocity of the charge carriers is given by:
+
+\[
+v(t) = v_D exp(-t/\tau)
+\]
+
+As time goes to \infty the charge carriers will reach equilibrium. This is called the *diffusion length* $L_D$.
+** Mobility (流動性)
+Now that we have the drift velocity, we can calculate the mobility. The mobility is given by:
+
+\[
+\mu = \frac{\vert \vec{v_D} \vert}{\vert \vec{E} \vert}
+\]
+
+Where $\vec{v_D}$ is the drift velocity and $\vec{E}$ is the electric field. Mobility tells us the *strength of drift velocity* given a certain electric field.
+
+Some important notes about mobility:
++ Depends on the impurity of the material
++ It holds that:
+  + $n$-type materials have a higher mobility than $p$-type materials
+  + $m_n \neq m_p \land \tau_n \neq \tau_p$ (the mobility of electrons and holes are different)
+
+With some fancy math we get to:
+
+\[
+\frac{1}{\mu} = \frac{1}{\mu_\text{vib}} + \frac{1}{\mu_\text{imp}} = AT^{3\over2} + BT^{-3\over2}
+\]
+
+Where $A$ and $B$ are constants, $T$ is the temperature, and $\mu_\text{vib}$ and $\mu_\text{imp}$ are the mobility due to vibration and impurity, respectively. We can see that the mobility is inversely proportional to the temperature to the power of $3/2$.
+
+
+#+DOWNLOADED: screenshot @ 2023-03-19 13:44:59
+[[file:./Semiconductors_(Non-Equilibrium)/2023-03-19_13-44-59_screenshot.png]]
+
+
+** Drift Current (漂移電流)
+The drift current is the current that is caused by the drift velocity of the charge carriers. The drift current is given by the following equations, respectively to each type of carrier (n/p):
+
+\[
+j_n = \frac{I_n}{A} = en\mu_n E
+\]
+
+\[
+j_p = \frac{I_p}{A} = ep\mu_p E
+\]
+
+Where $I_n$ and $I_p$ are the current of the electrons and holes, respectively, $A$ is the area of the cross-section of the material, $e$ is the charge of the electron, $n$ and $p$ are the electron and hole densities, respectively, $\mu_n$ and $\mu_p$ are the mobility of the electrons and holes, respectively, and $E$ is the electric field. The drift current is the current that is caused by the drift velocity of the charge carriers. We can also get the /net/ drift current by adding the two currents together:
+
+\[
+J_{\text{total}} = e(n\mu_n + p\mu_p) E = \sigma E
+\]
+
+Where $\sigma$ is the conductivity of the material. The conductivity is the current per unit voltage. We can also say that the drift current is the current that is caused by the drift velocity of the charge carriers.
+
+
 ** Electric Conductivity in Semiconductors
-** Mobility
+First we need to understand what is really meant by "intrinsic".
+
+#+begin_quote
+Being or relating to a semiconductor in which the concentration of charge carriers is characteristic of the material itself instead of the content of any impurities it contains
+#+end_quote
+
+In simpler terms: intrinsic semiconductors are semiconductors that have no impurities. Intrinsic semiconductors have a very high resistivity, which means that they have a very low conductivity. This is because the charge carriers are not free to move around. They are bound to the atoms.
+
+Now, we need to define the electric mass action law: $n_i^2 \prop \exp(-E_g/kT)$. With this, we can now rewrite $\sigma$ (the conductivity) as:
+
+\[
+\sigma(T) = \sigma_0 \exp(-E_g/2kT)
+\]
+
+Where $\sigma_0$ is the conductivity at $T=0$, $E_g$ is the band gap energy, $k$ is the Boltzmann constant, and $T$ is the temperature. We can see that the conductivity is inversely proportional to the temperature to the power of $2$. This is because the charge carriers are more free to move around at higher temperatures.
+
+For better interpretation, we can rewrite the equation as:
+
+\[
+\ln(\sigma) = -(\frac{E_g}{2k}) \frac{1}{T} + \ln(\sigma_0)
+\]
+
+
+#+DOWNLOADED: screenshot @ 2023-03-19 14:02:24
+[[file:./Semiconductors_(Non-Equilibrium)/2023-03-19_14-02-24_screenshot.png]]
+
+** Photoconductivity (光電導率)
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.stack.imgur.com%2FYYRs7.png&f=1&nofb=1&ipt=dbbb395cd3818c1b77a570ee6fc25ddb178f3ac7e30d0c014ddba02851c91c13&ipo=images @ 2023-03-19 14:03:51
+[[file:./Semiconductors_(Non-Equilibrium)/2023-03-19_14-03-51_.png]]
+
+Above is a Feynman diagram in which we can see the electrons emit photons when they are excited. This is called the *photoelectric effect*. We can now relate this to semiconductors:
+
+If we expose a semiconductor to an EM wave, the electrons will be excited and have make the material more conductive. They do this by jumping from the valance band to the conduction band.
+
+
+** Hall Effect in Semiconductors
+
+
 ** Generation and Recombination of Charge Carriers
 * PN Junctions
+If we put two semiconductors together, we get a PN junction. Each of the semiconductors must respectively have the n-type and p-type doping. The resulting junction is called a diode.
+
+
+#+DOWNLOADED: screenshot @ 2023-03-19 14:21:35
+[[file:./PN_Junctions/2023-03-19_14-21-35_screenshot.png]]
+
+Based on the voltage provided, the region between the two semiconductors, will have a different potential. This is also called the *depletion region*. The depletion region is where the charge carriers are not free to move around. This region allows for current to flow in one direction only. A diode like this will often be used in a circuit to prevent current from flowing in the wrong direction, for example, if changing AC to DC.
+
+
+#+DOWNLOADED: https://static.wikia.nocookie.net/electroboom/images/9/98/FULL_BRIDGE_RECTIFIER.gif/revision/latest/scale-to-width-down/313?cb=20190525221246 @ 2023-03-19 17:33:43
+[[file:./PN_Junctions/2023-03-19_17-33-43_313.gif]]
+
+
+The depletion region, is created when some electrons from the n-type /switch sides/ with the holes from the n-type. Inherently, this switch, creates an electric field which sustains the depletion region. This is called the *built-in electric field*.
+
+
 ** In Equilibrium
+For a diode to reach a state of equilibrium, we need to have the following conditions:
++ The drift current is equal to the diffusion current for each type of charge carrier
+
+What is diffusion current? It is the current that is caused by the diffusion of the charge carriers.
+
 ** Polarized Junctions
+If we put a pn-junction into an EM field, we will see different outcomes for the *depletion* and *neutral* region.
+
++ Forward Bias :: If we apply voltage to the p side of the junction, the depletion region deceases in potential. Current can flow in this direction.
++ Reverse Bias :: If we /negative/ apply voltage to the n side of the junction, the depletion region increases in potential. Current cannot flow in this direction.
+
+We can define the width of that region by:
+
+\[
+W=\sqrt{\frac{2 \varepsilon (V_{b i}-V)}{e} \frac{N_{A}+N_{D}}{N_{A} N_{D}}}
+\]
+
+Where $\varepsilon$ is the permittivity of the material, $V_{b i}$ is the built-in voltage, $V$ is the applied voltage, $e$ is the charge of the electron, $N_{A}$ is the concentration of acceptors, and $N_{D}$ is the concentration of donors.
+
+
 ** Characteristic I-V Curve of the Diode
+
+#+DOWNLOADED: screenshot @ 2023-03-19 17:29:47
+[[file:./PN_Junctions/2023-03-19_17-29-47_screenshot.png]]
+
+
+This curve gives us the behavioral property of the device. It tells us how the diode will behave in the circuit when we apply a voltage to it.
+
+
+** LEDs and Lasers
+An LED is a special kind of diode, that emits light when current is applied to it. The light is emitted when the electrons jump from the valance band to the conduction band. This is called the *photoelectric effect*. The light is emitted in the form of photons. The color of the light is determined by the band gap energy of the semiconductor. The higher the band gap energy, the more energy is required to excite the electrons. This means that the light emitted will have a higher frequency and thus a higher energy. This is why the color of the light is red (for example).
+
++ Anode :: Longer leg = Positive
++ Cathode :: Shorter leg  = Negative
+
 ** Optoelectronic Devices
+What is this? It is a device that uses light to control the electrical properties of a semiconductor. This is done by using the photoelectric effect.
+
+** Diodes in Circuits
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftechterms.com%2Fimg%2Flg%2Fdiode_1244.jpg&f=1&nofb=1&ipt=415b354cf24c68ee5d4327acb78dc4551064ec47b0260ce105ce906571926ad1&ipo=images @ 2023-03-19 17:42:35
+[[file:./PN_Junctions/2023-03-19_17-42-35_.jpeg]]
+
+1. Guess at how the diode will pass (forward or reverse) bias
+2. Replace diode with a voltage source (usually .7V)
+3. Solve for current
+4. If it makes sense, you are done, if not, go back to step 1 and switch your bias.
+
 * Transistors
 ** Bipolar Junction Transistors
 *** Basic Functioning
