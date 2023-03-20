@@ -464,7 +464,6 @@ Where $\oint_C$ is the integral around a closed loop, $\vec{B}$ is the magnetic 
 
 ** Hall Effect
 
-
 * Electromagnetism: Dynamic Fields
 ** Motional Electromotive Force
 If we have a conductive object moving through a magnetic field, it will create an electromotive force. This is given by the equation:
@@ -777,7 +776,6 @@ Why? The voltage across the terminals of a circuit is the same, regardless of th
 
 ** Thevenin's Voltage
 These are the steps to calculate the thevenin's voltage between two points across a resistor in a circuit.
-
 
 
 

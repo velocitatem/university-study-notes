@@ -231,7 +231,7 @@ In the above plot:
 + If the line is within the dashed lines, we fail to reject the null hypothesis
 
 We need a more robust way of assessing if the sequence is independent:
-#+begin_src ipython :tangle yes :results output :exports both :noweb yes
+#+begin_src ipython :tangle yes :results output :exports both :noweb yes :eval no
   acf, confint = statstools.acf(seq, alpha=0.05, nlags=10)
   lbvalue, pvalue = statstools.q_stat(acf[1:], len(seq))
   print("p-value: ", pvalue)
