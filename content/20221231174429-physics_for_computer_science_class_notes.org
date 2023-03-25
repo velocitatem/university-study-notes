@@ -1083,7 +1083,7 @@ If we have some charge, without the presence of an electric field, it will move 
 \frac{1}{2} m v_T^2 = \frac{3}{2} kT
 \]
 
-Where $m$ is the mass of the electron, $k$ is the Boltzmann constant, and $T$ is the temperature. Typically, we can say that $v_T = 10^6 cm/s$.
+Where $m$ is the mass of the electron, $k$ is the Boltzmann constant, and $T$ is the temperature. Typically, we can say that $v_T = 10^7 cm/s$.
 If we now apply an electric field, the charge carriers will move in the direction of the electric field. This is called the *drift velocity* $v_D$. The drift velocity is given by:
 
 \[

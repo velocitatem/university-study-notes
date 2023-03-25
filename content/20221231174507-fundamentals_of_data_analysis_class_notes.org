@@ -688,7 +688,8 @@ Now, we will try to estimate the variance using the maximum likelihood estimator
 : Error:  -0.005272459672671648
 
 * Single Sample Intervals
-[[file:./Animations/cls.mp4][Animation]]
++ [[file:./Animations/cls.mp4][Animation]]
++ [[https://deepai.org/machine-learning-glossary-and-terms/confidence-interval][DeepAI]]
 
 In this section, we will look at confidence intervals for a single sample. This will combine the idea id random variables, and the idea of sampling distributions.
 
@@ -1141,7 +1142,6 @@ We will use the same dataset as before, but this time we will use the petal widt
 
 #+RESULTS:
 
-
 * Midterm Review
 This is a review of the key concepts mentioned in the notes thus far. It is not a complete list of all the concepts that will be on the midterm. It is meant to be a guide to help you study for the midterm.
 
@@ -1225,13 +1225,87 @@ else (no)
 [[file:./confint-dist-decision.png]]
 
 
-
-* Midterm
-
-
 * Single Sample Hypothesis Testing
 ** Hypothesis Testing
+This is a process of taking some sample data and using it to make a decision about the population parameter. We start by forming a null hypothesis and an alternative hypothesis.
+
++ Null Hypothesis :: The hypothesis that we are trying to disprove. It is usually the status quo. Can also be called the *boring hypothesis*.
++ Alternative Hypothesis :: The hypothesis that we are trying to prove. It is usually the new idea. Can also be called the *researchers hypothesis*.
+
+We talk about some population parameter $\theta$. We can write the hypotheses as follows:
+
+| Null Hypothesis | Alternative Hypothesis |
+|-----------------+------------------------|
+| $\theta = \theta_0$        | $\theta \neq \theta_0$               |
+| $\theta \leq \theta_0$        | $\theta > \theta_0$               |
+| $\theta \geq \theta_0$        | $\theta < \theta_0$               |
+
+We then denote the hypotheses pair as follows:
+
+\begin{align}
+H_0: \theta = \theta_0 \\
+H_a: \theta \neq \theta_0
+\end{align}
+
+** Test Procedures
+We use a test procedure to determine if we should or should not reject the null hypothesis. The test procedure is a set of rules.
+
+The main question is: if H_0 is actually true, how likely is it that we would get a sample that contradicts the hypothesis as much as our current sample does?
+
+We use a *test statistic* to answer this question. We can use the following test statistics:
++ Z-Test :: Used when we are estimating the mean of a normal distribution or the proportion of a binomial distribution.
++ t-Test :: Used when we are estimating the mean of a non-normal distribution.
++ Chi-Square Test :: Used when we are estimating the variance of a normal distribution.
+
+
+With these statistics, we compute a *p-value*. The p-value is the probability of getting a sample that contradicts the null hypothesis as much as our current sample does. *If the p-value is less than our significance level, we reject the null hypothesis.*
+
+** Type I and Type II Errors
+We can make two types of errors when we are doing hypothesis testing:
++ Type I Error :: Rejecting the null hypothesis when it is actually true.
++ Type II Error :: Failing to reject the null hypothesis when it is actually false.
+
+Here is a nice table from AP Stats to help you better remember the difference between the two errors:
+
+
+#+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fj6jaz9v4d2x41.png&f=1&nofb=1&ipt=2efce2a96aef72cc80e2304dbfd250065b7d92a26d6350f47164d208b669cd99&ipo=images @ 2023-03-25 10:45:23
+[[file:Single_Sample_Hypothesis_Testing/2023-03-25_10-45-23_.png]]
+
+** Significance Level
+The significance level is the probability of making a type I error. It is denoted by $\alpha$. The significance level is usually set to 0.05 or 0.01.
+
+We also have $\beta$, which is the probability of making a type II error. We can compute $\beta$ using the following formula:
+
+\[
+\beta = P(\text{Reject } H_0 \text{ when } H_0 \text{ is false})
+\]
+
+Now we can put it all together:
+1. We form a null hypothesis and an alternative hypothesis.
+2. We compute a test statistic.
+3. We compute a p-value.
+4. We compare the p-value to the significance level.
+5. If the p-value is less than the significance level, we reject the null hypothesis.
+
+Now lets look at some of those test statistics.
 ** Hypothesis Testing for Normal Distributions
+We use the Z-Test to test hypotheses about the mean of a normal distribution. This statistic will vary, depending of it we know the population standard deviation or not.
+
+*** Hypothesis Testing for Normal Distributions with Known Standard Deviation
+We took some sample data and we want to test the hypothesis that the population mean is equal to some value. We can use the following formula to compute the test statistic:
+
+\[
+Z = \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{n}}}
+\]
+
+Now to compute the p-value, we need to pay attention to the alternative hypothesis, here is a table to help you remember the different cases:
+
+| Alternative Hypothesis | P-Value       |
+|------------------------+---------------|
+| $\theta \neq \theta_0$               | $2[1 - \Phi(Z)]$ |
+| $\theta \leq \theta_0$               | $\Phi(Z)$        |
+| $\theta \geq \theta_0$               | $1 - \Phi(Z)$    |
+
 ** Hypothesis Testing for Proportions
 ** Hypothesis Testing for Variances
 * Two Sample Hypotheses Testing
