@@ -534,7 +534,66 @@ Let's say we have a manufacturing process that has 3 machines. We want to know h
   env.run(until=1)
 #+END_SRC
 
-* Model Building
+* Model Design
+When we create a model, we have to consider three key things:
++ The data :: When it comes to data, it is important to highlight how the data was collected. We also need to consider the quality of the data. We need to make sure that the data is accurate and that it is representative of the population.
++ Response variable :: This is the variable that we are trying to predict. It is also known as the dependent variable.
++ Explantory variables :: These are the variables that we use to predict the response variable. They are also known as the independent variables. Sometimes, there are explanatory variables that hurt the model, these are known as confounding variables.
+
+** Cross Validation
+In order to have a good model, it is important not to mix the training and testing data. We can do this using cross validation. [[https://open.substack.com/pub/aisnakeoil/p/gpt-4-and-professional-benchmarks?r=2035qn&utm_campaign=post&utm_medium=web][Unlike OpenAI]]...
+
+This is done by splitting the data into 2 parts, the training data and the testing data. We then use the training data to build the model and the testing data to evaluate the model. We can then repeat this process multiple times to get a better idea of how the model performs.
+
+Here are some common ratios for splitting the data:
+
+| Training Data | Testing Data |
+|---------------+--------------|
+| 80%           | 20%          |
+| 70%           | 30%          |
+
+Why do we do this?
++ Preventing overfitting :: If we use all the data to build the model, we will get a model that is very accurate on the training data. However, this model will not be able to generalize to new data. This is known as overfitting.
++ Preventing underfitting :: If we use too little data to build the model, we will get a model that is not accurate on the training data. This is known as underfitting.
+
+In python we can use the =train_test_split= function from the =sklearn.model_selection= library to split the data.
+
+#+begin_src ipython :eval no
+  from sklearn.model_selection import train_test_split
+
+  # Split the data into training and testing data
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+#+end_src
+
+** Cross Validation (LOOCV)
+With this method, we go through the data one by one. We use all the data except for the current data point to build the model. We then use the current data point to evaluate the model. We then repeat this process for all the data points.
+
+What this does is it assures a lower probability for bias and variance. In python, we can use the =LeaveOneOut= function from the =sklearn.model_selection= library to do this.
+
+#+begin_src ipython :eval no
+  from sklearn.model_selection import LeaveOneOut
+
+  # Split the data into training and testing data
+  loo = LeaveOneOut()
+  for train_index, test_index in loo.split(X):
+      X_train, X_test = X[train_index], X[test_index]
+      y_train, y_test = y[train_index], y[test_index]
+#+end_src
+
+** Cross Validation (K-Fold)
+It is a bit similar to LOOVC but we split the data into =k= parts. We then use =k-1= parts to build the model and the remaining part to evaluate the model. We then repeat this process for all the parts.
+
+In python, we can use the =KFold= function from the =sklearn.model_selection= library to do this.
+
+#+begin_src ipython :eval no
+  from sklearn.model_selection import KFold
+
+  # Split the data into training and testing data
+  kf = KFold(n_splits=5)
+  for train_index, test_index in kf.split(X):
+      X_train, X_test = X[train_index], X[test_index]
+      y_train, y_test = y[train_index], y[test_index]
+#+end_src
 
 
 * Regression Models
@@ -714,6 +773,7 @@ Summary of assumptions for the error:
 |          3 | $\epsilon$ is homoscedastic (constant variance)                                 |
 |          3 | The influence of some $y$ on $\epsilon$ does not influence any other value $y_1$ |
 ** Adequacy
+
 ** Usefulness
 ** AIC and BIC
 ** Prediction

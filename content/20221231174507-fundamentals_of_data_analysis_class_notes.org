@@ -1288,7 +1288,7 @@ Now we can put it all together:
 5. If the p-value is less than the significance level, we reject the null hypothesis.
 
 Now lets look at some of those test statistics.
-** Hypothesis Testing for Normal Distributions
+** Hypothesis Testing for Means
 We use the Z-Test to test hypotheses about the mean of a normal distribution. This statistic will vary, depending of it we know the population standard deviation or not.
 
 *** Hypothesis Testing for Normal Distributions with Known Standard Deviation
@@ -1305,6 +1305,18 @@ Now to compute the p-value, we need to pay attention to the alternative hypothes
 | $\theta \neq \theta_0$               | $2[1 - \Phi(Z)]$ |
 | $\theta \leq \theta_0$               | $\Phi(Z)$        |
 | $\theta \geq \theta_0$               | $1 - \Phi(Z)$    |
+
+*** TODO $\beta$ and Sample Size Determination
+*** Large Sample Tests
+If we have a large sample size (n > 30), we can use the following formula to compute the test statistic:
+
+\[
+Z = \frac{\bar{x} - \mu_0}{S / \sqrt{n}}
+\]
+
+
+** Hypothesis Testing with t Distribution
+
 
 ** Hypothesis Testing for Proportions
 ** Hypothesis Testing for Variances
