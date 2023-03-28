@@ -701,9 +701,9 @@ Graphically, the current supplying components are the following:
 [[file:./Electric_Circuits_(DC)/2023-02-23_14-33-46_screenshot.png]]
 
 *** Voltage Supplying Components
-| Current | Voltage  |
-|---------+----------|
-| Variable | Fixed    |
+| Current  | Voltage |
+|----------+---------|
+| Variable | Fixed   |
 
 Graphically, the voltage supplying components are the following:
 
@@ -756,7 +756,7 @@ P = \frac{dW}{dt} = \frac{VdQ}{dt} = VI
 \]
 
 Probably the nicest equation in this course. The units of power are watts ($W$).
-** TODO Mesh Analysis
+** Mesh Analysis
 Mesh analysis is a method of solving a circuit, by constructing equations for each of the meshes in the circuit. We can then solve these equations to find the currents in the circuit.
 
 1. Identify all the meshes in the circuit.
@@ -1076,7 +1076,7 @@ n_0 = \frac{1}{V} \int_{E_F}^{\infty} n(E) dE = \frac{1}{V} \int_{E_F}^{\infty} 
 \]
 
 * Semiconductors (Non-Equilibrium)
-** Drift Velocity (漂移速度)
+** Drift Velocity
 If we have some charge, without the presence of an electric field, it will move in an erratic manner. They move at a thermal *speed* $v_T$. With statistics, we can say:
 
 \[
@@ -1103,7 +1103,7 @@ v(t) = v_D exp(-t/\tau)
 \]
 
 As time goes to \infty the charge carriers will reach equilibrium. This is called the *diffusion length* $L_D$.
-** Mobility (流動性)
+** Mobility
 Now that we have the drift velocity, we can calculate the mobility. The mobility is given by:
 
 \[
@@ -1130,8 +1130,7 @@ Where $A$ and $B$ are constants, $T$ is the temperature, and $\mu_\text{vib}$ an
 #+DOWNLOADED: screenshot @ 2023-03-19 13:44:59
 [[file:./Semiconductors_(Non-Equilibrium)/2023-03-19_13-44-59_screenshot.png]]
 
-
-** Drift Current (漂移電流)
+** Drift Current
 The drift current is the current that is caused by the drift velocity of the charge carriers. The drift current is given by the following equations, respectively to each type of carrier (n/p):
 
 \[
@@ -1151,6 +1150,7 @@ J_{\text{total}} = e(n\mu_n + p\mu_p) E = \sigma E
 Where $\sigma$ is the conductivity of the material. The conductivity is the current per unit voltage. We can also say that the drift current is the current that is caused by the drift velocity of the charge carriers.
 
 
+#+HTML: <video width="100%" height="100%" controls="controls" src="./Animations/0e4330406919c9f59a89b3744b28654055e2b88e9f792cd15fb68598.mp4"></video>
 ** Electric Conductivity in Semiconductors
 First we need to understand what is really meant by "intrinsic".
 
@@ -1178,7 +1178,7 @@ For better interpretation, we can rewrite the equation as:
 #+DOWNLOADED: screenshot @ 2023-03-19 14:02:24
 [[file:./Semiconductors_(Non-Equilibrium)/2023-03-19_14-02-24_screenshot.png]]
 
-** Photoconductivity (光電導率)
+** Photoconductivity
 
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.stack.imgur.com%2FYYRs7.png&f=1&nofb=1&ipt=dbbb395cd3818c1b77a570ee6fc25ddb178f3ac7e30d0c014ddba02851c91c13&ipo=images @ 2023-03-19 14:03:51
 [[file:./Semiconductors_(Non-Equilibrium)/2023-03-19_14-03-51_.png]]
@@ -1187,11 +1187,64 @@ Above is a Feynman diagram in which we can see the electrons emit photons when t
 
 If we expose a semiconductor to an EM wave, the electrons will be excited and have make the material more conductive. They do this by jumping from the valance band to the conduction band.
 
-
 ** Hall Effect in Semiconductors
+# #+begin_ai
+# [SYS]: You are Richard Faynman
 
+# [ME]: What is the Hall effect in semiconductors?
+
+# [AI]: The Hall effect is a fundamental phenomenon in condensed matter physics that occurs when an electric current flows through a semiconductor or other material in the presence of a magnetic field perpendicular to the direction of the current. The interaction between the moving charges in the current and the magnetic field causes a measurable voltage perpendicular to both the current and the magnetic field, which is known as the Hall voltage. This effect is used in a range of electronic devices, such as sensors, transducers, and magnetic field measurement instruments. The Hall coefficient, which is defined as the ratio of the Hall voltage to the product of the current and magnetic field, is a key parameter used in the characterization of semiconductors and other materials with electronic properties.
+# #+end_ai
+
+We previously looked at the Hall effect in metals. In semiconductors, the Hall effect is caused by the presence of the electric field. The magnetic field will cause the charge carriers to move in a direction perpendicular to the electric field. This will cause a voltage to appear across the material. This voltage is called the Hall voltage.
+
+\[
+V_H = E_y W
+\]
+
+For each type of semi conductor, we can define a Hall coefficient:
+
++ For n-type semiconductors :: $R_H = \frac{-1}{en}$
++ For p-type semiconductors :: $R_H = \frac{1}{ep}$
+
+Where $W$ is the width of the material, $E_y$ is the electric field in the y-direction, $e$ is the charge of the electron, $n$ is the electron density, and $p$ is the hole density.
+
+With these values, we can also get the mobility of the charge carriers:
+
+\[
+\mu = \sigma R_H = \frac{V_B L}{V_0 B_z W}
+\]
+
+Where $V_B$ is the voltage across the material, $L$ is the length of the material, $V_0$ is the voltage across the material, $B_z$ is the magnetic field in the z-direction, and $W$ is the width of the material.
+
+** Inhomogeneous Semiconductors
+This is a kind of semiconductor that has a non-uniform distribution of charge carriers. This is caused by the presence of impurities. Possible causes:
++ Doping
++ Inhomogeneous light
+
+** Diffusion Current
+If we have a bunch of charge carriers concentrated in one part of the material, they will diffuse to the other parts of the material. This is called diffusion. The diffusion current is the current that is caused by the diffusion of the charge carriers. It can be modeled mathematically:
+
+\[
+j = -D \nabla n = -D \frac{\partial c}{\partial x}
+\]
+
+Where $j$ is the diffusion current, $D$ is the diffusion coefficient, $\nabla$ is the gradient operator, $n$ is the charge carrier density, and $c$ is the concentration of the charge carriers.
+
+Again, we can define this with respect to each type of charge carrier predominant in a semiconductor:
+
++ n-type :: $J_n \vert_{text{diff}} = eD_n \frac{\partial n}{\partial x}$
++ p-type :: $J_p \vert_{text{diff}} = - eD_p \frac{\partial p}{\partial x}$
 
 ** Generation and Recombination of Charge Carriers
+#+HTML: <video src="./Animations/2df05e4f3d50a93c4dff8ae5e8248b8c4f005d5c0a5f68099aa7ae95.mp4" controls="controls" width="100%" height="100%"></video>
+
+We can *generate* an electron-hole pair if we direct a photon to an electron. When the photon hits the electron, the electron jumps into a higher energy state, it also leaves a hole behind in the valance band.
+
+If we go the other way around, we can *recombine* an electron-hole pair. This happens when the electron and the hole combine to form a neutral atom. This is called *radiative recombination*. This recombination also releases a photon.
+
+#+HTML: <video src="./Animations/0ac554bca7e0db9d8ff86c2d76f1dc0931623ebf6753bbc6b442b9f9.mp4" controls="controls" width="100%" height="100%"></video>
+
 * PN Junctions
 If we put two semiconductors together, we get a PN junction. Each of the semiconductors must respectively have the n-type and p-type doping. The resulting junction is called a diode.
 
