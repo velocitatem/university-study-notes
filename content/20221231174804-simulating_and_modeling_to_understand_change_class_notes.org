@@ -534,6 +534,24 @@ Let's say we have a manufacturing process that has 3 machines. We want to know h
   env.run(until=1)
 #+END_SRC
 
+
+# Midterm cutoff
+#+HTML: <hr><h2>Midterm cutoff</h2><hr>
+
+
+* Data Exploration
+When building a model, it is necessary to use data exploration to understand the data. This is done by using descriptive statistics and visualizations. We also apply various procedures to adjust the data to make it more suitable for modeling.
+
+** Missing Values
+Missing values are a common problem in data. We can deal with missing values in the following ways:
++ Drop the missing values :: In python we can use =df.dropna()= to drop the missing values. This is not a good idea because we are losing a lot of data. We can also use =df.dropna(axis=1)= to drop columns with missing values.
++ Imputation :: We can use imputation to fill in the missing values. We can use the mean, median, or mode to fill in the missing values. We can also use a linear regression to fill in the missing values. We can use =df.fillna()= to fill in the missing values.
+** Outliers
+Our data might also have outliers. We can check for outliers using =df.boxplot()= but can also make use of the $IQR$.
+
+#+DOWNLOADED: https://alejandrommingo.github.io/SMUCbook/images/EDA/Fig1.png @ 2023-04-13 11:05:06
+[[file:./Data_Exploration/2023-04-13_11-05-06_Fig1.png]]
+
 * Model Design
 When we create a model, we have to consider three key things:
 + The data :: When it comes to data, it is important to highlight how the data was collected. We also need to consider the quality of the data. We need to make sure that the data is accurate and that it is representative of the population.
@@ -571,7 +589,7 @@ With this method, we go through the data one by one. We use all the data except 
 What this does is it assures a lower probability for bias and variance. In python, we can use the =LeaveOneOut= function from the =sklearn.model_selection= library to do this.
 
 #+begin_src ipython :eval no
-  from sklearn.model_selection import LeaveOneOut
+
 
   # Split the data into training and testing data
   loo = LeaveOneOut()
@@ -594,7 +612,6 @@ In python, we can use the =KFold= function from the =sklearn.model_selection= li
       X_train, X_test = X[train_index], X[test_index]
       y_train, y_test = y[train_index], y[test_index]
 #+end_src
-
 
 * Regression Models
 We start of with SLR (Simple linear regression). There are 3 key steps in this process:
@@ -650,6 +667,8 @@ SS_{xy} = \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})
 \[
 SS_{xx} = \sum_{i=1}^n (x_i - \bar{x})^2
 \]
+
+SS means sum of squares. We can compute these values in python using the =numpy= library.
 
 
 Lets apply this to our example:
@@ -716,6 +735,13 @@ With this, we have created a LSRL (Least Squares Regression Line). We can use th
 
 Confidence in the model can be measured using the coefficient of determination ($R^2$). This is a measure of how well the model fits the data. The closer the value is to 1, the better the model fits the data. The value is always between 0 and 1.
 
+The formula used to compute $\beta_1$ is:
+
+\[
+\beta_1 = \frac{SS_{xy}}{SS_{xx}} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2} = \frac{Cov(x, y)}{Var(x)}
+\]
+
+
 
 ** Random Error
 Might have guessed already, the random error $\epsilon$ is a distribution. Lets start with some assumptions:
@@ -773,8 +799,97 @@ Summary of assumptions for the error:
 |          3 | $\epsilon$ is homoscedastic (constant variance)                                 |
 |          3 | The influence of some $y$ on $\epsilon$ does not influence any other value $y_1$ |
 ** Adequacy
+We now need to check if the model is adequate. We can do this by checking if the error is different from 0. We can do this by using a t-test. The null hypothesis is that the error is 0, and the alternative hypothesis is that the error is not 0.
 
+\[
+H_0: \beta = 0 \\
+H_1: \beta \neq 0
+\]
+
+We can use the following formula to compute the t-statistic:
+
+\[
+t = \frac{\hat{\beta}}{s_{\hat{\beta}}}
+\]
+
+Where $\hat{\beta}$ is the estimated coefficient, and $s_{\hat{\beta}}$ is the standard error of the estimated coefficient. With the computed t-statistic, we can compute the p-value using statistical software or python or a table. In python:
+
+#+begin_src ipython :session session01 :exports both :results output :eval no
+  t = beta_hat_1 / np.sqrt(epsilon_var / np.sum((x - x_bar)**2))
+  print(t)
+#+end_src
+
+Based on the p-val we either reject or fail to reject the null hypothesis. If we reject the null hypothesis, we can conclude that the model is adequate.
+
+Another much easier way to find the p-value is the *f-statistic* for the entire model:
+
+\[
+H_0: \beta_1 = \beta_2 = \dots = \beta_p = 0 \\
+H_1: \beta_1 \neq \beta_2 \neq \dots \neq \beta_p
+\]
 ** Usefulness
+We use the $R^2$ to measure how well the model fits the data. The closer the value is to 1, the better the model fits the data. The value is always between 0 and 1.
+
+Definition of r^2
+#+begin_quote
+The percentage of the variance in the dependent variable that is predictable from the independent variable(s).
+#+end_quote
+
+In simpler terms: The percentage of variance is like a way to measure how much one thing affects another. It tells us how likely it is that when one thing changes, the other thing will change too. For example, if you change the amount of sugar you put in your tea, it will change how sweet it is. The percentage of variance tells us how much the sugar affects how sweet the tea is.
+
 ** AIC and BIC
+
 ** Prediction
+We can predict a specific case, or use the error component to get a confidence interval for the prediction.
+* Multiple Linear Regression
+When we have multiple independent variables, we can use multiple linear regression to predict the value of a dependent variable. The formula for this is:
+
+\[
+\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2 + \dots + \hat{\beta}_p x_p
+\]
+
+Where $\hat{\beta}_0$ is the intercept, $\hat{\beta}_1$ is the coefficient for $x_1$, $\hat{\beta}_2$ is the coefficient for $x_2$, and so on. $p$ is the number of independent variables.
+
+We can see that this is a deterministic model, because the coefficients are fixed. The coefficients are estimated using the same method as in simple linear regression. To make this model deterministic, we would have to add a random error term to the model.
+
+* Advanced Linear Regression
+We start with mummification of data, also called hot-encoding. There are two types of hot-encoding:
++ One-hot encoding
++ Dummy encoding
+
+To better understand these we will use this example data:
+| Country | City | Population |
+|---------+------+------------|
+|   US    |  NY  |    1000    |
+|   US    |  LA  |    2000    |
+|   US    |  SF  |    3000    |
+|   CA    |  TO  |    4000    |
+|   CA    |  MO  |    5000    |
+|   CA    |  OT  |    6000    |
+
+** Dummy encoding
+We parse categorical data into a model. We use some sort of encoding to represent the data. For example, if we have a variable called country, and it has two values: US and CA, we can encode it as:
+
+\begin{align}
+Country &= \begin{cases}
+1 & \text{if US} \\
+0 & \text{if CA}
+\end{cases}
+\end{align}
+
+We can now use a simple linear regression to predict the population of a city. The formula for this is: $y = \beta_0 + \beta_1 x_1 + \epsilon$. Where $y$ is the population, $\beta_0$ is the intercept, $\beta_1$ is the coefficient for country, and $\epsilon$ is the error term.
+
+** One-hot encoding
+One-hot encoding is a way to encode categorical variables. It is called one-hot because only one of the values is hot (1), and the rest are cold (0). For example, if we have a variable called country, and it has two values: US and CA, we can encode it as:
+
+| City | Country_US | Country_CA |
+|------+------------+------------|
+|  NY  |      1     |      0     |
+|  LA  |      1     |      0     |
+|  SF  |      1     |      0     |
+|  TO  |      0     |      1     |
+|  MO  |      0     |      1     |
+|  OT  |      0     |      1     |
+
+This method is better for data with categories of more than two. For example, if we have a variable called color, and it has three values: red, blue, and green. This process is very commonly used in machine learning models to encode some data that might generally be hard to encode or pass to a model. We can also use it to *combine categorical and numerical data* into a model.
 * Classification Models
