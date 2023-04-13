@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       c93b0dc7-a627-4076-a31c-4d5db8849a04
+:END:
+#+title: Fundamentals of Data Analysis - Cheat Sheet
+
+* Types of Errors
++ Type I error: Reject $H_0$ when it is true (False positive)
++ Type II error: Fail to reject $H_0$ when it is false (False negative)
+* Hypothesis Test for Means
+Conditions:
++ $n \ge 30$
++ Normal distribution of the population
++ Population standard deviation is known
+
+Procedure:
+1. State the null and alternative hypotheses
+  | Null hypothesis | Alternative hypothesis | Tail         |
+  |-----------------+------------------------+--------------|
+  | $H_0: \mu = \mu_0$    | $H_1: \mu \ne \mu_0$           | Two-tailed   |
+  | $H_0: \mu \le \mu_0$    | $H_1: \mu > \mu_0$           | Right-tailed |
+  | $H_0: \mu \ge \mu_0$    | $H_1: \mu < \mu_0$           | Left-tailed  |
+2. Find the test statistic
+  \[
+  t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}
+  \]
+3. Find p-value and compare with $\alpha$
+   | Tail         | $p$ value                 |
+   |--------------+---------------------------|
+   | Two-tailed   | $2 \times P(\vert t\vert > t_{\alpha/2, n-1})$ |
+   | Right-tailed | $P(t > t_{\alpha, n-1})$          |
+   | Left-tailed  | $P(t < t_{\alpha, n-1})$          |
+
+4. Make a decision
+   + If $p \le \alpha$, reject $H_0$
+   + If $p > \alpha$, fail to reject $H_0$

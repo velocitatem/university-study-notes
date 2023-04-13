@@ -1247,6 +1247,16 @@ H_0: \theta = \theta_0 \\
 H_a: \theta \neq \theta_0
 \end{align}
 
+When conducting a hypothesis tests, we should follow a set of 6 steps:
+1. State the hypotheses
+   1. Check Conditions (Normality, Independence, etc.)
+2. Choose a significance level
+3. Compute the test statistic
+4. Compute the p-value
+5. Make a decision
+6. State the conclusion
+
+
 ** Test Procedures
 We use a test procedure to determine if we should or should not reject the null hypothesis. The test procedure is a set of rules.
 
@@ -1289,13 +1299,16 @@ Now we can put it all together:
 
 Now lets look at some of those test statistics.
 ** Hypothesis Testing for Means
-We use the Z-Test to test hypotheses about the mean of a normal distribution. This statistic will vary, depending of it we know the population standard deviation or not.
+We use the t-Test to test hypotheses about the mean of a normal distribution. This statistic will vary, depending of it we know the population standard deviation or not.
 
 *** Hypothesis Testing for Normal Distributions with Known Standard Deviation
+:PROPERTIES:
+:ID:       911852ca-321e-4d92-823a-a98c4e104330
+:END:
 We took some sample data and we want to test the hypothesis that the population mean is equal to some value. We can use the following formula to compute the test statistic:
 
 \[
-Z = \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{n}}}
+t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}
 \]
 
 Now to compute the p-value, we need to pay attention to the alternative hypothesis, here is a table to help you remember the different cases:
@@ -1306,6 +1319,11 @@ Now to compute the p-value, we need to pay attention to the alternative hypothes
 | $\theta \leq \theta_0$               | $\Phi(Z)$        |
 | $\theta \geq \theta_0$               | $1 - \Phi(Z)$    |
 
+The *conditions* for this test are:
++ The sample size is greater than 30.
++ The distribution is normal.
+[[id:6b1168f6-5b8a-4009-a54d-0b9ce56e65c4][Fundamentals of Data Analysis - Cheat Sheet]]
+
 *** TODO $\beta$ and Sample Size Determination
 *** Large Sample Tests
 If we have a large sample size (n > 30), we can use the following formula to compute the test statistic:
@@ -1314,8 +1332,6 @@ If we have a large sample size (n > 30), we can use the following formula to com
 Z = \frac{\bar{x} - \mu_0}{S / \sqrt{n}}
 \]
 
-
-** Hypothesis Testing with t Distribution
 
 
 ** Hypothesis Testing for Proportions

@@ -892,4 +892,18 @@ One-hot encoding is a way to encode categorical variables. It is called one-hot 
 |  OT  |      0     |      1     |
 
 This method is better for data with categories of more than two. For example, if we have a variable called color, and it has three values: red, blue, and green. This process is very commonly used in machine learning models to encode some data that might generally be hard to encode or pass to a model. We can also use it to *combine categorical and numerical data* into a model.
+** Interaction terms
+Instead of just using the independent variables, we can use the interaction between the independent variables. For example, if we have two independent variables $x_1$ and $x_2$. We could build a model normally like this:
+
+\[
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon
+\]
+
+But we can also use the interaction between the two variables:
+
+\[
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_1 x_2 + \epsilon
+\]
+
+The key difference is that we add a new term $\beta_3 x_1 x_2$. How do we interpret the interaction term?
 * Classification Models
