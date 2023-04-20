@@ -1320,11 +1320,13 @@ Now to compute the p-value, we need to pay attention to the alternative hypothes
 | $\theta \geq \theta_0$               | $1 - \Phi(Z)$    |
 
 The *conditions* for this test are:
-+ The sample size is greater than 30.
++ The sample size is greater than 30.TODO TODO
 + The distribution is normal.
 [[id:6b1168f6-5b8a-4009-a54d-0b9ce56e65c4][Fundamentals of Data Analysis - Cheat Sheet]]
 
-*** TODO $\beta$ and Sample Size Determination
+*** $\beta$ and Sample Size Determination
+
+
 *** Large Sample Tests
 If we have a large sample size (n > 30), we can use the following formula to compute the test statistic:
 
@@ -1333,11 +1335,25 @@ Z = \frac{\bar{x} - \mu_0}{S / \sqrt{n}}
 \]
 
 
-
-** Hypothesis Testing for Proportions
-** Hypothesis Testing for Variances
 * Two Sample Hypotheses Testing
+For a single sample, we talked about the difference between the sample mean and some value. For two samples, we are interested in the difference between the means of the two samples.
 ** Hypothesis Testing for Two Means
+To test a hypothesis for two means, we must firs check the following conditions:
+1. The samples are independent (X and Y are independent).
+2. $X_1, X_2, ... X_m$ are from $\mu_1$ and $\sigma_1$
+3. $Y_1, Y_2, ... Y_n$ are from $\mu_2$ and $\sigma_2$
+
+It is also important to note that the two samples *can have a different sample size*.
+
+The expected value of $\bar{X} - \bar{Y}$ is $\mu_1 - \mu_2$ and:
+
+\[
+\sigma_{\bar{X} - \bar{Y}} = \sqrt{\frac{\sigma_1^2}{m} + \frac{\sigma_2^2}{n}}
+\]
+
+
+** $\beta$ and Sample Size Determination
+
 ** Hypothesis Testing for Two Proportions
 ** Hypothesis Testing for Two Variances
 * Analysis of Variance: Single Factor
