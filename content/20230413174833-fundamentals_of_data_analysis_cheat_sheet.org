@@ -3,6 +3,8 @@
 :END:
 #+title: Fundamentals of Data Analysis - Cheat Sheet
 
+#+HTML: <a href="https://colab.research.google.com/github/velocitatem/university-study-notes/blob/master/content/20230413174833-fundamentals_of_data_analysis_cheat_sheet.org" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 * Types of Errors
 + Type I error: Reject $H_0$ when it is true (False positive)
 + Type II error: Fail to reject $H_0$ when it is false (False negative)
