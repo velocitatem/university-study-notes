@@ -1,0 +1,84 @@
+
+* Types of Errors
++ Type I error: Reject $H_0$ when it is true (False positive)
++ Type II error: Fail to reject $H_0$ when it is false (False negative)
+
+* Hypothesis Testing (One Sample)
+We want to test the null hypothesis $H_0$ against the alternative hypothesis $H_1$.
++ $H_0$ is the null hypothesis (the status quo)
++ $H_1$ is the alternative hypothesis (the new idea)
+
+** Hypothesis Test for Means
+Conditions:
++ $n \ge 30$
++ Normal distribution of the population
++ Population standard deviation is known
+
+Procedure:
+1. State the null and alternative hypotheses
+  | Null hypothesis | Alternative hypothesis | Tail         |
+  |-----------------+------------------------+--------------|
+  | $H_0: \mu = \mu_0$    | $H_1: \mu \ne \mu_0$           | Two-tailed   |
+  | $H_0: \mu \le \mu_0$    | $H_1: \mu > \mu_0$           | Right-tailed |
+  | $H_0: \mu \ge \mu_0$    | $H_1: \mu < \mu_0$           | Left-tailed  |
+2. Find the test statistic
+  \[
+  t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}
+  \]
+3. Find p-value and compare with $\alpha$
+   | Tail         | $p$ value                 |
+   |--------------+---------------------------|
+   | Two-tailed   | $2 \times P(\vert t\vert > t_{\alpha/2, n-1})$ |
+   | Right-tailed | $P(t > t_{\alpha, n-1})$          |
+   | Left-tailed  | $P(t < t_{\alpha, n-1})$          |
+
+4. Make a decision
+   + If $p \le \alpha$, reject $H_0$
+   + If $p > \alpha$, fail to reject $H_0$
+
+** Hypothesis Test for Proportions
+Conditions:
++ $np \ge 10$ and $n(1-p) \ge 10$
++ Random sampling
+
+Procedure:
+1. State the null and alternative hypotheses
+  | Null hypothesis | Alternative hypothesis | Tail         |
+  |-----------------+------------------------+--------------|
+  | $H_0: p = p_0$    | $H_1: p \ne p_0$           | Two-tailed   |
+  | $H_0: p \le p_0$    | $H_1: p > p_0$           | Right-tailed |
+  | $H_0: p \ge p_0$    | $H_1: p < p_0$           | Left-tailed  |
+
+2. Find the test statistic
+  \[
+  z = \frac{p - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}
+  \]
+3. Find p-value and compare with $\alpha$
+   | Tail         | $p$ value            |
+   |--------------+----------------------|
+   | Two-tailed   | $2 \times P(\vert z\vert > z_{\alpha/2})$ |
+   | Right-tailed | $P(z > z_{\alpha})$          |
+   | Left-tailed  | $P(z < z_{\alpha})$          |
+** Power of a Test
++ Probability of type I error is $\alpha$ (usually 0.05)
++ Probability of type II error is $\beta$
+
+\[
+\text{Power} = 1 - \beta
+\]
+** Size Determination for a Test
+We try to satisfy $\beta(p^\prime) = \beta$ with:
+
+\begin{align}
+n &= \begin{cases}
+\frac{z_\alpha \sqrt{p_0(1-p_0)} + z_\beta \sqrt{p^\prime(1-p^\prime)}}{p^\prime - p_0} & \text{if } \quad \text{one tail} \\
+\frac{z_{\alpha/2} \sqrt{p_0(1-p_0)} + z_{\beta/2} \sqrt{p^\prime(1-p^\prime)}}{p^\prime - p_0} & \text{if } \quad \text{two tail}
+\end{cases}
+\end{align}
+
+
+** Interpretation
++ Statistical significance: The result is unlikely to have occurred by chance
++ Practical significance: The result is unlikely to have occurred by chance and is also important in the real world (This can be disrupted by a large sample size)
+
+** Multiple Hypotheses
