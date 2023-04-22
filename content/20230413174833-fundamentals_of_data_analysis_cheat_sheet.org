@@ -70,6 +70,23 @@ Procedure:
 \[
 \text{Power} = 1 - \beta
 \]
+
+*** Assuming Normality
+In python:
+#+begin_src python :tangle yes :results output :exports both :noweb yes
+  import statsmodels.stats.power as ssp
+  power=ssp.normal_power_het(1000, sample_size, alpha_level, std_null=population_sigma, std_alternative=None, alternative='larger')
+#+end_src
+
+*** Using a T-Distribution
+#+begin_src python :tangle yes :results output :exports both :noweb yes
+  from statsmodels.stats.power import TTestPower
+  power = TTestPower().power(effect_size=None, nobs1=None, alpha=0.05, alternative='large')
+#+end_src
+
++ effect size :: The difference between the two means divided by the standard deviation of the population. (same as above)
++ power :: What we want the power to be. (same as above)
++ ratio :: The ratio of the standard deviations of the two groups. (same as above)
 ** Size Determination for a Test
 We try to satisfy $\beta(p^\prime) = \beta$ with:
 
@@ -80,9 +97,80 @@ n &= \begin{cases}
 \end{cases}
 \end{align}
 
+*** Assuming Normality
+#+begin_src python :tangle yes :results output :exports both :noweb yes
+  import statsmodels.stats.power as ssp
+  sample_size=ssp.tt_solve_power(effect_size=None, nobs1=None, alpha=0.05, power=0.8, ratio=1.0, alternative='two-sided')
+#+end_src
+
++ effect size :: The difference between the two means divided by the standard deviation of the population.
++ power :: What we want the power to be.
++ ratio :: The ratio of the standard deviations of the two groups.
+
+*** Using a T-Distribution
+#+begin_src python :tangle yes :results output :exports both :noweb yes
+  from statsmodels.stats.power import TTestPower
+  sample_size = TTestPower().solve_power(effect_size=None, nobs1=None, alpha=0.05, power=0.8, ratio=1.0, alternative='large')
+#+end_src
+
++ effect size :: The difference between the two means divided by the standard deviation of the population.
++ power :: What we want the power to be.
++ ratio :: The ratio of the standard deviations of the two groups.
+
+
 
 ** Interpretation
 + Statistical significance: The result is unlikely to have occurred by chance
 + Practical significance: The result is unlikely to have occurred by chance and is also important in the real world (This can be disrupted by a large sample size)
 
-** Multiple Hypotheses
+* Approaching a Hypothesis Testing Problem
+1. State the null and alternative hypotheses
+2. Identify the test statistic
+   1. If the population standard deviation is known, and the sample size is large, use the z-test
+   2. If the population standard deviation is known, and the sample size is small, use the t-test
+   3. If the population standard deviation is unknown, use the t-test
+3. Find the p-value
+4. Make a decision
+   + If $p \le \alpha$, reject $H_0$
+   + If $p > \alpha$, fail to reject $H_0$
+5. Interpret the result
+    + If $p \le \alpha$, the result is statistically significant
+    + If $p > \alpha$, the result is not statistically significant
+
+In puml format:
+#+begin_src puml :tangle yes :results output :exports none
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans Mono"
+skinparam defaultFontSize 12
+
+start
+:State the null and alternative hypotheses;
+:Identify the test statistic;
+if (Population standard deviation is known?) then (yes)
+  if (Sample size is large?) then (yes)
+    :Use the z-test;
+  else (no)
+    :Use the t-test;
+  endif
+else (no)
+  :Use the t-test;
+endif
+:Find the p-value;
+if (p <= alpha) then (yes)
+  :Reject H0;
+else (no)
+  :Fail to reject H0;
+endif
+if (p <= alpha) then (yes)
+  :The result is statistically significant;
+else (no)
+  :The result is not statistically significant;
+endif
+stop
+@enduml
+#+end_src
+
+
+[[./fda_cheat_flow.png]]

@@ -33,10 +33,6 @@ Useful Resources:
 ** Pandas DataFrames
 It is best to imagine a DataFrame as spreadsheet.
 
-#+begin_quote
-Hello There!
-#+end_quote
-
 #+BEGIN_src python :session fda :results output :eval no
   import pandas as pd
 
@@ -1351,8 +1347,49 @@ The expected value of $\bar{X} - \bar{Y}$ is $\mu_1 - \mu_2$ and:
 \sigma_{\bar{X} - \bar{Y}} = \sqrt{\frac{\sigma_1^2}{m} + \frac{\sigma_2^2}{n}}
 \]
 
+Another important concept is $\delta_0$. We denote the null hypothesis of a problem with $\mu_1 - \mu_2 = \delta_0$. Most often we will set $\delta_0 = 0$, meaning that $\mu_1 = \mu_2$. We can use the following formula to compute the test statistic:
+
+\[
+Z = \frac{\bar{X} - \bar{Y} - \delta_0}{\sqrt{\frac{\sigma_1^2}{m} + \frac{\sigma_2^2}{n}}}
+\]
+
+Now we can compute the p-value using the following table:
+| Alternative Hypothesis | Area under       |
+|------------------------+------------------|
+| $\mu_1 \neq \mu_2$              | Right of $\vert z \vert$ |
+| $\mu_1 \leq \mu_2$              | Left of $z$      |
+| $\mu_1 \geq \mu_2$              | Right of $z$     |
+
+
+
+** Comparison to Identify Causality
+Without manipulating variables in a study, we cannot infer causality. Some examples in which we cannot infer causality are:
++ Retrospective studies
++ Observational studies
 
 ** $\beta$ and Sample Size Determination
+As we know, $\beta$ is the probability of making a type II error. We have some alternate hypothesis of $\mu_1 - \mu_2 > \delta_0$, for now we assume that the null hypothesis is false, and so $\delta^\prime$ is the value that exceeds $\delta_0$ - meaning that $\mu_1 > \mu_2$. We can compute $\beta$ using the following formula:
+
+\[
+\beta = P(\text{Not rejecting } H_0 \text{ when } \mu_1 - \mu_2 > \delta^\prime) \\
+= P(\bar{X} - \bar{Y} \leq \delta^\prime + z_\alpha \sigma_{\bar{X} - \bar{Y}})
+\]
+
+Where $z_\alpha$ is the value of the standard normal distribution that corresponds to the significance level $\alpha$. So what does this tell us? The relationship here is that \beta is influenced by the sample size, the difference between the means, and the significance level. We can use this to determine the sample size needed to achieve a certain power.
+
+For various alternate hypotheses we can compute the beta using the following table:
+
+| Alternate Hypothesis | $\beta$                                |
+|----------------------+------------------------------------|
+| $\mu_1 - \mu_2 > \delta_0$       | $\Phi(z_\alpha - \frac{\delta^\prime - \delta_0}{\sigma})$        |
+| $\mu_1 - \mu_2 \lt \delta_0$       | $1 - \Phi(-z_\alpha - \frac{\delta^\prime - \delta_0}{\sigma})$   |
+| $\mu_1 - \mu_2 \neq \delta_0$       | $2[1 - \Phi(z_\alpha - \frac{\delta^\prime - \delta_0}{\sigma})]$ |
+
+We can now try to determine the sample size needed to achieve a certain power. We can use the following formula to compute the sample size:
+
+\[
+m = n = \frac{(\sigma_1^2 + \sigma_2^2)(z_\alpha + z_\beta)^2}{(\delta^\prime-\delta_0)^2}
+\]
 
 ** Hypothesis Testing for Two Proportions
 ** Hypothesis Testing for Two Variances
