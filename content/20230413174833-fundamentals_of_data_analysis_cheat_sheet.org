@@ -5,15 +5,19 @@
 
 #+HTML: <a href="https://colab.research.google.com/github/velocitatem/university-study-notes/blob/master/content/20230413174833-fundamentals_of_data_analysis_cheat_sheet.org" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
+* Confidence Intervals
+
 * Types of Errors
 + Type I error: Reject $H_0$ when it is true (False positive)
 + Type II error: Fail to reject $H_0$ when it is false (False negative)
 
 ** Type I Error
 + Probability of type I error is $\alpha$ (usually 0.05)
++ Intepretation: If we repeat the test many times, we expect to make a type I error 5% of the time.
 
 ** Type II Error
 + Probability of type II error is $\beta$
++ Intepretation: If we repeat the test many times, we expect to make a type II error 5% of the time
 
 In python:
 #+begin_src ipython :tangle yes :results output :exports both :noweb yes
@@ -41,9 +45,17 @@ Procedure:
   | $H_0: \mu \le \mu_0$    | $H_1: \mu > \mu_0$           | Right-tailed |
   | $H_0: \mu \ge \mu_0$    | $H_1: \mu < \mu_0$           | Left-tailed  |
 2. Find the test statistic
+
   \[
   t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}
   \]
+
+  or z if $n \ge 30$ and $\sigma$ is known
+
+  \[
+  z = \frac{\bar{x} - \mu_0}{\sigma}
+  \]
+
 3. Find p-value and compare with $\alpha$
    | Tail         | $p$ value                 |
    |--------------+---------------------------|
@@ -51,9 +63,28 @@ Procedure:
    | Right-tailed | $P(t > t_{\alpha, n-1})$          |
    | Left-tailed  | $P(t < t_{\alpha, n-1})$          |
 
+
 4. Make a decision
    + If $p \le \alpha$, reject $H_0$
    + If $p > \alpha$, fail to reject $H_0$
+
+T-test in python:
+#+begin_src ipython :tangle yes :results output :exports both :noweb yes
+  import scipy.stats as stats
+  t = (x_bar - mu_0) / (s / np.sqrt(n))
+  p_two_tailed = 2 * stats.t.sf(np.abs(t), n-1)
+  p_right_tailed = stats.t.sf(t, n-1)
+  p_left_tailed = stats.t.cdf(t, n-1)
+#+end_src
+
+Z-test in python:
+#+begin_src ipython :tangle yes :results output :exports both :noweb yes
+  import scipy.stats as stats
+  z = (x_bar - mu_0) / (sigma)
+  p_two_tailed = 2 * stats.norm.sf(np.abs(z))
+  p_right_tailed = stats.norm.sf(z)
+  p_left_tailed = stats.norm.cdf(z)
+#+end_src
 
 ** Hypothesis Test for Proportions
 Conditions:
@@ -78,6 +109,20 @@ Procedure:
    | Two-tailed   | $2 \times P(\vert z\vert > z_{\alpha/2})$ |
    | Right-tailed | $P(z > z_{\alpha})$          |
    | Left-tailed  | $P(z < z_{\alpha})$          |
+
+4. Make a decision
+    + If $p \le \alpha$, reject $H_0$
+    + If $p > \alpha$, fail to reject $H_0$
+
+Z-test in python:
+#+begin_src ipython :tangle yes :results output :exports both :noweb yes
+  import scipy.stats as stats
+  z = (p - p_0) / np.sqrt(p_0 * (1 - p_0) / n)
+  p_two_tailed = 2 * stats.norm.sf(np.abs(z))
+  p_right_tailed = stats.norm.sf(z)
+  p_left_tailed = stats.norm.cdf(z)
+#+end_src
+
 ** Power of a Test
 + Probability of type I error is $\alpha$ (usually 0.05)
 + Probability of type II error is $\beta$
@@ -186,4 +231,28 @@ n &= \begin{cases}
 
 
 
----
+** Choosing the Correct Test Statistic
+# #+begin_src puml :tangle yes :results output :exports none
+# @startuml
+# skinparam monochrome true
+# skinparam shadowing false
+
+# start
+# :Sigma is known?;
+# if (yes) then (yes)
+#   :Sample size is large? (n > 30);
+#   if (yes) then (yes)
+#     :Use the z-test;
+#   else (no)
+#     :Use the t-test;
+#   endif
+# else (no)
+#   :Use the t-test;
+# endif
+# stop
+# @enduml
+# #+end_src
+
+[[./fda_cheat_flow_stats.png]]
+
+The above applies only for means, if we are talking about proportions, we always use the z-test. And if we are talking about variances, we always use the chi-square test.

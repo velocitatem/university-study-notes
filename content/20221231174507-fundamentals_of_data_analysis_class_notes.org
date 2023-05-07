@@ -1330,7 +1330,12 @@ If we have a large sample size (n > 30), we can use the following formula to com
 Z = \frac{\bar{x} - \mu_0}{S / \sqrt{n}}
 \]
 
+** Hypothesis Testing for Variance
+\[
+\frac{(n-1)*s^2}{\sigma^2} \tilde \Chi^2
+\]
 
+In python we compute value to the left but with tables is to the right.
 * Two Sample Hypotheses Testing
 For a single sample, we talked about the difference between the sample mean and some value. For two samples, we are interested in the difference between the means of the two samples.
 ** Hypothesis Testing for Two Means

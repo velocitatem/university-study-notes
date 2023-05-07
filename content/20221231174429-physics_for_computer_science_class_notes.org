@@ -19,6 +19,7 @@
 
 
 There are 4 fundamental forces in nature: Gravity, Electromagnetism, Weak Nuclear Force and Strong Nuclear Force. Electromagnetic forces rely on particles which have a charge.
+
 * Electrostatic Fields
 ** Electric Charge
 Charge, is something as fundamental as mass. It is what determines how intense electromagnetic forces are. Here are some fundamental laws which govern charge:
@@ -26,7 +27,6 @@ Charge, is something as fundamental as mass. It is what determines how intense e
 - Charge is quantized. Charge is measured in units of elementary charge, which is $e = 1.602176634 \times 10^{-19} C$. This means that you can't have a charge of $1.5e$.
 - Charge is additive. If you have two charges, you can add them together to get the total charge. For example, if you have a charge of $+1e$ and a charge of $-1e$, you can add them together to get a total charge of $0e$.
 - Opposite charges attract, and like charges will repel.
-
 ** Ions
 An Ion is just a charged particle. It is a particle which has a charge. For example, a proton is an ion with a charge of $+1e$. A neutron is an ion with a charge of $0e$. An electron is an ion with a charge of $-1e$.
 + What determines if an Ion is positive or negative? :: It is determined by the number of protons and electrons. If the number of protons is greater than the number of electrons, then the Ion is positive. If the number of electrons is greater than the number of protons, then the Ion is negative. If the number of protons is equal to the number of electrons, then the Ion is neutral.
@@ -40,11 +40,9 @@ We can charge on object in three ways: Friction, Induction and Conduction.
 + Friction :: This is when you rub two objects together. For example, if you rub a balloon on your hair, you will get a static charge on the balloon. Here the electrons are transferred from your hair to the balloon through friction.
 + Induction :: This is when you bring a charged object near another object.
 + Conduction :: Electrons get transferred from one object to another, through direct contact.
-
 ** Electric Polarization
 If you have a neutrally charged object and you subject it to an electric field, it will become polarized. Meaning that the electrons will move to one side of the object, and the protons will move to the other side of the object.
 + Why does this happen? :: Because bodies charges have a tendency to align themselves with the electric field.
-
 ** Electric Force
 This is a force which is exerted between two charged objects. It is given by the equation, also knows as Coulomb's Law:
 
@@ -69,12 +67,10 @@ k = 9 \times 10^9 N \cdot m^2/C^2
 
 
 The electric force abides by the third law of Newtonian mechanics. This means that if object $A$ exerts a force on object $B$, then object $B$ will exert a force on object $A$ which is equal in magnitude, but opposite in direction.
-
 ** Superposition of Forces
 Give two charges, $q_1$ and $q_2$ and a third charge $q_3$, the net force on $q_3$ is given by the vector sum of the forces exerted by $q_1$ and $q_2$.
 
 Vector sum: [[Vector Sum]]
-
 ** Electric Field
 How do charges exert forces on other charges? They do so through the electric field. The electric field is a vector field which is defined as:
 
@@ -98,7 +94,6 @@ For this to be possible, we need to know the electric field at that point. We ca
 Some other key properties of the electric field:
 + The electric field is a vector field. This means that it has a direction and a magnitude.
 + Inside a conductor, the electric field is zero.
-
 ** Electric Field of a Point Charge
 The electric field of a point charge is given by:
 
@@ -107,7 +102,6 @@ The electric field of a point charge is given by:
 \]
 
 Where $k$ is the Coulomb constant, $q$ is the charge of the point charge, and $r$ is the distance between the point charge and the test charge. The electric field is a vector field, which means that it has a direction and a magnitude.
-
 ** Electric Field Lines
 
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftikz.net%2Ffiles%2Felectric_fieldlines2-004.png%3Fis-pending-load%3D1&f=1&nofb=1&ipt=c93f07fc015e2e0a5b5bc37a6ef2854c7e9a6bc3732b55a22e6047cda8cb8725&ipo=images @ 2023-01-29 17:07:48
@@ -115,14 +109,12 @@ Where $k$ is the Coulomb constant, $q$ is the charge of the point charge, and $r
 
 One of the most important properties of the electric field is that it is *symmetrical*. The spacing of the lines is proportional to the magnitude of the electric field. The closer the lines are together, the stronger the electric field. The further apart the lines are, the weaker the electric field. The direction of the lines is the direction of the electric field.
 + The electric field lines are a visual representation of the electric field. They are not a physical object.
-
 ** Uniform Electric Filed
 
 #+DOWNLOADED: https://phys.libretexts.org/@api/deki/files/2861/Figure_20_02_01a.jpg?revision=1&size=bestfit&width=195&height=369 @ 2023-01-29 17:14:41
-[[file:./Electromagnetism:_Static_Fields/2023-01-29_17-14-41_Figure_20_02_01a.jpg.jpeg]]
-
-
-A uniform electric field is an electric field which is constant in all directions. The electric field lines are parallel to each other, and are equidistant from each other. The electric field lines are also perpendicular to the surface of the object.
+[[./Electromagnetism:_Static_Fields/2023-01-29_17-14-41_Figure_20_02_01a.jpg.jpeg]]
+**
+** A uniform electric field is an electric field which is constant in all directions. The electric field lines are parallel to each other, and are equidistant from each other. The electric field lines are also perpendicular to the surface of the object.
 
 Although not electric, gravity can be thought of as a uniform field, at least near the surface of the earth. It only goes down.
 ** Electric Flux
@@ -133,7 +125,6 @@ The electric flux is the amount of electric field passing through a surface. It 
 \]
 
 The flux will primarily depend on two factors: the angle relative to the surface and which side of the surface we are measuring.
-
 ** Gauss's Law
 It equates flux, to the charge enclosed by the surface. It is given by the equation:
 
@@ -179,7 +170,6 @@ It is valid for anything. When we talk about an enclosed surface, it does not ha
 3. $\Phi = \frac{2.0 \mu C}{\epsilon_0} = 2.3 \times 10^5 N \cdot m^2/C$
 4. $\Phi = \frac{4.0 \mu C + 6.0 \mu C - 1.0 \mu C}{\epsilon_0} = 1.1 \times 10^5 N \cdot m^2/C$
 5. $\Phi = \frac{4.0 \mu C + 6.0 \mu C - 10.0 \mu C}{\epsilon_0} = 0$
-
 *** Gauss's Law for Conductors
 In a conductor, the electric field is zero. Any excess charge will only be at the surface. This means that
 ** Electric Potential
@@ -221,7 +211,6 @@ Where $U$ is the electric potential energy, $q_0$ is the charge, and $V$ is the 
 Some key points about the electric potential:
 + If a force does positive work, then the potential energy decreases
 + The slightest difference in potential energy. *We must have some sort of reference point* where $U = 0$, this is called the *ground*.
-
 ** Voltage
 Voltage is the difference in electric potential energy between two points. It is given by the equation:
 
@@ -230,7 +219,6 @@ V = V_2 - V_1
 \]
 
 Where $V$ is the voltage, $V_1$ is the electric potential energy at point 1, and $V_2$ is the electric potential energy at point 2.
-
 ** Electric Work
 Here we are talking about a force acting on a moving particle. The work done by the force is given by the equation:
 
@@ -247,7 +235,6 @@ W_{a\to b} = Fd = q_0 Ed
 \]
 
 Where $W_{a\to b}$ is the work done by the electric field, $F$ is the force, $q_0$ is the charge, $E$ is the electric field, and $d$ is the distance.
-
 ** Electric Dipole
 An electric dipole is a system of two equal and opposite charges separated by a distance $d$. The electric dipole moment is given by the equation:
 
@@ -272,7 +259,6 @@ U = -\vec{p} \cdot \vec{E}
 \]
 
 Where $U$ is the potential energy, $\vec{p}$ is the electric dipole moment, and $\vec{E}$ is the electric field.
-
 ** Dielectrics
 This is an insulator, that gets polarized when an electric field is applied. The polarization is the separation of charge.
 
@@ -285,7 +271,6 @@ We talked a lot about permittivity and dielectric constant. The permittivity of 
 Where $\epsilon$ is the permittivity, $\epsilon_0$ is the permittivity of free space, and $\epsilon_r$ is the relative permittivity.
 
 You can find a table of relative permittivity here: [[Relative Permittivity Table]].
-
 ** Capacitors
 A capacitor is like a battery, but it stores energy in the form of electric charge. It consists of two conductors separated by an insulator.
 
@@ -315,7 +300,6 @@ C = \frac{\epsilon_0 A}{d}
 \]
 
 Where $C$ is the capacitance, $\epsilon_0$ is the permittivity of free space, $A$ is the area of the plates, and $d$ is the distance between the plates.
-
 * Magneto-static Fields
 ** Electric Current
 This is pretty much the same type of current as we can observe in water. It is the flow of charge through space. That is why, we can define it as a function of time and space $Q(\vec{r})$, or better yet, represent it as a derivative the previous function:
@@ -332,7 +316,6 @@ I = nqv_d A
 
 Where $I$ is the current, $n$ is the number of particles per unit volume, $q$ is the charge of a single particle, $v_d$ is the drift velocity, and $A$ is the cross-sectional area which we are focusing on.
 Current is not a vector, but it is a scalar quantity. It is a measure in amperes (A).
-
 *** Vector Current Density
 What is this? It is the current per unit volume. It is given by the equation:
 
@@ -369,7 +352,6 @@ Where $\vec{J}$ is the vector current density, $\sigma$ is the conductivity, and
 \[
 \vec{J} = \frac{1}{\rho} \vec{E}
 \]
-
 ** Resistance
 #+HTML: <div style="width:100%;height:0;padding-bottom:73%;position:relative;"><iframe src="https://giphy.com/embed/6ozwFj8FgXGAo" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/favorite-aliens-dragonslayers-6ozwFj8FgXGAo">via GIPHY</a></p>
 
@@ -380,7 +362,6 @@ R = \rho L / A
 \]
 
 Where $R$ is the resistance, $\rho$ is the resistivity, $L$ is the length of the wire, and $A$ is the cross-sectional area of the wire. The units of resistance are ohms ($\Omega$).
-
 ** Resistivity
 Resistivity is the resistance per unit length. It is given by the equation:
 
@@ -416,7 +397,6 @@ Thats a hell of a lot of variables. Lets break it down a bit.
 + $r$ is the distance between the charge and the magnetic field
 
 The key conceptual thing here is the cross product of two vectors. This is a vector perpendicular to both vectors. This is the direction of the magnetic force. How can we better understand this? We use the right hand rule. If we have two vectors, we can put our right hand in the direction of the first vector, we then curl our fingers in the direction of the second vector, and our thumb will point in the direction of the cross product. This is the direction of the magnetic force.
-
 ** Magnetic Field
 When a charge moves, it creates a magnetic field. This is given by the equation:
 
@@ -429,7 +409,6 @@ Where $\vec{F}$ is the magnetic force, $q$ is the charge, $\vec{v}$ is the veloc
 Some key concepts related to the magnetic field:
 + The magnetic field is a vector quantity
 + It is always perpendicular to the velocity of the charge
-
 ** Magnetic Field Lines
 
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpixfeeds.com%2Fimages%2F41%2F611533%2F1280-magnetic-field-lines.png&f=1&nofb=1&ipt=f2aa09c68e45cb22d44902226c1896386dbab105b18c6549f2481bf111f0204e&ipo=images @ 2023-02-02 18:13:53
@@ -440,7 +419,6 @@ The magnetic field lines are the lines which show the direction of the magnetic 
 They share some traits with the electric field lines:
 + They spacing is proportional to the magnitude of the field
 + They never intersect
-
 ** Magnetic Flux
 Similar to the electric flux, this is the amount of magnetic field passing through a surface. It is given by the equation:
 
@@ -449,7 +427,6 @@ Similar to the electric flux, this is the amount of magnetic field passing throu
 \]
 
 Where $\Phi$ is the magnetic flux, $\vec{B}$ is the magnetic field, and $d\vec{A}$ is the differential area. The units of magnetic flux are webers ($Wb$).
-
 ** Gauss's Law of Magnetism
 When you take a magnet, split it in half, each half will still have two poles. This is because the magnetic field is continuous. This is the law of magnetism. It is given by the equation:
 
@@ -459,11 +436,8 @@ When you take a magnet, split it in half, each half will still have two poles. T
 
 Where $\oint_C$ is the integral around a closed loop, $\vec{B}$ is the magnetic field, and $d\vec{l}$ is the differential length. The units of Gauss's Law of Magnetism are tesla-meters ($Tm$).
 ** Ampere's Circuital Law
-
 ** Magnetic Dipole
-
 ** Hall Effect
-
 * Electromagnetism: Dynamic Fields
 ** Motional Electromotive Force
 If we have a conductive object moving through a magnetic field, it will create an electromotive force. This is given by the equation:
@@ -473,7 +447,6 @@ If we have a conductive object moving through a magnetic field, it will create a
 \]
 
 Where $\epsilon$ is the motional electromotive force, $\vec{v}$ is the velocity, $\vec{B}$ is the magnetic field, and $d\vec{l}$ is the length of the conductive object. The units of motional electromotive force are volts ($V$).
-
 ** Faraday's Law of Induction
 In this law, we learn that a change in the magnetic flux, will create an electromotive force. You can also think of the change of flux as the second derivative of the magnetic field. This is given by the equation:
 
@@ -494,7 +467,6 @@ The induced emf or current in a circuit opposes the change in magnetic flux. Thi
 
 #+DOWNLOADED: https://atomstalk.com/wp-content/uploads/2020/07/Demonstration-of-Lenzs-Law-1024x688.png @ 2023-02-20 18:40:52
 [[file:./Electromagnetism:_Dynamic_Fields/2023-02-20_18-40-52_Demonstration-of-Lenzs-Law-1024x688.png]]
-
 ** Alternators
 An alternator is device which converts mechanical rotational energy into electrical energy. It is a type of generator which makes use of the Faraday's Law of Induction. It is given by the equation:
 
@@ -503,8 +475,6 @@ An alternator is device which converts mechanical rotational energy into electri
 \]
 
 Where $\epsilon$ is the motional electromotive force, $N$ is the number of turns, $\Phi$ is the magnetic flux, $t$ is time, $\omega$ is the angular frequency, $B$ is the magnetic field, and $A$ is the area. The units of alternators are volts ($V$).
-
-
 ** Self-Inductance
 First, we need to redefine the emf as the change in current, because if we have a circuit, which is in a steady state, the emf will be zero, unless there is a change in current. This is given by the equation:
 
@@ -513,7 +483,6 @@ First, we need to redefine the emf as the change in current, because if we have 
 \]
 
 Where $\epsilon$ is the motional electromotive force, $L$ is the self-inductance, $I$ is the current, and $t$ is time. The units of self-inductance are henrys ($H$).
-
 ** Inductors
 We can see self-inductance in circuits with these components:
 
@@ -527,7 +496,6 @@ L = \frac{\muN^2 A}{2 \pi R}
 \]
 
 In a circuit we represent the component with a coil-like symbol. Why would we want to use such a component? Well, we can use it to store energy. This is because the emf is proportional to the change in current, and the change in current is proportional to the change in voltage. This means that if we have a circuit with a battery, and an inductor, the current will increase, and the voltage will decrease. This is because the battery is trying to increase the current, but the inductor is trying to decrease the current. This is called an inductive reactance.
-
 ** Mutual Inductance
 If we have two coils, and we change the current in one coil, the other coil will also change its current. This is because the magnetic field is changing, and the magnetic field is changing because the current is changing.
 
@@ -537,9 +505,8 @@ Eddy currents, are currents which are created by a changing magnetic field. Alth
 + Metal Detectors - detect eddy currents in metal
 + Heating - eddy currents create heat
 + Magnetic Breaking
-
 * Waves
-*** Displacement Current
+** Displacement Current
 If the electric field changes, so will the magnetic field. This is because the magnetic field is proportional to the electric field.
 
 We take amperes circuital law, and include the magnetic field:
@@ -556,10 +523,7 @@ i_D = \epsilon_0 \frac{d\Phi_E}{dt}
 \]
 
 Where $\Phi_E$ is the electric flux, and $t$ is time. The units of displacement current are amperes ($A$).
-
-
-
-*** Maxwell's Equations
+** Maxwell's Equations
 Finally, the good stuff. Maxwell's equations are the equations which describe the relationship between the electric and magnetic fields. They are given by the equations:
 
 \begin{align}
@@ -583,8 +547,7 @@ They will often be expressed in differential form:
 \nabla \times \vec{E} &= -\frac{\partial \vec{B}}{\partial t} \\
 \nabla \times \vec{B} &= \mu_0 (\vec{J} + \vec{D})_\text{enc}
 \end{align}
-
-*** Electromagnetic Waves
+** Electromagnetic Waves
 The key relationship here, is modeled by these equations:
 
 \begin{align}
@@ -603,7 +566,7 @@ Also, all waves in a vacuum travel at the speed of light, which is given by:
 \[
 c=\frac{1}{\sqrt{\mu_{0} \varepsilon_{0}}}=2.99792458 \times 10^{8} \mathrm{m} / \mathrm{s}
 \]
-*** Monochromatic Plane Waves
+** Monochromatic Plane Waves
 We first need to understand a wave in 1D:
 
 \[
@@ -626,14 +589,10 @@ Thats pretty awful looking, now we make it even worse by splitting it into two c
 \end{align}
 
 Where $\hat{j}$ and $\hat{k}$ are unit vectors in the $x$ and $y$ directions respectively. The units of the magnetic field are tesla ($T$).
-
-
-
-*** Electromagnetic Spectrum
-*** Poyntig Vector
-*** Electromagnetic Waves on Boundaries
-*** Standing Waves
-
+** Electromagnetic Spectrum
+** Poyntig Vector
+** Electromagnetic Waves on Boundaries
+** Standing Waves
 * Electric Circuits (DC)
 ** Circuits
 First, we need to define some terms:
@@ -643,7 +602,6 @@ First, we need to define some terms:
 + Loop :: A closed path in a circuit.
 + Branch :: A path in a circuit, which is not a loop and has no nodes.
 + Mesh :: A closed path in a circuit, which has no branches or no internal loops.
-
 ** Passive Components
 These are components which absorb energy, they are the following:
 *** Resistors
@@ -660,7 +618,6 @@ We can combine resistors, either *in series* or *in parallel*. In series, the to
 How can you calculate the resistance of a resistor, based on the bands? The first two bands are the first two digits of the resistance, the third band is the multiplier, and the fourth band is the tolerance.
 
 You can use [[https://www.calculator.net/resistor-calculator.html][this tool]] to calculate the resistance of a resistor, based on the bands.
-
 *** Capacitors
 This component accumulates charge. The capacitance $C$ is given by:
 
@@ -671,7 +628,6 @@ C = \frac{Q}{V}
 Where $Q$ is the charge, and $V$ is the voltage. The units of capacitance are farads ($F$).
 
 As for the order, it is reversed from resistors. Capacitance in series is given by the sum of the reciprocal of the individual capacitances. Capacitance in parallel is given by the sum of the individual capacitances.
-
 *** Inductors
 An inductor is a component which stores energy in the form of a magnetic field. The inductance $L$ is given by:
 
@@ -682,14 +638,12 @@ L = \frac{\Phi}{I}
 Where $\Phi$ is the flux, and $I$ is the current. The units of inductance are henrys ($H$).
 
 Parallel inductors are given by the sum of the reciprocal of the individual inductances. Series inductors are given by the sum of the individual inductances.
-
 *** Diodes
 A diode is a component which allows current to flow in one direction, and blocks it in the other.
 
 There is a special type of diode, the light emitting diode (LED). This is a diode which emits light when current flows through it.
 ** Active Components
 These are components which generate energy, they are the sources of energy in a circuit. They can supply current or voltage.
-
 *** Current Supplying Components
 | Current | Voltage  |
 |---------+----------|
@@ -699,7 +653,6 @@ Graphically, the current supplying components are the following:
 
 #+DOWNLOADED: screenshot @ 2023-02-23 14:33:46
 [[file:./Electric_Circuits_(DC)/2023-02-23_14-33-46_screenshot.png]]
-
 *** Voltage Supplying Components
 | Current  | Voltage |
 |----------+---------|
@@ -710,8 +663,6 @@ Graphically, the voltage supplying components are the following:
 
 #+DOWNLOADED: screenshot @ 2023-02-23 14:53:41
 [[file:./Electric_Circuits_(DC)/2023-02-23_14-53-41_screenshot.png]]
-
-
 ** Electrical Measurements
 To measure almost everything in a circuit, you need a multimeter. This is a device which can measure voltage, current, and resistance.
 
@@ -720,9 +671,6 @@ Usually looks something like this:
 
 #+DOWNLOADED: https://www.electronics-lab.com/wp-content/uploads/2020/12/6_000_Count_True_RMS_High_Performance_Waterproof_IP67_Digital_Multim_%E2%80%94_Triplett_Test_Equipment_Tools.jpg @ 2023-02-23 14:55:44
 [[file:./Electric_Circuits_(DC)/2023-02-23_14-55-44_6_000_Count_True_RMS_High_Performance_Waterproof_IP67_Digital_Multim_%E2%80%94_Triplett_Test_Equipment_Tools.jpg]]
-
-
-
 ** Kirchoff's Laws
 This law tells us that the sum of currents in a node, or the sum of voltages in a loop, is always zero.
 
@@ -747,7 +695,6 @@ An RC circuit is a type of circuit which contains a resistor and a capacitor con
 These two components work to create a transient state and steady state within the RC circuit, which means that the current and voltage in the circuit will initially change over time before reaching a steady, constant rate.
 
 The RC circuit is used in many applications, such as in the power supply of a computer, in the circuitry of a radio, and in the circuitry of a television.
-
 ** Electric Power
 In classical mechanics, power is defined as the rate of doing work. In electromagnetism, power is defined as the rate of energy transfer. The power $P$ is given by:
 
@@ -767,18 +714,13 @@ Mesh analysis is a method of solving a circuit, by constructing equations for ea
 Just as any other application of the superposition theorem.
 
 The superposition theorem states that the current in a circuit is the sum of the currents in the circuit, when each of the sources are turned on one at a time.
-
 *** Thevenin's Theorem
 Given any circuit with multiple voltages and resistances, we can replace the circuit with a single voltage source and a single resistance.
 This helps us decrease complexity in our circuits.
 
 Why? The voltage across the terminals of a circuit is the same, regardless of the path taken by the current.
-
 ** Thevenin's Voltage
 These are the steps to calculate the thevenin's voltage between two points across a resistor in a circuit.
-
-
-
 * Electric Circuits (AC)
 These are circuits, that run on alternating current. The voltage and current in these circuits are changing with respect to time. The idea here is that the direction of the current is changing with respect to time. It is given by:
 
@@ -797,7 +739,6 @@ I(t) = I_p \sin(\omega t + \varphi)
 Where $I_p$ is the peak current, and $\varphi$ is the phase difference between the voltage and current. The units of phase difference are radians ($rad$).
 
 So where can we see AC current? The most common place is in the powerlines leading to our house.
-
 ** [[Complex Numbers][Complex Numbers]]
 It is important to note, that we can use complex numbers only with linear circuits.
 ** Impedance
@@ -809,7 +750,6 @@ Z = \frac{V}{I}
 
 We can then take this general formula, and apply it to resistors, inductors and capacitors.
 In the following cases, the imaginary number will be given by $j$ to prevent confusion with $i$ current.
-
 *** Resistor
 The impedance of a resistor is given by:
 
@@ -826,7 +766,6 @@ If we substitute this into the general formula, we get:
 \[
 v_r = R I_R e^{j\omega t}
 \]
-
 *** Inductor
 The impedance of an inductor is given by:
 
@@ -843,7 +782,6 @@ If we substitute this into the general formula, we get:
 \[
 v_L = L I_L j\omega e^{j\omega t}
 \]
-
 *** Capacitor
 The impedance of a capacitor is given by:
 
@@ -860,7 +798,6 @@ If we substitute this into the general formula, we get:
 \[
 i_C = C V_C j\omega e^{j\omega t}
 \]
-
 *** Respective Impedances
 This is probably the most important part:
 | Impedance | Formula          |
@@ -868,9 +805,6 @@ This is probably the most important part:
 | Resistor  | $R$              |
 | Inductor  | $j\omega L$           |
 | Capacitor | $\frac{1}{j\omega C}$ |
-
-
-
 ** AC Power
 The power $P$ in an AC circuit is given by:
 
@@ -905,16 +839,12 @@ P = |S| \cos(\varphi)
 \]
 
 Where $\theta$ is the phase difference between the voltage and current.
-
-
 ** Reactive Power
 What is reactive power? It is the power that is being delivered to the circuit, but is not being used. This is given by:
 
 \[
 Q = VI \sin{\varphi}
 \]
-
-
 ** Resonance Frequency
 The resonance frequency is the frequency at which the impedance of the circuit is zero. This is given by:
 
@@ -937,7 +867,6 @@ Q = \frac{\omega_r}{\delta \omega}
 Where $\delta \omega$ is the bandwidth of the circuit.
 * Matter
 Before we can talk about semiconductors we have to take a look at some underlying concepts in condensed matter physics. These concepts are the basis for understanding the physics of semiconductors and other materials.
-
 ** Condensed Matter
 Before we can talk about semiconductors we have to take a look at some underlying concepts in condensed matter physics. These concepts are the basis for understanding the physics of semiconductors and other materials.
 
@@ -948,7 +877,6 @@ Condensed matter refers to any kind of object or material in which:
 We can classify materials into two categories:
 + Crystalline materials
 + Amorphous materials
-
 ** Crystalline Materials
 We will only focus on crystalline materials for now. This is a bit of a rough concept, here is an analogy to help you understand it:
 
@@ -965,9 +893,6 @@ We commonly use the term *latices* to describe the arrangement of atoms in a cry
 | Cubic   | [[file:./Condensed_Matter/2023-03-09_14-31-02_120px-Lattic_simple_cubic.svg.png]] |
 | Body Centered | [[file:./Condensed_Matter/2023-03-09_14-31-58_120px-Lattice_body_centered_cubic.svg.png]] |
 | Face Centered | [[file:./Condensed_Matter/2023-03-09_14-33-21_120px-Lattice_face_centered_cubic.svg.png]] |
-
-
-
 ** Bonding in Crystalline Materials
 In physics/chemistry a bond is just like any other, it is a force that holds two atoms together. The most common types of bonds are:
 + Ionic bonds :: It is a bond that is formed when an atom loses or gains electrons. This is a very strong bond
@@ -975,14 +900,12 @@ In physics/chemistry a bond is just like any other, it is a force that holds two
 + Metallic bonds :: Also occurs when two atoms share electrons. The main difference is that the electrons are free to move around. This is the weakest bond
 
 Why is this important? Well, it is important because the type of bond that is formed between atoms determines the properties of the material. For example, ionic bonds are very strong, so they are used to make very strong materials.
-
 ** Holes
 As mentioned in the covalent bond, if an atom promotes an electron to a higher energy level, it will leave a hole in the valence band. This hole is called a *hole*. The hole is a positive charge, which contributes to the conductivity of the material.
 
 
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.allaboutcircuits.com%2Fuploads%2Farticles%2Felectron-flow-in-an-n-type-semiconductor-3.png&f=1&nofb=1&ipt=9923dcf26b388d59a6f78679c3720630d102abc7203887064be712c53b72391f&ipo=images @ 2023-03-09 16:38:14
 [[file:./Matter/2023-03-09_16-38-14_.png]]
-
 * Energy Bands
 The next step before we can talk about semiconductors is to talk about energy bands. Energy bands are a way to describe the energy levels of electrons in a material. We create diagrams to demonstrate these energy bands for each atom. This diagram is called an energy-level diagram, here is an example for Hydrogen:
 
@@ -1009,10 +932,8 @@ n(E) = \frac{1}{\Delta E}
 \]
 
 Where $\Delta E$ is the energy difference between each level. This is also known as the *Fermi-Dirac distribution*.
-
 ** Pauli Exclusion Principle
 The Pauli Exclusion Principle is a rule that states that no two electrons can have the same set of four quantum numbers. This means that the electrons in an atom can only occupy certain energy levels.
-
 ** Valance and Conduction Bands
 + Conduction band :: The first band at which there are no electrons
 + Valance band :: The last band at which there are electrons
@@ -1029,7 +950,6 @@ We can also see the line, called the Fermi level, which is the maximum energy le
 At last, we can talk about semiconductors. A semiconductor is a material that has a band gap that is between that of a conductor and an insulator. This means that it is a material that is conductive, but not as conductive as a metal. The range in which the band gap can be is $0.5 \Leftrightarrow 2.5$ eV.
 
 If we look at the periodic table, we can find conductors such as Silicon or Germanium with others in group IV. [[Periodic Table]]
-
 ** Doping
 Just like in sports, doping is the act of adding a substance to a material to improve its performance. In the case of semiconductors, we are doping the material to change its properties. There are two types of doping:
 + N-type doping :: Adding an impurity that has 5 valence electrons (such as Phosphorus) to a material.
@@ -1038,12 +958,10 @@ Just like in sports, doping is the act of adding a substance to a material to im
 
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.physics-and-radio-electronics.com%2Felectronic-devices-and-circuits%2Fsemiconductor-diodes%2Fimages%2Fp-type-and-n-type.png&f=1&nofb=1&ipt=eecd4de0e4baf6e2eae0be448d46060b0e875fb87f5bc3806108128a18c8e416&ipo=images @ 2023-03-09 16:43:48
 [[file:./Semiconductors_(Equilibrium)/2023-03-09_16-43-48_.png]]
-
 ** Intrinsic vs Extrinsic Conductivity
 So if we dope a material, we either create excess electrons or holes. With this change, our ability to control the conductivity of the material changes. We can control the conductivity of the material with temperature.
 
 So what dose intrinsic and extrinsic mean? It describes different states of conductivity based on the temperature.
-
 ** Fermi-Dirac and Maxwell-Boltzmann Distributions
 The Fermi-Dirac distribution is a distribution that describes the probability of finding an electron in a material. It is given by:
 
@@ -1067,14 +985,12 @@ f(E) = \frac{1}{e^{\frac{E}{kT}} + 1}
 \]
 
 Where $E$ is the energy of the electron, $k$ is the Boltzmann constant, and $T$ is the temperature. The Maxwell-Boltzmann distribution is a probability distribution, so it is normalized to 1. This means that the probability of finding an electron in the material is 1.
-
 ** Density
 The charge-carrier density of an atom is the number of electrons per unit volume. This is given by:
 
 \[
 n_0 = \frac{1}{V} \int_{E_F}^{\infty} n(E) dE = \frac{1}{V} \int_{E_F}^{\infty} g_n(E) f(E) dE
 \]
-
 * Semiconductors (Non-Equilibrium)
 ** Drift Velocity
 If we have some charge, without the presence of an electric field, it will move in an erratic manner. They move at a thermal *speed* $v_T$. With statistics, we can say:
@@ -1129,7 +1045,6 @@ Where $A$ and $B$ are constants, $T$ is the temperature, and $\mu_\text{vib}$ an
 
 #+DOWNLOADED: screenshot @ 2023-03-19 13:44:59
 [[file:./Semiconductors_(Non-Equilibrium)/2023-03-19_13-44-59_screenshot.png]]
-
 ** Drift Current
 The drift current is the current that is caused by the drift velocity of the charge carriers. The drift current is given by the following equations, respectively to each type of carrier (n/p):
 
@@ -1177,7 +1092,6 @@ For better interpretation, we can rewrite the equation as:
 
 #+DOWNLOADED: screenshot @ 2023-03-19 14:02:24
 [[file:./Semiconductors_(Non-Equilibrium)/2023-03-19_14-02-24_screenshot.png]]
-
 ** Photoconductivity
 
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.stack.imgur.com%2FYYRs7.png&f=1&nofb=1&ipt=dbbb395cd3818c1b77a570ee6fc25ddb178f3ac7e30d0c014ddba02851c91c13&ipo=images @ 2023-03-19 14:03:51
@@ -1186,7 +1100,6 @@ For better interpretation, we can rewrite the equation as:
 Above is a Feynman diagram in which we can see the electrons emit photons when they are excited. This is called the *photoelectric effect*. We can now relate this to semiconductors:
 
 If we expose a semiconductor to an EM wave, the electrons will be excited and have make the material more conductive. They do this by jumping from the valance band to the conduction band.
-
 ** Hall Effect in Semiconductors
 # #+begin_ai
 # [SYS]: You are Richard Faynman
@@ -1216,12 +1129,10 @@ With these values, we can also get the mobility of the charge carriers:
 \]
 
 Where $V_B$ is the voltage across the material, $L$ is the length of the material, $V_0$ is the voltage across the material, $B_z$ is the magnetic field in the z-direction, and $W$ is the width of the material.
-
 ** Inhomogeneous Semiconductors
 This is a kind of semiconductor that has a non-uniform distribution of charge carriers. This is caused by the presence of impurities. Possible causes:
 + Doping
 + Inhomogeneous light
-
 ** Diffusion Current
 If we have a bunch of charge carriers concentrated in one part of the material, they will diffuse to the other parts of the material. This is called diffusion. The diffusion current is the current that is caused by the diffusion of the charge carriers. It can be modeled mathematically:
 
@@ -1235,7 +1146,6 @@ Again, we can define this with respect to each type of charge carrier predominan
 
 + n-type :: $J_n \vert_{text{diff}} = eD_n \frac{\partial n}{\partial x}$
 + p-type :: $J_p \vert_{text{diff}} = - eD_p \frac{\partial p}{\partial x}$
-
 ** Generation and Recombination of Charge Carriers
 #+HTML: <video src="./Animations/2df05e4f3d50a93c4dff8ae5e8248b8c4f005d5c0a5f68099aa7ae95.mp4" controls="controls" width="100%" height="100%"></video>
 
@@ -1244,7 +1154,6 @@ We can *generate* an electron-hole pair if we direct a photon to an electron. Wh
 If we go the other way around, we can *recombine* an electron-hole pair. This happens when the electron and the hole combine to form a neutral atom. This is called *radiative recombination*. This recombination also releases a photon.
 
 #+HTML: <video src="./Animations/0ac554bca7e0db9d8ff86c2d76f1dc0931623ebf6753bbc6b442b9f9.mp4" controls="controls" width="100%" height="100%"></video>
-
 * PN Junctions
 If we put two semiconductors together, we get a PN junction. Each of the semiconductors must respectively have the n-type and p-type doping. The resulting junction is called a diode.
 
@@ -1260,14 +1169,11 @@ Based on the voltage provided, the region between the two semiconductors, will h
 
 
 The depletion region, is created when some electrons from the n-type /switch sides/ with the holes from the n-type. Inherently, this switch, creates an electric field which sustains the depletion region. This is called the *built-in electric field*.
-
-
 ** In Equilibrium
 For a diode to reach a state of equilibrium, we need to have the following conditions:
 + The drift current is equal to the diffusion current for each type of charge carrier
 
 What is diffusion current? It is the current that is caused by the diffusion of the charge carriers.
-
 ** Polarized Junctions
 If we put a pn-junction into an EM field, we will see different outcomes for the *depletion* and *neutral* region.
 
@@ -1281,8 +1187,6 @@ W=\sqrt{\frac{2 \varepsilon (V_{b i}-V)}{e} \frac{N_{A}+N_{D}}{N_{A} N_{D}}}
 \]
 
 Where $\varepsilon$ is the permittivity of the material, $V_{b i}$ is the built-in voltage, $V$ is the applied voltage, $e$ is the charge of the electron, $N_{A}$ is the concentration of acceptors, and $N_{D}$ is the concentration of donors.
-
-
 ** Characteristic I-V Curve of the Diode
 
 #+DOWNLOADED: screenshot @ 2023-03-19 17:29:47
@@ -1290,17 +1194,13 @@ Where $\varepsilon$ is the permittivity of the material, $V_{b i}$ is the built-
 
 
 This curve gives us the behavioral property of the device. It tells us how the diode will behave in the circuit when we apply a voltage to it.
-
-
 ** LEDs and Lasers
 An LED is a special kind of diode, that emits light when current is applied to it. The light is emitted when the electrons jump from the valance band to the conduction band. This is called the *photoelectric effect*. The light is emitted in the form of photons. The color of the light is determined by the band gap energy of the semiconductor. The higher the band gap energy, the more energy is required to excite the electrons. This means that the light emitted will have a higher frequency and thus a higher energy. This is why the color of the light is red (for example).
 
 + Anode :: Longer leg = Positive
 + Cathode :: Shorter leg  = Negative
-
 ** Optoelectronic Devices
 What is this? It is a device that uses light to control the electrical properties of a semiconductor. This is done by using the photoelectric effect.
-
 ** Diodes in Circuits
 
 #+DOWNLOADED: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftechterms.com%2Fimg%2Flg%2Fdiode_1244.jpg&f=1&nofb=1&ipt=415b354cf24c68ee5d4327acb78dc4551064ec47b0260ce105ce906571926ad1&ipo=images @ 2023-03-19 17:42:35
@@ -1310,18 +1210,108 @@ What is this? It is a device that uses light to control the electrical propertie
 2. Replace diode with a voltage source (usually .7V)
 3. Solve for current
 4. If it makes sense, you are done, if not, go back to step 1 and switch your bias.
-
 * Transistors
+So far we have only talked about two terminal devices, we now must address 3 terminal ones. We classify these devices into 2 categories:
++ Controlled by voltage :: MOSFET
++ Controlled by current :: BJT
 ** Bipolar Junction Transistors
+This is probably the most familiar and easiest to understand. It is in a sense an electronic switch. Not only does it act as a switch, but also an amplifier of current.
 *** Basic Functioning
+It consists of a *collector*, *base* and *emitter*. You can imagine it as two diodes back to back.
++ Collector :: Doped, the current enters here
++ Base :: Regulates the current (middle) acts as the switch
++ Emitter :: Heavily Doped, the current exits here
+A BJT can be either NPN or PNP doped. The NPN is the most common as it has higher electron mobility. The PNP is used when the current is in the opposite direction.
 *** Polarization
+A BJT can be put into 4 different modes:
+
+| Mode       | NPN                       | PNP                       | Usage     |
+|------------+---------------------------+---------------------------+-----------|
+| Cut-off    | $V_{BE} < 0.7 \quad V_{CB} < 0$ | $V_{BE} < 0.7 \quad V_{CB} < 0$ | Logic     |
+| Active     | $V_{BE} > 0.7 \quad V_{CB} < 0$ | $V_{BE} > 0.7 \quad V_{CB} < 0$ | Amplifier |
+| Reverse    | $V_{BE} > 0.7 \quad V_{CB} > 0$ | $V_{BE} > 0.7 \quad V_{CB} > 0$ | Not Used  |
+| Saturation | $V_{BE} > 0.7 \quad V_{CB} < 0$ | $V_{BE} > 0.7 \quad V_{CB} < 0$ | Logic     |
+
+In terms of functioning in the circuit:
++ Active :: The BJT is acting as an amplifier of current, so the switch is on
++ Cut-off :: The BJT does not allow current to flow, so the switch is off
++ Saturation :: The BJT is acting as a switch, so the switch is on (but not amplifying)
 *** Modeling
+Since there are 3 IOs, we need 6 equations to model the BJT. Since we need:
+
+\[
+I_b \quad I_c \quad I_e \quad V_{be} \quad V_{bc} \quad V_{ce}
+\]
+
+We can use the following equations:
+
+\[
+V_b + I_c = I_e \\
+V_{CE} = V_{CB} + V_{BE}
+\]
+
+This holds always. Not only will the resulting current of a BJT be the input, but it gets amplified by a factor of $\beta$. This is called the *current gain*. The current gain is given by:
+
+\[
+\beta = \frac{I_c}{I_b} \\
+\alpha = \frac{I_c}{I_e}
+\]
+
+Where $\alpha$ is the *current transfer ratio*. The current transfer ratio is the ratio of the current that goes from the emitter to the collector. The current gain is the ratio of the current that goes from the base to the collector.
 *** Circuit Analysis with Transistors
-*** Digital Circuits
+If we have a transistor in a circuit, we can only guess at the mode in which it is. We can do this by looking at the circuit and seeing if it makes sense. If it does not, we can guess again. To know if it makes sense, we must check *conditions* given by this table:
+
+
+#+DOWNLOADED: screenshot @ 2023-05-02 15:58:31
+[[file:Transistors/2023-05-02_15-58-31_screenshot.png]]
+
+
+The following are the steps we must take in order to solve a circuit with a transistor:
+1. Assume the directions of the BCE currents respectively
+2. Assume the mode of the transistor
+3. Write down Kirchhoff equations
+4. Solve the non-linear equations using:
+   + IV curve of the transistor
+   + Circuit Simulation
+   + Linear approximation
+5. Check if the assumptions are correct (if not, go back to step 1)
 ** MOSFETs
+A MOSFET is a *Metal Oxide Semiconductor Field Effect Transistor*. It is a voltage controlled device. It is a 4 terminal device, but one of the terminals is not used. It is used in digital circuits, and is the most common transistor - we can see it in almost every modern piece of technology.
 *** Work Function
+The work function is the energy required to remove an electron from a material. It is given by $\gamma$. It is the difference between the fermi level and the vacuum level.
+
+
+| Material  | Work Function (eV) |
+|-----------+--------------------|
+| Silver    |               4.26 |
+| Aluminum  |               4.28 |
+| Gold      |                5.1 |
+| Palladium |               5.12 |
+| Nickel    |               5.15 |
+| Platinum  |               5.65 |
+
+Another important term is *electron affinity*, this is the energy released when an electron is added to a material. It is given by $\chi$.
+
+| Material  | Electron Affinity (eV) |
+|-----------+------------------------|
+| Silicon   |                   4.01 |
+| Germanium |                   4.13 |
+| GaAs      |                   4.07 |
+| AlAs      |                    3.5 |
 *** MOS
+
+#+DOWNLOADED: screenshot @ 2023-05-02 16:25:35
+[[file:Transistors/2023-05-02_16-25-35_screenshot.png]]
+
+
+A MOS is a *Metal Oxide Semiconductor*. It is a capacitor with a metal gate, an oxide insulator and a semiconductor. The semiconductor is either N or P doped.
+In essence, it acts as a capacitor, but the key difference is that it takes a certain threshold of voltage to start charging.
 *** MOSFET
+If we take a MOS and add a source and a drain, we get a MOSFET. The MOSFET is a voltage controlled device. It acts and looks almost just like a BJT, the key difference is that it is controlled by the MOS.
+
+
+#+DOWNLOADED: screenshot @ 2023-05-02 16:28:32
+[[file:Transistors/2023-05-02_16-28-32_screenshot.png]]
 *** Qualitative Functioning
 *** Polarization
 *** Modeling
@@ -1340,7 +1330,6 @@ What is this? It is a device that uses light to control the electrical propertie
 
 #+DOWNLOADED: https://ptable.com/image/periodic-table.svg @ 2023-03-09 16:34:09
 [[file:./References/2023-03-09_16-34-09_periodic-table.svg]]
-
 ** Vector Sum
 A vector sum is just the addition of two vectors. For example, if you have two vectors, $\vec{a}$ and $\vec{b}$, then the vector sum of $\vec{a}$ and $\vec{b}$ is given by:
 
@@ -1351,7 +1340,6 @@ A vector sum is just the addition of two vectors. For example, if you have two v
 A definite integral gives use the area under the curve. This is done by taking very small slices of the curve and adding them together. A line integral is the same thing, but instead of taking slices of the curve, we take slices of the line and then multiply the slides by the vector filed.
 
 + https://www.khanacademy.org/math/multivariable-calculus/integrating-multivariable-functions/line-integrals/v/introduction-to-the-line-integral
-
 ** Relative Permittivity Table
 
 Equation for permittivity of a dielectric:
@@ -1376,7 +1364,6 @@ Equation for permittivity of a dielectric:
 | Mylar    |                2.2000 |
 | Copper   |                1.0000 |
 | Gold     |                1.0000 |
-
 ** Complex Numbers
 The most common format of a complex number is: $x + iy$ where $x$ is the real part and $y$ is the imaginary part. The imaginary part is denoted by $i$, but $i$ iteself is not the imaginary part.
 
@@ -1390,7 +1377,6 @@ The imaginary part is denoted by $j$ in some cases.
 + Euler representation :: $z = r e^{i\theta}$
 + Polar representation :: $z = r e^{i\theta} = r(\cos\theta + i\sin\theta)$
 + Addition :: $z_1 + z_2 = (x_1 + x_2) + i(y_1 + y_2)$
-
 * Mind Map
 [[./physics_mind_map.svg]]
 
