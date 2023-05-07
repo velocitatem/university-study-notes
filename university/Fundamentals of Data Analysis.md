@@ -43,6 +43,7 @@ Conditions:
 + $\sigma$ is known
 
 Statistic:
+
 $$
 Z = \frac{\bar{X} - \mu_0}{\sigma\over\sqrt{n}}
 $$
@@ -80,6 +81,7 @@ Statistic:
 $$
 t = \frac{\bar{x} - \mu_0}{s \over \sqrt{n}}
 $$
+
 We also need the degrees of freedom, which are given by $n - 1$
 
 ### Python
@@ -103,9 +105,11 @@ Conditions:
 
 
 Statistic:
+
 $$
 z = \frac{\hat{p} - p_0}{\sqrt{p_0 (1- p_0) \over n}}
 $$
+
 Where $\hat{p}$ is the observed proportion and $p_0$ is the expected. If we fail to reject our $H_0$, the we can say that the distribution of $z$ is approximately normal with:
 
 $$
@@ -114,6 +118,7 @@ E(Z) &= \frac{p^\prime - p_0}{\sqrt{p(q)\over n}} \\
 V(z) &= \frac{p^\prime (1-p^\prime)\over n}{p(q)\over n}
 \end{align}
 $$
+
 Where $q = (1-p)$.
 ### #TODO beta
 ### Python
@@ -128,9 +133,11 @@ smp.proportions_ztest(count=x, nobs=n, value=p_0, alternative=direction, prop_va
 Conditions:
 + $n < 30$
 We can use a binomial distribution to estimate:
+
 $$
 B \sim (x,n,p)
 $$
+
 ### #TODO beta
 ### Python
 Relatively simple implementation:
@@ -149,6 +156,7 @@ Statistic:
 $$
 \chi^2 = \frac{(n-1)s^2}{s_0^2}
 $$
+
 We can them compute our p value via tables or python.
 ### Python
 We then go to compute the p-value with either some tables of the following python functions:
@@ -182,6 +190,7 @@ $$
 + Provides us with a sample size necessary to satisfy:
 	+ Some level of $\alpha$
 	+ Some level $\beta$
+ 
 $$
 m = n = \frac{(\sigma_1^2 + \sigma_2^2)(z_\alpha + z_\beta)^2}
 {(\Delta^\prime - \Delta_0)^2}
@@ -198,6 +207,7 @@ Statistic:
 $$
 z = \frac{\bar{x} - \bar{y} - \Delta_0}{\sqrt{\frac{s^2}{m}-\frac{s_2^2}{n}}}
 $$
+
 We only change the $\sigma$ for $s$.
 
 ### Confidence Intervals
@@ -207,16 +217,19 @@ We only change the $\sigma$ for $s$.
 $$
 \bar{x} - \bar{y} \pm z_{\alpha/2}\sqrt{\frac{s_1^2}{m} + \frac{s_2^2}{n}}
 $$
+
 Depending on the type of test, we replace $z_{\alpha/2}$ with $z_\alpha$. Sometimes we might also want to compute the size of on interval which would be of width $w$.
 
 $$
 n = \frac{4 z_{\alpha/2}^2 (\sigma_1^2 + \sigma_2^2)}{w^2}
 $$
+
 Where:
 
 $$
 w = z \times se
 $$
+
 ### Python
 Simple test:
 ```python
@@ -246,6 +259,7 @@ $$
 \end{align}
 $$
 
+
 ## T Test (Means)
 
 Conditions:
@@ -258,6 +272,7 @@ Statistic:
 $$
 T = \frac{\bar{X} - \bar{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{S_1^2}{m}+\frac{S_2^2}{n}}}
 $$
+
 Degrees of freedom:
 
 
@@ -274,6 +289,7 @@ Z = \frac{\bar{X}-\bar{Y}-(\mu_1 - \mu_2)}{\sqrt{\sigma^2(
 \frac{1}{m} + \frac{1}{n}
 )}}
 $$
+
 For this standardized statistic, the degrees of freedom are given by $(m+n-2)$
 
 ### Confidence Interval
@@ -302,10 +318,13 @@ Statistic:
 $$
 t = \frac{\bar{d} - \Delta_0}{s_D \over \sqrt{n}}
 $$
+
 The p-value is the computed using either a table or python. From this statistic, we can also create a confidence interval:
+
 $$
 \bar{d} \pm t_{\alpha/2,n-1}{s_d\over{\sqrt{n}}}
 $$
+
 The **conditions** for this CL are either:
 + $n > 30$
 + Approximately normal distribution of differences
@@ -333,6 +352,7 @@ Conditions: General conditions for inference
 	+ $E(\hat{p_1}-\hat{p_2}) = p_1 - p_2$
 	+ $Var(\hat{p_1}-\hat{p_2}) = \frac{p_1q_1}{m} + \frac{p_2q_2}{n}$
 + Given a large sample size, we can use the **common p**, also called a weighted estimator:
+
 $$
 \hat{p} = \frac{X+Y}{m+n} = \frac{m}{m+n}\hat{p_1} + \frac{n}{n+m}\hat{p_2}
 $$
@@ -342,14 +362,17 @@ Statistic:
 $$
 z = \frac{\hat{p_1}-\hat{p_2}}{\sqrt{\hat{p}\hat{q}(\frac{1}{m}+\frac{1}{n})}}
 $$
+
 ### Type II Error and $\beta$
 #TODO 
 
 ### Confidence Interval
 The CL in this case is given by:
+
 $$
 \hat{p_1}-\hat{p_2} \pm z_{\alpha/2}\sqrt{\hat{p}\hat{q}(\frac{1}{m}+\frac{1}{n})}
 $$
+
 ### Python
 Test:
 ```python
@@ -367,17 +390,23 @@ smp.confint_proportions_2indep(x1, n1, x2, n2, method=None, compare='diff', alph
 + Takes 2 parameters $v_1,v_2$
 Conditions: General
 Statistic:
+
 $$
 F = \frac{X_1/v_1}{X_2/v_2}
 $$
+
 Where $X_{1,2}$ represent some random variable (in this case $\chi^2$) and $v_{1,2}$ are the respective degrees of freedom. We now define our specific statistic as:
+
 $$
 F = \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}
 $$
+
 The statistic we will use for inference is lowercase $f$ given by:
+
 $$
 f = \frac{s_1^2}{s_2^2}
 $$
+
 For computing p values, this is a bit different, as the F curve is not normal, here is a table:
 | Alternative Hypothesis     | P Value                   |
 | -------------------------- | ------------------------- |
@@ -386,6 +415,7 @@ For computing p values, this is a bit different, as the F curve is not normal, h
 | $\sigma_1^2\neq\sigma_2^2$ | $2\times min(A_R,A_L)$    | 
 
 ### Confidence Interval
+
 $$
 P(F_{1-\alpha/2,v_1,v_2} < F < F_{\alpha/2,v_1,v_2}) = 1 - \alpha
 $$
