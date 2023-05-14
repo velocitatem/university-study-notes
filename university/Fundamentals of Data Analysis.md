@@ -1,10 +1,191 @@
+---
+title: Fundamentals of Data Analysis
+---
++ Problem Sets
+	+ [[FDA Problem Set 4]]
 + [[FDA Final Project]]
 + ![[Probability and Statistics for Engineering and the Sciences (Jay L. Devore) (Z-Library).pdf]]
 + ![[Data Analysis Notes.pdf]]
 
-# Questions to Ask when Solving
+# Stats Models Parameters First
+
+A modified version of `statsmodels` that allows you to enter parameters directly, rather than just using distributions of data. Start by running the following to import the modified version:
+
+```python
+!pip install https://github.com/velocitatem/statsmodels/releases/download/beta2/statsmodelspf-0.1.dev15054+g898b7c7.d20230507-cp310-cp310-linux_x86_64.whl
+
+import statsmodels.stats.weightstats as smw
+```
+
+With this modified version you can do more with less code.
+
+# Confidence Intervals
++ A range of values which contains a population parameters with some confidence level
+	+ $CL = 100(1-a)\%$
+	+ Margin of error: statistical score $\times$ standard error
++ We assume that $\sigma$ is known
+
+General formula for the means:
+
+$$
+\bar{x} \pm z_\alpha \frac{\sigma}{\sqrt{n}}
+$$
+
+The interpretation is a long-run probability interpretation, if we sample multiple time, we will find that the means falls into the interval CL% of the time. The higher the confidence level, the higher the margin of error.
+
+![[Pasted image 20230511085752.png]]
+
++ Since the interval has two sides, an area of cl will be achieved by $\alpha/2$
+	+ $\bar{x} \pm z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}}$
+
+## Precision and Sample Size
++ We might also have to compute the required sample size for a given CL
+
+$$
+n = (2 z_{\alpha/2} \times \frac{\sigma}{w})^2
+$$
+
+## Large Sample
++ We do not know $\sigma$
++ Our sample is large enough so that we can assume normality
+
+$$
+Z = \frac{\bar{X}-\mu}{\frac{S}{\sqrt{n}}} \quad \ldots \quad \bar{x}\pm z_{\alpha/2}\times\frac{s}{\sqrt{n}}
+$$
 
 
+
+## Proportions
++ We want to be confident a population proportions will land in some range
++ The formula is a pain
+
+$$
+\tilde{p} \pm z_{\alpha/2} \frac{\sqrt{\hat{p}\hat{q}/n + z_{\alpha/2}^2/4n^2}}{1+z_{\alpha/2}^2/n}
+$$
+
+Where $\hat{q} = 1 = \hat{p}$. However, with a **large sample** the formula changes to:
+
+$$
+\hat{p} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}\hat{q}}{n}}
+$$
+
+Because $\tilde{p} \approx \hat{p}$.
+### Python
+  
+
+```python
+import statsmodels.stats.proportion as smp
+smp.proportion_confint(count=..., nobs=..., alpha=..., method='normal')
+```
+
+where:
+- `count` is the number of successes
+- `nobs` is the number of observations
+- `alpha` is the error level, and
+- `method='normal'` implies that we assume the sampling ditribution to follow a normal distribution.
+## One Sided
++ We thus far made confidence intervals which went both ways
++ Now we just isolate one direction
+
+$$
+\mu \lt \bar{x} + z_{\alpha}\times\frac{s}{\sqrt{n}} \quad\quad\mu \gt\bar{x} -z_{\alpha}\times\frac{s}{\sqrt{n}}
+$$
+
+It might seem a bit counter-intuitive, but we try to capture the entirety of the area under the curve, rather than the top.
+
+## Distributions
++ Depending on the sample size and information give:
+	+ We select either the $z$ or $t$ distribution
++ The biggest difference comes when getting the $p$ value
+
+$$
+s \text{ is unknown}\quad \cdots\quad
+\begin{cases}
+n > 40 \quad  S\approx\sigma \ldots \text{z distribution} \\
+n < 40 \quad \text{t distribution}
+\end{cases}
+$$
+
+
+
+## Variance and Standard Deviation
++ We sample from a normal distribution
+	+ We know $\sigma$
+
+$$
+\frac{(n-1)S^2}{\sigma^2} = \frac{\sum{(X_i - \bar{X})^2}}{\sigma^2}
+$$
+
+This follows the chi squared distribution.
+
+## Python
+Simple z interval:
+```python
+res.zconfint_mean(alpha=0.05, alternative='two-sided/larger/smaller')
+```
+
+t interval:
+```python
+res.tconfint_mean(alpha=0.1, alternative='two-sided/larger/smaller')
+```
+
+Variance CI from data:
+
+```python
+x=[1470,1510,1690,1740,1900,2000,2030,2100,2190,2200,2290,2380,2390,2480,2500,2580,2700]
+n=len(x)
+s2=np.var(x,ddof=1)
+df=n-1
+alpha=0.05
+
+ucl = (n - 1) * s2 / ss.chi2.ppf(alpha / 2, df)
+lcl = (n - 1) * s2 / ss.chi2.ppf(1 - alpha / 2, df)
+lcl,ucl
+```
+
+Variance CL from parameters:
+```python
+n=292
+s2=8.3**2
+alpha=0.05
+df=n-1
+
+ucl = (n - 1) * s2 / ss.chi2.ppf(alpha / 2, df)
+lcl = (n - 1) * s2 / ss.chi2.ppf(1 - alpha / 2, df)
+lcl,ucl
+```
+
+
+
++ If the null hypothesis is rejected in One Way Anova, we need to perform a post hoc analysis to determine which groups are significantly different from each other
++ Common methods include:
+	+ Tukey's HSD (Honestly Significant Difference)
+	+ Bonferroni Correction
+	+ Scheffe's Method
+
+### Tukey's HSD
+
+$$
+q = \frac{\bar{X_i} - \bar{X_j}}{\sqrt{\frac{MSE}{J}}}\geq q_\alpha(J,I,J(I-1))
+$$
+
+Where $q_\alpha$ can be found using a table or calculator.
+
+### Bonferroni Correction
+
+$$
+\text{New }\alpha = \frac{\alpha}{I(I-1)/2}
+$$
+
+Then, we compare the confidence intervals for each pair of groups. If they do not overlap, they are significantly different.
+
+### Scheffe's Method
+
+$$
+F = \frac{\text{Max Mean Difference}^2}{MSE/J}
+$$
+
+If $F>F_{\alpha,I-1,J(I-1)}$, then the two groups are significantly different.
 # Hypothesis Testing (One Sample)
 + Given by two hypotheses:
 	+ Null Hypothesis: The status quo
@@ -52,22 +233,32 @@ Where $\sigma\over\sqrt{n}$ is the **standard error** and $\mu_0$ is the hypothe
 
 Once we have the value of $z$ , we can get our **p-value**. We can either get this from a table or using this python code. 
 
-### #TODO Type II Error and $\beta$
+### Type II Error and $\beta$
++ $\beta$ gives us the probability of the type II error, whereas the Type II error is given by $\alpha$. 
+	+ We can also use this to calculate the required sample size for a specific level of each.
++ The formulas are horrible to compute by hand, so we use python.
+
+Type II Error:
+```python
+import statsmodels.stats.power as ssp
+T2_p = ssp.normal_power_het(mu_prime, n, alpha, std_null=std, std_alternative=None, alternative='larger/smaller/two-sided')
+```
+
+Required sample size:
+```python
+req_n = ssp.zt_ind_solve_power(effect_size=(H_a-H_0)/std, nobs1=None, alpha=0.01, power=0.99, ratio=0, alternative='larger/smaller/two-sided')
+```
 
 ### Python
 Calculating given a dataset
 ```python
-import statsmodels.stats.weightstats as smw
-res = smw.DescrStatsW(x) # where x is our data
+res = smw.DescrStatsW(mean=x_bar, std=std, sample_size=n)
 z_score, p_value = res.ztest_mean(value=H_0, alternative=direction)
 ```
 Given just metrics:
 ```python
-import numpy as np
-import scipy.stats as ss
-se = s / np.sqrt(n)
-z_score = (x_bar - H_0) / se
-p_value = ss.norm.cdf(z_score) # gives area to the left
+res = smw.DescrStatsW(x) # where x is our data
+z_score, p_value = res.ztest_mean(value=H_0, alternative=direction)
 ```
 
 ## T Test (Means)
@@ -84,16 +275,29 @@ $$
 
 We also need the degrees of freedom, which are given by $n - 1$
 
+### Type II Error and $\beta$
+Power:
+
+```python
+from statsmodels.stats.power import TTestPower
+TTestPower().power(effect_size=(H_a-H_0)/std, nobs=n, alternative='larger/smaller/two-sided',alpha=0.01)
+```
+
+And the required sample size:
+
+```python
+TTestPower().solve_power(effect_size=(H_a-H_0)/std, nobs=None, alpha=0.01, power=0.88, alternative='larger/smaller/two-sided')
+```
+
 ### Python
 Full t-test using formulas:
 ```python
-import scipy.stats as ss
-se = s / np.sqrt(n)
-t_score = (x_bar - H_0) / se
-p_value = ss.t.cdf(t_score, df=n-1)
+res = smw.DescrStatsW(mean=x_bar, std=std, sample_size=n)
+t_score, p_value, d_freedom = res.ttest_mean(value=H_0, alternative=direction)
 ```
 Or for a dataset:
 ```python
+res = smw.DescrStatsW(data)
 t_score, p_value, d_freedom = res.ttest_mean(value=H_0, alternative=direction)
 ```
 
@@ -120,7 +324,18 @@ V(z) &= \frac{p^\prime (1-p^\prime)\over n}{p(q)\over n}
 $$
 
 Where $q = (1-p)$.
-### #TODO beta
+### Type II Error and $\beta$
+Beta:
+```python
+beta = ssp.normal_power_het(diff_alt, n, alpha, std_null=std_0, std_alternative=std_a, alternative='smaller/larger/two-sided')
+```
+
+Sample size:
+```python
+req_size = ssp.zt_ind_solve_power(effect_size=diff_alt/std, nobs1=None, alpha=0.01, power=0.99, ratio=0, alternative='smaller/larger/two-sided')
+```
+
+
 ### Python
 Simple proportions test:
 ```python
@@ -138,7 +353,21 @@ $$
 B \sim (x,n,p)
 $$
 
-### #TODO beta
+### Type II Error and $\beta$
++ Even for a small sample we can get a type II
+	+ In this case, since we generalize with the binomial distribution, its simpler
+
+$$
+B(p^\prime) = B(c_a - 1, n, p^\prime)
+$$
+And in python:
+
+```python
+import scipy.stats as ss
+beta = ss.binom.cfd(c_a - 1, n , p_prime)
+```
+
+
 ### Python
 Relatively simple implementation:
 ```python
@@ -169,6 +398,7 @@ ss.chi2.cdf(chi_squared, df=n-1)
 # Hypothesis Testing (Two Sample)
 + Concerns the comparison between two means of samples
 	+ We have 2 distributions
++ Exercises: 421
 
 ## Z Test (Means)
 
@@ -243,6 +473,7 @@ Confidence Interval:
 lower, upper = comp.zconfint_diff(alpha, usevar='unequal')
 ```
 
+If given summary statistics, just replace each `DescrStatsW(data)` with `DescrStatsW(mean=mean, std=std, var=var, sample_size=n)` 
 
 ## Paired Data
 + We still make two observations (samples)
@@ -258,6 +489,23 @@ $$
 \sigma^2_D &= V(X - Y) = V(\frac{1}{n}\sum_i{D_i}) = \frac{\sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2}{n}
 \end{align}
 $$
+
+### How to Identify
+
+```mermaid
+graph TD
+    A[Are there two sets of data?] -->|Yes| B[Do the sets have the same number of measurements?]
+    B -->|Yes| C[Do the measurements in one set correspond to the measurements in the other set?]
+    C -->|Yes| D[Are the corresponding measurements related to each other in a natural way?]
+    D -->|Yes| E[Do each pair of corresponding measurements consist of exactly one measurement from each set?]
+    E -->|Yes| F[The data is paired]
+    E -->|No| G[The data is not paired]
+    D -->|No| G
+    C -->|No| G
+    B -->|No| G
+    A -->|No| G
+
+```
 
 
 ## T Test (Means)
@@ -295,15 +543,15 @@ For this standardized statistic, the degrees of freedom are given by $(m+n-2)$
 ### Confidence Interval
 #TODO 
 ### Python
-Statistic given dataset:
+Statistic:
 ```python
-comp= smw.CompareMeans(a,b) # where a and b are decre stats
+comp= smw.CompareMeans(a,b) # a,b can either be DescrStatsW from a dataset or parameters
 tStat, pVal, dfreedom = comp.ttest_ind(usevar='unequal', value=0, alternative='two-sided')
 ```
-Confidence Interval given dataset:
+Confidence Interval:
 ```python
 alpha=0.05
-lower, upper = comp.tconfint_diff(alpha, usevar='unequal')
+comp.summary(use_t=False, alpha=0.1, usevar='unequal')
 ```
 
 **IF WE ASSUME EQUAL (pooled)** : We have to replace `unequal` with `pooled`
@@ -335,7 +583,7 @@ df['diff'] = df['a']-df['b']
 ```
 Then we can:
 ```python
-comp = smw.DescrStatsW(df['diff'])
+comp = smw.DescrStatsW(df['diff']) # here you can again replace with parameters
 tStat, pVal, dfreedom = comp.ttest_mean(value=H_0, alternative='two-sided')
 ```
 
@@ -364,7 +612,7 @@ z = \frac{\hat{p_1}-\hat{p_2}}{\sqrt{\hat{p}\hat{q}(\frac{1}{m}+\frac{1}{n})}}
 $$
 
 ### Type II Error and $\beta$
-#TODO 
+
 
 ### Confidence Interval
 The CL in this case is given by:
@@ -376,6 +624,7 @@ $$
 ### Python
 Test:
 ```python
+import statsmodels.stats.proportion as smp
 count = np.array([x1, x2])
 nobs = np.array([n1,n2])
 zStat, pVal = smp.proportions_ztest(count, nobs,value=None, alternative="two-sided",prop_var=False)
@@ -414,8 +663,45 @@ For computing p values, this is a bit different, as the F curve is not normal, h
 | $\sigma_1^2 < \sigma_2^2$  | Area to the left ($A_L$)  |
 | $\sigma_1^2\neq\sigma_2^2$ | $2\times min(A_R,A_L)$    | 
 
+
 ### Confidence Interval
 
 $$
 P(F_{1-\alpha/2,v_1,v_2} < F < F_{\alpha/2,v_1,v_2}) = 1 - \alpha
 $$
+
+### Python
+
+```python
+f = sx2/sy2
+import scipy.stats as ss
+critical=ss.f.ppf(1-alpha,dfx,dfy)
+f<critical
+```
+
+# Analysis of Variance (Anova)
++ Compares some number of groups
++ We distinguish between **one way** and **two way**
+	+ It refers to the number of factors in the response variable
++ For each independent variable (**treatment**)
+	+ We have a **group** or **level** - this is just various types of the independent variable
+
+## One Way Anova
++ We compare **two** groups (their means)
+	+ The null hypothesis is that they are the same
+
+Statistic:
+
+$$
+\begin{align}
+F &= \frac{MSTr}{MSE} \\
+MSTr &= \frac{J}{I - 1}\sum_i{(\bar{X_i} - \bar{X})^2} = \frac{SSTr}{I-1} \\
+MSE &= \frac{S_i^2 + S_2^2 + \cdots + S_i^2}{I} = \frac{SSE}{I(J-1)}
+\end{align}
+$$
+
+Where $I = \text{treatments}$ and $J = \text{groups in each treatment}$. Once we have the F statistic, we can use functions to get the probability or we can get a rejection region.
+
+## Post Hoc Analysis
+
+
